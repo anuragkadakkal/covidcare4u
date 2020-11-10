@@ -57,7 +57,7 @@
       Services Section
 	============================-->
 	<div id="scrolldashboard"></div>
-	<section id="services" class="section-bg " style="background-color: #fff;padding-left: 450px;padding-right: 100px;">
+	<section id="services" class="section-bg " style="background-color: #fff;padding-left: 60px;padding-right: 100px;">
 		<div class="container" >
 			<div class="wow  fadeInUp" >
 				<div class="row ">
@@ -66,7 +66,7 @@
 					</div> -->
 					<!-- Dashboard Start-->
 								
-							<ul>
+							<ul style="align-items: center;">
 								<li style="list-style: none;">
 									<h2 style="font-family: 'Inconsolata', monospace;">Covid-19 INDIA<br><h6 style="font-family: 'Inconsolata', monospace;">&nbsp;as on : 16 July 2020, 08:00 IST</h6><br></h2>
 									<img src="assets/images/icon-infected.png" alt="Active Status">
@@ -79,7 +79,7 @@
 						
 									<img src="assets/images/icon-death.png" alt="Death Status">
 									<strong>24915</strong>
-									<span style="color:red">Deaths  </span> &nbsp;&nbsp;
+									<span style="color:red">Deaths  </span> &nbsp;&nbsp;<br>
 							
 									<img src="assets/images/icon-active.png" alt="Inactive Status">
 									<strong>1</strong>
@@ -287,7 +287,7 @@
 					<i class="fa fa-envelope mr-1 text-white mb-2"></i>directoratehealthcare@kerala.gov.in<br> <a href='resources/downloads/helpline.pdf' class="text-white view"><i class="fa fa-phone mr-1 text-white"></i>Helpline</a>
 
 					<!-- 	 -->
-					<h4 class="mt-5">Hit Count:&emsp;9408391</h4>
+					<h4 class="mt-5">Hit Count:&emsp;1</h4>
 				</div>
 
 			</div>

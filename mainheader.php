@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 
    
     $captcha = @$_POST['ct_captcha']; // the user's entry for the captcha code
-	$_SESSION["username"] =@$_POST['username'];
+	$_SESSION["username"] =@$_POST["username"];
 	$_SESSION["pass"] =@$_POST["pass"];
 
     $errors = array();  // initialize empty error array
@@ -40,7 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 
     if (sizeof($errors) == 0) {
         // no errors, send the form
-		header("Location: http://localhost/covidcare4u/logincheck.php"); 
+        /*echo $_SERVER["SERVER_NAME"];exit;*/
+		header("Location: http://".$_SERVER["SERVER_NAME"]."/covidcare4u/logincheck.php"); 
         echo "<script type='text/javascript'>alert('Correct security code')</script>";
         
     } else {
@@ -50,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
             $errmsg .= " - {$error}\n";
         }
 
-        echo "<script type='text/javascript'>alert('Incorrect security code')</script>";
+        echo "<script type='text/javascript'>alert('Invalid Captcha...Try Again..!!')</script>";
         
     }
 } // POST
@@ -117,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 
 		<div class="logo float-left">
 
-			<a href="home/index.html" class="scrollto titl" style="font-family: 'Trade Winds', cursive; font-size: 25px">
+			<a href="index.php" class="scrollto titl" style="font-family: 'Trade Winds', cursive; font-size: 25px">
 				<img src="resources/images/covid-logo.png" alt=""  style="width: 350px; height: 80px; margin-bottom: 20px;"></a>
 
 
@@ -126,32 +127,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 
 		<nav class="main-nav float-right d-none d-lg-block ">
 			<ul>
-				<li><a href="home/index.html">Home</a></li>
+				<li><a href="index.php">Home</a></li><!--
 				<li class="drop-down"><a href="#">Public Services</a>
 					<ul>
-
-						<li><a href="home/addDomestic.html">Domestic
-								Returnees Registration</a></li>
-						<li><a href="home/pravasiEntry.html">International
-								Returnees</a></li>
 						<li><a href="home/addMedicalEmergencyPass.html">Emergency
 								Entry Registration</a></li>
-						<li><a href="home/shortVisit.html">Short/Regular
-								Visit Registration</a></li>
 						<li><a href="home/addTrackYourApplication.html">Track
 								your Application</a></li>
-						<li><a href="home/addOffence.html"> Report
-								Offence </a></li>
 						<li><a href="home/addComplaints.html">Complaints/Requests</a></li>
-						<li><a href="home/addpermission.html">Self
-								Declaration</a></li>
 
-						<li><a href="home/addVolunteer.html">Volunteer
-								Registration</a></li>
-						<li><a href="https://athidhi.kerala.nic.in/" target="_blank" rel="noopener noreferrer">Athidhi Portal (for volunteer)</a></li>
-						<li><a href="home/addUpdateVolunteer.html">Update
-								Volunteer Details</a></li>
-						
+						<!-- <li><a href="home/addVolunteer.html">Volunteer
+								Registration</a></li> 
 						<li><a href="home/addSelfRegistration.html">Self
 								Registration For Quarentine People</a></li>
 					</ul></li>
@@ -159,9 +145,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 					<ul>
 						<li><a href="home/addAmbulance.html">
 								Ambulance Owner Registration</a></li>
-					</ul></li>
+					</ul>
+				</li> -->
+				<li class="drop-down"><a href="#">Registration</a>
+					<ul>
+						<li><a href="customerreg.php">
+								Customer</a></li> <!--
+						<li><a href="">
+								Medical Stores</a></li>
+						<li><a href="">
+								Restaurants</a></li> -->
+					</ul>
+				</li>
 
-				<li class="drop-down"><a href="#">Goods &amp; Services</a>
+				<!-- <li class="drop-down"><a href="#">Goods &amp; Services</a>
 					<ul>
 						<li><a href="home/addEssentialservices.html">Vehicle
 								Permit</a></li>
@@ -171,13 +168,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 						<li><a href="home/renewVehiclePermit.html">Renew
 								Vehicle Permit</a></li>
 
-					</ul></li>
-				<li class="drop-down"><a href="#">Info</a>
+					</ul></li> -->
+				<!-- <li class="drop-down"><a href="#">Info</a>
 					<ul>
 						<li><a class="view" href="resources/downloads/user%20manual.pdf">User
 								Manual</a></li>
 
-						<li><a class="view" href="resources/downloads/Covid19%20Jagratha%20Health%20Component.pdf">Health
+						<li><a class="view" href="resources/downloads/Covid19%20xxxxxxa%20Health%20Component.pdf">Health
 								component</a></li>
 						<li><a class="view" href="resources/downloads/Family%20-%20Hospital%20Health%20Care%20Management%20Module.pdf">Family-Hospital
 								Care</a></li>
@@ -250,12 +247,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 
 						<li><a href="home/addCCCList.html">Covid
 								Care Center List</a></li>
-					</ul></li>
+					</ul></li> 
 				
 
-				<li><a href="home/jagrathaAnalytics.html"> <!-- Jagratha -->
-						Analytics
-				</a></li>
+				<li><a href=""> 
+						Statistics
+				</a></li> -->
 				
 				<li><a href="" id="myModal" class="" data-toggle="modal" data-target="#exampleModalCenter">Login</a></li>
 			</ul>
@@ -303,8 +300,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 
 	   </div>
        <div class="modal-footer">
-		<a style="text-decoration: none; cursor:pointer;">
-		Not a user ?</a>
+		
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a style="text-decoration: none; cursor:pointer;">
 		Forgot Password

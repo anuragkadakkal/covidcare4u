@@ -37,10 +37,10 @@ function _endpage()
 
 function Footer()
     {
-      $this->SetXY(40,-15);
+      $this->SetXY(50,-15);
       $this->SetFont('Helvetica','I',10);
       $this->SetTextColor(255,0,0);
-      $this->Write (5, "Don't Exchange This Pass With Anyone Else. Keep This Pass While You Are Travelling.");
+      $this->Write (5, "This is a system generated document, no physical signature needed.");
     }
 }
 ?>

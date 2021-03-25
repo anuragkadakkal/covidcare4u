@@ -45,7 +45,7 @@
       <th>District</th>
       <th>Pincode</th>
       <th>Status</th>
-      <th>Cancel</th>
+      <th>Links</th>
     </tr>
   </thead> <?php } ?>
 
@@ -63,7 +63,7 @@ if($flag==0)
   <?php
         $result = mysqli_query($conn,$sql);
         while ($row=mysqli_fetch_array($result))
-              { ?>
+              {  $status = $row['status'];?>
   	<tr style="text-align: center;">
       <td><?php echo $row['curdate']; ?></td>
       <td><?php echo $row['fname']; ?></td>
@@ -73,21 +73,39 @@ if($flag==0)
       <td><?php echo $row['qstatus']; ?></td>
       <td><?php echo $row['district']; ?></td>
       <td><?php echo $row['pincode']; ?></td>
-      <td> <font color="red"><b><?php echo $row['feedback']; ?></b></font></td>
-      <td><?php 
-      
-      $status = $row['status'];
-      if($status==0)
+      <td> <?php  if($status==0) { ?> <font color="grey"><b>Not Viewed</b></font></td> <?php } ?>
+           <?php  if($status==1) { ?> <font color="green"><b>Available</b></font><a href="fpdf/foodbill.php?t=<?php echo $row['filekey']; ?>" download> <button class="btn btn-success">Reciept</button></a></td> <?php } ?>
+           <?php  if($status==2) { ?> <font color="red"><b>Order Cancelled By User</b></font></td> <?php } ?>
+           <?php  if($status==3) { ?> <font color="red"><b>Not Available</b></font></td> <?php } ?>
+           <?php  if($status==4) { ?> <font color="blue"><b>Bill Paid</b></font></td> <?php } ?>
+
+
+
+
+      <td><?php  if($status==0)
       { ?>
-        <a href="foodcancel.php?t=<?php echo $row['filekey']; ?>"><button class="btn btn-danger">Yes</button></a>
+        <a href="foodcancel.php?t=<?php echo $row['filekey']; ?>"><button class="btn btn-danger">Cancel</button></a>
    
    <?php   } 
-    if($status==2)
+   if ($status==1)
+   { ?>
+      <a href="billpay/index.php?t=<?php echo $row['filekey']; ?>"><button class="btn btn-primary">Payment</button></a>
+   <?php }
+    if($status==2 )
      { ?>
-        <font color="red"><b><?php echo "Cancelled";?></b></font>
+        <font color="red"><b><?php echo "Not Available";?></b></font>
 
     <?php }
-      
+    if($status==3)
+     { ?>
+        <font color="red"><b><?php echo "Not Available";?></b></font>
+
+    <?php }
+    if($status==4)
+     { ?>
+        <font color="blue"><a href="fpdf/foodbillpaid.php?t=<?php echo $row['filekey']; ?>" download> <button class="btn btn-success">Reciept</button></a></font>
+
+    <?php }
       
       
       

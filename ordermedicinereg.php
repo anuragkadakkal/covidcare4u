@@ -6,6 +6,7 @@
     $items = $_POST['items'];
     $phno = $_POST['phno'];;
 	$qstatus = $_POST['gender'];
+  $medkey= $_POST['medkey'];
 
     $filename = $_FILES['aadharfile']["name"];
 	$dist = $_POST['district'];
@@ -16,9 +17,9 @@
 	$filekey=substr($k1,0,8);
 
     $sql="insert into tb_medicine (fname,address,items,phno,qstatus,
-    prescription,district,pincode,curdate,status,filekey,loginid) values 
+    prescription,district,pincode,curdate,status,filekey,medkey,loginid) values 
     ('".$firstname."','".$address."','".$items."','".$phno."','".$qstatus."','".$filename."','".$dist."',
-    '".$pin."','".$curdate."','".$status."','".$filekey."','".$loginid."')";
+    '".$pin."','".$curdate."','".$status."','".$filekey."','".$medkey."','".$loginid."')";
 
     
  

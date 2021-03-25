@@ -70,7 +70,29 @@ session_start();
 
    }
 </script>
+<?php
+	$sql= "select district from tb_customer where loginid='".$lkey."'";
+	$result = mysqli_query($conn,$sql);
+	while ($row=mysqli_fetch_array($result))
+	{
+		$district=$row['district'];
+	} 
+?>
+
 					<form role="form" method="POST" action="ordermedicinereg.php" name="myform" enctype="multipart/form-data">
+
+						<div class="form-group">
+							<select class="form-control bfh-states" name="medkey" data-country="US" data-state="CA">
+									<option value="null">Select Karunya Medicals</option>
+								<?php $sql= "select * from tb_karunyamedicals where kmdistrict='".$district."'";
+	$result = mysqli_query($conn,$sql);
+	while ($row=mysqli_fetch_array($result))
+	{ ?> 
+										
+										<option value="<?php echo $row['kmkey']; ?>"><?php echo $row['kmname']; ?></option>
+<?php } ?>
+									</select>
+						</div>
 
                         <div class="form-group">
 							<input type="name" name="fname"  class="form-control input-sm" placeholder="Full Name">

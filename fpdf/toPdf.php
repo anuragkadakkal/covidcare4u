@@ -51,14 +51,14 @@ $pdf->AddPage();
 
 $pdf->SetXY(50,20);
 $pdf->SetDrawColor(50,60,100);
-$pdf->Image('logo.png',82,13,33);
+$pdf->Image('logo.png',92,13,33);
 
 
 $pdf->SetFont('Arial','B',24);
-$pdf->Cell(100,60,'Kerala Police',0,0,'C');
+$pdf->Cell(120,60,'Kerala Police',0,0,'C');
 $pdf->SetFont('Arial','B',18);
 
-$pdf->SetXY(60,-240);
+$pdf->SetXY(69,-240);
 $pdf->SetFont('Arial','B',18);
 $pdf->Write (5, "Inter- District Travel Pass");
 
@@ -150,6 +150,16 @@ if($status==1)
 $pdf->Write (5, $flag);
 
 $pdf->Image('logo1.png',100,173,53);
+
+$pdf->SetXY(25,-32);
+$pdf->SetFont('Arial','B',25);
+$pdf->SetTextColor(0,0,0);
+$pdf->Write (5, "______________________________________");
+
+$pdf->SetXY(25,-240);
+$pdf->SetFont('Arial','B',25);
+$pdf->SetTextColor(0,0,0);
+$pdf->Write (5, "______________________________________");
 
 
 

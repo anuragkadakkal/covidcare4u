@@ -1,5 +1,4 @@
 <?php
-session_start();
   if(isset($_COOKIE['logined']) && $_COOKIE['logined']==1)
   {
   $lkey = $_COOKIE['lkey'];
@@ -20,15 +19,15 @@ session_start();
 ?>
 
     <br><br>
-	<section id="about" style="background-color: #ecf5ff; box-shadow: 0px 0px 12px 0px #aeb8ba;">
-		<div class="container ">
+  <section id="about" style="background-color: #ecf5ff; box-shadow: 0px 0px 12px 0px #aeb8ba;">
+    <div class="container ">
 
-			<header class="section-header">
-				<h3>Ordered Food Status</h3><br>
-			</header>
+      <header class="section-header">
+        <h3>Ordered Food Status</h3><br>
+      </header>
 
  
-<?php if($flag==1 || $flag==0){ ?>
+<?php if($flag==0 || $flag==1){ ?>
 <table
   id="table"
   data-toggle="table"
@@ -46,25 +45,26 @@ session_start();
       <th>District</th>
       <th>Pincode</th>
       <th>Status</th>
-      <th>Cancel</th>
+      <th>Links</th>
     </tr>
-    </thead> <?php } ?>
+  </thead> <?php } ?>
 
-<?php
+  <?php
 if($flag==0)
 {
 
-//echo "No Data Found";
+  //echo "No Data Found";
 
 }
 
 ?>
+
   <tbody>
   <?php
         $result = mysqli_query($conn,$sql);
         while ($row=mysqli_fetch_array($result))
-              { ?>
-  	<tr style="text-align: center;">
+              {  $status = $row['status'];?>
+    <tr style="text-align: center;">
       <td><?php echo $row['curdate']; ?></td>
       <td><?php echo $row['fname']; ?></td>
       <td><?php echo $row['address']; ?></td>
@@ -73,21 +73,39 @@ if($flag==0)
       <td><?php echo $row['qstatus']; ?></td>
       <td><?php echo $row['district']; ?></td>
       <td><?php echo $row['pincode']; ?></td>
-      <td> <font color="red"><b><?php echo $row['feedback']; ?></b></font></td>
-      <td><?php 
-      
-      $status = $row['status'];
-      if($status==0)
+      <td> <?php  if($status==0) { ?> <font color="grey"><b>Not Viewed</b></font></td> <?php } ?>
+           <?php  if($status==1) { ?> <font color="green"><b>Available</b></font><a href="fpdf/medbill.php?t=<?php echo $row['filekey']; ?>" download> <button class="btn btn-success">Reciept</button></a></td> <?php } ?>
+           <?php  if($status==2) { ?> <font color="red"><b>Order Cancelled By User</b></font></td> <?php } ?>
+           <?php  if($status==3) { ?> <font color="red"><b>Not Available</b></font></td> <?php } ?>
+           <?php  if($status==4) { ?> <font color="blue"><b>Bill Paid</b></font></td> <?php } ?>
+
+
+
+
+      <td><?php  if($status==0)
       { ?>
-        <a href="medicinecancel.php?t=<?php echo $row['filekey']; ?>"><button class="btn btn-danger">Yes</button></a>
+        <a href="medicinecancel.php?t=<?php echo $row['filekey']; ?>"><button class="btn btn-danger">Cancel</button></a>
    
    <?php   } 
-    if($status==2)
+   if ($status==1)
+   { ?>
+      <a href="mbilpay/index.php?t=<?php echo $row['filekey']; ?>"><button class="btn btn-primary">Payment</button></a>
+   <?php }
+    if($status==2 )
      { ?>
-        <font color="red"><b><?php echo "Cancelled";?></b></font>
+        <font color="red"><b><?php echo "Not Available";?></b></font>
 
     <?php }
-      
+    if($status==3)
+     { ?>
+        <font color="red"><b><?php echo "Not Available";?></b></font>
+
+    <?php }
+    if($status==4)
+     { ?>
+        <font color="blue"><a href="fpdf/medbillpaid.php?t=<?php echo $row['filekey']; ?>" download> <button class="btn btn-success">Reciept</button></a></font>
+
+    <?php }
       
       
       
@@ -96,9 +114,9 @@ if($flag==0)
     </tr>  <?php } ?>
   </tbody>
 </table>
-<br><br>
-<?php  ?>
 
+<?php  ?>
+<br><br><br><br><br><br><br>
 
           </div>
         </div> <!-- / .row -->
@@ -134,7 +152,7 @@ if($flag==0)
 
       </div>
       <div class="modal-footer">
-      <p style="padding-right: 170px;padding-top: 20px;">	<b>Status :</b> <?php if($row['status']=='0')
+      <p style="padding-right: 170px;padding-top: 20px;"> <b>Status :</b> <?php if($row['status']=='0')
                   {
                     echo "<font color='grey'><b>Not Viewed</b></font>";
                   }
@@ -144,7 +162,7 @@ if($flag==0)
                   }
                   else
                   {
-                  	echo "<font color='red'><b>Rejected &nbsp;</b></font><img src='fail.png' height='50px' width='50px'>";
+                    echo "<font color='red'><b>Rejected &nbsp;</b></font><img src='fail.png' height='50px' width='50px'>";
                   } ?> <br>
 
       <?php } ?></p>
@@ -152,57 +170,57 @@ if($flag==0)
     </div>
   </div>
 </div>
-			</div>
+      </div>
 
-		</div>
-	</section>
+    </div>
+  </section>
 
 
 <footer id="footer">
-	<div class="footer-top">
-		<div class="container">
-			<div class="row">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
 
-				<div class="col-lg-4 col-md-6 footer-info">
-					<br><h4>Disclaimer</h4>
-					<p class="text-justify">Conceptualized and designed by Anurag A engaging Master Of Computer Application in Amal Jyothi College Of Engineering, Kanjirampally, Kottayam.
-						</p>
+        <div class="col-lg-4 col-md-6 footer-info">
+          <br><h4>Disclaimer</h4>
+          <p class="text-justify">Conceptualized and designed by Anurag A engaging Master Of Computer Application in Amal Jyothi College Of Engineering, Kanjirampally, Kottayam.
+            </p>
 
 
-				</div>
+        </div>
 
-				<div class="col-lg-4 col-md-6 footer-links">
-					<br><h4>Useful Links</h4>
-					<ul>
+        <div class="col-lg-4 col-md-6 footer-links">
+          <br><h4>Useful Links</h4>
+          <ul>
 
-						<li><a href="http://dhs.kerala.gov.in/" target="_blank" rel="noopener noreferrer">Directorate of Health Services</a></li>
-						<li><a href="https://play.google.com/store/apps/details?id=com.qkopy.prdkerala&amp;hl=en_IN" target="_blank" rel="noopener noreferrer">GoK - Direct Kerala
-								app</a></li>
-						<li><a href="https://play.google.com/store/apps/details/?id=in.nic.kerala.nicscanner" target="_blank" rel="noopener noreferrer">NIC QR Scanner</a></li>
-					<li>
-					</ul>
-			<!--		<a href="https://itmission.kerala.gov.in/" target="_blank" rel="noopener noreferrer"><img src="resources/images/itmission.png" alt="IT Mission Logo" style="width: 100px; height: 70px;" class="mt-3"></a>
-			-->	</div>
+            <li><a href="http://dhs.kerala.gov.in/" target="_blank" rel="noopener noreferrer">Directorate of Health Services</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.qkopy.prdkerala&amp;hl=en_IN" target="_blank" rel="noopener noreferrer">GoK - Direct Kerala
+                app</a></li>
+            <li><a href="https://play.google.com/store/apps/details/?id=in.nic.kerala.nicscanner" target="_blank" rel="noopener noreferrer">NIC QR Scanner</a></li>
+          <li>
+          </ul>
+      <!--    <a href="https://itmission.kerala.gov.in/" target="_blank" rel="noopener noreferrer"><img src="resources/images/itmission.png" alt="IT Mission Logo" style="width: 100px; height: 70px;" class="mt-3"></a>
+      --> </div>
 
-				<div class="col-lg-3 col-md-6 footer-contact">
+        <div class="col-lg-3 col-md-6 footer-contact">
 
-					<h4 style="margin-top: 20px;">Contact Us</h4>
-					<i class="fa fa-envelope mr-1 text-white mb-2"></i>directoratehealthcare@kerala.gov.in<br> <a href='resources/downloads/helpline.pdf' class="text-white view"><i class="fa fa-phone mr-1 text-white"></i>Helpline</a>
+          <h4 style="margin-top: 20px;">Contact Us</h4>
+          <i class="fa fa-envelope mr-1 text-white mb-2"></i>directoratehealthcare@kerala.gov.in<br> <a href='resources/downloads/helpline.pdf' class="text-white view"><i class="fa fa-phone mr-1 text-white"></i>Helpline</a>
 
-					<!-- 	 -->
-					<h4 class="mt-5">Hit Count:&emsp;1</h4>
-				</div>
+          <!--   -->
+          <h4 class="mt-5">Hit Count:&emsp;1</h4>
+        </div>
 
-			</div>
-		</div>
-	</div>
+      </div>
+    </div>
+  </div>
 
 <?php
 include 'mainfooter.php';
 }
 
-	else
-	{
-		Header("location:index.php");
-	}
+  else
+  {
+    Header("location:index.php");
+  }
 ?>

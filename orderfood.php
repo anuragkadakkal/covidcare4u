@@ -64,6 +64,27 @@ session_start();
    }
 </script>
 					<form role="form" method="POST" action="orderfoodreg.php" name="myform">
+<?php
+	$sql= "select district from tb_customer where loginid='".$lkey."'";
+	$result = mysqli_query($conn,$sql);
+	while ($row=mysqli_fetch_array($result))
+	{
+		$district=$row['district'];
+	} 
+?>
+
+						<div class="form-group">
+							<select class="form-control bfh-states" name="kitkey" data-country="US" data-state="CA">
+									<option value="null">Select Communtiy Kitchen</option>
+								<?php $sql= "select * from tb_communitykitchen where cmdistrict='".$district."'";
+	$result = mysqli_query($conn,$sql);
+	while ($row=mysqli_fetch_array($result))
+	{ ?> 
+										
+										<option value="<?php echo $row['cmkey']; ?>"><?php echo $row['cmname']; ?></option>
+<?php } ?>
+									</select>
+						</div>
 
                         <div class="form-group">
 							<input type="name" name="fname"  class="form-control input-sm" placeholder="Full Name">

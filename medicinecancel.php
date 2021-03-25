@@ -5,7 +5,7 @@
   $filekey = $_GET['t'];
 $status =2;
 
-  $sql2 = "update tb_medicine set status='".$status."', feedback='Order Canceled by User' where filekey='".$filekey."'";
+  $sql2 = "update tb_medicine set status='".$status."' where filekey='".$filekey."'";
   $ex2=mysqli_query($conn,$sql2);
 
   if($ex2)

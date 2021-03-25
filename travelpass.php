@@ -86,6 +86,26 @@
    }
 </script>
 					<form role="form" method="POST" action="applypass.php" name="myform">
+						<?php
+	$sql= "select district from tb_customer where loginid='".$lkey."'";
+	$result = mysqli_query($conn,$sql);
+	while ($row=mysqli_fetch_array($result))
+	{
+		$district=$row['district'];
+	} 
+?>
+						<div class="form-group">
+							<select class="form-control bfh-states" name="pkey" data-country="US" data-state="CA">
+									<option value="null">Select Police Station</option>
+								<?php $sql= "select * from tb_policestation where district='".$district."'";
+	$result = mysqli_query($conn,$sql);
+	while ($row=mysqli_fetch_array($result))
+	{ ?> 
+										
+										<option value="<?php echo $row['policekey']; ?>"><?php echo $row['address']; ?></option>
+<?php } ?>
+									</select>
+						</div>
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">

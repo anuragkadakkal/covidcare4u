@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 25, 2021 at 07:25 AM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Host: 127.0.0.1
+-- Generation Time: Apr 20, 2021 at 05:07 AM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -103,7 +103,7 @@ INSERT INTO `tb_food` (`fid`, `filekey`, `fname`, `address`, `items`, `phno`, `q
 (8, '4f104809', 'Abhishek A', 'Anu Bahvan', 'Bread 5 packets', '7356308128', 'Yes', 'Trivandrum', '695614', '4', '2024-03-21', 'f4308d94', 36),
 (9, '84058693', 'Anu', 'Anu Bhavan', 'Bread - 1', '7356308128', 'Yes', 'Trivandrum', '695614', '2', '2024-03-21', 'f4308d94', 36),
 (10, '9135fdd1', 'Abhiram', 'Abhu Vaban', 'Milk -2glass', '7356308128', 'Yes', 'Kollam', '695614', '3', '2024-03-21', 'f4308d94', 36),
-(12, 'dc2460eb', 'Anilkumar R', 'Abhi Bhavan', 'Bread And Butter - 1 Each', '9645023651', 'No', 'Kottayam', '695614', '0', '2025-03-21', 'f4307d95', 36);
+(12, 'dc2460eb', 'Anilkumar R', 'Abhi Bhavan', 'Bread And Butter - 1 Each', '9645023651', 'No', 'Kottayam', '695614', '1', '2025-03-21', 'f4307d95', 36);
 
 -- --------------------------------------------------------
 
@@ -231,8 +231,8 @@ CREATE TABLE `tb_medicine` (
 --
 
 INSERT INTO `tb_medicine` (`m_id`, `fname`, `address`, `items`, `phno`, `qstatus`, `prescription`, `district`, `pincode`, `curdate`, `status`, `filekey`, `medkey`, `loginid`) VALUES
-(10, 'Anurag A', 'Anu Bhavan', 'Azithral 500 - 5 Tablets', '7356308128', 'Yes', 'doc.pdf', 'Trivandrum', '695614', '2030-01-21', '4', '4fc181a5', 'g4325e88', 36),
-(11, 'Anurag', 'Anu Bhavan', 'Wikoryl 15', '9873456789', 'Yes', 'Skills.pdf', 'Kottayam', '123456', '2025-03-21', '0', '71ea77ed', 'g4325e88', 36);
+(10, 'Anurag A', 'Anu Bhavan', 'Azithral 500 - 5 Tablets', '7356308128', 'Yes', 'doc.pdf', 'Trivandrum', '695614', '2030-01-21', '4', '4fc181a6', 'g4325e88', 36),
+(11, 'Anurag', 'Anu Bhavan', 'Wikoryl 15', '9873456789', 'Yes', 'Skills.pdf', 'Kottayam', '123456', '2025-03-21', '4', '4fc181a5', 'g4325e88', 36);
 
 -- --------------------------------------------------------
 

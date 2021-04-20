@@ -1,6 +1,6 @@
 <?php
 session_start(); // this MUST be called prior to any output including whitespaces and line breaks!
-$GLOBALS['ct_recipient']   = 'YOU@EXAMPLE.COM'; // Change to your email address!
+/*$GLOBALS['ct_recipient']   = 'YOU@EXAMPLE.COM'; // Change to your email address!
 $GLOBALS['ct_msg_subject'] = 'Securimage Test Contact Form';
 
 $GLOBALS['DEBUG_MODE'] = 1;
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 
     if (sizeof($errors) == 0) {
         // no errors, send the form
-        /*echo $_SERVER["SERVER_NAME"];exit;*/
+        /*echo $_SERVER["SERVER_NAME"];exit; //
 		header("Location: http://".$_SERVER["SERVER_NAME"]."/covidcare4u/logincheck.php"); 
         echo "<script type='text/javascript'>alert('Correct security code')</script>";
         
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
         echo "<script type='text/javascript'>alert('Invalid Captcha...Try Again..!!')</script>";
         
     }
-} // POST
+} */
 
 ?>
 <!DOCTYPE html>
@@ -273,7 +273,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
         </button>
 	  </div>
 	  
-<form action="" method="POST" id="contact_form">
+<form action="logincheck.php" method="POST" id="contact_form">
 <input type="hidden" name="do" value="contact" />
       <div class="modal-body">
 		<div class="input-group input-group-lg">
@@ -286,14 +286,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 
 		<div class="input-group input-group-lg">
 
-<!-- Captcha Start -->	
+<!-- Captcha Start 
 			<table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="table">
 				<tr>
 					<th align="right" valign="top">Captcha</th>
-					<td><?php require_once 'securimage.php'; echo Securimage::getCaptchaHtml(array('input_name' => 'ct_captcha')); ?><br>
+					<td><?php //require_once 'securimage.php'; echo Securimage::getCaptchaHtml(array('input_name' => 'ct_captcha')); ?><br>
 				</tr>
 			</table>
-<!-- Captcha End -->
+Captcha End -->
 
 
 		</div>

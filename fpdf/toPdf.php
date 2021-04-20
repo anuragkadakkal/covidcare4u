@@ -163,7 +163,7 @@ $pdf->Write (5, "______________________________________");
 
 
 
-$pdf->Output('I',$passkey.'TravelPAss');
+$pdf->Output('I',$passkey.'TravelPAss.pdf');
 
 ?>
         

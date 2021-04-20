@@ -1,7 +1,7 @@
 <?php 
     session_start();
-    $usr = $_SESSION["username"];
-    $en = md5($_SESSION["pass"]);
+    $usr = $_POST["username"];
+    $en = md5($_POST["pass"]);
     /*unset($_SESSION['username']);
     unset($_SESSION['pass']);*/
     include 'connection.php';

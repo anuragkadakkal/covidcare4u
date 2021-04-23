@@ -8,7 +8,7 @@
 
   $flag=0;
   $loginid = $_COOKIE['lkey'];
-  $sql="select * from tb_food where loginid='".$loginid."'";
+  $sql="select * from tb_food where loginid='".$loginid."' order by fid desc";//echo $sql;exit;
 
   $result = mysqli_query($conn,$sql);
   while ($row=mysqli_fetch_array($result))

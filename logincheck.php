@@ -1,10 +1,10 @@
 <?php 
     session_start();
+    include 'connection.php';
     $usr = $_POST["username"];
     $en = md5($_POST["pass"]);
     /*unset($_SESSION['username']);
     unset($_SESSION['pass']);*/
-    include 'connection.php';
 
     $sql="select id,status,utype from tb_login where username='".$usr."' and password='".$en."'";
 
@@ -35,9 +35,13 @@
 			{
 				header("location:police/policehome.php");
 			}
+			else if($c==3)
+			{
+				header("location:kitchen/kitchenhome.php");
+			}
 			else
 			{
-
+				header("location:medicalstore/medicalstorehome.php");
 			}
 		}
 		else if ($d==2)

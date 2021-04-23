@@ -33,7 +33,7 @@ function getCallbackUrl()
 ?>
 <?php
 $key=$_GET['t'];
-	$sql="select * from tb_foodbill inner join tb_food on tb_foodbill.fborderkey=tb_food.filekey where fborderkey='".$key."'";
+	$sql="select * from tb_foodbill inner join tb_food on tb_foodbill.fborderkey=tb_food.filekey where fborderkey='".$key."'";//echo $sql;exit;
 	$result = mysqli_query($conn,$sql);
 	while ($row=mysqli_fetch_array($result))
   {

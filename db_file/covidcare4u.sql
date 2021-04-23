@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2021 at 05:07 AM
+-- Generation Time: Apr 23, 2021 at 10:33 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -35,6 +35,7 @@ CREATE TABLE `tb_communitykitchen` (
   `cmdistrict` varchar(70) NOT NULL,
   `cmpincode` varchar(6) NOT NULL,
   `cmcity` varchar(50) NOT NULL,
+  `cmcertificate` varchar(100) NOT NULL,
   `cmphone` varchar(10) NOT NULL,
   `loginid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -43,9 +44,10 @@ CREATE TABLE `tb_communitykitchen` (
 -- Dumping data for table `tb_communitykitchen`
 --
 
-INSERT INTO `tb_communitykitchen` (`cmid`, `cmkey`, `cmname`, `cmaddress`, `cmdistrict`, `cmpincode`, `cmcity`, `cmphone`, `loginid`) VALUES
-(1, 'f4308d94', 'Community Kitchen - Kanjirampally', 'Kanjirampally Town', 'Kottayam', '123456', 'Kanjirampally', '9645023655', 38),
-(2, 'f4307d95', 'Community Kitchen 16th Mile', '16th Mile', 'Kottayam', '123456', 'Kanjirampally', '1234567890', 39);
+INSERT INTO `tb_communitykitchen` (`cmid`, `cmkey`, `cmname`, `cmaddress`, `cmdistrict`, `cmpincode`, `cmcity`, `cmcertificate`, `cmphone`, `loginid`) VALUES
+(1, 'f4308d94', 'Community Kitchen - Kanjirampally', 'Kanjirampally Town', 'Kottayam', '123456', 'Kanjirampally', '', '9645023655', 38),
+(2, 'f4307d95', 'Community Kitchen 16th Mile', '16th Mile', 'Kottayam', '123456', 'Kanjirampally', '', '1234567890', 39),
+(3, '6da58e0d', 'Community Kitchen - Mundakayam', 'Community Kitchen, Mundakayam, Kottayam', 'Kottayam', '123456', 'Mundakayam', 'ResearchPaperDraft.pdf', '1234567890', 49);
 
 -- --------------------------------------------------------
 
@@ -55,6 +57,7 @@ INSERT INTO `tb_communitykitchen` (`cmid`, `cmkey`, `cmname`, `cmaddress`, `cmdi
 
 CREATE TABLE `tb_customer` (
   `id` int(11) NOT NULL,
+  `custkey` varchar(8) NOT NULL,
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
   `address` varchar(100) NOT NULL,
@@ -69,8 +72,9 @@ CREATE TABLE `tb_customer` (
 -- Dumping data for table `tb_customer`
 --
 
-INSERT INTO `tb_customer` (`id`, `fname`, `lname`, `address`, `phno`, `gender`, `district`, `pincode`, `loginid`) VALUES
-(28, 'Anurag', 'A', 'Anu Bhavan, Adyamon PO', '9645023651', 'Male', 'Kottayam', '695614', 36);
+INSERT INTO `tb_customer` (`id`, `custkey`, `fname`, `lname`, `address`, `phno`, `gender`, `district`, `pincode`, `loginid`) VALUES
+(28, '', 'Anurag', 'A', 'Anu Bhavan, Adyamon PO', '9645023651', 'Male', 'Kottayam', '695614', 36),
+(29, '5ea86184', 'Anu', 'Rag', 'Anu Bhavan', '9645023651', 'Male', 'Kottayam', '695614', 53);
 
 -- --------------------------------------------------------
 
@@ -103,7 +107,10 @@ INSERT INTO `tb_food` (`fid`, `filekey`, `fname`, `address`, `items`, `phno`, `q
 (8, '4f104809', 'Abhishek A', 'Anu Bahvan', 'Bread 5 packets', '7356308128', 'Yes', 'Trivandrum', '695614', '4', '2024-03-21', 'f4308d94', 36),
 (9, '84058693', 'Anu', 'Anu Bhavan', 'Bread - 1', '7356308128', 'Yes', 'Trivandrum', '695614', '2', '2024-03-21', 'f4308d94', 36),
 (10, '9135fdd1', 'Abhiram', 'Abhu Vaban', 'Milk -2glass', '7356308128', 'Yes', 'Kollam', '695614', '3', '2024-03-21', 'f4308d94', 36),
-(12, 'dc2460eb', 'Anilkumar R', 'Abhi Bhavan', 'Bread And Butter - 1 Each', '9645023651', 'No', 'Kottayam', '695614', '1', '2025-03-21', 'f4307d95', 36);
+(14, 'f825805e', 'Anurag A', 'Anu Bhavan', 'Biriyani - 2', '9645023651', 'No', 'Kottayam', '695614', '2', '2023-04-21', '49', 36),
+(15, 'f5affdb5', 'Anurag A', 'Anu Bhavan', 'Biriyani - 2', '9645023651', 'No', 'Kottayam', '695614', '0', '2023-04-21', '49', 36),
+(16, 'f82b27e4', 'Abhishek A', 'Abhi Bhavan', '', '7356308128', 'No', 'Kottayam', '695614', '0', '2023-04-21', '39', 36),
+(19, '4cf76626', 'Abhi', 'Abhi Bhavan', 'Curd - 3', '7890987654', 'No', 'Kottayam', '678678', '4', '2023-04-21', '49', 36);
 
 -- --------------------------------------------------------
 
@@ -125,7 +132,38 @@ CREATE TABLE `tb_foodbill` (
 --
 
 INSERT INTO `tb_foodbill` (`fbid`, `fbkey`, `fbdate`, `fbamount`, `fborderkey`, `fbloginid`) VALUES
-(1, 'f4308d94', '2021-03-24', 240, '4f104809', 36);
+(1, 'f4308d94', '2021-03-24', 240, '4cf76626', 36);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_foodreg`
+--
+
+CREATE TABLE `tb_foodreg` (
+  `fid` int(11) NOT NULL,
+  `fkey` varchar(8) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `fdate` varchar(100) NOT NULL,
+  `ftime` varchar(70) NOT NULL,
+  `fdesc` varchar(100) NOT NULL,
+  `fprice` varchar(10) NOT NULL,
+  `fqty` int(11) NOT NULL,
+  `fstatus` enum('0','1','') NOT NULL,
+  `delstatus` enum('0','1') NOT NULL,
+  `loginid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_foodreg`
+--
+
+INSERT INTO `tb_foodreg` (`fid`, `fkey`, `fname`, `fdate`, `ftime`, `fdesc`, `fprice`, `fqty`, `fstatus`, `delstatus`, `loginid`) VALUES
+(9, '918e2d35', 'Biriyani', 'Friday 23rd of April 2021', 'Friday 23rd of April 2021', 'Chicken and Beef Available', '79', 38, '1', '0', 49),
+(10, '9d1f6b73', 'Kanji', 'Friday 23rd of April 2021', 'Friday 23rd of April 2021', 'Kanji + Peas and Pickles', '50', 40, '0', '0', 49),
+(11, '21dc1742', 'Bread', 'Friday 23rd of April 2021', 'Friday 23rd of April 2021', 'Mil Bread', '10', 10, '0', '0', 49),
+(12, '9b2b9e9b', 'Curd', 'Friday 23rd of April 2021', 'Friday 23rd of April 2021', 'Cow Milk - Curd ', '8', 5, '1', '0', 49),
+(13, 'f6971bf8', 'Noodles', 'Friday 23rd of April 2021 11:08:50 AM', 'Friday 23rd of April 2021', 'Chicken Noodles', '49', 10, '1', '0', 49);
 
 -- --------------------------------------------------------
 
@@ -142,6 +180,7 @@ CREATE TABLE `tb_karunyamedicals` (
   `kmpincode` varchar(6) NOT NULL,
   `kmcity` varchar(50) NOT NULL,
   `kmphone` varchar(10) NOT NULL,
+  `kmcertificate` varchar(100) NOT NULL,
   `loginid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -149,9 +188,8 @@ CREATE TABLE `tb_karunyamedicals` (
 -- Dumping data for table `tb_karunyamedicals`
 --
 
-INSERT INTO `tb_karunyamedicals` (`kmid`, `kmkey`, `kmname`, `kmaddress`, `kmdistrict`, `kmpincode`, `kmcity`, `kmphone`, `loginid`) VALUES
-(1, 'f4325d94', 'Karunya Medicals - Kanjirampally', 'Kanjirampally Town', 'Kottayam', '123456', 'Kanjirampally', '1234567890', 40),
-(2, 'g4325e88', 'Karunya Medicals 16th Mile', '16th Mile', 'Kottayam', '123456', 'Kanjirampally', '1234567890', 41);
+INSERT INTO `tb_karunyamedicals` (`kmid`, `kmkey`, `kmname`, `kmaddress`, `kmdistrict`, `kmpincode`, `kmcity`, `kmphone`, `kmcertificate`, `loginid`) VALUES
+(7, '3257abf8', 'Karunya Medicals - Mundakayam', 'Karunya Medicals, Mundakayam, Kottayam', 'Kottayam', '123456', 'Mundakayam', '5678902345', 'ResearchPaperDraft.pdf', 50);
 
 -- --------------------------------------------------------
 
@@ -164,7 +202,7 @@ CREATE TABLE `tb_login` (
   `username` varchar(100) NOT NULL,
   `password` varchar(32) NOT NULL,
   `status` enum('0','1','2') NOT NULL,
-  `utype` enum('0','1','2') NOT NULL
+  `utype` enum('0','1','2','3','4') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -175,11 +213,12 @@ INSERT INTO `tb_login` (`id`, `username`, `password`, `status`, `utype`) VALUES
 (24, 'admin@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '0'),
 (36, 'anuragkadakkal@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '1'),
 (37, 'keralapolice@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '2'),
-(38, 'kitchen1@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '0'),
-(39, 'kitchen2@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '0'),
-(40, 'kmedicals1@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '0'),
-(41, 'kmedicals2@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '0'),
-(42, 'keralapolic@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '2');
+(38, 'kitchen1@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '3'),
+(39, 'kitchen2@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '3'),
+(42, 'keralapolic@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '2'),
+(49, 'kmkitchen1@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '3'),
+(50, 'karunyamedical5@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '4'),
+(53, 'anuragkadakkal1@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -323,6 +362,12 @@ ALTER TABLE `tb_foodbill`
   ADD PRIMARY KEY (`fbid`);
 
 --
+-- Indexes for table `tb_foodreg`
+--
+ALTER TABLE `tb_foodreg`
+  ADD PRIMARY KEY (`fid`);
+
+--
 -- Indexes for table `tb_karunyamedicals`
 --
 ALTER TABLE `tb_karunyamedicals`
@@ -366,19 +411,19 @@ ALTER TABLE `tb_vehiclepass`
 -- AUTO_INCREMENT for table `tb_communitykitchen`
 --
 ALTER TABLE `tb_communitykitchen`
-  MODIFY `cmid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cmid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_customer`
 --
 ALTER TABLE `tb_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tb_food`
 --
 ALTER TABLE `tb_food`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tb_foodbill`
@@ -387,16 +432,22 @@ ALTER TABLE `tb_foodbill`
   MODIFY `fbid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tb_foodreg`
+--
+ALTER TABLE `tb_foodreg`
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `tb_karunyamedicals`
 --
 ALTER TABLE `tb_karunyamedicals`
-  MODIFY `kmid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `kmid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tb_login`
 --
 ALTER TABLE `tb_login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `tb_medbill`

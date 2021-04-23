@@ -150,11 +150,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 				<li class="drop-down"><a href="#">Registration</a>
 					<ul>
 						<li><a href="customerreg.php">
-								Customer</a></li> <!--
-						<li><a href="">
-								Medical Stores</a></li>
-						<li><a href="">
-								Restaurants</a></li> -->
+								Customer</a></li> 
+						<li><a href="medicalstorereg.php">
+								Karunya Medicals</a></li>
+						<li><a href="communitykitchenreg.php">
+								Community Kitchen</a></li>
 					</ul>
 				</li>
 

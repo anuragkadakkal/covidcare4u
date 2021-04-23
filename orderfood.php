@@ -1,5 +1,6 @@
 <?php
 session_start();
+
   if(isset($_COOKIE['logined']) && $_COOKIE['logined']==1)
   {
   $lkey = $_COOKIE['lkey'];
@@ -63,7 +64,7 @@ session_start();
 
    }
 </script>
-					<form role="form" method="POST" action="orderfoodreg.php" name="myform">
+					<form role="form" method="POST" action="foodbuy.php" name="myform"> <!-- orderfoodreg.php -->
 <?php
 	$sql= "select district from tb_customer where loginid='".$lkey."'";
 	$result = mysqli_query($conn,$sql);
@@ -81,7 +82,7 @@ session_start();
 	while ($row=mysqli_fetch_array($result))
 	{ ?> 
 										
-										<option value="<?php echo $row['cmkey']; ?>"><?php echo $row['cmname']; ?></option>
+										<option value="<?php echo $row['loginid']; ?>"><?php echo $row['cmname']; ?></option>
 <?php } ?>
 									</select>
 						</div>
@@ -94,9 +95,9 @@ session_start();
 							<textarea rows="2" class="form-control input-sm" name="address" placeholder="Address"></textarea>
 						</div>
 
-                        <div class="form-group">
+                     <!--    <div class="form-group">
 							<textarea rows="2" class="form-control input-sm" name="items" placeholder="Food Items Needed and Quantity"></textarea>
-						</div>
+						</div> -->
 
                         <div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
@@ -143,7 +144,7 @@ session_start();
 						</div>
 
 						
-						<input type="submit" value="Order Food" class="btn btn-info btn-block" onclick="return checkAll()">
+						<input type="submit" value="Select Food(s)" class="btn btn-info btn-block" ><!-- onclick="return checkAll()" -->
 					</form><br><br><br>
 
 			</div>

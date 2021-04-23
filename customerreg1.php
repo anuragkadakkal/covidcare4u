@@ -11,6 +11,8 @@
 	$pin = $_POST['pincode'];
 	$pass = md5($_POST['pass']);
 	$conpass = $_POST['conpass'];
+  $k1=md5(microtime());
+  $k2=substr($k1,0,8);
 	$utype = 1;
 	$status = 1;
 
@@ -24,7 +26,7 @@
         $loginid=$row["id"];
     }
 
-    $sql3="insert into tb_customer(fname,lname,address,phno,gender,district,pincode,loginid) values ('".$firstname."','".$lastname."','".$address."','".$phno."','".$gender."','".$dist."','".$pin."','".$loginid."')";
+    $sql3="insert into tb_customer(custkey,fname,lname,address,phno,gender,district,pincode,loginid) values ('".$k2."','".$firstname."','".$lastname."','".$address."','".$phno."','".$gender."','".$dist."','".$pin."','".$loginid."')";//echo $sql3;exit;
     $ex2=mysqli_query($conn,$sql3);
 
     if($ex1 && $ex2)

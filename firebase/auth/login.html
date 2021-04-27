@@ -166,31 +166,7 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
-   //===================Saving Login Details in My Server Using AJAX================
-   function sendDatatoServerPhp(email,provider,token,username){
-       
-        var xhr = new XMLHttpRequest();
-        //xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", function() {
-        if(this.readyState === 4) {
-            console.log(this.responseText);
-            if(this.responseText=="Login Successfull" || this.responseText=="User Created"){
-                alert("Login Successfull");
-                location='home.php';
-            }
-            else if(this.responseText=="Please Verify Your Email to Get Login"){
-                alert("Please Verify Your Email to Login")
-            }
-            else{
-                alert("Error in Login");
-            }
-        }
-        });
-
-        xhr.open("POST", "http://localhost/firebase/auth/login.php?email="+email+"&provider="+provider+"&username="+username+"&token="+token);
-        xhr.send();
-   }
+   
 
 
    //===========================End Saving Details in My Server=======================
@@ -229,9 +205,9 @@
             var token=userobj.xa;
             var provider="phone";
             var email=phoneinput.value;
-            if(token!=null && token!=undefined && token!=""){
-            sendDatatoServerPhp(email,provider,token,email);
-            }
+            alert("Login Successfull");
+            window.location.replace("home.php");
+      
        })
        .catch(function(error){
            //console.log(error);

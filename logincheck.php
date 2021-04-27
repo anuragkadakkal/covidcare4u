@@ -41,7 +41,7 @@
 			}
 			else
 			{
-				header("location:medicalstore/medicalstorehome.php");
+				header("location:karunyamedicals/medicalhome.php");
 			}
 		}
 		else if ($d==2)

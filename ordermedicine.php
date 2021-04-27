@@ -1,5 +1,6 @@
 <?php
 session_start();
+unset($_SESSION["cart_item"]);
   if(isset($_COOKIE['logined']) && $_COOKIE['logined']==1)
   {
   $lkey = $_COOKIE['lkey'];
@@ -79,7 +80,7 @@ session_start();
 	} 
 ?>
 
-					<form role="form" method="POST" action="ordermedicinereg.php" name="myform" enctype="multipart/form-data">
+					<form role="form" method="POST" action="medbuys.php" name="myform" enctype="multipart/form-data">
 
 						<div class="form-group">
 							<select class="form-control bfh-states" name="medkey" data-country="US" data-state="CA">
@@ -89,21 +90,17 @@ session_start();
 	while ($row=mysqli_fetch_array($result))
 	{ ?> 
 										
-										<option value="<?php echo $row['kmkey']; ?>"><?php echo $row['kmname']; ?></option>
+										<option value="<?php echo $row['loginid']; ?>"><?php echo $row['kmname']; ?></option>
 <?php } ?>
 									</select>
 						</div>
 
                         <div class="form-group">
-							<input type="name" name="fname"  class="form-control input-sm" placeholder="Full Name">
+							<input type="name" name="fname" value="<?php echo $name; ?>" class="form-control input-sm" placeholder="Full Name" readonly>
 						</div>
 
                         <div class="form-group">
 							<textarea rows="2" class="form-control input-sm" name="address" placeholder="Address"></textarea>
-						</div>
-
-                        <div class="form-group">
-							<textarea rows="2" class="form-control input-sm" name="items" placeholder="Medicine Needed and Quantity"></textarea>
 						</div>
 
                         <div class="row">
@@ -129,33 +126,16 @@ session_start();
 							</div>
 						</div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                         <label class="form-check-input" for="exampleRadios1" style="color: black;font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Doctor Prescription</label>&nbsp;<br>
 							<input type="file" name="aadharfile"  class="form-control input-sm" >
-						</div>
+						</div> -->
 					
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-6">
-								<div class="form-group">
-									<select class="form-control bfh-states" name="district" data-country="US" data-state="CA">
-										<option value="null">Select District</option>
-										<option value="Trivandrum">Trivandrum</option>
-										<option value="Kollam">Kollam</option>
-										<option value="Idukki">Idukki</option>
-										<option value="Kottayam">Kottayam</option>
-									</select>
-
-								</div>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6">
-								<div class="form-group">
-									<input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode">
-								</div>
-							</div>
-						</div>
-
 						
-						<input type="submit" value="Order Medicine" class="btn btn-info btn-block" onclick="return checkAll()">
+									<input type="hidden" name="district" class="form-control input-sm" value="<?php echo $district; ?>">
+									<input type="hidden" name="pincode" class="form-control input-sm" value="<?php echo $pincode; ?>">
+						
+						<input type="submit" value="Order Medicine" class="btn btn-info btn-block" ><!-- onclick="return checkAll()" -->
 					</form><br><br><br>
 
 			</div>

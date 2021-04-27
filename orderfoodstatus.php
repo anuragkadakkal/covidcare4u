@@ -73,11 +73,12 @@ if($flag==0)
       <td><?php echo $row['qstatus']; ?></td>
       <td><?php echo $row['district']; ?></td>
       <td><?php echo $row['pincode']; ?></td>
-      <td> <?php  if($status==0) { ?> <font color="grey"><b>Not Viewed</b></font></td> <?php } ?>
+      <td> <?php  if($status==0) { ?> <font color="grey"><b>Not [Available/Viewed] </b></font></td> <?php } ?>
            <?php  if($status==1) { ?> <font color="green"><b>Available</b></font><a href="fpdf/foodbill.php?t=<?php echo $row['filekey']; ?>" download> <button class="btn btn-success">Reciept</button></a></td> <?php } ?>
            <?php  if($status==2) { ?> <font color="red"><b>Order Cancelled By User</b></font></td> <?php } ?>
            <?php  if($status==3) { ?> <font color="red"><b>Not Available</b></font></td> <?php } ?>
-           <?php  if($status==4) { ?> <font color="blue"><b>Bill Paid</b></font></td> <?php } ?>
+           <?php  if($status==4) { ?> <font color="blue"><b>Paid Online</b></font></td> <?php } ?>
+           <?php  if($status==5) { ?> <font color="blue"><b>COD [Paid]</b></font></td> <?php } ?>
 
 
 
@@ -101,7 +102,7 @@ if($flag==0)
         <font color="red"><b><?php echo "Not Available";?></b></font>
 
     <?php }
-    if($status==4)
+    if($status==4 || $status==5)
      { ?>
         <font color="blue"><a href="fpdf/foodbillpaid.php?t=<?php echo $row['filekey']; ?>" download> <button class="btn btn-success">Reciept</button></a></font>
 
@@ -124,52 +125,6 @@ if($flag==0)
     </section>
 
    <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle" style="color: green;">Inter-District Travel Pass Report</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-         <?php
-        $result = mysqli_query($conn,$sql);
-        while ($row=mysqli_fetch_array($result))
-              { ?>
-        <b>Date :</b> <?php echo $row['curdate']; ?> <br>
-        <b>Travel Date :</b> <?php echo $row['traveldate']; ?> <br>
-        <b>Return Date :</b> <?php echo $row['returndate']; ?> <br>
-        <b>From Place :</b> <?php echo $row['fromplace']; ?> <br>
-        <b>To Place :</b> <?php echo $row['toplace']; ?> <br>
-        <b>Vehicle Number :</b> <?php echo $row['carregno']; ?> <br>
-        <b>Total Passengers :</b> <?php echo $row['personcount']; ?> <br>
-        <b>Passenger(s) Name(s) :</b> <?php echo $row['namelist']; ?> <br>
-        <b>Purpose :</b> <?php echo $row['purpose']; ?> <br>
-        <h5>Feedback : <?php echo $row['feedback']; ?></h5>
-        <p style="color: red;">NB : Take a screenshot of this report while travelling.</p>
-
-      </div>
-      <div class="modal-footer">
-      <p style="padding-right: 170px;padding-top: 20px;">	<b>Status :</b> <?php if($row['status']=='0')
-                  {
-                    echo "<font color='grey'><b>Not Viewed</b></font>";
-                  }
-                  else if ($row['status']=='1')
-                  {
-                    echo "<font color='green'><b>Approved &nbsp;</b></font><img src='suc.png' height='40px' width='40px'>";
-                  }
-                  else
-                  {
-                  	echo "<font color='red'><b>Rejected &nbsp;</b></font><img src='fail.png' height='50px' width='50px'>";
-                  } ?> <br>
-
-      <?php } ?></p>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>      </div>
-    </div>
-  </div>
-</div>
 			</div>
 
 		</div>

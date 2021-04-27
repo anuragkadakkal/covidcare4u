@@ -2,7 +2,7 @@
   include 'connection.php';
   include 'adminheader.php';
 
-  $sql = "select * from tb_engineerreg inner join tb_login on tb_login.id=tb_engineerreg.loginid";
+  $sql = "select * from tb_communitykitchen inner join tb_login on tb_login.id=tb_communitykitchen.loginid order by cmid desc";
   $result = mysqli_query($conn,$sql);
 ?>
 
@@ -10,7 +10,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">KSEB Engineer Details</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Community Kitchen Details</h1>
                     <p class="mb-4"></p>
 
                     <!-- DataTales Example -->
@@ -20,54 +20,50 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered table-striped" width="100%" cellspacing="0" id="table"  data-toggle="table"  data-height="460" data-pagination="true"
+  data-search="true">
                                     <thead>
                                         <tr>
-                                            <th>Date</th>
-					    <th>Name</th>
+                                          <th>Name</th>
                                             <th>Address</th>
                                             <th>Email</th>
-                                            <th>Pincode</th>
                                             <th>District</th>
-                                            <th>Section</th>
+                                            <th>Pincode</th>
                                             <th>Phone #</th>
+                                            <th>Certificate</th>
                                             <th>Update / Delete</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-					  <th>Date</th>
                                           <th>Name</th>
                                           <th>Address</th>
                                           <th>Email</th>
-                                          <th>Pincode</th>
                                           <th>District</th>
-                                          <th>Section</th>
+                                          <th>Pincode</th>
                                           <th>Phone #</th>
+                                          <th>Certificate</th>
                                           <th>Update  / Delete</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                       <?php while ($row=mysqli_fetch_array($result))
                       {  ?>
-                                        <tr>
-					    <td><?php echo $row['curdate']; ?></td>
-                                            <td><?php echo $row['fname']." ".$row['lname']; ?></td>
-                                            <td><?php echo $row['address']; ?></td>
+                                        <tr><td><?php echo $row['cmname']; ?></td>
+                                            <td><?php echo $row['cmaddress']; ?></td>
                                             <td><?php echo $row['username']; ?></td>
-                                            <td><?php echo $row['pincode']; ?></td>
-                                            <td><?php echo $row['district']; ?></td>
-                                            <td><?php echo $row['section']; ?></td>
-                                            <td><?php echo $row['phno']; ?></td>
-                                            <td><?php $status = $row['delstatus'];
-                                            if($status==0)
+                                            <td><?php echo $row['cmdistrict']; ?></td>
+                                            <td><?php echo $row['cmpincode']; ?></td>
+                                            <td><?php echo $row['cmphone']; ?></td>
+                                            <td><a href="../uploads/<?php echo $row['cmkey']."/".$row['cmcertificate']; ?>" download> <button class="btn btn-warning"><i class="fa fa-download" aria-hidden="true"></i></button></a></td>
+                                            <td><?php $status = $row['status'];
+                                            if($status==1)
                                             { ?>
-                                               <a href="editengineer.php?t=<?php echo $row['engkey']; ?>"><button class="btn btn-primary">Edit</button></a>&nbsp;&nbsp;
-                                                 <a href="deleteengineer.php?t=<?php echo $row['engkey']; ?>"><button class="btn btn-danger">Delete</button></a>
+                                               <font color="green"><b>Active</b></font>&nbsp;&nbsp;<a href="deactivatekitchen.php?t=<?php echo $row['cmkey']; ?>"><button class="btn btn-danger">Deactivate</button></a>
                                  <?php      }
-                                            else
+                                            if($status==2)
                                             {   ?>
-                                               <font color="red"><b>Not Available</b></font>&nbsp;&nbsp;<a href="activateengineer.php?t=<?php echo $row['engkey']; ?>"><button class="btn btn-success">Activate</button></a>
+                                               <font color="red"><b>Inactive</b></font>&nbsp;&nbsp;<a href="activatekitchen.php?t=<?php echo $row['cmkey']; ?>"><button class="btn btn-success">Activate</button></a>
                                  <?php      }    ?>
 
 

@@ -77,7 +77,7 @@
 
     </script>
 
-    <title>CovidCare4U -Admin Homepage</title>
+    <title>CovidCare4U - Admin</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -131,35 +131,56 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fab fa-redhat"></i>
                     <span>Police Station</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Services</h6>
                         <a class="collapse-item" href="addpolicestation.php">Add Police Station</a>
-                       <!-- <a class="collapse-item" href="viewksebengineer.php">View Police Stations</a> -->
+                        <a class="collapse-item" href="viewpolicestations.php">View Police Stations</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu 
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities1"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fa fa-h-square" aria-hidden="true"></i>
+                    <span>PHC</span>
+                </a>
+                <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Services</h6>
+                        <a class="collapse-item" href="addphc.php">Add PHC</a>
+                        <a class="collapse-item" href="viewphc.php">View PHC</a>
+                       <!--  <a class="collapse-item" href="utilities-other.html">Assign Applications</a> -->
+                    </div>
+                </div>
+            </li> 
+
+            <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Jobs</span>
+                    <i class="fa fa-file" aria-hidden="true"></i>
+                    <span>Verify Registrations</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Services</h6>
-                        <a class="collapse-item" href="jobrequests.php">View Jobs</a>
-                        <a class="collapse-item" href="utilities-other.html">View Applications</a>
-                        <a class="collapse-item" href="utilities-other.html">Assign Applications</a>
+                        <a class="collapse-item" href="viewkarunyamedicals.php">Karunya Medicals</a>
+                        <a class="collapse-item" href="viewcommunitykitchens.php">Community Kitchen</a>
+                       <!--  <a class="collapse-item" href="utilities-other.html">Assign Applications</a> -->
                     </div>
                 </div>
-            </li> -->
+            </li> 
+
+
+           
+
 
             <hr class="sidebar-divider d-none d-md-block">
 

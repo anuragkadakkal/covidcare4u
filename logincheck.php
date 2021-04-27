@@ -25,7 +25,7 @@
 			setcookie("logined",1);
 			if ($c==0)
 			{
-				header("location:admin/adminhome.php?");
+				header("location:admin/adminhome.php");
 			}
 			else if($c==1)
 			{
@@ -40,14 +40,22 @@
 			{
 				header("location:kitchen/kitchenhome.php");
 			}
-			else
+			else if($c==4)
 			{
 				header("location:karunyamedicals/medicalhome.php");
+			}
+			else if($c==5)
+			{
+				header("location:phc/phchome.php");
+			}
+			else
+			{
+
 			}
 		}
 		else if ($d==2)
 	    {
-	    	echo "<SCRIPT type='text/javascript'>alert('Rejected by Admin.....!!');
+	    	echo "<SCRIPT type='text/javascript'>alert('Permission Denied.....!!');
 	        window.location.replace(\"index.php\");
 	        </SCRIPT>";
 	    }

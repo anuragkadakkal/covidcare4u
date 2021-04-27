@@ -33,6 +33,7 @@
 			}
 			else if($c==2)
 			{
+
 				header("location:police/policehome.php");
 			}
 			else if($c==3)

@@ -77,7 +77,7 @@
        return false;
      } 
 
-	 if(!/^[A-Za-z ]{3,30}$/.test(purpose))
+	 if(!/^[A-Za-z. ]{3,30}$/.test(purpose))
      {
        alert('Enter Any Purpose');
        return false;
@@ -85,7 +85,7 @@
 
    }
 </script>
-					<form role="form" method="POST" action="applypass.php" name="myform">
+					<form role="form" method="POST" action="applypass.php" name="myform" enctype="multipart/form-data">
 						<?php
 	$sql= "select district from tb_customer where loginid='".$lkey."'";
 	$result = mysqli_query($conn,$sql);
@@ -102,7 +102,7 @@
 	while ($row=mysqli_fetch_array($result))
 	{ ?> 
 										
-										<option value="<?php echo $row['policekey']; ?>"><?php echo $row['address']; ?></option>
+										<option value="<?php echo $row['loginid']; ?>"><?php echo $row['address']; ?></option>
 <?php } ?>
 									</select>
 						</div>
@@ -156,7 +156,11 @@
 						<div class="form-group">
 							<textarea rows="2" class="form-control input-sm" name="purpose" placeholder="Description of Purpose"></textarea>
 						</div>
-<br>
+
+						<div class="form-group">
+							<span><b>Aadhar / Driving Licence</b></span>
+							<input type="file" name="aadharfile"  class="form-control input-sm" >
+						</div>
 						<input type="submit" value="Apply" class="btn btn-info btn-block"  onclick="return checkDet()">
 					</form>
 

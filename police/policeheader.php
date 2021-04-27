@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+// this MUST be called prior to any output including whitespaces and line breaks!
 
+  include 'connection.php';
+
+  $lkey = $_COOKIE['lkey'];
+  $sql="select * from tb_policestation where loginid='".$lkey."'";
+
+  $result = mysqli_query($conn,$sql);
+  while ($row=mysqli_fetch_array($result))
+  {
+    $name=$row['address'];
+  }
+  ?>
 <head>
 
     <meta charset="utf-8">
@@ -231,7 +244,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Kerala Police</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $name; ?></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>

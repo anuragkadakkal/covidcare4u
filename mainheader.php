@@ -194,10 +194,8 @@ session_start();
 								Care Center List</a></li>
 					</ul></li> 
 				
-
-				<li><a href=""> 
-						Statistics
-				</a></li> -->
+-->
+				<li><a href=""><button class="btn btn-warning rounded btn-sm mr-2">&nbsp;<i class="fa fa-ambulance mr-1">&nbsp;SOS Ambulance</i></button></a></li>
 				
 				<li><a href="" id="myModal" class="" data-toggle="modal" data-target="#exampleModalCenter">Login</a></li>
 			</ul>

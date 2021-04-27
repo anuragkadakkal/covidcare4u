@@ -2,9 +2,9 @@
     session_start();
 	include 'connection.php';
 
-    $id = $_GET['t'];
+    $id = $_POST['filekey'];
 	$status = 2;
-	$sql2 = "update tb_vehiclepass set status='".$status."',feedback='Rejected' where passkey='".$id."'";
+	$sql2 = "update tb_vehiclepass set status='".$status."',feedback='".$_POST['feedback']."' where passkey='".$id."'";
 	$ex2=mysqli_query($conn,$sql2);
 
 	if($ex2)

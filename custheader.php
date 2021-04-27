@@ -4,13 +4,15 @@
   include 'connection.php';
 
   $lkey = $_COOKIE['lkey'];
-  $sql="select fname,lname from tb_customer where loginid='".$lkey."'";
+  $sql="select * from tb_customer where loginid='".$lkey."'";
 
   $result = mysqli_query($conn,$sql);
   while ($row=mysqli_fetch_array($result))
   {
     $fname=$row['fname'];
     $lname=$row['lname'];
+    $district=$row['district'];
+    $pincode=$row['pincode'];
     $name=$fname." ".$lname;
   }
 
@@ -79,7 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 <head>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"></script>
+<script src="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"></script>
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>CovidCare4U</title>

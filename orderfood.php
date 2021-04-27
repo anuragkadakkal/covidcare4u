@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+unset($_SESSION["cart_item"]);
   if(isset($_COOKIE['logined']) && $_COOKIE['logined']==1)
   {
   $lkey = $_COOKIE['lkey'];
@@ -64,7 +64,7 @@ session_start();
 
    }
 </script>
-					<form role="form" method="POST" action="foodbuy.php" name="myform"> <!-- orderfoodreg.php -->
+					<form role="form" method="POST" action="foodbuys.php" name="myform"> <!-- orderfoodreg.php -->
 <?php
 	$sql= "select district from tb_customer where loginid='".$lkey."'";
 	$result = mysqli_query($conn,$sql);
@@ -88,7 +88,7 @@ session_start();
 						</div>
 
                         <div class="form-group">
-							<input type="name" name="fname"  class="form-control input-sm" placeholder="Full Name">
+							<input type="name" name="fname"  class="form-control input-sm" placeholder="Full Name" value="<?php echo $name; ?>" readonly>
 						</div>
 
                         <div class="form-group">
@@ -123,25 +123,10 @@ session_start();
 						</div>
 
 					
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-6">
-								<div class="form-group">
-									<select class="form-control bfh-states" name="district" data-country="US" data-state="CA">
-										<option value="null">Select District</option>
-										<option value="Trivandrum">Trivandrum</option>
-										<option value="Kollam">Kollam</option>
-										<option value="Idukki">Idukki</option>
-										<option value="Kottayam">Kottayam</option>
-									</select>
-
-								</div>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6">
-								<div class="form-group">
-									<input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode">
-								</div>
-							</div>
-						</div>
+						
+									<input type="hidden" name="district" class="form-control input-sm" placeholder="Pincode" value="<?php echo $district; ?>">	
+									<input type="hidden" name="pincode" class="form-control input-sm" placeholder="Pincode" value="<?php echo $pincode; ?>">
+								
 
 						
 						<input type="submit" value="Select Food(s)" class="btn btn-info btn-block" ><!-- onclick="return checkAll()" -->

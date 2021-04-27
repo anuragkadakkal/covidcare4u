@@ -38,7 +38,7 @@ $flag="";
 		   $billitems = $row['items'];
 		   $phno = $row['phno'];
 		   $status = $row['status'];
-		   $fbkey= $row['fbkey'];
+		   $fbkey= $row['filekey'];
   }
 
 $pdf=new PDF();

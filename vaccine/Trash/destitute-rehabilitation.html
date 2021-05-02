@@ -1,0 +1,2793 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from dashboard.kerala.gov.in/destitute-rehabilitation.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 18:53:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="title" content="GoK Dashboard |Official Kerala COVID-19 Statistics">
+<meta name="description" content="Official Kerala COVID-19(corona) tracker. Vaccination Status, Statistics of cases, location, quarantined, test results, community kitchen, Social volunteer force etc.">
+<meta name="keywords" content="covid cases in kerala, covid kerala, corona in kerala,covid samples tested in kerala, kerala covid, covid dshboard kerala">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="en">
+<meta name="revisit-after" content="0.5 days">
+<meta name="author" content="Kerala State IT Mission, C-DIT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Logo.png"  >
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<title>GoK Dashboard | Official Kerala COVID-19 Statistics</title>
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  
+ <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+   <link rel="stylesheet" href="jquery.dataTables.min.css"> 
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+	
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/GoK.png"
+           alt=" GoK Logo"
+           class="brand-image img-circle "
+           >
+      <span class=" font-weight-light text-gray">Kerala : COVID-19 Battle</span>
+    </a>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/Logo.gif"
+           alt=" Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">GoK Dashboard</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+        <div class="info text-gray">
+          <i>#KeralaFightsCorona</i>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+            <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+		
+				<li class="nav-item">
+				<a  href="index-2.html" class="nav-link " >
+				<i class="nav-icon fas fa-home"></i>
+				<p>
+				Dashboard
+				</p>
+				</a>
+				</li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-newspaper text-red"></i>
+              <p>
+                Daily Reporting
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="daily.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://dashboard.kerala.gov.in/dailyreporting-view-public-districtwise.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="deaths.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Deaths Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bed text-info"></i>
+              <p>
+                Quarantine Report
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="quarantine-view-public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="quar_dst_wise_public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+
+
+				<li class="nav-item">
+				<a  href="testing-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-flask text-pink"></i>
+				<p>
+				Test Results
+				</p>
+				</a>
+				</li>
+		            		 <li class="nav-item">
+            <a  href="vaccination.html" class="nav-link ">
+             <i class="nav-icon fa fa-syringe text-success "></i>
+              <p>
+                Vaccination
+                
+              </p> 
+            </a>
+          </li>
+		  
+		      <li class="nav-item">
+				<a  href="hotspots.html" class="nav-link " >
+				<i class="nav-icon fas fa-map-marker text-warning"></i>
+				<p>
+				Hotspots
+				</p>
+				</a>
+				</li> 
+				
+
+				
+                <li class="nav-item">
+                <a href="volunteers.html" class="nav-link ">
+                <i class="nav-icon fas fa-users" style="color:#8f54fb"></i>
+                <p>
+                Social Volunteer Force
+                </p>
+                </a>
+                </li>
+                
+                <li class="nav-item">
+                <a href="psycosocial.html" class="nav-link ">
+                <i class="nav-icon fas fa-brain" style="color:#49B283"></i>
+                <p>
+                Psychosocial Support
+                </p>
+                </a>
+                </li>
+                
+				<li class="nav-item">
+				<a  href="ck-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-utensils text-orange"></i>
+				<p>
+				Community Kitchen
+				</p>
+				</a>
+				</li>		  
+ 
+ 				<li class="nav-item">
+				<a  href="destitute-rehabilitation.html" class="nav-link " >
+				<i class="nav-icon fas fa-hands-helping text-green"></i>
+				<p>
+				Destitute Rehabilitation
+				</p>
+				</a>
+				</li>                
+                		 <li class="nav-item">
+            <a target="_blank" href="https://donation.cmdrf.kerala.gov.in/index.php/Dashboard/allType_transaction" class="nav-link">
+              <i class="nav-icon fas fa-rupee-sign text-warning"></i>
+              <p>
+                CMDRF Donation
+               
+              </p>
+            </a>
+          </li>
+				
+           <div class="info text-gray">
+          <i>Useful Links</i>
+        </div>
+            		  		 <li class="nav-item">
+            <a  href="onlinedr.html" class="nav-link ">
+              <i class="nav-icon fa fa-plus text-danger " style="background:#FFF; border-radius:25px"></i>
+              <p>
+                Online Doctor Service
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a target="_blank" href="http://dhs.kerala.gov.in/ഡെയിലി-ബുള്ളറ്റിന്‍/" class="nav-link ">
+              <i class="nav-icon fas fa-newspaper "></i>
+              <p>
+                Daily Medical Bulletin
+                
+              </p>
+            </a>
+          </li>
+
+
+           <div class="info text-gray">
+          <i>Awareness</i>
+        </div>
+
+
+		  		 <li class="nav-item">
+            <a  href="government-orders.html" class="nav-link ">
+              <i class="nav-icon fas fa-gavel text-danger "></i>
+              <p>
+                Government Orders
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="faqs.html" class="nav-link ">
+              <i class="nav-icon fas fa-question-circle text-info "></i>
+              <p>
+                FAQs
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="helplines.html" class="nav-link ">
+              <i class="nav-icon fas fa-phone-volume text-warning "></i>
+              <p>
+                Helplines
+                
+              </p>
+            </a>
+          </li>
+          
+          	<!--	 <li class="nav-item">
+            <a target="_blank" href="https://keralabattlescovid.in" class="nav-link ">
+              <i class="nav-icon fa fa-info-circle text-info "></i>
+              <p>
+                Kerala Battles Covid
+                
+              </p>
+            </a>
+          </li> -->
+          
+
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+           
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active">Updated: 27-04-2021 6:33 pm</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+  
+	
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+		<div class="col-md-8">
+
+		            <div class=" card card-success">
+              <div class="card-header">
+                <h3 class="card-title"><i class="fa fa-hands-helping"></i> Destitutes and Homeless Rehabilitated</h3>
+				<div class="card-tools">
+<button type="button"  data-card-widget="maximize"><i class="fas fa-expand"></i>
+                </div>
+              </div>
+               <div class="card-body" style="height:400px">
+
+
+                    <canvas id="myChart4"></canvas>
+
+              </div>
+           </div>
+
+
+                 <div class=" card card-success ">
+                <div class="card-header bg-navy">
+                  <h3 class="card-title"><i class="fa fa-calendar"></i> Datewise Total Rehabilitation </h3>
+         <div class="card-tools">
+<button type="button"  data-card-widget="maximize"><i class="fas fa-expand"></i>
+                  </div>
+                </div>
+            <div class="card-body p0">
+
+                  <table class="table  table-striped table-hover table-bordered">
+                    <thead>
+                    <tr >
+                    <th class="text-center">Date</th>
+                    <th class="text-center">Corporations + Muncipality</th>
+                    <th class="text-center">Grama Panchayats</th>
+                    <th class="text-center">Total</th>
+                    </tr>
+                    <thead>
+                  <tbody>
+                                    <tr>
+                  <td class="text-center">26-03-2020</td>
+                  <td class="text-center">1331</td>
+                  <td class="text-center">0</td>
+                  <td class="text-center">1331</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">27-03-2020</td>
+                  <td class="text-center">763</td>
+                  <td class="text-center">290</td>
+                  <td class="text-center">1053</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">28-03-2020</td>
+                  <td class="text-center">2162</td>
+                  <td class="text-center">407</td>
+                  <td class="text-center">2569</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">29-03-2020</td>
+                  <td class="text-center">2162</td>
+                  <td class="text-center">350</td>
+                  <td class="text-center">2512</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">30-03-2020</td>
+                  <td class="text-center">2162</td>
+                  <td class="text-center">407</td>
+                  <td class="text-center">2569</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">31-03-2020</td>
+                  <td class="text-center">2162</td>
+                  <td class="text-center">498</td>
+                  <td class="text-center">2660</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">01-04-2020</td>
+                  <td class="text-center">2329</td>
+                  <td class="text-center">611</td>
+                  <td class="text-center">2940</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">02-04-2020</td>
+                  <td class="text-center">2317</td>
+                  <td class="text-center">444</td>
+                  <td class="text-center">2761</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">03-04-2020</td>
+                  <td class="text-center">2320</td>
+                  <td class="text-center">486</td>
+                  <td class="text-center">2806</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">04-04-2020</td>
+                  <td class="text-center">2321</td>
+                  <td class="text-center">489</td>
+                  <td class="text-center">2810</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">05-04-2020</td>
+                  <td class="text-center">2326</td>
+                  <td class="text-center">764</td>
+                  <td class="text-center">3090</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">06-04-2020</td>
+                  <td class="text-center">2326</td>
+                  <td class="text-center">479</td>
+                  <td class="text-center">2805</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">07-04-2020</td>
+                  <td class="text-center">2620</td>
+                  <td class="text-center">475</td>
+                  <td class="text-center">3095</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">08-04-2020</td>
+                  <td class="text-center">2620</td>
+                  <td class="text-center">485</td>
+                  <td class="text-center">3105</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">09-04-2020</td>
+                  <td class="text-center">3129</td>
+                  <td class="text-center">547</td>
+                  <td class="text-center">3676</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">10-04-2020</td>
+                  <td class="text-center">3175</td>
+                  <td class="text-center">571</td>
+                  <td class="text-center">3746</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">11-04-2020</td>
+                  <td class="text-center">3175</td>
+                  <td class="text-center">500</td>
+                  <td class="text-center">3675</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">12-04-2020</td>
+                  <td class="text-center">3175</td>
+                  <td class="text-center">497</td>
+                  <td class="text-center">3672</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">13-04-2020</td>
+                  <td class="text-center">3175</td>
+                  <td class="text-center">541</td>
+                  <td class="text-center">3716</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">14-04-2020</td>
+                  <td class="text-center">3175</td>
+                  <td class="text-center">550</td>
+                  <td class="text-center">3725</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">15-04-2020</td>
+                  <td class="text-center">3175</td>
+                  <td class="text-center">546</td>
+                  <td class="text-center">3721</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">17-04-2020</td>
+                  <td class="text-center">3174</td>
+                  <td class="text-center">536</td>
+                  <td class="text-center">3710</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">18-04-2020</td>
+                  <td class="text-center">3174</td>
+                  <td class="text-center">545</td>
+                  <td class="text-center">3719</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">19-04-2020</td>
+                  <td class="text-center">3174</td>
+                  <td class="text-center">545</td>
+                  <td class="text-center">3719</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">20-04-2020</td>
+                  <td class="text-center">3174</td>
+                  <td class="text-center">511</td>
+                  <td class="text-center">3685</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">21-04-2020</td>
+                  <td class="text-center">3174</td>
+                  <td class="text-center">512</td>
+                  <td class="text-center">3686</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">22-04-2020</td>
+                  <td class="text-center">3174</td>
+                  <td class="text-center">506</td>
+                  <td class="text-center">3680</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">23-04-2020</td>
+                  <td class="text-center">3174</td>
+                  <td class="text-center">506</td>
+                  <td class="text-center">3680</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">24-04-2020</td>
+                  <td class="text-center">3174</td>
+                  <td class="text-center">522</td>
+                  <td class="text-center">3696</td>
+                  </tr>
+                                     <tr>
+                  <td class="text-center">25-04-2020</td>
+                  <td class="text-center">3174</td>
+                  <td class="text-center">592</td>
+                  <td class="text-center">3766</td>
+                  </tr>
+                                     </tbody>
+                  </table>
+
+           
+
+
+
+                </div>
+           </div>
+      </div>
+
+
+
+    <div class="col-md-4">
+
+
+
+
+                  <div class=" card card-secondary">
+                <div class="card-header">
+                  <h3 class="card-title"><i class="fa fa-building"></i> Local Body-wise Report as on 25-04-2020 </h3>
+          <div class="card-tools">
+  <button type="button"  data-card-widget="maximize"><i class="fas fa-expand"></i>
+                  </div>
+                </div>
+               <div class="card-body">
+
+
+
+
+
+
+
+                 <table class="table table-bordered table-striped table-sm table-hover" >
+                  <thead>
+                 <tr>
+                 <th>Sl No</th><th>Local Self Government Institutions</th><th align="center">Number of People Rehabilitated</th>
+                 </tr>
+                   <thead>
+                     <tbody>
+                 <tr>
+                 <td colspan="3" ><strong>Corporation                 </strong></td>
+                 </tr>
+                 <tr>
+                 <td>1</td>
+                 <td>Thiruvananthapuram</td>
+                 <td align="center">190</td>
+                 </tr>
+                 <tr>
+                 <td>2</td>
+                 <td>Kollam</td>
+                 <td align="center">5</td>
+                 </tr>
+                 <tr>
+                 <td>3</td>
+                 <td>Kochi</td>
+                 <td align="center">274</td>
+                 </tr>
+                 <tr>
+                 <td>4</td>
+                 <td>Thrissur</td>
+                 <td align="center">292</td>
+                 </tr>
+                 <tr>
+                 <td>5</td>
+                 <td>Kozhikode</td>
+                 <td align="center">641</td>
+                 </tr>
+                 <tr>
+                   <td>6</td>
+                   <td>Kannur</td>
+                   <td align="center">17</td>
+                   </tr>
+                 <tr>
+                 <td colspan="2" align="right">TOTAL</td>
+                 <td align="center">1419</td>
+                 </tr>
+                 <tr>
+                 <td colspan="3" ><strong>Municipality                 </strong></td>
+                 </tr>
+                 <tr>
+                 <td>1</td>
+                 <td>Palakkad</td>
+                 <td align="center">362</td>
+                 </tr>
+                 <tr>
+                 <td>2</td>
+                 <td>Guruvayoor</td>
+                 <td align="center">263</td>
+                 </tr>
+                 <tr>
+                 <td>3</td>
+                 <td>Kottayam</td>
+                 <td align="center">135</td>
+                 </tr>
+                 <tr>
+                 <td>4</td>
+                 <td>Vadakara</td>
+                 <td align="center">79</td>
+                 </tr>
+                 <tr>
+                 <td>5</td>
+                 <td>Shornur</td>
+                 <td align="center">71</td>
+                 </tr>
+                 <tr>
+                 <td>6</td>
+                 <td>Ettumanoor</td>
+                 <td align="center">60</td>
+                 </tr>
+                 <tr>
+                 <td>7</td>
+                 <td>Chavakkadu</td>
+                 <td align="center">60</td>
+                 </tr>
+                 <tr>
+                 <td>8</td>
+                 <td>Sulthanbathery</td>
+                 <td align="center">51</td>
+                 </tr>
+                 <tr>
+                 <td>9</td>
+                 <td>Aluva</td>
+                 <td align="center">50</td>
+                 </tr>
+                 <tr>
+                 <td>10</td>
+                 <td>Chalakkudy</td>
+                 <td align="center">50</td>
+                 </tr>
+                 <tr>
+                 <td>11</td>
+                 <td>Mananthavady</td>
+                 <td align="center">46</td>
+                 </tr>
+                 <tr>
+                 <td>12</td>
+                 <td>Malappuram</td>
+                 <td align="center">44</td>
+                 </tr>
+                 <tr>
+                 <td>13</td>
+                 <td>Ottappalam</td>
+                 <td align="center">40</td>
+                 </tr>
+                 <tr>
+                 <td>14</td>
+                 <td>Kanhangadu</td>
+                 <td align="center">36</td>
+                 </tr>
+                 <tr>
+                 <td>15</td>
+                 <td>Alappuzha</td>
+                 <td align="center">35</td>
+                 </tr>
+                 <tr>
+                 <td>16</td>
+                 <td>Thirur</td>
+                 <td align="center">35</td>
+                 </tr>
+                 <tr>
+                 <td>17</td>
+                 <td>Kodungallur</td>
+                 <td align="center">32</td>
+                 </tr>
+                 <tr>
+                 <td>18</td>
+                 <td>Kunnamkulam</td>
+                 <td align="center">32</td>
+                 </tr>
+                 <tr>
+                 <td>19</td>
+                 <td>Thrippunithura</td>
+                 <td align="center">26</td>
+                 </tr>
+                 <tr>
+                 <td>20</td>
+                 <td>Kothamangalam</td>
+                 <td align="center">25</td>
+                 </tr>
+                 <tr>
+                 <td>21</td>
+                 <td>Muvattupuzha</td>
+                 <td align="center">24</td>
+                 </tr>
+                 <tr>
+                 <td>22</td>
+                 <td>Wadakkanchery</td>
+                 <td align="center">23</td>
+                 </tr>
+                 <tr>
+                 <td>23</td>
+                 <td>Payyannur</td>
+                 <td align="center">21</td>
+                 </tr>
+                 <tr>
+                 <td>24</td>
+                 <td>Pala</td>
+                 <td align="center">19</td>
+                 </tr>
+                 <tr>
+                 <td>25</td>
+                 <td>Mavelikkara</td>
+                 <td align="center">14</td>
+                 </tr>
+                 <tr>
+                 <td>26</td>
+                 <td>Panur</td>
+                 <td align="center">14</td>
+                 </tr>
+                 <tr>
+                 <td>27</td>
+                 <td>Anthoor</td>
+                 <td align="center">13</td>
+                 </tr>
+                 <tr>
+                 <td>28</td>
+                 <td>Angamali</td>
+                 <td align="center">12</td>
+                 </tr>
+                 <tr>
+                 <td>29</td>
+                 <td>Ponnani</td>
+                 <td align="center">11</td>
+                 </tr>
+                 <tr>
+                 <td>30</td>
+                 <td>Thaliparamba</td>
+                 <td align="center">11</td>
+                 </tr>
+                 <tr>
+                 <td>31</td>
+                 <td>Mannarkkad</td>
+                 <td align="center">10</td>
+                 </tr>
+                 <tr>
+                 <td>32</td>
+                 <td>Payyoli</td>
+                 <td align="center">10</td>
+                 </tr>
+                 <tr>
+                 <td>33</td>
+                 <td>Kalpetta</td>
+                 <td align="center">9</td>
+                 </tr>
+                 <tr>
+                 <td>34</td>
+                 <td>Kasargodu</td>
+                 <td align="center">7</td>
+                 </tr>
+                 <tr>
+                 <td>35</td>
+                 <td>Feroke</td>
+                 <td align="center">6</td>
+                 </tr>
+                 <tr>
+                 <td>36</td>
+                 <td>Nedumangadu</td>
+                 <td align="center">5</td>
+                 </tr>
+                 <tr>
+                 <td>37</td>
+                 <td>North Paravoor</td>
+                 <td align="center">4</td>
+                 </tr>
+                 <tr>
+                   <td>38</td>
+                   <td>Koyilandy</td>
+                   <td align="center">4</td>
+                   </tr>
+                 <tr>
+                   <td>39</td>
+                   <td>Changanassery</td>
+                   <td align="center">2</td>
+                   </tr>
+                 <tr>
+                   <td>40</td>
+                   <td>Thirurangadi</td>
+                   <td align="center">2</td>
+                   </tr>
+                 <tr>
+                   <td>41</td>
+                   <td>Pathanamthitta</td>
+                   <td align="center">1</td>
+                   </tr>
+                 <tr>
+                 <td>42</td>
+                 <td>C.T.Mangalam</td>
+                 <td align="center">1</td>
+                 </tr>
+                 <tr>
+                 <td></td>
+                 <td align="right">TOTAL</td>
+                 <td align="center">3174</td>
+                 </tr>
+                 <tr>
+                 <td colspan="3" ><strong>Grama Panchayats                </strong></td>
+                 </tr>
+                 <tr>
+                 <td>1</td><td>Thiruvananthapuram</td>
+                 <td align="center">47</td>
+                 </tr>
+                 <tr>
+                 <td>2</td><td>Kollam</td>
+                 <td align="center">5</td>
+                 </tr>
+                 <tr>
+                 <td>3</td><td>Pathanamthitta</td>
+                 <td align="center">1</td>
+                 </tr>
+                 <tr>
+                 <td>4</td><td>Alappuzha</td>
+                 <td align="center">50</td>
+                 </tr>
+                 <tr>
+                 <td>5</td><td>Kottayam</td>
+                 <td align="center">36</td>
+                 </tr>
+                 <tr>
+                 <td>6</td><td>Idukki</td>
+                 <td align="center">17</td>
+                 </tr>
+                 <tr>
+                 <td>7</td><td>Ernakulam</td>
+                 <td align="center">42</td>
+                 </tr>
+                 <tr>
+                 <td>8</td><td>Thrissur</td>
+                 <td align="center">156</td>
+                 </tr>
+                 <tr>
+                 <td>9</td><td>Palakkad</td>
+                 <td align="center">64</td>
+                 </tr>
+                 <tr>
+                 <td>10</td><td>Malappuram</td>
+                 <td align="center">10</td>
+                 </tr>
+                 <tr>
+                 <td>11</td><td>Kozhikkode</td>
+                 <td align="center">90</td>
+                 </tr>
+                 <tr>
+                 <td>12</td><td>Wayanad</td>
+                 <td align="center">30</td>
+                 </tr>
+                 <tr>
+                 <td>13</td><td>Kannur</td>
+                 <td align="center">12</td>
+                 </tr>
+                 <tr>
+                 <td>14</td><td>Kasaragod</td>
+                 <td align="center">32</td>
+                 </tr>
+                 <tr>
+                 <td></td>
+                 <td align="right">TOTAL</td>
+                 <td align="center">592</td>
+                 </tr>
+                 <tr>
+                 <td colspan="3" ><strong>Total Number of Destitutes Rehabilitated on 25th April 2020: 3766</strong></td>                 
+            </td>
+                 </tr>
+               </tbody>
+                 </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+           </div>
+       </div>
+      
+      </div>
+	  </div>
+		  
+		  <div class="card card-secondary">
+        <div class="card-header">
+          <h3 class="card-title">Labour Camps for Guest Labourers during Lockdown</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body table-responsive">
+        
+          <table class="table table-bordered table-striped table-hover table-sm">
+			<thead>
+            <tr>
+              <td>Date</td>
+              <td>District</td>
+              <td>Total Camps</td>
+              <td>Total Labourers</td>
+              <td>Visited by    Field Officer</td>
+            </tr>
+			</thead>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>TVM</td>
+              <td align="right">519</td>
+              <td align="right">10432</td>
+              <td align="right">21</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>KLM</td>
+              <td align="right">702</td>
+              <td align="right">10934</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>PTA</td>
+              <td align="right">783</td>
+              <td align="right">12285</td>
+              <td align="right">15</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1956</td>
+              <td align="right">19596</td>
+              <td align="right">81</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">26</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>IDK</td>
+              <td align="right">447</td>
+              <td align="right">8205</td>
+              <td align="right">17</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2436</td>
+              <td align="right">60145</td>
+              <td align="right">68</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1402</td>
+              <td align="right">20854</td>
+              <td align="right">27</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1553</td>
+              <td align="right">24341</td>
+              <td align="right">19</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">36</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>KKD</td>
+              <td align="right">3681</td>
+              <td align="right">45200</td>
+              <td align="right">121</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>WYD</td>
+              <td align="right">337</td>
+              <td align="right">7869</td>
+              <td align="right">10</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1426</td>
+              <td align="right">23883</td>
+              <td align="right">24</td>
+            </tr>
+            <tr>
+              <td align="right">16-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">18</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>339132</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>TVM</td>
+              <td align="right">587</td>
+              <td align="right">13659</td>
+              <td align="right">35</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">16</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>PTA</td>
+              <td align="right">813</td>
+              <td align="right">12285</td>
+              <td align="right">20</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1973</td>
+              <td align="right">19625</td>
+              <td align="right">55</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">26</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>IDK</td>
+              <td align="right">448</td>
+              <td align="right">8205</td>
+              <td align="right">11</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2436</td>
+              <td align="right">60145</td>
+              <td align="right">68</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">24</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1571</td>
+              <td align="right">24341</td>
+              <td align="right">10</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">52</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>KKD</td>
+              <td align="right">3852</td>
+              <td align="right">46519</td>
+              <td align="right">132</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>WYD</td>
+              <td align="right">338</td>
+              <td align="right">7869</td>
+              <td align="right">10</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1446</td>
+              <td align="right">24060</td>
+              <td align="right">34</td>
+            </tr>
+            <tr>
+              <td align="right">17-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">12</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>343962</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>TVM</td>
+              <td align="right">602</td>
+              <td align="right">14978</td>
+              <td align="right">25</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">734</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>PTA</td>
+              <td align="right">819</td>
+              <td align="right">12294</td>
+              <td align="right">20</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1973</td>
+              <td align="right">19637</td>
+              <td align="right">68</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">26</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>IDK</td>
+              <td align="right">448</td>
+              <td align="right">8205</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2436</td>
+              <td align="right">60145</td>
+              <td align="right">104</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1821</td>
+              <td align="right">28374</td>
+              <td align="right">10</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>KKD</td>
+              <td align="right">3852</td>
+              <td align="right">47614</td>
+              <td align="right">56</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>WYD</td>
+              <td align="right">338</td>
+              <td align="right">7902</td>
+              <td align="right">10</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1444</td>
+              <td align="right">24278</td>
+              <td align="right">21</td>
+            </tr>
+            <tr>
+              <td align="right">18-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>350681</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>TVM</td>
+              <td align="right">637</td>
+              <td align="right">15849</td>
+              <td align="right">26</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">17</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>PTA</td>
+              <td align="right">819</td>
+              <td align="right">12330</td>
+              <td align="right">26</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1973</td>
+              <td align="right">19698</td>
+              <td align="right">44</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">26</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>IDK</td>
+              <td align="right">451</td>
+              <td align="right">8277</td>
+              <td align="right">13</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2436</td>
+              <td align="right">60145</td>
+              <td align="right">123</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">31</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1847</td>
+              <td align="right">28584</td>
+              <td align="right">7</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">9</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>KKD</td>
+              <td align="right">3891</td>
+              <td align="right">47798</td>
+              <td align="right">51</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>WYD</td>
+              <td align="right">338</td>
+              <td align="right">7916</td>
+              <td align="right">13</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1479</td>
+              <td align="right">24664</td>
+              <td align="right">16</td>
+            </tr>
+            <tr>
+              <td align="right">19-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">11</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>352515</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>TVM</td>
+              <td align="right">665</td>
+              <td align="right">16395</td>
+              <td align="right">37</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>PTA</td>
+              <td align="right">819</td>
+              <td align="right">12401</td>
+              <td align="right">6</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1979</td>
+              <td align="right">19707</td>
+              <td align="right">52</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>IDK</td>
+              <td align="right">451</td>
+              <td align="right">8277</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2436</td>
+              <td align="right">60145</td>
+              <td align="right">58</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1847</td>
+              <td align="right">28631</td>
+              <td align="right">6</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>KKD</td>
+              <td align="right">3900</td>
+              <td align="right">48208</td>
+              <td align="right">53</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>WYD</td>
+              <td align="right">338</td>
+              <td align="right">7924</td>
+              <td align="right">3</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1479</td>
+              <td align="right">24664</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">20-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>353606</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>TVM</td>
+              <td align="right">707</td>
+              <td align="right">17478</td>
+              <td align="right">24</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>PTA</td>
+              <td align="right">837</td>
+              <td align="right">12411</td>
+              <td align="right">27</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1989</td>
+              <td align="right">19732</td>
+              <td align="right">43</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2435</td>
+              <td align="right">57496</td>
+              <td align="right">36</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">22</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">60145</td>
+              <td align="right">58</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1786</td>
+              <td align="right">27815</td>
+              <td align="right">18</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">22</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4121</td>
+              <td align="right">48863</td>
+              <td align="right">56</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>WYD</td>
+              <td align="right">342</td>
+              <td align="right">7924</td>
+              <td align="right">3</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">24932</td>
+              <td align="right">16</td>
+            </tr>
+            <tr>
+              <td align="right">21-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>381562</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>TVM</td>
+              <td align="right">709</td>
+              <td align="right">17486</td>
+              <td align="right">11</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">32</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>PTA</td>
+              <td align="right">837</td>
+              <td align="right">12411</td>
+              <td align="right">5</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1989</td>
+              <td align="right">19850</td>
+              <td align="right">46</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">37</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">8</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">60145</td>
+              <td align="right">109</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">26</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1797</td>
+              <td align="right">27942</td>
+              <td align="right">23</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">84</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4174</td>
+              <td align="right">50016</td>
+              <td align="right">77</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>WYD</td>
+              <td align="right">342</td>
+              <td align="right">7924</td>
+              <td align="right">3</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">25026</td>
+              <td align="right">16</td>
+            </tr>
+            <tr>
+              <td align="right">22-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">5</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>356331</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>TVM</td>
+              <td align="right">733</td>
+              <td align="right">18001</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">3</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>PTA</td>
+              <td align="right">835</td>
+              <td align="right">12426</td>
+              <td align="right">37</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1994</td>
+              <td align="right">19880</td>
+              <td align="right">38</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">37</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">8</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">60145</td>
+              <td align="right">103</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">26</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1798</td>
+              <td align="right">27980</td>
+              <td align="right">18</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">9</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4193</td>
+              <td align="right">50426</td>
+              <td align="right">35</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>WYD</td>
+              <td align="right">342</td>
+              <td align="right">7971</td>
+              <td align="right">5</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">25026</td>
+              <td align="right">16</td>
+            </tr>
+            <tr>
+              <td align="right">23-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">5</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>357386</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>TVM</td>
+              <td align="right">753</td>
+              <td align="right">18149</td>
+              <td align="right">23</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>PTA</td>
+              <td align="right">835</td>
+              <td align="right">12426</td>
+              <td align="right">6</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1995</td>
+              <td align="right">19889</td>
+              <td align="right">75</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">19</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">12</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">60145</td>
+              <td align="right">140</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">21</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1798</td>
+              <td align="right">27980</td>
+              <td align="right">18</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">64</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4224</td>
+              <td align="right">50967</td>
+              <td align="right">56</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>WYD</td>
+              <td align="right">342</td>
+              <td align="right">7971</td>
+              <td align="right">24</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">25196</td>
+              <td align="right">7</td>
+            </tr>
+            <tr>
+              <td align="right">24-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">19</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>358254</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>TVM</td>
+              <td align="right">799</td>
+              <td align="right">18419</td>
+              <td align="right">28</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">9</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>PTA</td>
+              <td align="right">835</td>
+              <td align="right">12426</td>
+              <td align="right">11</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1995</td>
+              <td align="right">19903</td>
+              <td align="right">68</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">11</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">8</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">57652</td>
+              <td align="right">110</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">21</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1798</td>
+              <td align="right">27956</td>
+              <td align="right">12</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">17</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4310</td>
+              <td align="right">51249</td>
+              <td align="right">48</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>WYD</td>
+              <td align="right">342</td>
+              <td align="right">8020</td>
+              <td align="right">16</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">25287</td>
+              <td align="right">5</td>
+            </tr>
+            <tr>
+              <td align="right">25-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">19</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>356443</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>TVM</td>
+              <td align="right">804</td>
+              <td align="right">19427</td>
+              <td align="right">49</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">11</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>PTA</td>
+              <td align="right">835</td>
+              <td align="right">12430</td>
+              <td align="right">9</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1995</td>
+              <td align="right">19903</td>
+              <td align="right">55</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">16</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">9</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">57652</td>
+              <td align="right">108</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">26</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1800</td>
+              <td align="right">27956</td>
+              <td align="right">31</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">33</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4337</td>
+              <td align="right">51914</td>
+              <td align="right">102</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>WYD</td>
+              <td align="right">343</td>
+              <td align="right">8156</td>
+              <td align="right">21</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">25380</td>
+              <td align="right">15</td>
+            </tr>
+            <tr>
+              <td align="right">26-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>358349</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>TVM</td>
+              <td align="right">842</td>
+              <td align="right">19969</td>
+              <td align="right">24</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>KLM</td>
+              <td align="right">761</td>
+              <td align="right">11794</td>
+              <td align="right">15</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>PTA</td>
+              <td align="right">839</td>
+              <td align="right">12474</td>
+              <td align="right">9</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1995</td>
+              <td align="right">19903</td>
+              <td align="right">53</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">12</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">13</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">57652</td>
+              <td align="right">8</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">7</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1800</td>
+              <td align="right">27956</td>
+              <td align="right">4</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">9</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4490</td>
+              <td align="right">52426</td>
+              <td align="right">8</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>WYD</td>
+              <td align="right">350</td>
+              <td align="right">8209</td>
+              <td align="right">10</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1555</td>
+              <td align="right">25773</td>
+              <td align="right">2</td>
+            </tr>
+            <tr>
+              <td align="right">27-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>360753</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>TVM</td>
+              <td align="right">842</td>
+              <td align="right">19969</td>
+              <td align="right">25</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">20</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>PTA</td>
+              <td align="right">835</td>
+              <td align="right">12478</td>
+              <td align="right">22</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1995</td>
+              <td align="right">19905</td>
+              <td align="right">45</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">67</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">24</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">57652</td>
+              <td align="right">127</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">86</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1802</td>
+              <td align="right">27969</td>
+              <td align="right">63</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">33</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4588</td>
+              <td align="right">53203</td>
+              <td align="right">64</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>WYD</td>
+              <td align="right">343</td>
+              <td align="right">8209</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">26274</td>
+              <td align="right">29</td>
+            </tr>
+            <tr>
+              <td align="right">28-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">13</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>361190</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>TVM</td>
+              <td align="right">842</td>
+              <td align="right">19969</td>
+              <td align="right">25</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">20</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>PTA</td>
+              <td align="right">835</td>
+              <td align="right">12478</td>
+              <td align="right">22</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1995</td>
+              <td align="right">19905</td>
+              <td align="right">45</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">67</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">24</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">57652</td>
+              <td align="right">127</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">86</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1802</td>
+              <td align="right">27969</td>
+              <td align="right">63</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">33</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4588</td>
+              <td align="right">53203</td>
+              <td align="right">64</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>WYD</td>
+              <td align="right">343</td>
+              <td align="right">8209</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">26274</td>
+              <td align="right">29</td>
+            </tr>
+            <tr>
+              <td align="right">29-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">13</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>361190</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>TVM</td>
+              <td align="right">805</td>
+              <td align="right">20958</td>
+              <td align="right">3</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">69</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>PTA</td>
+              <td align="right">835</td>
+              <td align="right">12478</td>
+              <td align="right">25</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>ALP</td>
+              <td align="right">1995</td>
+              <td align="right">19905</td>
+              <td align="right">87</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">31</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">5</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">57652</td>
+              <td align="right">80</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">8</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>PKD</td>
+              <td align="right">1802</td>
+              <td align="right">27969</td>
+              <td align="right">13</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">52</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>KKD</td>
+              <td align="right">4588</td>
+              <td align="right">53203</td>
+              <td align="right">57</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>WYD</td>
+              <td align="right">343</td>
+              <td align="right">8209</td>
+              <td align="right">12</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">26274</td>
+              <td align="right">24</td>
+            </tr>
+            <tr>
+              <td align="right">30-04-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">5</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="right"><strong>362179</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>TVM</td>
+              <td align="right">805</td>
+              <td align="right">20958</td>
+              <td align="right">1</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>KLM</td>
+              <td align="right">762</td>
+              <td align="right">10934</td>
+              <td align="right">10</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>PTA</td>
+              <td align="right">835</td>
+              <td align="right">12478</td>
+              <td align="right">50</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>ALP</td>
+              <td align="right">1995</td>
+              <td align="right">19905</td>
+              <td align="right">12</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>KTM</td>
+              <td align="right">2165</td>
+              <td align="right">30765</td>
+              <td align="right">12</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>IDK</td>
+              <td align="right">452</td>
+              <td align="right">8277</td>
+              <td align="right">11</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>EKM</td>
+              <td align="right">2435</td>
+              <td align="right">57652</td>
+              <td align="right">40</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>TSR</td>
+              <td align="right">1404</td>
+              <td align="right">20932</td>
+              <td align="right">11</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>PKD</td>
+              <td align="right">1802</td>
+              <td align="right">27969</td>
+              <td align="right">4</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>MPM</td>
+              <td align="right">1073</td>
+              <td align="right">48065</td>
+              <td align="right">21</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>KKD</td>
+              <td align="right">4588</td>
+              <td align="right">53203</td>
+              <td align="right">8</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>WYD</td>
+              <td align="right">343</td>
+              <td align="right">8209</td>
+              <td align="right">11</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>KNR</td>
+              <td align="right">1503</td>
+              <td align="right">26274</td>
+              <td align="right">17</td>
+            </tr>
+            <tr>
+              <td align="right">02-05-2020</td>
+              <td>KGD</td>
+              <td align="right">627</td>
+              <td align="right">16558</td>
+              <td align="right">14</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><strong>20789</strong></td>
+              <td align="right"><strong>362179</strong></td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+			
+         
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          Footer
+        </div>
+        <!-- /.card-footer-->
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <footer class="main-footer" style="position:relative; z-index:99; ">
+   <small> <div class="float-right  d-sm-block">
+       <a href="sources.html" >Data Source</a>
+    </div>
+   
+    <a target="_blank" href="http://kerala.gov.in/">GoK Dashboard</a>. <a href="https://cdit.org/" class="text-secondary" target="_blank" >Developed by C-DIT</a></small>
+    
+  </footer>
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- date-range-picker -->
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script src="jquery.dataTables.min.js"></script>   
+
+
+
+<script src="../cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="../cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+
+
+
+
+<!-- Page script -->
+<script>
+$(document).ready(function() {
+    $('table.display').DataTable( {
+   
+        dom: 'lBfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+</script>
+<script>
+var ctx = document.getElementById("myChart4").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['26-03-2020','27-03-2020','28-03-2020','29-03-2020','30-03-2020','31-03-2020','01-04-2020','02-04-2020','03-04-2020','04-04-2020','05-04-2020','06-04-2020','07-04-2020','08-04-2020','09-04-2020','10-04-2020','11-04-2020','12-04-2020','13-04-2020','14-04-2020','15-04-2020','17-04-2020','18-04-2020','19-04-2020','20-04-2020','21-04-2020','22-04-2020','23-04-2020','24-04-2020','25-04-2020'],
+        datasets: [{
+            label: 'Corporation/Muncipality',
+            backgroundColor: "#caf270",
+            data: [1331,763,2162,2162,2162,2162,2329,2317,2320,2321,2326,2326,2620,2620,3129,3175,3175,3175,3175,3175,3175,3174,3174,3174,3174,3174,3174,3174,3174,3174],
+        }, {
+            label: 'Grama Panchayath',
+            backgroundColor: "#45c490",
+            data: [0,290,407,350,407,498,611,444,486,489,764,479,475,485,547,571,500,497,541,550,546,536,545,545,511,512,506,506,522,592],
+        },
+      ],
+    },
+options: {
+  tooltips: {
+    mode: 'label',
+    callbacks: {
+      label: function(tooltipItem, data) {
+        var corporation = data.datasets[tooltipItem.datasetIndex].label;
+        var valor = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+        var total = 0;
+        for (var i = 0; i < data.datasets.length; i++)
+          total += data.datasets[i].data[tooltipItem.index];
+        if (tooltipItem.datasetIndex != data.datasets.length - 1) {
+          return corporation + " : " + valor.toFixed(0).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+        } else {
+          return [corporation + " : " + valor.toFixed(0).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'), "Total : " + total + " Persons"];
+        }
+      }
+    }
+  },
+    scales: {
+      xAxes: [{
+        stacked: true,
+        gridLines: {
+          display: false,
+        }
+      }],
+      yAxes: [{
+        stacked: true,
+        ticks: {
+          beginAtZero: true,
+        },
+        type: 'linear',
+      }]
+    },
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: { position: 'bottom' },
+    }
+});
+</script>
+
+</body>
+
+<!-- Mirrored from dashboard.kerala.gov.in/destitute-rehabilitation.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 18:53:20 GMT -->
+</html>

@@ -100,6 +100,34 @@ session_start();
 								Karunya Medicals</a></li>
 						<li><a href="communitykitchenreg.php">
 								Community Kitchen</a></li>
+						<li><a href="ambulancereg.php">
+								Ambulance</a></li>
+					</ul>
+				</li>
+
+				<li class="drop-down"><a href="#">Self Services</a>
+					<ul>
+						<li class="drop-down"><a href="#">Quarantine</a>
+							<ul>
+								<li><a  href="quarantinereg.php">Register</a></li>
+								<li><a  href="quarantinestatus.php">Status</a></li>
+							</ul>
+						</li>
+
+							<!-- <li class="drop-down"><a href="#">Testing</a>
+								<ul>
+									<li><a  href="resources/downloads/mha.pdf">Antigen</a></li>
+									<li><a  href="resources/downloads/mha.pdf">RTPCR</a></li>
+									<li><a  href="resources/downloads/mha.pdf">Status</a></li>
+								</ul>
+							</li> -->
+
+						<li class="drop-down"><a href="#">Vaccination</a>
+							<ul>
+								<li><a  href="vaccinereg.php">Register / Sign In</a></li>
+								<!-- <li><a  href="vaccinestatus.php">Status</a></li> -->
+							</ul>
+						</li>
 					</ul>
 				</li>
 
@@ -114,7 +142,7 @@ session_start();
 								Vehicle Permit</a></li>
 
 					</ul></li> -->
-				<!-- <li class="drop-down"><a href="#">Info</a>
+				<!--  <li class="drop-down"><a href="#">Info</a>
 					<ul>
 						<li><a class="view" href="resources/downloads/user%20manual.pdf">User
 								Manual</a></li>
@@ -158,7 +186,8 @@ session_start();
 
 								<li><a class="view" href="resources/downloads/mha.pdf">MHA
 								</a></li>
-							</ul></li>
+							</ul>
+						</li>
 						<li class="drop-down"><a href="#">Guide lines</a>
 							<ul>
 								<li><a class="view" href="resources/downloads/guildline.pdf">Guide
@@ -192,9 +221,10 @@ session_start();
 
 						<li><a href="home/addCCCList.html">Covid
 								Care Center List</a></li>
-					</ul></li> 
+					</ul></li>  -->
 				
--->
+				
+
 				<li><a href=""><button class="btn btn-warning rounded btn-sm mr-2">&nbsp;<i class="fa fa-ambulance mr-1">&nbsp;SOS Ambulance</i></button></a></li>
 				
 				<li><a href="" id="myModal" class="" data-toggle="modal" data-target="#exampleModalCenter">Login</a></li>

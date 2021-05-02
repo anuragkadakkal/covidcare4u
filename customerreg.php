@@ -6,7 +6,7 @@
 		<div class="container ">
 
 			<header class="section-header">
-				<h3>Customer Registration</h3><br>
+				<h3>User Registration</h3><br>
 			</header>
 <script>
 	function checkAll()
@@ -156,7 +156,7 @@
 								</div>
 							</div>
 						</div><br>
-						<input type="submit" value="Register" class="btn btn-info btn-block" onclick="return checkAll()">
+						<input type="submit" value="Register" class="btn btn-info btn-block" > <!-- onclick="return checkAll()" -->
 					</form>
 <br>
 			</div>

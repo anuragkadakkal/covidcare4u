@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from dashboard.kerala.gov.in/quar_dst_wise_public.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 18:53:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="title" content="GoK Dashboard |Official Kerala COVID-19 Statistics">
+<meta name="description" content="Official Kerala COVID-19(corona) tracker. Vaccination Status, Statistics of cases, location, quarantined, test results, community kitchen, Social volunteer force etc.">
+<meta name="keywords" content="covid cases in kerala, covid kerala, corona in kerala,covid samples tested in kerala, kerala covid, covid dshboard kerala">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="en">
+<meta name="revisit-after" content="0.5 days">
+<meta name="author" content="Kerala State IT Mission, C-DIT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Logo.png"  >
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<title>GoK Dashboard | Official Kerala COVID-19 Statistics</title>
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  
+ <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+   <link rel="stylesheet" href="jquery.dataTables.min.css"> 
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+	
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/GoK.png"
+           alt=" GoK Logo"
+           class="brand-image img-circle "
+           >
+      <span class=" font-weight-light text-gray">Kerala : COVID-19 Battle</span>
+    </a>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/Logo.gif"
+           alt=" Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">GoK Dashboard</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+        <div class="info text-gray">
+          <i>#KeralaFightsCorona</i>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+            <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+		
+				<li class="nav-item">
+				<a  href="index-2.html" class="nav-link " >
+				<i class="nav-icon fas fa-home"></i>
+				<p>
+				Dashboard
+				</p>
+				</a>
+				</li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-newspaper text-red"></i>
+              <p>
+                Daily Reporting
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="daily.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://dashboard.kerala.gov.in/dailyreporting-view-public-districtwise.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="deaths.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Deaths Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bed text-info"></i>
+              <p>
+                Quarantine Report
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="quarantine-view-public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="quar_dst_wise_public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+
+
+				<li class="nav-item">
+				<a  href="testing-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-flask text-pink"></i>
+				<p>
+				Test Results
+				</p>
+				</a>
+				</li>
+		            		 <li class="nav-item">
+            <a  href="vaccination.html" class="nav-link ">
+             <i class="nav-icon fa fa-syringe text-success "></i>
+              <p>
+                Vaccination
+                
+              </p> 
+            </a>
+          </li>
+		  
+		      <li class="nav-item">
+				<a  href="hotspots.html" class="nav-link " >
+				<i class="nav-icon fas fa-map-marker text-warning"></i>
+				<p>
+				Hotspots
+				</p>
+				</a>
+				</li> 
+				
+
+				
+                <li class="nav-item">
+                <a href="volunteers.html" class="nav-link ">
+                <i class="nav-icon fas fa-users" style="color:#8f54fb"></i>
+                <p>
+                Social Volunteer Force
+                </p>
+                </a>
+                </li>
+                
+                <li class="nav-item">
+                <a href="psycosocial.html" class="nav-link ">
+                <i class="nav-icon fas fa-brain" style="color:#49B283"></i>
+                <p>
+                Psychosocial Support
+                </p>
+                </a>
+                </li>
+                
+				<li class="nav-item">
+				<a  href="ck-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-utensils text-orange"></i>
+				<p>
+				Community Kitchen
+				</p>
+				</a>
+				</li>		  
+ 
+ 				<li class="nav-item">
+				<a  href="destitute-rehabilitation.html" class="nav-link " >
+				<i class="nav-icon fas fa-hands-helping text-green"></i>
+				<p>
+				Destitute Rehabilitation
+				</p>
+				</a>
+				</li>                
+                		 <li class="nav-item">
+            <a target="_blank" href="https://donation.cmdrf.kerala.gov.in/index.php/Dashboard/allType_transaction" class="nav-link">
+              <i class="nav-icon fas fa-rupee-sign text-warning"></i>
+              <p>
+                CMDRF Donation
+               
+              </p>
+            </a>
+          </li>
+				
+           <div class="info text-gray">
+          <i>Useful Links</i>
+        </div>
+            		  		 <li class="nav-item">
+            <a  href="onlinedr.html" class="nav-link ">
+              <i class="nav-icon fa fa-plus text-danger " style="background:#FFF; border-radius:25px"></i>
+              <p>
+                Online Doctor Service
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a target="_blank" href="http://dhs.kerala.gov.in/ഡെയിലി-ബുള്ളറ്റിന്‍/" class="nav-link ">
+              <i class="nav-icon fas fa-newspaper "></i>
+              <p>
+                Daily Medical Bulletin
+                
+              </p>
+            </a>
+          </li>
+
+
+           <div class="info text-gray">
+          <i>Awareness</i>
+        </div>
+
+
+		  		 <li class="nav-item">
+            <a  href="government-orders.html" class="nav-link ">
+              <i class="nav-icon fas fa-gavel text-danger "></i>
+              <p>
+                Government Orders
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="faqs.html" class="nav-link ">
+              <i class="nav-icon fas fa-question-circle text-info "></i>
+              <p>
+                FAQs
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="helplines.html" class="nav-link ">
+              <i class="nav-icon fas fa-phone-volume text-warning "></i>
+              <p>
+                Helplines
+                
+              </p>
+            </a>
+          </li>
+          
+          	<!--	 <li class="nav-item">
+            <a target="_blank" href="https://keralabattlescovid.in" class="nav-link ">
+              <i class="nav-icon fa fa-info-circle text-info "></i>
+              <p>
+                Kerala Battles Covid
+                
+              </p>
+            </a>
+          </li> -->
+          
+
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+           
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active">Updated: 27-04-2021 6:33 pm</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+  
+	    <!-- Main content -->
+ <meta http-equiv="refresh" content="0;url=quarantine-districtwise.html" />

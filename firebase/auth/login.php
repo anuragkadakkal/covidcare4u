@@ -1,5 +1,5 @@
 <?php
-session_start();/*
+session_start();
 $con = mysqli_connect("localhost", "root", "", "firebaselogin");
 function saveUserInDatabase($con,$email,$username,$token,$provider){
     $check_user = mysqli_query($con, "select * from users where email='" . $email . "'");
@@ -22,7 +22,7 @@ function saveUserInDatabase($con,$email,$username,$token,$provider){
 }
 if ($con) {
     //echo "Connected";
-}*/
+}
 
 $email    = $_REQUEST['email'];
 $provider = $_REQUEST['provider'];

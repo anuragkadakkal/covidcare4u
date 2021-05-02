@@ -48,6 +48,10 @@
 			{
 				header("location:phc/phchome.php");
 			}
+			else if($c==6)
+			{
+				header("location:phc/drhome.php");
+			}
 			else
 			{
 

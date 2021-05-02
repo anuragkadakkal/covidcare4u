@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from dashboard.kerala.gov.in/ck-view-public.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 18:53:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="title" content="GoK Dashboard |Official Kerala COVID-19 Statistics">
+<meta name="description" content="Official Kerala COVID-19(corona) tracker. Vaccination Status, Statistics of cases, location, quarantined, test results, community kitchen, Social volunteer force etc.">
+<meta name="keywords" content="covid cases in kerala, covid kerala, corona in kerala,covid samples tested in kerala, kerala covid, covid dshboard kerala">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="en">
+<meta name="revisit-after" content="0.5 days">
+<meta name="author" content="Kerala State IT Mission, C-DIT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Logo.png"  >
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<title>GoK Dashboard | Official Kerala COVID-19 Statistics</title>
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  
+ <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+   <link rel="stylesheet" href="jquery.dataTables.min.css"> 
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+	
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/GoK.png"
+           alt=" GoK Logo"
+           class="brand-image img-circle "
+           >
+      <span class=" font-weight-light text-gray">Kerala : COVID-19 Battle</span>
+    </a>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/Logo.gif"
+           alt=" Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">GoK Dashboard</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+        <div class="info text-gray">
+          <i>#KeralaFightsCorona</i>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+            <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+		
+				<li class="nav-item">
+				<a  href="index-2.html" class="nav-link " >
+				<i class="nav-icon fas fa-home"></i>
+				<p>
+				Dashboard
+				</p>
+				</a>
+				</li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-newspaper text-red"></i>
+              <p>
+                Daily Reporting
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="daily.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://dashboard.kerala.gov.in/dailyreporting-view-public-districtwise.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="deaths.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Deaths Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bed text-info"></i>
+              <p>
+                Quarantine Report
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="quarantine-view-public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="quar_dst_wise_public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+
+
+				<li class="nav-item">
+				<a  href="testing-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-flask text-pink"></i>
+				<p>
+				Test Results
+				</p>
+				</a>
+				</li>
+		            		 <li class="nav-item">
+            <a  href="vaccination.html" class="nav-link ">
+             <i class="nav-icon fa fa-syringe text-success "></i>
+              <p>
+                Vaccination
+                
+              </p> 
+            </a>
+          </li>
+		  
+		      <li class="nav-item">
+				<a  href="hotspots.html" class="nav-link " >
+				<i class="nav-icon fas fa-map-marker text-warning"></i>
+				<p>
+				Hotspots
+				</p>
+				</a>
+				</li> 
+				
+
+				
+                <li class="nav-item">
+                <a href="volunteers.html" class="nav-link ">
+                <i class="nav-icon fas fa-users" style="color:#8f54fb"></i>
+                <p>
+                Social Volunteer Force
+                </p>
+                </a>
+                </li>
+                
+                <li class="nav-item">
+                <a href="psycosocial.html" class="nav-link ">
+                <i class="nav-icon fas fa-brain" style="color:#49B283"></i>
+                <p>
+                Psychosocial Support
+                </p>
+                </a>
+                </li>
+                
+				<li class="nav-item">
+				<a  href="ck-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-utensils text-orange"></i>
+				<p>
+				Community Kitchen
+				</p>
+				</a>
+				</li>		  
+ 
+ 				<li class="nav-item">
+				<a  href="destitute-rehabilitation.html" class="nav-link " >
+				<i class="nav-icon fas fa-hands-helping text-green"></i>
+				<p>
+				Destitute Rehabilitation
+				</p>
+				</a>
+				</li>                
+                		 <li class="nav-item">
+            <a target="_blank" href="https://donation.cmdrf.kerala.gov.in/index.php/Dashboard/allType_transaction" class="nav-link">
+              <i class="nav-icon fas fa-rupee-sign text-warning"></i>
+              <p>
+                CMDRF Donation
+               
+              </p>
+            </a>
+          </li>
+				
+           <div class="info text-gray">
+          <i>Useful Links</i>
+        </div>
+            		  		 <li class="nav-item">
+            <a  href="onlinedr.html" class="nav-link ">
+              <i class="nav-icon fa fa-plus text-danger " style="background:#FFF; border-radius:25px"></i>
+              <p>
+                Online Doctor Service
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a target="_blank" href="http://dhs.kerala.gov.in/ഡെയിലി-ബുള്ളറ്റിന്‍/" class="nav-link ">
+              <i class="nav-icon fas fa-newspaper "></i>
+              <p>
+                Daily Medical Bulletin
+                
+              </p>
+            </a>
+          </li>
+
+
+           <div class="info text-gray">
+          <i>Awareness</i>
+        </div>
+
+
+		  		 <li class="nav-item">
+            <a  href="government-orders.html" class="nav-link ">
+              <i class="nav-icon fas fa-gavel text-danger "></i>
+              <p>
+                Government Orders
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="faqs.html" class="nav-link ">
+              <i class="nav-icon fas fa-question-circle text-info "></i>
+              <p>
+                FAQs
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="helplines.html" class="nav-link ">
+              <i class="nav-icon fas fa-phone-volume text-warning "></i>
+              <p>
+                Helplines
+                
+              </p>
+            </a>
+          </li>
+          
+          	<!--	 <li class="nav-item">
+            <a target="_blank" href="https://keralabattlescovid.in" class="nav-link ">
+              <i class="nav-icon fa fa-info-circle text-info "></i>
+              <p>
+                Kerala Battles Covid
+                
+              </p>
+            </a>
+          </li> -->
+          
+
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+           
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active">Updated: 27-04-2021 6:33 pm</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+  
+	
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+
+
+	          <div class="row">
+
+		<div class="col-md-8 ">
+		            <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title"><i class="fa fa-utensils text-orange"></i> Hunger Free Kerala during Lockdown</h3>
+				<div class="card-tools">
+
+                </div>
+              </div>
+
+              <!-- /.card-body -->
+              <!--////*****dist*****////-->
+                <div class="card-body " style="height:425px; ">
+
+				<canvas id="bar-chart" ></canvas>
+
+
+              </div>
+
+              <!-- /.card-body -->
+              <!--////*****dist*****end///////-->
+            </div>
+		</div>
+			<div class="col-md-4 ">
+		            <div class="card card-default">
+
+
+              <!-- /.card-body -->
+              <!--////*****dist*****////-->
+                <div class="card-body ">
+<div class="info-box mb-3 bg-warning">
+              <span class="info-box-icon"><i class="fas fa-building"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">No of LSGIs in Kerala</span>
+                <span class="info-box-number">1034</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box mb-3 bg-success">
+              <span class="info-box-icon"><i class="fa fa-building"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">LSGIs with CK</span>
+                <span class="info-box-number">1034 </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+                        <!-- /.info-box -->
+            <div class="info-box mb-3 bg-danger">
+              <span class="info-box-icon"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Community kitchens opened<br><i>on 17-05-2020 </i></span>
+                <span class="info-box-number"> 853 </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box mb-3 bg-info">
+              <span class="info-box-icon"><i class="fa fa-utensils"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Individuals Served<br><i>till  17-05-2020 </i></span>
+                <span class="info-box-number"> 8651627 </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+		              </div>
+
+              <!-- /.card-body -->
+              <!--////*****dist*****end///////-->
+            </div>
+		</div>
+		</div>
+        <div class="row">
+
+		<div class="col-md-12 ">
+		            <div class="card card-default">
+              <div class="card-header">
+                <h3 class="card-title"><i class="fa fa-utensils text-orange"></i> Daily Food Distribution Details</h3>
+				<div class="card-tools">
+                  <button type="button"  data-card-widget="maximize"><i class="fas fa-expand"></i>
+                </div>
+              </div>
+
+              <!-- /.card-body -->
+              <!--////*****dist*****////-->
+                <div class="card-body p-0">
+<table class="table table-striped  table-hover table-sm">
+<thead>
+  <tr>
+    <td class="align-bottom " align="center">Date</td>
+    <td class="align-bottom " align="center"><img src="dist/img/meal.png" class="img-fluid align-bottom " ><br>      
+      Individual served</td>
+    <td class="align-bottom" align="center"><img src="dist/img/free.png" class="img-fluid  align-bottom"><br>
+    Free Meals </td>
+    <td class="align-bottom" align="center"><img src="dist/img/paid.png" class="img-fluid align-bottom "><br>
+    Paid Meals </td>
+    <td class="align-bottom" align="center"><img src="dist/img/homedelivery.png" class="img-fluid align-bottom "><br>Home delivery</td>
+  </tr>
+  <thead>
+  <tbody>
+    <tr>
+    <td align="center">17-05-2020</td>
+        <td align="center">38648</td>
+    <td align="center">29150</td>
+    <td align="center">9498</td>
+    <td align="center">24932</td>
+  </tr>
+    <tr>
+    <td align="center">15-05-2020</td>
+        <td align="center">75124</td>
+    <td align="center">58526</td>
+    <td align="center">16598</td>
+    <td align="center">55504</td>
+  </tr>
+    <tr>
+    <td align="center">14-05-2020</td>
+        <td align="center">75912</td>
+    <td align="center">58860</td>
+    <td align="center">17052</td>
+    <td align="center">31014</td>
+  </tr>
+    <tr>
+    <td align="center">13-05-2020</td>
+        <td align="center">76908</td>
+    <td align="center">60192</td>
+    <td align="center">16716</td>
+    <td align="center">57681</td>
+  </tr>
+    <tr>
+    <td align="center">12-05-2020</td>
+        <td align="center">78782</td>
+    <td align="center">62112</td>
+    <td align="center">16670</td>
+    <td align="center">59270</td>
+  </tr>
+    <tr>
+    <td align="center">11-05-2020</td>
+        <td align="center">79989</td>
+    <td align="center">63951</td>
+    <td align="center">16038</td>
+    <td align="center">60155</td>
+  </tr>
+    <tr>
+    <td align="center">10-05-2020</td>
+        <td align="center">76349</td>
+    <td align="center">64025</td>
+    <td align="center">12324</td>
+    <td align="center">61375</td>
+  </tr>
+    <tr>
+    <td align="center">08-05-2020</td>
+        <td align="center">100407</td>
+    <td align="center">85435</td>
+    <td align="center">17972</td>
+    <td align="center">75130</td>
+  </tr>
+    <tr>
+    <td align="center">07-05-2020</td>
+        <td align="center">102857</td>
+    <td align="center">84552</td>
+    <td align="center">18305</td>
+    <td align="center">77708</td>
+  </tr>
+    <tr>
+    <td align="center">06-05-2020</td>
+        <td align="center">107557</td>
+    <td align="center">89628</td>
+    <td align="center">17929</td>
+    <td align="center">82176</td>
+  </tr>
+    <tr>
+    <td align="center">05-05-2020</td>
+        <td align="center">114391</td>
+    <td align="center">97155</td>
+    <td align="center">17236</td>
+    <td align="center">88990</td>
+  </tr>
+    <tr>
+    <td align="center">04-05-2020</td>
+        <td align="center">120399</td>
+    <td align="center">103929</td>
+    <td align="center">16470</td>
+    <td align="center">94977</td>
+  </tr>
+    <tr>
+    <td align="center">03-05-2020</td>
+        <td align="center">143045</td>
+    <td align="center">127529</td>
+    <td align="center">15516</td>
+    <td align="center">117253</td>
+  </tr>
+    <tr>
+    <td align="center">01-05-2020</td>
+        <td align="center">133882</td>
+    <td align="center">107128</td>
+    <td align="center">26755</td>
+    <td align="center">108655</td>
+  </tr>
+    <tr>
+    <td align="center">30-04-2020</td>
+        <td align="center">165917</td>
+    <td align="center">136990</td>
+    <td align="center">28927</td>
+    <td align="center">137146</td>
+  </tr>
+    <tr>
+    <td align="center">29-04-2020</td>
+        <td align="center">169062</td>
+    <td align="center">139803</td>
+    <td align="center">29259</td>
+    <td align="center">142975</td>
+  </tr>
+    <tr>
+    <td align="center">28-04-2020</td>
+        <td align="center">173037</td>
+    <td align="center">153018</td>
+    <td align="center">20019</td>
+    <td align="center">142975</td>
+  </tr>
+    <tr>
+    <td align="center">27-04-2020</td>
+        <td align="center">175840</td>
+    <td align="center">157485</td>
+    <td align="center">18355</td>
+    <td align="center">148103</td>
+  </tr>
+    <tr>
+    <td align="center">26-04-2020</td>
+        <td align="center">174445</td>
+    <td align="center">153153</td>
+    <td align="center">21292</td>
+    <td align="center">148103</td>
+  </tr>
+    <tr>
+    <td align="center">25-04-2020</td>
+        <td align="center">183158</td>
+    <td align="center">164421</td>
+    <td align="center">18737</td>
+    <td align="center">141927</td>
+  </tr>
+    <tr>
+    <td align="center">24-04-2020</td>
+        <td align="center">182765</td>
+    <td align="center">159010</td>
+    <td align="center">23755</td>
+    <td align="center">841585</td>
+  </tr>
+    <tr>
+    <td align="center">23-04-2020</td>
+        <td align="center">183610</td>
+    <td align="center">158772</td>
+    <td align="center">25159</td>
+    <td align="center">141396</td>
+  </tr>
+    <tr>
+    <td align="center">22-04-2020</td>
+        <td align="center">200438</td>
+    <td align="center">175279</td>
+    <td align="center">25159</td>
+    <td align="center">156419</td>
+  </tr>
+    <tr>
+    <td align="center">21-04-2020</td>
+        <td align="center">206513</td>
+    <td align="center">180901</td>
+    <td align="center">25612</td>
+    <td align="center">163860</td>
+  </tr>
+    <tr>
+    <td align="center">20-04-2020</td>
+        <td align="center">216188</td>
+    <td align="center">190928</td>
+    <td align="center">25260</td>
+    <td align="center">171881</td>
+  </tr>
+    <tr>
+    <td align="center">19-04-2020</td>
+        <td align="center">214207</td>
+    <td align="center">191650</td>
+    <td align="center">22557</td>
+    <td align="center">170776</td>
+  </tr>
+    <tr>
+    <td align="center">18-04-2020</td>
+        <td align="center">217306</td>
+    <td align="center">194035</td>
+    <td align="center">23271</td>
+    <td align="center">172463</td>
+  </tr>
+    <tr>
+    <td align="center">17-04-2020</td>
+        <td align="center">219834</td>
+    <td align="center">195088</td>
+    <td align="center">24746</td>
+    <td align="center">175365</td>
+  </tr>
+    <tr>
+    <td align="center">16-04-2020</td>
+        <td align="center">220929</td>
+    <td align="center">198734</td>
+    <td align="center">22195</td>
+    <td align="center">176231</td>
+  </tr>
+    <tr>
+    <td align="center">15-04-2020</td>
+        <td align="center">220929</td>
+    <td align="center">198734</td>
+    <td align="center">22195</td>
+    <td align="center">176231</td>
+  </tr>
+    <tr>
+    <td align="center">14-04-2020</td>
+        <td align="center">227356</td>
+    <td align="center">208191</td>
+    <td align="center">19165</td>
+    <td align="center">184817</td>
+  </tr>
+    <tr>
+    <td align="center">13-04-2020</td>
+        <td align="center">230940</td>
+    <td align="center">208746</td>
+    <td align="center">22194</td>
+    <td align="center">187271</td>
+  </tr>
+    <tr>
+    <td align="center">12-04-2020</td>
+        <td align="center">232631</td>
+    <td align="center">211769</td>
+    <td align="center">20862</td>
+    <td align="center">189419</td>
+  </tr>
+    <tr>
+    <td align="center">11-04-2020</td>
+        <td align="center">233275</td>
+    <td align="center">210912</td>
+    <td align="center">22363</td>
+    <td align="center">191991</td>
+  </tr>
+    <tr>
+    <td align="center">10-04-2020</td>
+        <td align="center">232304</td>
+    <td align="center">212044</td>
+    <td align="center">20260</td>
+    <td align="center">189441</td>
+  </tr>
+    <tr>
+    <td align="center">09-04-2020</td>
+        <td align="center">238043</td>
+    <td align="center">215726</td>
+    <td align="center">22317</td>
+    <td align="center">195515</td>
+  </tr>
+    <tr>
+    <td align="center">08-04-2020</td>
+        <td align="center">246091</td>
+    <td align="center">221512</td>
+    <td align="center">24579</td>
+    <td align="center">201747</td>
+  </tr>
+    <tr>
+    <td align="center">07-04-2020</td>
+        <td align="center">258487</td>
+    <td align="center">232210</td>
+    <td align="center">26277</td>
+    <td align="center">89202</td>
+  </tr>
+    <tr>
+    <td align="center">06-04-2020</td>
+        <td align="center">297788</td>
+    <td align="center">267925</td>
+    <td align="center">29863</td>
+    <td align="center">254791</td>
+  </tr>
+    <tr>
+    <td align="center">05-04-2020</td>
+        <td align="center">297788</td>
+    <td align="center">267925</td>
+    <td align="center">29863</td>
+    <td align="center">254791</td>
+  </tr>
+    <tr>
+    <td align="center">04-04-2020</td>
+        <td align="center">307807</td>
+    <td align="center">279234</td>
+    <td align="center">28573</td>
+    <td align="center">261594</td>
+  </tr>
+    <tr>
+    <td align="center">03-04-2020</td>
+        <td align="center">303902</td>
+    <td align="center">277580</td>
+    <td align="center">26322</td>
+    <td align="center">258782</td>
+  </tr>
+    <tr>
+    <td align="center">02-04-2020</td>
+        <td align="center">301255</td>
+    <td align="center">276305</td>
+    <td align="center">24950</td>
+    <td align="center">256154</td>
+  </tr>
+    <tr>
+    <td align="center">01-04-2020</td>
+        <td align="center">288069</td>
+    <td align="center">263423</td>
+    <td align="center">24646</td>
+    <td align="center">215967</td>
+  </tr>
+    <tr>
+    <td align="center">31-03-2020</td>
+        <td align="center">270913</td>
+    <td align="center">245607</td>
+    <td align="center">25306</td>
+    <td align="center">227561</td>
+  </tr>
+    <tr>
+    <td align="center">30-03-2020</td>
+        <td align="center">236550</td>
+    <td align="center">214446</td>
+    <td align="center">22104</td>
+    <td align="center">190561</td>
+  </tr>
+    </tbody>
+  <tfoot>
+
+  <tr style="font-size:">
+    <th class="text-center">TOTAL</th>
+
+    <th class="text-center">8651627</th>
+    <th class="text-center">7653728</th>
+    <th class="text-center">1001221</th>
+    <th class="text-center">7551860</th>
+
+  </tr>
+  </tfoot>
+</table>
+
+
+              </div>
+
+              <!-- /.card-body -->
+              <!--////*****dist*****end///////-->
+            </div>
+		</div>
+
+
+
+		</div>
+		<div class="row">
+
+
+
+<div class="col-md-12">
+		            <div class="card card-secondary">
+              <div class="card-header ">
+                <h3 class="card-title"><i class="fa fa-utensils text-orange"></i> Community Kitchen - Summary</h3>
+				<div class="card-tools">
+                  <button type="button"  data-card-widget="maximize"><i class="fas fa-expand"></i>
+                </div>
+              </div>
+
+              <!-- /.card-body -->
+              <!--////*****dist*****////-->
+                <div class="card-body p-0 table-responsive">
+<table class="table table-striped table-sm table-hover table-bordered">
+<thead>
+  <tr>
+    <th >Date</th>
+    <!--<th >Area</th>-->
+
+    <th >Total CK started</th>
+    <th >Kudumbsree  Hotels</th>
+   <!-- <th >LSGI alone</th>
+    <th >PSUs</th>
+    <th >Co-op institutions</th>
+    <th >Voluntary organizations</th>
+    <th >others</th> -->
+
+  </tr>
+  <thead>
+  <tbody>
+    <tr>
+    <td align="center">17-05-2020</td>
+
+    <td align="center">853</td>
+    <td align="center">299</td>
+
+  </tr>
+    <tr>
+    <td align="center">15-05-2020</td>
+
+    <td align="center">901</td>
+    <td align="center">380</td>
+
+  </tr>
+    <tr>
+    <td align="center">14-05-2020</td>
+
+    <td align="center">906</td>
+    <td align="center">368</td>
+
+  </tr>
+    <tr>
+    <td align="center">13-05-2020</td>
+
+    <td align="center">909</td>
+    <td align="center">358</td>
+
+  </tr>
+    <tr>
+    <td align="center">12-05-2020</td>
+
+    <td align="center">917</td>
+    <td align="center">367</td>
+
+  </tr>
+    <tr>
+    <td align="center">11-05-2020</td>
+
+    <td align="center">919</td>
+    <td align="center">433</td>
+
+  </tr>
+    <tr>
+    <td align="center">10-05-2020</td>
+
+    <td align="center">941</td>
+    <td align="center">426</td>
+
+  </tr>
+    <tr>
+    <td align="center">08-05-2020</td>
+
+    <td align="center">965</td>
+    <td align="center">420</td>
+
+  </tr>
+    <tr>
+    <td align="center">07-05-2020</td>
+
+    <td align="center">978</td>
+    <td align="center">416</td>
+
+  </tr>
+    <tr>
+    <td align="center">06-05-2020</td>
+
+    <td align="center">984</td>
+    <td align="center">408</td>
+
+  </tr>
+    <tr>
+    <td align="center">05-05-2020</td>
+
+    <td align="center">1009</td>
+    <td align="center">402</td>
+
+  </tr>
+    <tr>
+    <td align="center">04-05-2020</td>
+
+    <td align="center">1023</td>
+    <td align="center">394</td>
+
+  </tr>
+    <tr>
+    <td align="center">03-05-2020</td>
+
+    <td align="center">911</td>
+    <td align="center">383</td>
+
+  </tr>
+    <tr>
+    <td align="center">01-05-2020</td>
+
+    <td align="center">1137</td>
+    <td align="center">381</td>
+
+  </tr>
+    <tr>
+    <td align="center">30-04-2020</td>
+
+    <td align="center">1142</td>
+    <td align="center">377</td>
+
+  </tr>
+    <tr>
+    <td align="center">29-04-2020</td>
+
+    <td align="center">1158</td>
+    <td align="center">373</td>
+
+  </tr>
+    <tr>
+    <td align="center">28-04-2020</td>
+
+    <td align="center">1161</td>
+    <td align="center">360</td>
+
+  </tr>
+    <tr>
+    <td align="center">27-04-2020</td>
+
+    <td align="center">1172</td>
+    <td align="center">359</td>
+
+  </tr>
+    <tr>
+    <td align="center">26-04-2020</td>
+
+    <td align="center">1188</td>
+    <td align="center">352</td>
+
+  </tr>
+    <tr>
+    <td align="center">25-04-2020</td>
+
+    <td align="center">1193</td>
+    <td align="center">351</td>
+
+  </tr>
+    <tr>
+    <td align="center">24-04-2020</td>
+
+    <td align="center">1199</td>
+    <td align="center">350</td>
+
+  </tr>
+    <tr>
+    <td align="center">23-04-2020</td>
+
+    <td align="center">734</td>
+    <td align="center">350</td>
+
+  </tr>
+    <tr>
+    <td align="center">22-04-2020</td>
+
+    <td align="center">1172</td>
+    <td align="center">346</td>
+
+  </tr>
+    <tr>
+    <td align="center">21-04-2020</td>
+
+    <td align="center">1181</td>
+    <td align="center">343</td>
+
+  </tr>
+    <tr>
+    <td align="center">20-04-2020</td>
+
+    <td align="center">1209</td>
+    <td align="center">339</td>
+
+  </tr>
+    <tr>
+    <td align="center">19-04-2020</td>
+
+    <td align="center">1205</td>
+    <td align="center">331</td>
+
+  </tr>
+    <tr>
+    <td align="center">18-04-2020</td>
+
+    <td align="center">1202</td>
+    <td align="center">320</td>
+
+  </tr>
+    <tr>
+    <td align="center">17-04-2020</td>
+
+    <td align="center">1217</td>
+    <td align="center">318</td>
+
+  </tr>
+    <tr>
+    <td align="center">16-04-2020</td>
+
+    <td align="center">1229</td>
+    <td align="center">303</td>
+
+  </tr>
+    <tr>
+    <td align="center">15-04-2020</td>
+
+    <td align="center">1229</td>
+    <td align="center">303</td>
+
+  </tr>
+    <tr>
+    <td align="center">14-04-2020</td>
+
+    <td align="center">1239</td>
+    <td align="center">295</td>
+
+  </tr>
+    <tr>
+    <td align="center">13-04-2020</td>
+
+    <td align="center">1243</td>
+    <td align="center">292</td>
+
+  </tr>
+    <tr>
+    <td align="center">12-04-2020</td>
+
+    <td align="center">1245</td>
+    <td align="center">289</td>
+
+  </tr>
+    <tr>
+    <td align="center">11-04-2020</td>
+
+    <td align="center">1248</td>
+    <td align="center">284</td>
+
+  </tr>
+    <tr>
+    <td align="center">10-04-2020</td>
+
+    <td align="center">1246</td>
+    <td align="center">266</td>
+
+  </tr>
+    <tr>
+    <td align="center">09-04-2020</td>
+
+    <td align="center">1248</td>
+    <td align="center">264</td>
+
+  </tr>
+    <tr>
+    <td align="center">08-04-2020</td>
+
+    <td align="center">1251</td>
+    <td align="center">255</td>
+
+  </tr>
+    <tr>
+    <td align="center">07-04-2020</td>
+
+    <td align="center">1259</td>
+    <td align="center">251</td>
+
+  </tr>
+    <tr>
+    <td align="center">06-04-2020</td>
+
+    <td align="center">1282</td>
+    <td align="center">238</td>
+
+  </tr>
+    <tr>
+    <td align="center">05-04-2020</td>
+
+    <td align="center">1282</td>
+    <td align="center">238</td>
+
+  </tr>
+    <tr>
+    <td align="center">04-04-2020</td>
+
+    <td align="center">1314</td>
+    <td align="center">215</td>
+
+  </tr>
+    <tr>
+    <td align="center">03-04-2020</td>
+
+    <td align="center">1323</td>
+    <td align="center">0</td>
+
+  </tr>
+    <tr>
+    <td align="center">02-04-2020</td>
+
+    <td align="center">1323</td>
+    <td align="center">0</td>
+
+  </tr>
+    <tr>
+    <td align="center">01-04-2020</td>
+
+    <td align="center">1325</td>
+    <td align="center">0</td>
+
+  </tr>
+    <tr>
+    <td align="center">31-03-2020</td>
+
+    <td align="center">1316</td>
+    <td align="center">0</td>
+
+  </tr>
+    <tr>
+    <td align="center">30-03-2020</td>
+
+    <td align="center">1304</td>
+    <td align="center">0</td>
+
+  </tr>
+    </tbody>
+  <tfoot>
+
+  </tfoot>
+</table>
+</div>
+
+              </div>
+
+              <!-- /.card-body -->
+              <!--////*****dist*****end///////-->
+            </div>
+		</div>
+
+
+		<div class="row">
+
+
+
+<div class="col-md-12">
+		            <div class="card card-secondary">
+              <div class="card-header ">
+                <h3 class="card-title"><i class="fa fa-utensils text-orange"></i> Agency-wise Community Kitchen Details (till 3-04-2020)</h3>
+				<div class="card-tools">
+                  <button type="button" data-card-widget="maximize"><i class="fas fa-expand"></i>
+                </button></div>
+              </div>
+
+              <!-- /.card-body -->
+              <!--////*****dist*****////-->
+                <div class="card-body p-0 table-responsive">
+<table class="table table-striped table-sm table-hover table-bordered">
+<thead>
+  <tr>
+    <th>Date</th>
+    <!--<th >Area</th>-->
+
+    <th>Total No. of CK started</th>
+    <th>Kudumbsree +LSGIs</th>
+    <th>LSGIs alone</th>
+    <th>PSUs</th>
+    <th>Co-op institutions</th>
+    <th>Voluntary organizations</th>
+    <th>others</th>
+
+  </tr>
+  </thead><thead>
+  </thead><tbody>
+    <tr>
+    <td align="center">03-04-2020</td>
+
+    <td align="center">1323</td>
+    <td align="center">1100</td>
+    <td align="center">174</td>
+    <td align="center">1</td>
+    <td align="center">3</td>
+    <td align="center">15</td>
+    <td align="center">30</td>
+
+  </tr>
+    <tr>
+    <td align="center">02-04-2020</td>
+
+    <td align="center">1323</td>
+    <td align="center">1103</td>
+    <td align="center">175</td>
+    <td align="center">1</td>
+    <td align="center">3</td>
+    <td align="center">12</td>
+    <td align="center">29</td>
+
+  </tr>
+    <tr>
+    <td align="center">01-04-2020</td>
+
+    <td align="center">1325</td>
+    <td align="center">1096</td>
+    <td align="center">177</td>
+    <td align="center">1</td>
+    <td align="center">4</td>
+    <td align="center">17</td>
+    <td align="center">30</td>
+
+  </tr>
+    <tr>
+    <td align="center">31-03-2020</td>
+
+    <td align="center">1316</td>
+    <td align="center">1078</td>
+    <td align="center">179</td>
+    <td align="center">1</td>
+    <td align="center">4</td>
+    <td align="center">24</td>
+    <td align="center">28</td>
+
+  </tr>
+    <tr>
+    <td align="center">30-03-2020</td>
+
+    <td align="center">1304</td>
+    <td align="center">1072</td>
+    <td align="center">173</td>
+    <td align="center">2</td>
+    <td align="center">6</td>
+    <td align="center">24</td>
+    <td align="center">27</td>
+
+  </tr>
+    </tbody>
+  <tfoot>
+
+  </tfoot>
+</table>
+</div>
+
+              </div>
+
+              <!-- /.card-body -->
+              <!--////*****dist*****end///////-->
+            </div>
+		</div>
+
+
+
+
+
+      </div>
+	  </div>
+	  </section>
+       <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer" style="position:relative; z-index:99; ">
+   <small> <div class="float-right  d-sm-block">
+       <a href="sources.html" >Data Source</a>
+    </div>
+   
+    <a target="_blank" href="http://kerala.gov.in/">GoK Dashboard</a>. <a href="https://cdit.org/" class="text-secondary" target="_blank" >Developed by C-DIT</a></small>
+    
+  </footer>
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- date-range-picker -->
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script src="jquery.dataTables.min.js"></script>   
+
+
+
+<script src="../cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="../cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+
+
+
+
+<!-- Page script -->
+<script>
+$(document).ready(function() {
+    $('table.display').DataTable( {
+   
+        dom: 'lBfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+</script>
+<script>
+// Bar chart
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: [ '30-03-2020', '31-03-2020', '01-04-2020', '02-04-2020', '03-04-2020', '04-04-2020', '05-04-2020', '06-04-2020', '07-04-2020', '08-04-2020', '09-04-2020', '10-04-2020', '11-04-2020', '12-04-2020', '13-04-2020', '14-04-2020', '15-04-2020', '16-04-2020', '17-04-2020', '18-04-2020', '19-04-2020', '20-04-2020', '21-04-2020', '22-04-2020', '23-04-2020', '24-04-2020', '25-04-2020', '26-04-2020', '27-04-2020', '28-04-2020', '29-04-2020', '30-04-2020', '01-05-2020', '03-05-2020', '04-05-2020', '05-05-2020', '06-05-2020', '07-05-2020', '08-05-2020', '10-05-2020', '11-05-2020', '12-05-2020', '13-05-2020', '14-05-2020', '15-05-2020', '17-05-2020'],
+      datasets: [
+        {
+          label: "Individuals served: ",
+          backgroundColor: ["#3e95cd", "#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd","#3e95cd"],
+          data: [ '236550', '270913', '288069', '301255', '303902', '307807', '297788', '297788', '258487', '246091', '238043', '232304', '233275', '232631', '230940', '227356', '220929', '220929', '219834', '217306', '214207', '216188', '206513', '200438', '183610', '182765', '183158', '174445', '175840', '173037', '169062', '165917', '133882', '143045', '120399', '114391', '107557', '102857', '100407', '76349', '79989', '78782', '76908', '75912', '75124', '38648']
+        }
+      ]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    },
+        responsive: true,
+        maintainAspectRatio: false,
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Total No. of individuals served through Community Kitchens (CK)'
+      }
+    }
+});
+</script>
+
+</body>
+
+<!-- Mirrored from dashboard.kerala.gov.in/ck-view-public.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 18:53:20 GMT -->
+</html>

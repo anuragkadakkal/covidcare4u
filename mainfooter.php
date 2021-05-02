@@ -7,6 +7,7 @@
 </div>
 </footer>
 <!-- #footer -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
@@ -77,6 +78,8 @@
 <script type="text/javascript">$(document).ready(function(){var message='';if(message!=""){alert(message);}});</script>
 <script type="text/javascript">$(document).on('click','.social',function(){var distId=$(this).find('.distId').val();window.location.href="/home/listReportingFormat?distId="+distId;});$(document).on('click','.surveillance',function(){var distId=$(this).find('.distId').val();if(distId==8){window.location.href="/home/addSurveillanceDashboard?distId="+distId;}else{alert("This dashboard is available to the District Collector and District Medical Officer")};});$(document).on('click','.transit',function(){window.location.href="home/addTransitDashBoard.html";});$(document).on('click','.sur',function(){window.location.href="home/addSurveillanceDashboard.html";});$(document).on('click','.tst',function(){window.location.href="home/addTestandContactDashBoard.html";});$(document).on('click','.hos',function(){window.location.href="home/addHospitalDashBoard.html";});$(document).on('click','.per',function(){window.location.href="home/permitPassDashboard.html";});$(document).on('click','.ccc',function(){window.location.href="home/cccManagement.html";});$('.texsrl').on('mouseover',function(e){owlalert.trigger('play.owl.autoplay');})
 $('.texsrl').on('mouseleave',function(e){owlalert.trigger('stop.owl.autoplay');})</script>
+
+
 </body>
 
 

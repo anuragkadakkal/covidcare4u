@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2021 at 07:40 AM
+-- Generation Time: May 04, 2021 at 09:40 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -51,7 +51,7 @@ CREATE TABLE `tb_ambulance` (
 
 INSERT INTO `tb_ambulance` (`ambid`, `ambkey`, `fname`, `lname`, `address`, `phno`, `district`, `pincode`, `brand`, `model`, `rcbook`, `drlicence`, `phcfeedback`, `phcid`, `loginid`) VALUES
 (2, '6453bf1d', 'Vipin', 'P', 'Romy Bhavan', '9645023651', 'Idukki', '123456', 'Maruti Suzuki', 'Eeco', 'ResearchPaperDraft.pdf', 'AnuragAResume.pdf', NULL, 58, 77),
-(4, 'b8519802', 'Abhiram', 'A', 'Abhiram Bhavan', '9645023651', 'Kottayam', '696156', 'Maruti Suzuki', 'Eeco', 'ResearchPaperDraft.pdf', 'AnuragAResume.pdf', NULL, 58, 80);
+(4, 'b8519802', 'Abhiram', 'A', 'Abhiram Bhavan', '9645023651', 'Idukki', '696156', 'Maruti Suzuki', 'Eeco', 'ResearchPaperDraft.pdf', 'AnuragAResume.pdf', NULL, 58, 80);
 
 -- --------------------------------------------------------
 
@@ -185,7 +185,8 @@ CREATE TABLE `tb_firebaseauthusers` (
 --
 
 INSERT INTO `tb_firebaseauthusers` (`id`, `username`, `email`, `token`, `created_at`, `login_type`) VALUES
-(0, ' 917356308128', ' 917356308128', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjRlOWRmNWE0ZjI4YWQwMjUwNjRkNjY1NTNiY2I5YjMzOTY4NWVmOTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmlyLXR1dG9yaWFsLWM5N2Y2IiwiYXVkIjoiZmlyLXR1dG9yaWFsLWM5N2Y2IiwiYXV0aF90aW1lIjoxNjE5ODcwODMwLCJ1c2VyX2lkIjoiU3VlV1hXMTY0N2Z1QjMwQkRIWkx5cEhpdGx6MSIsInN1YiI6IlN1ZVdYVzE2NDdmdUIzMEJESFpMeXBIaXRsejEiLCJpYXQiOjE2MTk4NzA4MzAsImV4cCI6MTYxOTg3NDQzMCwicGhvbmVfbnVtYmVyIjoiKzkxNzM1NjMwODEyOCIsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsicGhvbmUiOlsiKzkxNzM1NjMwODEyOCJdfSwic2lnbl9pbl9wcm92aWRlciI6InBob25lIn19.e47xVq_GmRHL12WAbL1tdALqfKS_A6ZsUprddfUh7Qty0gcGQaA6MseYpxU9Ciy-XcXHpYYWc3w7KxnCaw-jGFh6QjaGJc-_33dpxAOOglMSyFdrTLTtKJs10JRCI8rKjz43XTu6t5TpmQWHHF-6_JYy_nqSoZCAGhNGCyvzrDSniXJaHLHbqsdxb4BbGe5RZc0tsHJwkF1U5dY83oYDT8VGNjJRpaGstJOBOXIeAXhxw2sne9ix4sTeqfY53ENxVoixJbxe_WPRuJ0cE-EzrV5BEVIKTCkUYl0w4vamBG9vszIGh3SnD1EllzsjkgTzkuniyxYzkYYjan9nOmliMQ', '2021-05-01 14:08:08', 'Phone');
+(0, ' 917356308128', ' 917356308128', 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjRlOWRmNWE0ZjI4YWQwMjUwNjRkNjY1NTNiY2I5YjMzOTY4NWVmOTQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmlyLXR1dG9yaWFsLWM5N2Y2IiwiYXVkIjoiZmlyLXR1dG9yaWFsLWM5N2Y2IiwiYXV0aF90aW1lIjoxNjE5ODcwODMwLCJ1c2VyX2lkIjoiU3VlV1hXMTY0N2Z1QjMwQkRIWkx5cEhpdGx6MSIsInN1YiI6IlN1ZVdYVzE2NDdmdUIzMEJESFpMeXBIaXRsejEiLCJpYXQiOjE2MTk4NzA4MzAsImV4cCI6MTYxOTg3NDQzMCwicGhvbmVfbnVtYmVyIjoiKzkxNzM1NjMwODEyOCIsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsicGhvbmUiOlsiKzkxNzM1NjMwODEyOCJdfSwic2lnbl9pbl9wcm92aWRlciI6InBob25lIn19.e47xVq_GmRHL12WAbL1tdALqfKS_A6ZsUprddfUh7Qty0gcGQaA6MseYpxU9Ciy-XcXHpYYWc3w7KxnCaw-jGFh6QjaGJc-_33dpxAOOglMSyFdrTLTtKJs10JRCI8rKjz43XTu6t5TpmQWHHF-6_JYy_nqSoZCAGhNGCyvzrDSniXJaHLHbqsdxb4BbGe5RZc0tsHJwkF1U5dY83oYDT8VGNjJRpaGstJOBOXIeAXhxw2sne9ix4sTeqfY53ENxVoixJbxe_WPRuJ0cE-EzrV5BEVIKTCkUYl0w4vamBG9vszIGh3SnD1EllzsjkgTzkuniyxYzkYYjan9nOmliMQ', '2021-05-01 14:08:08', 'Phone'),
+(0, ' 917559014286', ' 917559014286', 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImNjM2Y0ZThiMmYxZDAyZjBlYTRiMWJkZGU1NWFkZDhiMDhiYzUzODYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZmlyLXR1dG9yaWFsLWM5N2Y2IiwiYXVkIjoiZmlyLXR1dG9yaWFsLWM5N2Y2IiwiYXV0aF90aW1lIjoxNjIwMTM2NzgzLCJ1c2VyX2lkIjoiRWFGeDRvZWhKZlZ5S3R1dEJwMElXWld4ZFJwMiIsInN1YiI6IkVhRng0b2VoSmZWeUt0dXRCcDBJV1pXeGRScDIiLCJpYXQiOjE2MjAxMzY3ODMsImV4cCI6MTYyMDE0MDM4MywicGhvbmVfbnVtYmVyIjoiKzkxNzU1OTAxNDI4NiIsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsicGhvbmUiOlsiKzkxNzU1OTAxNDI4NiJdfSwic2lnbl9pbl9wcm92aWRlciI6InBob25lIn19.BFNn4m2yOYNzQjE-HSWSIdiwvSJhOLd0siA5GJYDRl-coXCmQ7fmxjadvoFdqhZAhplFY6PfaV055fTd9WFZ1DzqcjjH1x5lSGgCvvwdm3B5XLKaE3q_gN3Hh_x4VJ3HAwusjBxBAwj-refau60vzLT7vmmJuGtaDJsYotvzjGJF-hmmXRAkvVzDQJIHl_7Gp4dpqmlyub_MgGLHG9aSgh47cSnupFuULdWPRAuZyJS1VTp_xYPNX88GvbdLXqfOuXGXRILrV8KBJXRtowGM-U8hsGhfg3aYANeCN3PWsIQefJp365UfdiJ1Lh99YJICrJNZWqGRnjtC3ems_zbDOg', '2021-05-04 15:59:45', 'Phone');
 
 -- --------------------------------------------------------
 
@@ -332,7 +333,7 @@ INSERT INTO `tb_login` (`id`, `username`, `password`, `status`, `utype`) VALUES
 (67, 'romyr@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '6'),
 (68, 'anilkumar@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '6'),
 (77, 'ambulance@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '7'),
-(80, 'ambulance2@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '2', '7');
+(80, 'ambulance2@gmail.com', '751cb3f4aa17c36186f4856c8982bf27', '1', '7');
 
 -- --------------------------------------------------------
 
@@ -488,6 +489,7 @@ CREATE TABLE `tb_quarreg` (
   `fname` varchar(100) NOT NULL,
   `lname` varchar(100) NOT NULL,
   `address` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `district` varchar(100) NOT NULL,
   `phno` varchar(15) NOT NULL,
   `pcid` int(11) NOT NULL,
@@ -504,8 +506,44 @@ CREATE TABLE `tb_quarreg` (
 -- Dumping data for table `tb_quarreg`
 --
 
-INSERT INTO `tb_quarreg` (`qid`, `qkey`, `fname`, `lname`, `address`, `district`, `phno`, `pcid`, `phcid`, `sdate`, `edate`, `idno`, `qfeedback`, `idcard`, `status`) VALUES
-(6, 'd1bc32c7', 'Anurag', 'A', 'Anu Bhavan', 'Idukki', '7356308128', 37, 58, '2021-05-01', '2021-05-08', '944171304193', 'Don\'t make direct contact with other persons in the home.', 'ResearchPaperDraft.pdf', '0');
+INSERT INTO `tb_quarreg` (`qid`, `qkey`, `fname`, `lname`, `address`, `email`, `district`, `phno`, `pcid`, `phcid`, `sdate`, `edate`, `idno`, `qfeedback`, `idcard`, `status`) VALUES
+(7, 'eda9db93', 'Anurag', 'A', 'Anu Bhavan', 'anuragkadakkal@gmail.com', 'Idukki', '7356308128', 37, 58, '2021-05-04', '2021-05-18', '944171304193', 'Keep Social Distancing.', 'AnuragAResume (2).pdf', '0'),
+(8, 'd27c478f', 'Anurag', 'A', 'Anu Bhavan', 'anuragkadakkal@gmail.com', 'Idukki', '7356308128', 0, 0, '2021-05-12', '2021-05-19', '944171304193', 'Keep Social Distancing.', 'AnuragAResume (2).pdf', '0'),
+(9, '91db3e17', 'Anurag', 'A', 'Anu Bhavan', 'anuragkadakkal@gmail.com', 'Idukki', '7356308128', 0, 0, '2021-05-04', '2021-05-11', '944171304193', 'Keep Social Distancing.', 'AnuragAResume (2).pdf', '0'),
+(10, '49b15a40', 'Anurag', 'A', 'Anu Bhavan', 'anuragkadakkal@gmail.com', 'Idukki', '7356308128', 0, 0, '2021-05-04', '2021-05-18', '944171304193', 'Keep Social Distancing.', 'AnuragAResume (2).pdf', '0'),
+(14, '4a986ae5', 'Swapna', 'T', 'Swapna Nivas', 'anuragkadakkal@gmail.com', 'Idukki', '7356308128', 37, 58, '2021-05-13', '2021-05-19', '1234567890', 'Keep Social Distancing.', 'AnuragAResume (2).pdf', '0'),
+(15, 'd0dd7301', 'Anurag', 'A', 'Anu Bhavan, Missionkunnu', '', 'Idukki', '7356308128', 0, 58, '', '', '', NULL, '', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_sosambreg`
+--
+
+CREATE TABLE `tb_sosambreg` (
+  `sosid` int(11) NOT NULL,
+  `soskey` varchar(8) NOT NULL,
+  `ambid` int(11) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `phcid` int(11) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `status` enum('0','1','2','3') NOT NULL,
+  `curdate` varchar(100) NOT NULL,
+  `district` varchar(50) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `feedback` varchar(255) DEFAULT 'Request Not Viewed',
+  `purpose` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_sosambreg`
+--
+
+INSERT INTO `tb_sosambreg` (`sosid`, `soskey`, `ambid`, `fname`, `email`, `lname`, `phcid`, `address`, `status`, `curdate`, `district`, `phone`, `feedback`, `purpose`) VALUES
+(4, 'c868a3de', 4, 'Anurag', 'anuragkadakkal@gmail.com', 'A', 58, 'Anu Bhavan', '0', '04-05-2021 07:11:57pm', 'Idukki', '7356308128', '04-05-2021 09:12:35pm - Not Available.', 'Fever'),
+(7, '8490d02f', 4, 'Anurag', 'anuragkdl998@gmail.com', 'A', 58, 'Anu Bhavan Missionkunnu Adayamon PO', '0', '04-05-2021 08:31:32pm', 'Idukki', '7356308128', '04-05-2021 09:15:15pm - Will reach soon.', 'Accident');
 
 -- --------------------------------------------------------
 
@@ -528,7 +566,7 @@ CREATE TABLE `tb_vaccine` (
 --
 
 INSERT INTO `tb_vaccine` (`vid`, `vkey`, `vname`, `vtotal`, `availdate`, `vstatus`, `loginid`) VALUES
-(1, 'ahyxg67f', 'COVISHIELD', 35, '2021-01-06', NULL, 58),
+(1, 'ahyxg67f', 'COVISHIELD', 31, '2021-01-06', NULL, 58),
 (2, 'ajdghey7', 'COVAXINE', 35, '2021-01-06', NULL, 58);
 
 -- --------------------------------------------------------
@@ -558,7 +596,11 @@ INSERT INTO `tb_vaccinebookhistory` (`vbkid`, `vkey`, `uid`, `phcid`, `bkdate`, 
 (6, '6793d733', '90faa34a', 58, '2021-05-02', 2),
 (7, '1e23cfa4', 'c62a423c', 58, '2021-05-02', 2),
 (8, '83925a49', '90faa34a', 58, '2021-05-02', 1),
-(9, '689f1cb3', 'd6923e9c', 58, '2021-05-02', 2);
+(9, '689f1cb3', 'd6923e9c', 58, '2021-05-02', 2),
+(10, '82955025', 'bd1c6f8e', 58, '2021-05-04', 1),
+(11, '109cc5fa', 'c62a423c', 58, '2021-05-04', 1),
+(12, '75556bd5', 'c62a423c', 58, '2021-05-04', 1),
+(13, '09da78f1', 'c62a423c', 58, '2021-05-04', 1);
 
 -- --------------------------------------------------------
 
@@ -584,9 +626,10 @@ CREATE TABLE `tb_vaccinereg` (
 --
 
 INSERT INTO `tb_vaccinereg` (`vid`, `vkey`, `fname`, `phone`, `gender`, `idcard`, `yob`, `vaccinestatus`, `vacdate`, `vacphc`) VALUES
-(8, 'c62a423c', 'Anurag A', '917356308128', 'Male', '944171304193', '1998', '1', NULL, ''),
-(9, '90faa34a', 'Abhishek A', '917356308128', 'Male', '944171304193', '2003', '1', NULL, ''),
-(10, 'd6923e9c', 'Swapna T', '917356308128', 'Female', '944171304193', '1983', '1', NULL, '');
+(8, 'c62a423c', 'Anurag A', '917356308128', 'Male', '944171304193', '1998', '4', NULL, ''),
+(9, '90faa34a', 'Abhishek A', '917356308128', 'Male', '944171304193', '2003', '0', NULL, ''),
+(10, 'd6923e9c', 'Swapna T', '917356308128', 'Female', '944171304193', '1983', '0', NULL, ''),
+(11, 'bd1c6f8e', 'Anurag A', '917559014286', 'Male', '145634748940', '1998', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -724,6 +767,12 @@ ALTER TABLE `tb_quarreg`
   ADD PRIMARY KEY (`qid`);
 
 --
+-- Indexes for table `tb_sosambreg`
+--
+ALTER TABLE `tb_sosambreg`
+  ADD PRIMARY KEY (`sosid`);
+
+--
 -- Indexes for table `tb_vaccine`
 --
 ALTER TABLE `tb_vaccine`
@@ -845,7 +894,13 @@ ALTER TABLE `tb_policestation`
 -- AUTO_INCREMENT for table `tb_quarreg`
 --
 ALTER TABLE `tb_quarreg`
-  MODIFY `qid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `qid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `tb_sosambreg`
+--
+ALTER TABLE `tb_sosambreg`
+  MODIFY `sosid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tb_vaccine`
@@ -857,13 +912,13 @@ ALTER TABLE `tb_vaccine`
 -- AUTO_INCREMENT for table `tb_vaccinebookhistory`
 --
 ALTER TABLE `tb_vaccinebookhistory`
-  MODIFY `vbkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `vbkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb_vaccinereg`
 --
 ALTER TABLE `tb_vaccinereg`
-  MODIFY `vid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `vid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_vehiclepass`

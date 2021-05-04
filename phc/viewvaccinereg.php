@@ -6,7 +6,7 @@
       include 'connection.php';
       include 'phcheader.php';
       $phcid = $_COOKIE['lkey'];
-      $sql="select * from tb_quarreg where phcid='".$phcid."'";//echo $sql;exit;
+      $sql="select * from tb_vaccinereg inner join tb_vaccinebookhistory on tb_vaccinereg.vkey=tb_vaccinebookhistory.uid where phcid='".$phcid."'";//echo $sql;exit;
       $result = mysqli_query($conn,$sql);
 ?>
 
@@ -28,12 +28,10 @@
         <thead>
     <tr style="text-align: center;">
       <th>Full Name</th>
-      <th>Address</th>
-      <th>District</th>
+      <th>Gender</th>
       <th>Phone #</th>
-      <th>Start - End Date</th>
       <th>ID #</th>
-      <th>Feedback</th>
+      <th>YOB</th>
       <th>Document</th>
       <th>Notify / Update</th>
       <th>Active / Inactive</th>
@@ -43,11 +41,11 @@
   <?php while ($row=mysqli_fetch_array($result))
   { ?>
     <tr style="text-align: center;">
-      <td><?php echo $row['fname']." ".$row['lname']; ?></td>
-      <td><?php echo $row['address']; ?></td>
-      <td><?php echo $row['district']; ?></td>
-      <td><?php echo $row['phno']; ?></td>
-      <td><?php echo $row['sdate']."----".$row['edate']; ?></td>
+      <td><?php echo $row['fname']; ?></td>
+      <td><?php echo $row['gender']; ?></td>
+      <td><?php echo $row['phone']; ?></td>
+      <td><?php echo $row['idcard']; ?></td>
+      <td><?php echo $row['yob'];?></td>
       <td><?php echo $row['idno']; ?></td>
       <td><?php $status = $row['qfeedback'];
                                             if($status==NULL)

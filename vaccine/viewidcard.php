@@ -96,7 +96,7 @@ else if($v==1) //scheduled
 else if($v==2) //dose 1 taken and dose 2 no schduled
 { ?>
   <a href=""><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 1</i></button></a>
- <a href=""><button class="btn btn-outline-danger">Schedule Now</button></a> <?php
+ <a href="schedule2.php?t=<?php echo $row['vkey']; ?>&sch2=true"><button class="btn btn-outline-danger">Schedule Now</button></a> <?php
 }
 else if($v==3) //dose 1 taken and dose 2 scheduled
 {

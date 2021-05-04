@@ -16,7 +16,15 @@
 		$sql="update tb_vaccine set vtotal='".$vcount."' where vid='".$vid."'";
 		$result = mysqli_query($conn,$sql);
 
-		$sql="update tb_vaccinereg set vaccinestatus='1' where vkey='".$userkey."'";
+		if(isset($_POST['sch2']))
+		{
+			$sql="update tb_vaccinereg set vaccinestatus='3' where vkey='".$userkey."'";
+		}
+		else
+		{
+			$sql="update tb_vaccinereg set vaccinestatus='1' where vkey='".$userkey."'";
+		}
+		
 		$result = mysqli_query($conn,$sql);
 
 		if($result)

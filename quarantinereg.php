@@ -14,9 +14,9 @@
 
     <input type="text" id="inputPhone" class="form-control" placeholder="[Enter Country Code + Phone Number] : Eg: +91**********" required="" autofocus="" ><br>
     <div id="recaptcha-container"></div><br>
-    <button class="btn btn-success btn-block" type="button" id="phoneloginbtn"><i class="fas fa-sign-in-alt"></i> SEND OTP</button><br><hr>
+    <button class="btn btn-outline-success btn-block" type="button" id="phoneloginbtn"><i class="fas fa-sign-in-alt"></i> SEND OTP</button><br><hr>
     <input type="password" id="inputOtp" class="form-control" placeholder="OTP" required=""><br>
-    <button class="btn btn-primary btn-block" type="button" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button>
+    <button class="btn btn-outline-primary btn-block" type="button" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button>
 </form>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>

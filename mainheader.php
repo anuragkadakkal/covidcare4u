@@ -225,7 +225,7 @@ session_start();
 				
 				
 
-				<li><a href=""><button class="btn btn-warning rounded btn-sm mr-2">&nbsp;<i class="fa fa-ambulance mr-1">&nbsp;SOS Ambulance</i></button></a></li>
+				<li><a href="sosambulance.php"><button class="btn btn-warning rounded btn-sm mr-2">&nbsp;<i class="fa fa-ambulance mr-1">&nbsp;SOS Ambulance</i></button></a></li>
 				
 				<li><a href="" id="myModal" class="" data-toggle="modal" data-target="#exampleModalCenter">Login</a></li>
 			</ul>

@@ -9,6 +9,10 @@
       $district=$_POST['district'];
       $phcid=$_POST['phcid'];
       $userkey=$_POST['userkey'];
+      if(isset($_POST['sch2']))
+      {
+        $sch=$_POST['sch2'];
+      }
 ?>
 
 
@@ -103,6 +107,15 @@
           <input type="hidden" name="phcid" value="<?php echo $phcid;?>">
           <input type="hidden" name="vcount" value="<?php echo $row['vtotal']?>">
           <input type="hidden" name="userkey" value="<?php echo $userkey; ?>">
+
+          <?php 
+                if(isset($sch))
+                { ?>
+                    <input type="hidden" name="sch2" value="<?php echo $sch; ?>">
+       <?php    }
+
+              ?>
+         
           <button type="submit" class="btn btn-outline-success">Confirm</button>
         </form>
       </div>

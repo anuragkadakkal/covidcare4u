@@ -31,6 +31,11 @@ $phone=substr($phone,3,12);//exit;
 						</div>
 
 						<div class="form-group">
+							<input type="email" name="emailid"  class="form-control input-sm" placeholder="Email ID">
+						</div>
+
+
+						<div class="form-group">
                         	<select class="form-control bfh-states country" name="district" data-country="US" data-state="CA">
 								<option value="null">Select District</option>
 								<option value="Trivandrum">Trivandrum</option>

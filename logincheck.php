@@ -52,10 +52,11 @@
 			{
 				header("location:phc/drhome.php");
 			}
-			else
+			else if($c==7)
 			{
-
+				header("location:ambulance/ambulancehome.php");
 			}
+			else{}
 		}
 		else if ($d==2)
 	    {

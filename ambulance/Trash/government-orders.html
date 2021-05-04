@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from dashboard.kerala.gov.in/government-orders.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 18:53:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="title" content="GoK Dashboard |Official Kerala COVID-19 Statistics">
+<meta name="description" content="Official Kerala COVID-19(corona) tracker. Vaccination Status, Statistics of cases, location, quarantined, test results, community kitchen, Social volunteer force etc.">
+<meta name="keywords" content="covid cases in kerala, covid kerala, corona in kerala,covid samples tested in kerala, kerala covid, covid dshboard kerala">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="en">
+<meta name="revisit-after" content="0.5 days">
+<meta name="author" content="Kerala State IT Mission, C-DIT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Logo.png"  >
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<title>GoK Dashboard | Official Kerala COVID-19 Statistics</title>
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  
+ <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+   <link rel="stylesheet" href="jquery.dataTables.min.css"> 
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+	
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/GoK.png"
+           alt=" GoK Logo"
+           class="brand-image img-circle "
+           >
+      <span class=" font-weight-light text-gray">Kerala : COVID-19 Battle</span>
+    </a>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/Logo.gif"
+           alt=" Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">GoK Dashboard</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+        <div class="info text-gray">
+          <i>#KeralaFightsCorona</i>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+            <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+		
+				<li class="nav-item">
+				<a  href="index-2.html" class="nav-link " >
+				<i class="nav-icon fas fa-home"></i>
+				<p>
+				Dashboard
+				</p>
+				</a>
+				</li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-newspaper text-red"></i>
+              <p>
+                Daily Reporting
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="daily.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://dashboard.kerala.gov.in/dailyreporting-view-public-districtwise.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="deaths.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Deaths Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bed text-info"></i>
+              <p>
+                Quarantine Report
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="quarantine-view-public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="quar_dst_wise_public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+
+
+				<li class="nav-item">
+				<a  href="testing-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-flask text-pink"></i>
+				<p>
+				Test Results
+				</p>
+				</a>
+				</li>
+		            		 <li class="nav-item">
+            <a  href="vaccination.html" class="nav-link ">
+             <i class="nav-icon fa fa-syringe text-success "></i>
+              <p>
+                Vaccination
+                
+              </p> 
+            </a>
+          </li>
+		  
+		      <li class="nav-item">
+				<a  href="hotspots.html" class="nav-link " >
+				<i class="nav-icon fas fa-map-marker text-warning"></i>
+				<p>
+				Hotspots
+				</p>
+				</a>
+				</li> 
+				
+
+				
+                <li class="nav-item">
+                <a href="volunteers.html" class="nav-link ">
+                <i class="nav-icon fas fa-users" style="color:#8f54fb"></i>
+                <p>
+                Social Volunteer Force
+                </p>
+                </a>
+                </li>
+                
+                <li class="nav-item">
+                <a href="psycosocial.html" class="nav-link ">
+                <i class="nav-icon fas fa-brain" style="color:#49B283"></i>
+                <p>
+                Psychosocial Support
+                </p>
+                </a>
+                </li>
+                
+				<li class="nav-item">
+				<a  href="ck-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-utensils text-orange"></i>
+				<p>
+				Community Kitchen
+				</p>
+				</a>
+				</li>		  
+ 
+ 				<li class="nav-item">
+				<a  href="destitute-rehabilitation.html" class="nav-link " >
+				<i class="nav-icon fas fa-hands-helping text-green"></i>
+				<p>
+				Destitute Rehabilitation
+				</p>
+				</a>
+				</li>                
+                		 <li class="nav-item">
+            <a target="_blank" href="https://donation.cmdrf.kerala.gov.in/index.php/Dashboard/allType_transaction" class="nav-link">
+              <i class="nav-icon fas fa-rupee-sign text-warning"></i>
+              <p>
+                CMDRF Donation
+               
+              </p>
+            </a>
+          </li>
+				
+           <div class="info text-gray">
+          <i>Useful Links</i>
+        </div>
+            		  		 <li class="nav-item">
+            <a  href="onlinedr.html" class="nav-link ">
+              <i class="nav-icon fa fa-plus text-danger " style="background:#FFF; border-radius:25px"></i>
+              <p>
+                Online Doctor Service
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a target="_blank" href="http://dhs.kerala.gov.in/ഡെയിലി-ബുള്ളറ്റിന്‍/" class="nav-link ">
+              <i class="nav-icon fas fa-newspaper "></i>
+              <p>
+                Daily Medical Bulletin
+                
+              </p>
+            </a>
+          </li>
+
+
+           <div class="info text-gray">
+          <i>Awareness</i>
+        </div>
+
+
+		  		 <li class="nav-item">
+            <a  href="government-orders.html" class="nav-link ">
+              <i class="nav-icon fas fa-gavel text-danger "></i>
+              <p>
+                Government Orders
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="faqs.html" class="nav-link ">
+              <i class="nav-icon fas fa-question-circle text-info "></i>
+              <p>
+                FAQs
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="helplines.html" class="nav-link ">
+              <i class="nav-icon fas fa-phone-volume text-warning "></i>
+              <p>
+                Helplines
+                
+              </p>
+            </a>
+          </li>
+          
+          	<!--	 <li class="nav-item">
+            <a target="_blank" href="https://keralabattlescovid.in" class="nav-link ">
+              <i class="nav-icon fa fa-info-circle text-info "></i>
+              <p>
+                Kerala Battles Covid
+                
+              </p>
+            </a>
+          </li> -->
+          
+
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+           
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active">Updated: 27-04-2021 6:33 pm</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+  
+	<title>Government Orders - Official Kerala COVID-19 Dashboard</title>
+   <script src="sorttable.js"></script>
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+
+	          <div class="row">
+<div class="col-md-12" >
+          <div class="card card-danger" >
+              <div class="card-header">
+<h3 class="card-title"><i class="fa house-user text-warning"> </i> Kerala Government Guidelines & Advisory related to COVID-19 </h3>
+<div class="card-tools">
+  <button type="button"  data-card-widget="maximize"><i class="fas fa-expand"></i>
+            </div>
+            </div>
+
+            <!-- /.card-body -->
+            <!--////*****dist*****////-->
+            <div class="card-body table-responsive " >
+				  
+				  
+              <table  class="table table-striped table-bordered table-sm sortable">
+             <thead>
+                <tr>
+                  <th nowrap style="word-wrap: normal;word-break: keep-all">Date</td>
+				 <th>Order/Guideline   </th>             
+                
+					</thead>
+				  <tr>
+				    <td>25-04-2021</td>
+				    <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Kerala-State-COVID-19-guidelines-Version-3.pdf" target="_blank" rel="noopener" role="link">&nbsp;<strong>COVID-19    guidelines version-3</strong></a></td>
+			    </tr>
+				  <tr>
+				    <td>25-04-2021</td>
+				    <td><strong><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Guidelines-Treatment-Protocol-April-2021-merged.pdf" target="_blank" rel="noopener" role="link">&nbsp;COVID-19    treatment guidelines</a></strong></td>
+			    </tr>
+				  <tr>
+				    <td>25-04-2021</td>
+				    <td><strong><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Guidelines-Vaccination-Special-arrangements-for-Elderly-and-People-with-Disability.pdf" target="_blank" rel="noopener" role="link">&nbsp;Vaccination    – Special arrangements for Elderly and People with Disability</a></strong></td>
+			    </tr>
+			    <tr>
+                  <td nowrap style="word-wrap: normal;word-break: keep-all">23-04-2021</td>
+					
+                <td><strong><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Summary-Of-Covid-19-quarantine-and-isolation-guidelines.pdf" target="_blank" >&nbsp;Covid-19    quarantine and isolation guidelines 21-04-21</a></strong></td>
+                </tr>
+                <tr>
+                  <td>21-04-2021</td>
+                  <td><strong><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/GO-restrictions.pdf" target="_blank" >Covid    19 – Surge in positive cases – Restrictions for the effective containment of    Covid 19 – orders issued</a></strong></td>
+                </tr>
+                <tr>
+                  <td>21-04-2021</td>
+                  <td><strong><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/appendix-to-GO-on-restrictions.pdf" target="_blank" >&nbsp;</a></strong><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/appendix-to-GO-on-restrictions.pdf" target="_blank" >Essential    and emergency activities permitted on 24th and 25th April</a></td>
+                </tr>
+                <tr>
+                  <td>21-04-2021</td>
+                  <td><strong><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Guideline-Covid-19-Vaccination-planning-and-conduct.pdf" target="_blank" >&nbsp;Guideline    – Covid 19 Vaccination planning and conduct</a></strong></td>
+                </tr>
+                <tr>
+                  <td>18-04-2021</td>
+                  <td><strong><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/health_covid_18.pdf" target="_blank" >&nbsp;COVID-19    containment activities -Incoming travelers-Surveillance</a></strong></td>
+                </tr>
+                <tr>
+                  <td>15-04-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Guideline-Augmented-Testing-Strategy.pdf" target="_blank" >&nbsp;Augemented    testing strategy for Kerala State-April 2021</a></td>
+                </tr>
+                <tr>
+                  <td>13-04-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/GO-Rt-No-364-221-DMD.pdf" target="_blank" >&nbsp;<strong>COVID-19    Surge in positive cases-restrictions for the effective containment of    Covid-19</strong></a></td>
+                </tr>
+                <tr>
+                  <td>29-03-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/go353.pdf" target="_blank" >Covid-19    -phase 5 unlocking of general lockdown and extension of lockdown for    effective containment of Covid-19</a></td>
+                </tr>
+                <tr>
+                  <td>31-03-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/03/advisory-on-COVID-Appropriate-Behaviour-and-Vaccination.pdf" target="_blank" >Advisory    on COVID appropriate behaviour and vaccination</a></td>
+                </tr>
+                <tr>
+                  <td>01-03-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/03/Guideline-for-COVID19-Vaccination-for-the-priority-groups_compressed.pdf" target="_blank" >Guideline    for COVID 19 vaccination for the priority groups&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>27-02-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/02/Guidelines-COVID-19-RTPCR-testing-outsourced-model.pdf" target="_blank" >Guidelines    for COVID 19 testing – through Government laboratories and outsource model    RTPCR mobile laboratories and RTPCR (static) laboratories&nbsp;&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>26-02-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/02/document-2.pdf" target="_blank" >&nbsp;RTPCR    -mobile unit -outsourcing -free of cost -modified</a></td>
+                </tr>
+                <tr>
+                  <td>19-02-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/02/Guidelines-COVID19-Vaccination-Camps-1.pdf" target="_blank" >&nbsp;Advisory    on organization of mass covid 19 vaccination camp facility for front line    workers&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>19-02-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/02/img02192021_0002.pdf" target="_blank" >&nbsp;Guidelines    for conduct of Kerala Legislative Assembly Elections 2021 during    COVID-19&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>13-02-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/02/Guidelines-Testing-simultaneously-swabbing.pdf" target="_blank" >&nbsp;Advisory    regarding swabbing of symptomatic individuals undergoing rapid antigen test    for COVID 19</a></td>
+                </tr>
+                <tr>
+                  <td>09-02-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/02/F2-31-2020-Part-20-dated-09-02-2021.pdf" target="_blank" >COVID-19-    Enhancing 1,00,000 tests/day – Functioning of Government labs – further    instructions – Reg</a></td>
+                </tr>
+                <tr>
+                  <td>09-02-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/02/Guideline-Testing-Feb-2021.pdf" target="_blank" >Revised    testing guidelines for COVID-19&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>09-02-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/02/go326.pdf" target="_blank" >Authorizing    all DMO (H) to issue COVID patient certificates COVID suspect person    certificate&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>02-02-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/02/Guidelines-Back-to-the-basics-campaign.pdf" target="_blank" >Covid-19    Guidelines- Back to the basics campaign</a></td>
+                </tr>
+                <tr>
+                  <td>15-01-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Adviosry-COVID-prevention-at-Vaccination-Centres.pdf" target="_blank" >Advisory    on COVID prevention measures at COVID-19 Vaccination Centres</a></td>
+                </tr>
+                <tr>
+                  <td>04-01-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Advisory-Conduct-of-Festivals-in-context-of-COVID19.pdf" target="_blank" >Advisory    for safe conduct of festivals in the context of COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>04-01-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Adviosry-Performance-Artists-and-Programs-Indoors-and-Outdoors.pdf" target="_blank" >Advisory    for performance artists and programmes (indoor and outdoor) in the context of    COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>04-01-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Advisory-Opening-of-Cinema-halls.pdf" target="_blank" >Advisory-    Opening of Cinema halls</a></td>
+                </tr>
+                <tr>
+                  <td>04-01-2021</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Advisory-Opening-of-Swimming-Pools-and-Sports-Centres.pdf" target="_blank" >Advisory    with regard to safe opening of Swimming Pools and Sports centres in the    context of COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>01-01-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/01/GO-Rt-12-2021.pdf" target="_blank" >Refixing    the COVID-19 test rates&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>30-12-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/12/go2395.pdf" target="_blank" >Fixing    the rate for RT LAMP based COVID-19 test</a></td>
+                </tr>
+                <tr>
+                  <td>16-12-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Amendment-to-Revised-Advisory-Sabarimala-pilgrimage-1.pdf" target="_blank" >Amendment    to Revised Advisory on Sabarimala pilgrimage in the context of COVID19</a></td>
+                </tr>
+                <tr>
+                  <td>14-12-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/12/1607956030656_Revised-Advisory-sabarimala-pilgrimage.pdf" target="_blank" >Revised    Health Advisory on Sabarimala Pilgrimage in the context of COVID 19</a></td>
+                </tr>
+                <tr>
+                  <td>10-12-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/12/CoVID-19-Vaccine-introduction-GO-.pdf" target="_blank" >GO    -Coordination mechanism for COVID 19 vaccine introduction</a></td>
+                </tr>
+                <tr>
+                  <td>10-12-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/12/document531-1.pdf" target="_blank" >GO    on Covid testing rates in kerala</a></td>
+                </tr>
+                <tr>
+                  <td>01-12-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Addendum-COVID-19-Revised-Testing-Guidelines-dated-15th-Aug-2020.pdf" target="_blank" >Addendum    to the COVID-19 revised testing guidelines&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>01-12-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/12/CPT-Revised-Advisory.pdf" target="_blank" >Revised    advisory to optimize the evidence based use of convalescent plasma therapy in    COVID 19</a></td>
+                </tr>
+                <tr>
+                  <td>28-11-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/11/1606572165274_Advisory-Screening-and-Testing-of-Election-Duty-Officials.pdf" target="_blank" >COVID    19 Screening and testing of officers, staff and security personnel involved    in election dutie</a></td>
+                </tr>
+                <tr>
+                  <td>24-11-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Guidelines-Management-of-Dead-Bodies-in-context-of-COVID.pdf" target="_blank" >Guidelines    on Dead Body management in the context of COVID 19</a></td>
+                </tr>
+                <tr>
+                  <td>19-11-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/11/Advisory-Discharged-COVID-patient-retesting.pdf" target="_blank" >Advisory    with regard to re-testing of patients who have been cures of COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>15-11-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/11/sabarimala-action-plan-final-edited.pdf" target="_blank" >Sabarimala    action plan</a></td>
+                </tr>
+                <tr>
+                  <td>15-11-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/11/sabarimala-G-O.pdf" target="_blank" >Health    Advisory on Sabarimala pilgrimage in the context of COVID19</a></td>
+                </tr>
+                <tr>
+                  <td>14-11-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-13-at-12.09.41-PM-1-9-files-merged.pdf" target="_blank" >കരുതലോടെ    ശബരിമല തീർത്ഥാടനം</a></td>
+                </tr>
+                <tr>
+                  <td>08-11-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/11/Advisory-Sabarimala-Pilgrimage-modified.pdf" target="_blank" >Health    Advisory on Sabarimala Pilgrimage in the context of COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>28-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Guidelines-Post-COVID-Clinics.pdf" target="_blank" >Guidelines    on the setting up of post COVID clinics</a></td>
+                </tr>
+                <tr>
+                  <td>16-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Advisory-Narvaratri-Festival-celebration-during-COVID-19-pandemic-.pdf" target="_blank" >Advisory    for Navaratri festival celebrations during COVID-19 pandemic</a></td>
+                </tr>
+                <tr>
+                  <td>14-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Guidelines-LDMS-Supportive-Supervision-and-daily-reporting-by-District-and-the-State-Summary-of-COVID.pdf" target="_blank" >Guidelines    on LDMS supportive supervision and daily reporting of district and state    summary of COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>14-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Gudelines-Revised-Discharge-guidelines-for-COVID-19-patients-1.pdf" target="_blank" >Revised    discharge guidelines for COVID -19 patients</a></td>
+                </tr>
+                <tr>
+                  <td>14-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Guidelines-Tele-ICU-and-Intensive-Care-Servcies-1.pdf" target="_blank" >Guidelines-    Tele ICU and Intensive Care Servcies</a></td>
+                </tr>
+                <tr>
+                  <td>14-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/COVID-INTENSIVE-CARE-SET-UP.pdf" target="_blank" >Proposal    for strengthening critical care support&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>12-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Guidelines-STEP-KIOSKS-for-COVID-testing-.pdf" target="_blank" >COVID    -19 Screening, Testing, Education &amp; Prevention (Step) Kiosk</a></td>
+                </tr>
+                <tr>
+                  <td>06-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/gort1795.pdf" target="_blank" >Honoring    prescriptions and Lab investigation request via Tele Medicine platforms&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>03-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Technical-Paper-COVID-19-ICMR-Sero-Surveillance-Study.docx.pdf" target="_blank" >Technical    paper COVID-19 ICMR sero surveillance second round</a></td>
+                </tr>
+                <tr>
+                  <td>03-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Technical-paper-COVID-19-AB-Sero-surveillance-Base-Line-Report.docx.pdf" target="_blank" >Technical    paper COVID-19 rapid anti body test sero-surveillance-base line report</a></td>
+                </tr>
+                <tr>
+                  <td>03-10-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Guidelines-HCW-amendment.docx.pdf" target="_blank" >Amendment    to the health care worker resource management guideline for centres providing    COVID-19 care</a></td>
+                </tr>
+                <tr>
+                  <td>22-09-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2021/04/covid22092020.pdf" target="_blank" >Quarantine    guidelines for travelers</a></td>
+                </tr>
+                <tr>
+                  <td>22-09-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Exams-1-1601012188.pdf" target="_blank" >Generic    guidelines on conduct of examinations in the background of COVID-19 pandemic</a></td>
+                </tr>
+                <tr>
+                  <td>14-09-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/09/Guidelines-Prevention-and-Management-of-COVID-in-Prisons.pdf" target="_blank" >Guidelines-    Prevention &amp; Management of COVID-19 in Prisons&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>11-09-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/09/Guidelines-Integrated-TB-Diagnosis-algorithm-in-context-COVID.pdf" target="_blank" >&nbsp;Integrated    TB diagnosis algorithm in the context of COVID-19&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>27-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Guidelines-Sentinel-Surveillance-September.pdf" target="_blank" >&nbsp;Addendum    to the advisory on sentinel surveillance&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>25-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Guidelines-Clarifications-NEET-Examination.pdf" target="_blank" >&nbsp;Clarifications    regarding Quarantine for NRK&nbsp; Students appearing for NEET exam&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>22.08.2020</td>
+                  <td> <a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/G-O-Guidelines-1-3-files-merged.pdf" target="_blank">&nbsp;COVID-19    Guidelines for the conduct of Legislative Assembly session</a></td>
+                </tr>
+                <tr>
+                  <td>22.08.2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/1598163078157_Guideline-COVID-19-Contact-Tracing-High-Risk-Low-Risk-and-Quarantine.pdf" target="_blank" >&nbsp;COVID-19    Contact tracing and Quarantine guidelines</a></td>
+                </tr>
+                <tr>
+                  <td>17-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Guidelines-COVID-Sample-Management-inside-Virus-Diagnostic-Laboratory-.pdf" target="_blank" >&nbsp;Covid-19    Sample management inside a virus diagnostic Laboratory&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>15-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/COVID-19-Rx-Guidelines-15th-August-2020.pdf" target="_blank" >COVID-19    Treatment guidelines</a></td>
+                </tr>
+                <tr>
+                  <td>15-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/1597486460508_COVID-19-Revised-Testing-Guidelines-15th-August-2020.pdf" target="_blank" >COVID-19    revised testing guidelines</a></td>
+                </tr>
+                <tr>
+                  <td>14-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Guidelines-Independence-Day-COVID-Protocol.pdf" target="_blank" >COVID    Protocol for the Independence day Celebrations at the State Head Quarter and    at the District Head Quarters</a></td>
+                </tr>
+                <tr>
+                  <td>14-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Guidelines-COVID-Protocol-for-VIP.pdf" target="_blank" >&nbsp;COVID-19    Protocol for VIPs</a></td>
+                </tr>
+                <tr>
+                  <td>12-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Addendum-Testing-sample-Technician-Staff-Nurse.pdf" target="_blank" >&nbsp;Addendum    to sample testing, collection and transport guidelines for Laboratory    Diagnosis&nbsp;&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>10-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Guidelines-NEET-Exam-2020-Final-1.pdf" target="_blank" >&nbsp;Advisory    regarding conduct of NEET 2020</a></td>
+                </tr>
+                <tr>
+                  <td>09-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Technical-paper-COVID-19-Sampling-Laboratory-Testing-Management.docx.pdf" target="_blank" >Technical    paper – COVID 19 Sampling Laboratory Testing Management</a></td>
+                </tr>
+                <tr>
+                  <td>08-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Advisory-Restricting-Visitors-to-Hospitals.pdf" target="_blank" >&nbsp;Advisory    restricting visitors to hospitals caring airline accident patients&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>08-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Advisory-Air-crash-Treatment-of-Crew-Passenger-and-Rescue-workers.pdf" target="_blank" >&nbsp;Advisory    on treatment of passengers and crew members and on quaranting and testing of    the volunteers engaged in rescue work at karipur international Airport,    Kozhikode</a></td>
+                </tr>
+                <tr>
+                  <td>07-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Advisory-Home-care-Asymptomatic-COVID19-Postive-patient.pdf" target="_blank" >&nbsp;Advisory    on home care of Asymptomatic COVID-19 Positive patients</a></td>
+                </tr>
+                <tr>
+                  <td>07-08-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Guidelines-Health-preparedness-managing-calamities-covid-period.pdf" target="_blank" >&nbsp;Framework    for Health System Preparedness for managing natural calamities in the context    of COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>29-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Advisory-HCW-Home-Isolation.pdf" target="_blank" >&nbsp;Advisory    for home isolation of asymptomatic COVID-19 positive Health Care    Workers&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>28-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guidelines-DPMSU-and-SPMSU-for-Bed-ICU-management.pdf" target="_blank" >COVID    19 Dedicated Management structures for coordinating admission referrals &amp;    inpatient facilities</a></td>
+                </tr>
+                <tr>
+                  <td>28-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guidelines-CFLTC-Planning-and-Management-of-infrastructure-and-Admissions.pdf" target="_blank" >CFLTC    – Planning and Management of infrastructures and Admissions</a></td>
+                </tr>
+                <tr>
+                  <td>24-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guidelines-HR-Deployment-in-COVID-Hospital-and-CFLTCs.pdf" target="_blank" >Health    Human Resource pool for deployment at CFLTC,COVID hospitals and other health    facilities</a></td>
+                </tr>
+                <tr>
+                  <td>21-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guidelines-Amendement-to-the-Revised-Discharge-Guidelines-of-COVID-patients.pdf" target="_blank" >Amendment    to the revised discharge guidelines for COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>19-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guidelines-Thiruvananthapuram-Cluster-Testing-.pdf" target="_blank" >COVID-19    Testing at large community clusters&amp;coastal area -Thiruvananthapuram</a></td>
+                </tr>
+                <tr>
+                  <td>18-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Advisory-Returning-Guest-Workers.pdf" target="_blank" >Advisory    on Quarantine and COVID-19 testing of guest workers returning to    Kerala&nbsp;&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>17-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guidelines-Mapping-and-cluster-identification-2.pdf" target="_blank" >Instruction    to district surveillance&nbsp;officers on preparing a contact map of cases    from local transmission&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>17-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guidelines-SS-Coastl-Tribal-and-Urban-Slums.pdf" target="_blank" >Guidelines    – Sentinel surveillance in coastal, slum&amp;Tribal areas</a></td>
+                </tr>
+                <tr>
+                  <td>02-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Advisory-Airport-testing-and-Transportation-management.pdf" target="_blank" >Addendum    to Advisory-Airport testing and Transportation management</a></td>
+                </tr>
+                <tr>
+                  <td>02-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guidelines_Cause_of_Death_COVID-19.pdf" target="_blank" >Guidelines    for certification and classification(Coding) of COVID-19 as cause of Death</a></td>
+                </tr>
+                <tr>
+                  <td>02-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Advisory-Antigen-Testing.pdf" target="_blank" >Advisory    for performing Rapid Antigen Diagnostic Assay for COVID-19&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>02-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guideliines-Augmenting-Testing-Sample-Collection-Management.pdf" target="_blank" >Advisory    on Augmenting Testing – Sample Collection Management</a></td>
+                </tr>
+                <tr>
+                  <td>01-07-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Guidelines-Revised-Discharge-Policy.pdf" target="_blank" >Revised    discharge guideline for COVID-19 patients</a></td>
+                </tr>
+                <tr>
+                  <td>28-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Advisory-CLIA-Testing-Malapuram.pdf" target="_blank" >Advisory    on using Chemilnminescent Immunoassay(CLIA) based serology&nbsp;test in    containment zone ( Malapuram)</a></td>
+                </tr>
+                <tr>
+                  <td>28-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Special-Team-Malapuarm-Deployment-Order-.pdf" target="_blank" >Special    Team – Malapuarm- Deployment Order</a></td>
+                </tr>
+                <tr>
+                  <td>28-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Guidelines-Supportive-Supervision-for-Special-Team-.pdf" target="_blank" >Guidelines    – Generic frame work for Supportive Supervision by the Special Team</a></td>
+                </tr>
+                <tr>
+                  <td>25-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Advisory-Airport-Testing-Protocol.pdf" target="_blank" >Advisory    on testing of expatriates screened positive for IgM at Airport</a></td>
+                </tr>
+                <tr>
+                  <td>24-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/ADV-1.pdf" target="_blank" >Advisory    on recording and reporting of COVID tests</a></td>
+                </tr>
+                <tr>
+                  <td>22-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Advisory-Pooled-testing-RTPCR-XPERT-TrueNAT.pdf" target="_blank" >Advisory    for pooled testing&nbsp;for COVID -RTPCR/Xpert/TrueNAT tests</a></td>
+                </tr>
+                <tr>
+                  <td>21-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/HCW-Management-guidelines-20.06.20.pdf" target="_blank" >Health    care Worker Resource Management guideline for centres</a></td>
+                </tr>
+                <tr>
+                  <td>18-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Advisory-Blood-Sample-Collection.pdf" target="_blank" >Advisory    regarding collection of blood samples for COVID testing&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>18-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Advisory-Addendum-to-TrueNAT-test-.pdf" target="_blank" >&nbsp;Addendum    for truenat Beta CoV testing at Government Laboratories -Advisory for step II    assay for truenat&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>14-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/SOP-CFLTC-14.06.20.docx.pdf" target="_blank" >Standard    operating procedure(SOP) for health care in COVID-19 first line treatment    centres(CFLTC)</a></td>
+                </tr>
+                <tr>
+                  <td>10-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/CFLTC-ADDENDUM-10.06.20.pdf" target="_blank" >Addendum    to Advisory for patient admissions to COVID first line treatment centres    (CFLTC)</a></td>
+                </tr>
+                <tr>
+                  <td>06-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Advisory-AB-testing-1.pdf" target="_blank" >Advisory    on COVID-19 community surveillance using rapid antibody tests</a></td>
+                </tr>
+                <tr>
+                  <td>05-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Revised-Guideline-COVID-19-Testing-Quarantine-Isolation.pdf" target="_blank" >Revised    Guideline- COVID 19 – Testing and Quarantine/ Isolation</a></td>
+                </tr>
+                <tr>
+                  <td>03-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Advisory-on-Performance-Assessment-of-District-Surveillance-Unit.pdf" target="_blank" >Advisory    on Performance Assessment of District Survellance unit&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>01-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Addendum-Prisoners-CFLTC.pdf" target="_blank" >COVID-19,    Addendum to the advisory for Quarantine and testing of prisoners WHO newly    incarcerated or returning to jail after parole</a></td>
+                </tr>
+                <tr>
+                  <td>01-06-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Guideline-Plasma-treatment-Protocol.pdf" target="_blank" >COVID-19    Guideline – Protocol for compassionate use of convalescent Plasma for    treatment of patients with severe/critical COVID-19 Protocol</a></td>
+                </tr>
+                <tr>
+                  <td>31-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/TrueNat-Beta-Cov-Testing.pdf" role="link">COVID-19 TrueNat Beta Cov    Testing at Government Laboratories</a></td>
+                </tr>
+                <tr>
+                  <td>29-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Advisory-Technical-Examination-.pdf" target="_blank" >COVID-19    Health Advisory for the conduct of examinations in Polytechnical    colleges/Technical Education Departments</a></td>
+                </tr>
+                <tr>
+                  <td>27-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/GORT-939-2020-Health.pdf" target="_blank" >COVID-19    Instructions&nbsp;for using GeneXpert/TrueNAT-beta-CoV in the private sector    in Kerala</a></td>
+                </tr>
+                <tr>
+                  <td>24-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Advisory-School-Students-Examination-MODIFIED-.pdf" target="_blank" >Covid-19    Health advisory students appearing the examination</a></td>
+                </tr>
+                <tr>
+                  <td>23-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Advisory-driver-crew-passengers.pdf" target="_blank" >Covid-19    health advisory for drivers, crew and passengers of taxis and interstate    vehicles</a></td>
+                </tr>
+                <tr>
+                  <td>21-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/GO-Ms-No-100-2020-GAD-dated-18-05-2020.pdf" target="_blank" >കോവിഡ്-19    നിര്‍വ്യാപന പ്രവര്‍ത്തനങ്ങള്‍-വിവിധ വകുപ്പുകളില്‍ അനുവര്‍ത്തിച്ചു വരുന്ന    ഇലക്ട്രോണിക് സങ്കേതങ്ങളെ ഏകോപിപ്പിച്ച് ഉത്തരവ്</a></td>
+                </tr>
+                <tr>
+                  <td>21-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Advisory-COVID19-Patient-Clinical-data-reporting.pdf" target="_blank" >Advisory    on COVID-19 patient clinical data reporting by COVID Hospitals&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>21-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Addendum-Constitution-of-SMB.pdf" target="_blank" >COVID-19-Addendum    -Constitution of State Medical Board</a></td>
+                </tr>
+                <tr>
+                  <td>20-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Advisory-testing-of-Prisoners.pdf" target="_blank" >COVID-19    -Advisory for Quarantine and testing of Prisoners who are newly incarcerated    or returning to Jail after the parole</a></td>
+                </tr>
+                <tr>
+                  <td>20-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/GORT845-2020-HFWD-Cancer-Care.pdf" target="_blank" >Cancer    care treatment strategy for COVID-19 positive or suspected COVID-19 patients</a></td>
+                </tr>
+                <tr>
+                  <td>19-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Advisory-on-Performance-Assessment-for-COVID-Hospitals.pdf" target="_blank" >Advisory    on performance assessment for COVID Hospitals&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>14-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/railway_14052020.pdf" target="_blank" >Railway    Surveillance Guidelines</a></td>
+                </tr>
+                <tr>
+                  <td>14-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Advisory-Sentinel-surveillance-14th-May-2020.pdf" target="_blank" >Advisory    on COVID -19 Sentinel Surveillance activity using RT-PCR</a></td>
+                </tr>
+                <tr>
+                  <td>13-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Advisory-on-RT-PCR-Pooled-testing.pdf" target="_blank" >Advisory    on RT-PCR Pooled testing for COVID-19&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>13-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/GORT872-2020-Health-Covid19Jagratha.pdf" target="_blank" >COVID    -19 Jagratha platform for real time surveillance, care and support for people    affected/Quarantined by covid 19</a></td>
+                </tr>
+                <tr>
+                  <td>10-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/857-2020-COVID-19-TREATMENT-PROCEDURE-3.pdf" target="_blank" >കോവിഡ്    -19 മറ്റ് സംസ്ഥാനങ്ങളില്‍ നിന്നും എത്തുന്ന കേരളീയരുടെ ക്വാറന്‍റൈന്‍ സംവിധാനം    -തദ്ദേശസ്വയംഭരണ സ്ഥാപനങ്ങള്‍ നിര്‍വ്വഹിക്കേണ്ട ചുമതലകളും പ്രവര്‍ത്തനങ്ങളും    നിശ്ചയിച്ച് ഉത്തരവ്</a></td>
+                </tr>
+                <tr>
+                  <td>08-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/QAQC-ADVISORY-SIGNED-8.05.20.pdf" target="_blank" >Quality    assessment and quality control of Laboratories performing RT-PCR for COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>08-05-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/05/eye-care-signed-8.05.20.pdf" target="_blank" >COVID-19    Advisory on care of Ophthalmic Patients</a></td>
+                </tr>
+                <tr>
+                  <td>24-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/L-DSO-Lab-incharge-Reorganization-of-District-Lab-.pdf" target="_blank" >Reorganisation    of laboratories for sending routine covid samples&nbsp;By RT-PCR</a></td>
+                </tr>
+                <tr>
+                  <td>24-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Advisory-XPERT-NAT-Testing-.pdf" target="_blank" >COVID-19    Testing augmentation-Xpert-SARS-CoV-Testing&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>22-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/GO_Trunat.pdf" target="_blank" >COVID-19    Instructions for using GeneXpert/Truenat-beta-CoV in the private sector in    Kerala</a></td>
+                </tr>
+                <tr>
+                  <td>20-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Advisory-on-TB.pdf" target="_blank" >Advisory    for Ensuring TB services in Kerala in the context of COVID-19</a></td>
+                </tr>
+                <tr>
+                  <td>17-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/G.O.-ABT-pvt_compressed.pdf" target="_blank" >COVID-19    Antibody testing(IgG and IgM) in the private sector in Kerala</a></td>
+                </tr>
+                <tr>
+                  <td>16-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Advisory-for-restarting-Immunisation-activities-regarding-Universal-Immunisation-Programme.pdf" target="_blank" >Advisory    for restarting Immunization activities regarding Universal Immunisation    Programme</a></td>
+                </tr>
+                <tr>
+                  <td>15-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/2.-critical-care-29-7-19_Final.pdf" target="_blank" >Standard    Treatment Guidelines – Critical Care Medicine</a></td>
+                </tr>
+                <tr>
+                  <td>11-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/GO-Rt-709-2020.pdf" target="_blank" >COVID-19    Guidelines for conducting tests to identify community transmission</a></td>
+                </tr>
+                <tr>
+                  <td>10-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Advisory_Rapid-Test-.pdf.pdf" target="_blank" >Advisory    on using Rapid Diagnostic kits for COVID-19&nbsp; diagnosis and surveillance</a></td>
+                </tr>
+                <tr>
+                  <td>09-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/FAQ-on-Masks-9.4.20.pdf" target="_blank" >Frequently    asked Questions on cloth MASKS</a></td>
+                </tr>
+                <tr>
+                  <td>08-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/mask08042020.pdf" target="_blank" >തുണികൊണ്ടുള്ള    മാസ്ക്-ഫലപ്രദമായ ഉപയോഗരീതി</a></td>
+                </tr>
+                <tr>
+                  <td>07-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Advisory-MASK-Best-practices.pdf" target="_blank" >Cloth    MASK -Best practices</a></td>
+                </tr>
+                <tr>
+                  <td>07-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Use-of-Mask-Malayalam.pdf" target="_blank" >വായൂജന്യ    രോഗങ്ങളില്‍ നിന്നും രക്ഷനേടാന്‍ മാസ്‌ക് ഉപയോഗിക്കേണ്ട വിധം</a></td>
+                </tr>
+                <tr>
+                  <td>05-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/2.04.20-How-to-convert-Hospitals-into-COVID-Hospitals.pdf" target="_blank" >How    to convert Hospitals into COVID Hospitals</a></td>
+                </tr>
+                <tr>
+                  <td>01-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Advisory-Staff-management-at-Hospitals-.pdf" target="_blank" >&nbsp;COVID-19    Guidelines for Human Resource Management in COVID Hospitals&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>01-04-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Advisory-Addendum-to-revised-Testing-Admissoin-discharge-srategy.pdf" target="_blank" >COVID-19    Addendum to revised Guidelines for Testing, Quarantine, Hospital admission    and Discharge for COVID-19 based on current risk assesment Grid published on    12/03/2020</a></td>
+                </tr>
+                <tr>
+                  <td>31-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/How-to-convert-Hospital-into-COVID-Hospital.final-pdf.pdf" target="_blank" >COVID-19    Reference Guide for converting Hospitals into dedicated COVID Hospitals&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>31-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/Distribution-of-Laboratories-Reg.pdf" target="_blank" >COVID-19-    Guidelines for distribution of Laboratories</a></td>
+                </tr>
+                <tr>
+                  <td align="right">28-03-2020</td>
+                  <td>Mental Health Guidelines <a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/IEC-Health-Personal-pdf.pdf" target="_blank" rel="noopener" role="link">Health-Personal</a>        <a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/IEC-People-in-Isolation.pdf" target="_blank" rel="noopener" role="link">People-in-Isolation</a>          <a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/IEC-Elderly.pdf" target="_blank" rel="noopener" role="link">Elderly</a>      <a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/IEC-Public_-pdf.pdf" target="_blank" rel="noopener" role="link">Public </a>         <a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/04/IEC-Caregivers-of-Children-pdf.pdf" target="_blank" rel="noopener" role="link">Caregivers of Children</a></td>
+                </tr>
+                <tr>
+                  <td>28-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/COVID-19-Guidelines-for-Routine-Vaccination.pdf" target="_blank" >&nbsp;Guidelines    for Routine Vaccination including Out Reach Imminization program under UIP</a></td>
+                </tr>
+                <tr>
+                  <td>28-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/CCC_2.pdf" target="_blank" >COVID    19-Advisory for Patient admissions to COVID care center</a></td>
+                </tr>
+                <tr>
+                  <td>28-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/CFLTC_2.pdf" target="_blank" >&nbsp;COVID    19- Advisory for Patient admissions to COVID First-Line treatment    centre(CFLTC)</a></td>
+                </tr>
+                <tr>
+                  <td>28-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/Advisory-Resident-Association-.pdf" target="_blank" >&nbsp;കോവിഡ്    19- റസിഡന്‍റ്സ് അസോസിയേഷനുകള്‍ക്കുള്ള മാര്‍ഗ്ഗനിര്‍ദേശങ്ങള്‍..</a></td>
+                </tr>
+                <tr>
+                  <td>28-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/Advisory_Rapid-Test.pdf" target="_blank" >&nbsp;Advisory    on using Rapid Diagnostic Kits for COVID 19 Diagnosis and Surveillance</a></td>
+                </tr>
+                <tr>
+                  <td>26-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/ppe_260320202.pdf" target="_blank" >&nbsp;COVID    19-Guidelines on rational use Personal Protective Equipment</a></td>
+                </tr>
+                <tr>
+                  <td>25-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/guide_25032020.pdf" target="_blank" >&nbsp;COVID    19-Guidelines for distribution of Laboratories</a></td>
+                </tr>
+                <tr>
+                  <td>24-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/dental_24032020.pdf" target="_blank" >&nbsp;COVID-19    Advisory for infection control precautions to be adopted in Dental care    settings</a></td>
+                </tr>
+                <tr>
+                  <td>24-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/labour_24032020.pdf" target="_blank" >&nbsp;Covid    19-Advisory for Pregnancy and Labour Management</a></td>
+                </tr>
+                <tr>
+                  <td>24-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/interim_24032020.pdf" target="_blank" >COVID    19- Interim treatment Guidelines for Kerala State</a></td>
+                </tr>
+                <tr>
+                  <td>24-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/routine_24032020.pdf" target="_blank" >COVID    19-Guidelines for Routine Vaccination including Out Reach Immunization    programme&nbsp;&nbsp;</a></td>
+                </tr>
+                <tr>
+                  <td>24-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/medical_24032020.pdf" target="_blank" >State    Medical Board decision with regard to Quarantine of Health care workers WHO    are low risk Asymptomatic secondary contact of a proven COVID 19 case</a></td>
+                </tr>
+                <tr>
+                  <td>23-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/lsgd_23032020.pdf" target="_blank" >കോവിഡ്    19-പ്രതിരോധ പ്രവര്‍ത്തനങ്ങളുമായി ബന്ധപ്പെട്ട്&nbsp;തദ്ദേശ സ്വയംഭരണ    സ്ഥാപനങ്ങള്‍ ഏറ്റെടുക്കേണ്ട പ്രവര്‍ത്തനങ്ങളും ഉത്തരവാദിത്വങ്ങള്‍</a></td>
+                </tr>
+                <tr>
+                  <td>23-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/go580_23032020.pdf" target="_blank" >Constitution    of COVID 19 cells in various Departments(G.O.(Rt)No.580/2020/H&amp;FWD    dated-16/03/2020)</a></td>
+                </tr>
+                <tr>
+                  <td>23-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/shop_23032020.pdf" target="_blank" >COVID    19(nCorona) -Guidelines for Employees in Shopping centers and Shopping malls</a></td>
+                </tr>
+                <tr>
+                  <td>23-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/beaty_23032020.pdf" target="_blank" >COVID    19(nCorona) -Guidelines for Beauty Parlours and Saloons</a></td>
+                </tr>
+                <tr>
+                  <td>23-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/screen_23032020.pdf" target="_blank" >COVID    -19 Testing and treatment Algorithm</a></td>
+                </tr>
+                <tr>
+                  <td>23-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/adv_23032020.pdf" target="_blank" >Advisory    on the use of Hydroxy-chloroquin as prophylaxis for SARS-CoV-2 infection</a></td>
+                </tr>
+                <tr>
+                  <td>19-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/con_19032020.pdf" target="_blank" >&nbsp;COVID    19-Guidelines for exclusive arrangement for the foreign Tourists coming to    Kerala</a></td>
+                </tr>
+                <tr>
+                  <td>15-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/Adisory-Airport-arrangements-and-flow-chart-.pdf" target="_blank" >Adisory    – Airport arrangements and flow chart</a></td>
+                </tr>
+                <tr>
+                  <td>12-03-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/reg_12032020.pdf" target="_blank" >Revised    Guidelines for Testing, Quarantine, Hospital admission and discharge for    COVID 19 based on current risk assessment</a></td>
+                </tr>
+                <tr>
+                  <td>19-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/cor_19022020.pdf" target="_blank" >Matrix    for Discharge of persons from home Isolation/Hospital Isolation based on risk    assessment grid dated -19th Feb 2020</a></td>
+                </tr>
+                <tr>
+                  <td>05-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/clsgd_08022020.pdf" target="_blank" >കൊറോണ    അറിയേണ്ടതെല്ലാം തദ്ദേശ സ്വയം ഭരണ സ്ഥാപനങ്ങള്‍ ചെയ്യേണ്ടത്‌</a></td>
+                </tr>
+                <tr>
+                  <td>05-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/cturi_080202020.pdf" target="_blank" >കൊറോണ    വൈറസ് രോഗ ബാധ നിയന്ത്രണവുമായി ബന്ധപ്പെട്ടു ടൂറിസം വകുപ്പിന്റെ    ഉത്തരവാദിത്തങ്ങള്‍</a></td>
+                </tr>
+                <tr>
+                  <td>05-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/ced_08022020.pdf" target="_blank" >കൊറോണ    വൈറസ് രോഗ ബാധ നിയന്ത്രണവുമായി ബന്ധപ്പെട്ടു വിദ്യാഭ്യാസ വകുപ്പിന്റെ    ഉത്തരവാദിത്തങ്ങള്‍</a></td>
+                </tr>
+                <tr>
+                  <td>05-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bwm_08022020.pdf" target="_blank" >Policy    on Bio-Medical Waste Management for BMW from Patients in Novel Corona Virus    Ward/OPD</a></td>
+                </tr>
+                <tr>
+                  <td>05-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/hat_05022020.pdf" target="_blank" >nCorona-    Health advisory for Tourism Depatment dated -5th Feb 2020</a></td>
+                </tr>
+                <tr>
+                  <td>05-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/ahe_08022020.pdf" target="_blank" >Noval    Corona outbreak related Health Advisory for Animal Husbandry Department</a></td>
+                </tr>
+                <tr>
+                  <td>05-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/hae_05022020.pdf" target="_blank" >nCorona-    Health advisory for STUDENTS-Education Department dated -5th Feb 2020</a></td>
+                </tr>
+                <tr>
+                  <td>05-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/haa_05022020.pdf" target="_blank" >nCorona-    Health advisory for Animal care- Animal Husbandry Department dated- 5th Feb    2020</a></td>
+                </tr>
+                <tr>
+                  <td>03-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/rrt_05022020.pdf" target="_blank" >Constitution    of State RRT</a></td>
+                </tr>
+                <tr>
+                  <td>03-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/comm_05022020.pdf" target="_blank" >TOR    for State Level Committees</a></td>
+                </tr>
+                <tr>
+                  <td>02-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/mb_05022020.pdf" target="_blank" >Constitution    of State Medical Board</a></td>
+                </tr>
+                <tr>
+                  <td>01-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/revis_06022020.pdf" target="_blank" >Revised    guidelines for nCorona virus surveillance</a></td>
+                </tr>
+                <tr>
+                  <td>01-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/test_05022020.pdf" target="_blank" >Testing,    Collection and Transportation for Lab diagnosis -Guidelines</a></td>
+                </tr>
+                <tr>
+                  <td>01-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/quaran_05022020.pdf" target="_blank" >&nbsp;Testing,    Quarantine, hospital Admission and discharge criteria</a></td>
+                </tr>
+                <tr>
+                  <td>01-02-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/corp_02022020.pdf" target="_blank" >&nbsp;കൊറോണ    വൈറസ്സ് പ്രതിരോധത്തിനായി അറിയേണ്ടത് എന്തൊക്കെ ?</a></td>
+                </tr>
+                <tr>
+                  <td>26-01-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/ncorona_26012020.pdf" target="_blank" >n    Corona Guidelines-2020 Updated on 26/1/2020</a></td>
+                </tr>
+                <tr>
+                  <td>05-01-2020</td>
+                  <td><a href="https://dhs.kerala.gov.in/wp-content/uploads/2020/03/add_06022020.pdf" target="_blank" >Addendum    to the Testing, Quarantine, Hospital admission and discharge criteria for    nCoV</a></td>
+                </tr>
+              </table>
+            </div>
+	  </div>
+	  </section>
+       <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer" style="position:relative; z-index:99; ">
+   <small> <div class="float-right  d-sm-block">
+       <a href="sources.html" >Data Source</a>
+    </div>
+   
+    <a target="_blank" href="http://kerala.gov.in/">GoK Dashboard</a>. <a href="https://cdit.org/" class="text-secondary" target="_blank" >Developed by C-DIT</a></small>
+    
+  </footer>
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- date-range-picker -->
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script src="jquery.dataTables.min.js"></script>   
+
+
+
+<script src="../cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="../cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+
+
+
+
+<!-- Page script -->
+<script>
+$(document).ready(function() {
+    $('table.display').DataTable( {
+   
+        dom: 'lBfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+</script>
+
+
+</body>
+
+<!-- Mirrored from dashboard.kerala.gov.in/government-orders.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 18:53:20 GMT -->
+</html>

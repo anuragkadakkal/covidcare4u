@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2021 at 09:50 AM
+-- Generation Time: May 04, 2021 at 09:40 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -449,7 +449,7 @@ CREATE TABLE `tb_phc` (
 --
 
 INSERT INTO `tb_phc` (`pid`, `phckey`, `fname`, `address`, `email`, `district`, `pincode`, `phone`, `loginid`) VALUES
-(1, '7498cf2a', 'Health Centre - 102', 'Health Centre, Mundakayam Town', 'healthmkm@gmail.com', 'Idukki', '123456', '7356308128', 58);
+(1, '7498cf2a', 'Health Centre - 102', 'Health Centre, Mundakayam Town, Kuttikanam Road', 'healthmkm@gmail.com', 'Idukki', '123456', '7356308128', 58);
 
 -- --------------------------------------------------------
 
@@ -566,8 +566,8 @@ CREATE TABLE `tb_vaccine` (
 --
 
 INSERT INTO `tb_vaccine` (`vid`, `vkey`, `vname`, `vtotal`, `availdate`, `vstatus`, `loginid`) VALUES
-(1, 'ahyxg67f', 'COVISHIELD', 28, '2021-01-06', NULL, 58),
-(2, 'ajdghey7', 'COVAXINE', 33, '2021-01-06', NULL, 58);
+(1, 'ahyxg67f', 'COVISHIELD', 31, '2021-01-06', NULL, 58),
+(2, 'ajdghey7', 'COVAXINE', 35, '2021-01-06', NULL, 58);
 
 -- --------------------------------------------------------
 
@@ -589,9 +589,18 @@ CREATE TABLE `tb_vaccinebookhistory` (
 --
 
 INSERT INTO `tb_vaccinebookhistory` (`vbkid`, `vkey`, `uid`, `phcid`, `bkdate`, `vid`) VALUES
-(14, '9efc882b', 'c62a423c', 58, '2021-05-05', 2),
-(15, '73f05026', '90faa34a', 58, '2021-05-05', 1),
-(16, 'd026746b', 'd6923e9c', 58, '2021-05-05', 1);
+(2, '80f827d5', 'c62a423c', 58, '2021-05-02', 1),
+(3, 'ed03a19d', '90faa34a', 58, '2021-05-02', 2),
+(4, '0c82fb36', 'd6923e9c', 58, '2021-05-02', 1),
+(5, '006e4bed', 'c62a423c', 58, '2021-05-02', 1),
+(6, '6793d733', '90faa34a', 58, '2021-05-02', 2),
+(7, '1e23cfa4', 'c62a423c', 58, '2021-05-02', 2),
+(8, '83925a49', '90faa34a', 58, '2021-05-02', 1),
+(9, '689f1cb3', 'd6923e9c', 58, '2021-05-02', 2),
+(10, '82955025', 'bd1c6f8e', 58, '2021-05-04', 1),
+(11, '109cc5fa', 'c62a423c', 58, '2021-05-04', 1),
+(12, '75556bd5', 'c62a423c', 58, '2021-05-04', 1),
+(13, '09da78f1', 'c62a423c', 58, '2021-05-04', 1);
 
 -- --------------------------------------------------------
 
@@ -609,17 +618,18 @@ CREATE TABLE `tb_vaccinereg` (
   `yob` varchar(10) NOT NULL,
   `vaccinestatus` enum('0','1','2','3','4') NOT NULL,
   `vacdate` varchar(100) DEFAULT NULL,
-  `vacdtaffname` varchar(255) DEFAULT NULL
+  `vacphc` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_vaccinereg`
 --
 
-INSERT INTO `tb_vaccinereg` (`vid`, `vkey`, `fname`, `phone`, `gender`, `idcard`, `yob`, `vaccinestatus`, `vacdate`, `vacdtaffname`) VALUES
-(8, 'c62a423c', 'Anurag A', '917356308128', 'Male', '944171304193', '1998', '4', '2021-05-04', 'Sunil'),
-(9, '90faa34a', 'Abhishek A', '917356308128', 'Male', '944171304193', '2003', '1', NULL, ''),
-(10, 'd6923e9c', 'Swapna T', '917356308128', 'Female', '944171304193', '1983', '0', NULL, '');
+INSERT INTO `tb_vaccinereg` (`vid`, `vkey`, `fname`, `phone`, `gender`, `idcard`, `yob`, `vaccinestatus`, `vacdate`, `vacphc`) VALUES
+(8, 'c62a423c', 'Anurag A', '917356308128', 'Male', '944171304193', '1998', '4', NULL, ''),
+(9, '90faa34a', 'Abhishek A', '917356308128', 'Male', '944171304193', '2003', '0', NULL, ''),
+(10, 'd6923e9c', 'Swapna T', '917356308128', 'Female', '944171304193', '1983', '0', NULL, ''),
+(11, 'bd1c6f8e', 'Anurag A', '917559014286', 'Male', '145634748940', '1998', '0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -902,7 +912,7 @@ ALTER TABLE `tb_vaccine`
 -- AUTO_INCREMENT for table `tb_vaccinebookhistory`
 --
 ALTER TABLE `tb_vaccinebookhistory`
-  MODIFY `vbkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `vbkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb_vaccinereg`

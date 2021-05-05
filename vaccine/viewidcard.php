@@ -90,25 +90,25 @@ if($v==0) //not scheduled
 else if($v==1) //scheduled
 { 
 ?>
-<a href="../fpdf/ack1.php?t=<?php echo $row['vkey']; ?>" download><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Acknowledgment</i></button></a>
+<a href=""><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Acknowledgment</i></button></a>
 <?php
 }
 else if($v==2) //dose 1 taken and dose 2 no schduled
 { ?>
-  <a href="../fpdf/dose1.php?t=<?php echo $row['vkey']; ?>" download><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 1</i></button></a>
+  <a href=""><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 1</i></button></a>
  <a href="schedule2.php?t=<?php echo $row['vkey']; ?>&sch2=true"><button class="btn btn-outline-danger">Schedule Now</button></a> <?php
 }
 else if($v==3) //dose 1 taken and dose 2 scheduled
 {
   ?>
-  <a href="../fpdf/dose1.php?t=<?php echo $row['vkey']; ?>" download><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 1</i></button></a>
- <a href="../fpdf/ack2.php?t=<?php echo $row['vkey']; ?>" download><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Acknowledgment</i></button></a><?php
+  <a href=""><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 1</i></button></a>
+ <a href=""><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Acknowledgment</i></button></a><?php
 }
 else //dose 1 and 2 taken  ---status=4
 {
    ?>
-  <a href="../fpdf/dose1.php?t=<?php echo $row['vkey']; ?>" download><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 1</i></button></a>
-  <a href="../fpdf/dose2.php?t=<?php echo $row['vkey']; ?>" download><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 2</i></button></a> <?php
+  <a href=""><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 1</i></button></a>
+  <a href=""><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 2</i></button></a> <?php
 }
 
 

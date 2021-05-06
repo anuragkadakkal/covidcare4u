@@ -53,6 +53,7 @@ session_start();
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script> <!--marquee smiley-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LckNsgaAAAAAHWodSJ046Ua9yPTV8qxmxffB-i5"></script>
 </head>
 <body>
 	
@@ -280,9 +281,9 @@ Captcha End -->
 		</a>
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button name="Submit" type="submit"  value="Submit" class="btn btn-primary" style="cursor:pointer">Log In</button>
+        <button name="post" type="submit"  value="Submit" class="btn btn-primary" style="cursor:pointer">Log In</button>
 	  </div>
-	  
+	  <input type="hidden" id="token" name="token">
 	</form>  
 
     </div>

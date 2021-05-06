@@ -7,6 +7,8 @@
 		<div class="container">
 			<div class="intro-img "style="opacity: 0.8;">
 				<img src='resources/images/coronavirus_214.png' class="img-fluid ml-5" alt=""  >
+				<p style="padding-left: 36%"><iframe src="https://free.timeanddate.com/clock/i7sl1sm3/n1892/fn17/fs12/fcfff/tct/pct/tt0/tw1/tm1/td1/tb2" frameborder="0" width="204" height="17" allowtransparency="true"></iframe></p>
+
 			</div>
 			<div class="intro-info">
 <!-- Marquee Start -->

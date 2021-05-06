@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2021 at 09:50 AM
+-- Generation Time: May 06, 2021 at 10:46 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -300,6 +300,38 @@ CREATE TABLE `tb_karunyamedicals` (
 
 INSERT INTO `tb_karunyamedicals` (`kmid`, `kmkey`, `kmname`, `kmaddress`, `kmdistrict`, `kmpincode`, `kmcity`, `kmphone`, `kmcertificate`, `loginid`) VALUES
 (7, '3257abf8', 'Karunya Medicals - Mundakayam', 'Karunya Medicals, Mundakayam, Kottayam', 'Kottayam', '123456', 'Mundakayam', '5678902345', 'ResearchPaperDraft.pdf', 50);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_logginglogin`
+--
+
+CREATE TABLE `tb_logginglogin` (
+  `logid` int(11) NOT NULL,
+  `logtoken` text NOT NULL,
+  `loginusername` varchar(255) NOT NULL,
+  `curdate` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_logginglogin`
+--
+
+INSERT INTO `tb_logginglogin` (`logid`, `logtoken`, `loginusername`, `curdate`) VALUES
+(1, '03AGdBq25S2pjku1DiX9FL43IkgQ76x34DLIk6Lve6xI7p8xShzJwnfMpwPYb8O3gQBmZ1zQJ0nA4b-uR0GPZvBlclTlu6uLLdiXA94f9LTLbwpaI26kNRT26Xy9kVMtq9YgP1UCjjrdkpht51PFfeb68ZigcrQaIwAVkLp25Id6Q4t2MGczWcZ5ySs_Eq5Lmy0b_p3z6_ufrEQninwqpFJ10K5G6xFfLxljPpH5lkFrTHUaBJha0Meewf98lT2dODtvixlp6cPNpvLHgQTC9R2DTGPCgE32W1V8YxzdMxUBeD4oVUjG0vgD9W9pYJx0rIVJL_yfZrIDE87g8L0v8a7e4fpRPcIirf_1LKtFLS9p3ECdgPduwi3Jyw1VpmUIS71AWBGqNbKNhfNN_YBp687HLVchrgj8BqM8dbX8isInMYolXIBKH1O_SawgQ54yNg-iQ-xu8IoA6t', 'ambulance2@gmail.com', '06-05-2021 07:19:17am'),
+(2, '03AGdBq24DXbIPFFEWRBlzCLtdWQrogYFvn72-pWRUy_JFtUX3rXemoO_www4SycL1xtaxW9WdsrnTYxujmib6CyEaVmbcMNvTk6GpXdn5hs90sI7zLFs1gnW66-hI5pF9WN-GSDZXlEGP8Ld5EGmQlvl6AxOB-Z03k-iGYB23BVP7v_5O6k2UgDIO6w78oNss-CeLKj4mVjyXD4bruxNwzieNrIo2npuDVfgOm7cr4cOiLF0tchJP6lghh3zc4r9c_BaDYbjkwOTvWbO3wZdAcrXkREPIlYnXxxYrK6tFDEmDrfbqs2v4JxTGbUsKkTdora7YIf30YJCzjZ6j-2e28HdpIxGBFhZAMIxtWpxWk-bSfM6GWd1EoicfCTgzIT8BRYz7yIMYOun5TX9obqXmyLrI50JrAWaH7u4AOQVe_Odf2t9tKznvTt2_9unKnbf5IqXI3bPH6Nsg', 'admin@gmail.com', '06-05-2021 07:20:57am'),
+(3, '03AGdBq26DmIdGVgEnkuZwyx4g8PG_-yewlrQ1ORVmPH30sRwk2sEJ3Jk2Y49MHlgXmyelpD4rtjTgMsF8V6qYdd1aWrpW1FP5RGPMMA8SMKZlvOGH__GOXf9NuuoMHSunkzlm2DAW526yW2ng8S3I_Fv1ZQ3iIJ1NnIv0zDs7n8XY03BUIdsonA9nujub6YFmTCrQmtOYxh7LhKbfthXYNl7zTh_W7d19rS83YDchHlUto6Nsl0f79BOh6dvKfSZ27uQUmdinYuJ5HPuYr7O0rZh7ydvkxlOpReMjqMa5vv-TbC0y70MpkGm9e6EJm_ibAJaEPSKlqISE4b_1mWHjwcG6acUfTZXkN9X4ClEA-1xK8jRmAqf5aKLG_5DG6Zm5XmXUw1W1mOgCYIFUYL8v5YQidF3lz8DeYlWUAhUH79B0HYFwalc2k7g', 'admin@gmail.com', '06-05-2021 07:21:02am'),
+(4, '03AGdBq26bO9FVdNjeMt-bym05TSmg2qw-TUiWjQpFomaEu8nPAdsCbs-15Mmp4agO3rEKJbLmLvqYHqHMWdaX6Hp6q0u_tVKL_g4vECLlVB4K9NvM8kzuy4tT8giXBgbs3iJK8oIB5QBslbMyD9I5qIY8nBObTD7iFLoY-9HpK7L-KkK1XTVw411_ZTEByrHEAEmS2ORlK6dfxyrnTZkEWsPzhEKL3LNmLnSOus7HzGBn1xF3EL9fvJpp0nzHEBAMnplnUyVJjoID2BaVUNopAuG9UnwyaUMPGzxhv1efbbvQNjcTR6PuehFf0AasEfZ6y7dw4B5SYY6FYczp7hSjRHylDgUTZ51I5coDwVn3LtjKrqxAOW-qsgCeOj3v0VE0X6tM-9E5cBSvqjJHCW806U7r9ZBWjTX5__oNsSiVzTZ4YII2J7J00dRYHjffmKyHWujgFsV5kAmX', 'admin@gmail.com', '06-05-2021 07:27:57am'),
+(5, '03AGdBq25q_mO9wdqL8h7pL--3Izt5PjktPW5RNFmEE2ei-veW6G37qcUgVbaSSvy8yVDMz1_nV8fsconazRuSuiKeanPFu7NUJiHXDirLNhiP6PniKB5_To99uwrQY-BK6dGvIvlJ2D7PU2MkHC20HRpHU_ToWMiPFXdufrgyz5s6DiSrHMWvqghrs9mgFlq3SsAW77tfo9F7JRbK8Zgrn3p_U-AyuZjZnqZCvBxUbb8Nz6Ei8c1Mhe458tJLUhytL1_tMhXsjrBDrdBJF2s24Abo68YIZEF3UpTrWLPxe2-R9ucnNWdHLlh2r-1HA2yvuP4yXn0N3xYp_S_EWoBDgzWjoqgjFmbqZaA5Kg8HWSczukn6n5d-zRaPcEcy4LpSaxIgC4hLTwcl8rcoAmQexo7b8YgsPIhkOIi_r2mXrPopI-ltcFmQMdqRaPnvj91Z-doMOXZ0wOXj', 'admin@gmail.com', '06-05-2021 07:28:00am'),
+(6, '03AGdBq24FYZHjleiQKbGzCOLYI46AVtNh2E5D9yRhAAxCXhmrDLDrgmvOsiNxWJM7sh5ovne_TDzmwmBuXRP1ClT5YLfhizBv5sDdNASEn62-Scroy-iTOC3eQ5L8NDL3Nqva4IgzfuRx4r62Obk1ELdG3djuHvkE9ZRUMkanXeQwOdgDA67FjtjLByKEu8l35shZgpEchaobj2k52XJ_PfFcqxnIV2d-zVhBxdCvsgkHxpLn6_Wlh6M7D4KG-0BtSuoHLAbk2XkCM20z3E2ksTLXcZ_HjGtzZKUhU82BcpQL1UjXh6g-WjmrHPOJX1lICeAV4L0c5eJlFn_p0UDTRNRse97ILkilP_O_QteKoGwd5QTtoaWOefbc2F-uH1Enu-8TN0pVYc8nVgHFVUWAi_MY7xq9DU8gAsM4sQsYtvma0zGrsrozNRttmME-mI_ea7HfDlFrGKUL', 'healthmkm@gmail.com', '06-05-2021 07:29:10am'),
+(7, '03AGdBq25XK9is24eBd8pK4JmDFMK8gW_bW6JCNqWijjuZMOorEaGX1xRCIXLxN6330zFRVffP-Ra6XMhWSJuAzwSVyS_S3iYYSUORw9690DZk0RsR6peDycRHrmSJSpk8l8Ye-cq2rdNi5rHStj7h6eJYeNwzPy2XhqbAPMqhWZAVkjvtbzV4wph-HScSTUYP3YzpE1mJ6YQHfBZNA7Pm78hGLSFs55I1AQmbUKHWi57_dA26Z6CcfwDN0cINA-j2z_c7sulcCpwNgduSd6YpNQVOol9jEYYxXCvl9czxOVUJiuiwkGxUMYOBdLppiedu4LCTsI-DLa7wmugnG85ER20Yk4elrPOTfzeXxFAmlHWQaFh3lGt9NR365KGsjqXrpFr8jWw6Od46R_KWhNgrWfwnHdcARfb5-I5wgq-nhKBl9757AsPKnpPXmzK-psgdYzNOMBifsAak', 'healthmkm@gmail.com', '06-05-2021 07:29:22am'),
+(8, '03AGdBq27dWQrB2MNdTF8hlhfrOla1MbE3pGYgtCIpHbzC-vCjgQRZfoV_y2kfsWz--m4a4hRE5llLJdxcoUC9KJ_dCwgh5Ak550Vgi5M5pa8yGvn7NB6ZovK3QL_fijY304H95jiTGiw2kTZ6e4iCuXCoL3UQE0jeXtpui6c2ScqL7hLm5zr_p73bkt2na4Tr35ykdLt6TR-tewynkWFSF2eooNv_ypvM85Maan_euS-ktuaZOz3eg6ecRU3IwIJAI-KZ3R0hbeDDboxkdo5ifbcjBPvyU8iGAsY58o4XQ-nKtUxRDS4prHXOGV1y78ELXtMNzjyDabA6KTtP-nJHCPvEgbdOTPi0iZqnttlRSnUx5HI3RbIQmDA4YjMdvn4vwB8zCQFJYbCPiVM2fv-qOX2mNJOj0VJThBLFLL7pWTZfJ0dKMgDNTkknc1ZdwoxTaNJkxKK41X1Q', 'admin@gmail.com', '06-05-2021 07:29:34am'),
+(9, '03AGdBq27wgqRkBM2Fcjimq0-oI7isWcKadFhb7_t9L6zWZxCjyIJJ9cMKtWqXrseYfJ9ioWnrcMDg6Jy_NZ92TS5Reo-0pvDqljy_L8J67pBzRDsXILGOILUP2auLBnvet8FSOvvNx-UuHb3pEeRsp8chUMmZ0iMDGCBnr3tZtQ-CGBQEGSjLWz5tl5FoUH29NeKCaxo5ufiUbN2ru1FLbdcLpjSh3KMQ4fyoYeKEQIhXLNWmJNg7pSUXhPAFGHqfoHi8T6f5mJnf69A_MJyLvUTEdj4U6kHBYmi45wjtSnsA4o312K54kUO-WJaK703OkJYGl8RSt3DYizbAuB-hv3vRW8RUYbZ93IzcwdeTkuoAG1tfPmyFCkq8IACf64M41d0tUdn1M1UVkw1_0MaVgVhUkLsU-_xx88ie8muH-pNd_lRRqijcVODZ-8GvGH9wCOI8Gy9WSxcH', 'admin@gmail.com', '06-05-2021 07:29:38am'),
+(10, '03AGdBq24ds_ASxv1eE40gputK3UBNQseVsGBrPCdWYVv8yAZMATiHWPvX7GDch9__wBW6AE5FfEsuk7vErnI2QU4iuFR6pzfL7wfiEozaaC-OY7623HQMz5dFm-1POoxJIbHKhEEKcD4RCbDZ1wTuRJTCMpdLz6bJdryC-AbNA-vy0-94oo8t6bV2SePKzT9oma4C4TYykHYH71NMLchZeOVgdsSgWhdYpBYRc5TYkt-Szazma8w1WIbenSNzs3vZxYPwh7PToTYHuVxGxqqq5xMwjRGjS7f1zTVW_JxThcFF7_QjrdyV-EMpjzEB5eBCTgHKi_fuRQDYrjOKiEZ75zWTjs04irwmJvPjzRtjoi7-SA_m9fsgPTqs8PAc7mmqRDe68OTbbKneR4IawBVWnnSdCd2sBu2f7RqSdAytN3d_DKlgGKj6RDZbHeieQtRsE2HOcjPZb6fH', 'admin@gmail.com', '06-05-2021 07:40:19am'),
+(11, '03AGdBq24vJMtJxM4kKcw7bCc1n_GRDkUfs2a08MDMgBAHxcHECALy7IFbDIjiMCinLhhLM5RzKVeYQeGNDN8xkaOBcusLmQPLyshiujVytIXVGktjIE9BEdsj_UOAALQY2ntM2iqA0hlZrSsiCfUu-55FN_DUOSDWZWtdMbrpocrzedLTYVT6TEsvKjpWX7mYMZm8BHwdnvG-TmqIVmhDcaIQ8k2Jq6PpqNSjXLFfH1CNgUA2jjqxmtVQ0bNkfKXvIM_gxVNVtU5GgJpFPTc6Cvse7izqDevmYXY3tgbv4JNta5OjlgshOvXNJw1L59TxMbi8Pgx3Xfq6OM473h077xe4eFgHOgRUkVKPpBOhCFQd4f2xcBZ4-hQQwSG56PbM7FcaE-sHF77uasNZz51y3oXYT-TAW2BKiefXvzlxQrhgFCkk64adAl7dNzCuQLfrqlRToNGQff4O', 'admin@gmail.com', '06-05-2021 07:40:23am'),
+(12, '03AGdBq26aE7tNv_gThVfd4lmIDYq-ktgFk4W0WbOw0s1iOHNyN9iJIEddlNQNtst8aKlGBMBolQJvwU6Iz4zCmd0sCEmZr06iKJiLf1LgNmCle4c-_xOmqFeIm7Mxh8P_vgaTHWUHWGh5qfhzmWyTbubd13sNrIPatF1SJ3a3GdyZYjEO4h5BkTGRGK3UecKDLpucGJwXilVqH0g6QIoStp8KHcGtp6gjl4LseWU7DdtwG58Cbk7OBzQ-sJ0Bbd9OL9z7amkj1rQhv702egpgRkKziV0eALGvxziAbPB85oFWh_dYE44Nl2yEzWcscL43ZdT19PJSz3IJzDjIff5vNOvL_s5EsJGqHD0iB_Gx1fAixtJHcqesZgAISkjQg0xEogrUrHah3WQLbu9GtLFdnhIa-tHRT9VCPMRm592qoL52gXtRt2gGecpeqxvYb93uG6f7-h-XO5HW', '', '06-05-2021 07:41:07am'),
+(13, '03AGdBq24nb7XcPQ-qNKuq8g7GBcf8R7yD21LB5qeO9SQWdNBm0wdeI0c_UOAfuAhHp7sNzvnCYbtaDpvLEiVkrW19nHUqfujaVGd2U7j7f7CQjBLd2a4jabicHX_ca4jHCAnOIASdFGXkTjIn7qo3LTpJiHYE2povCVhSlwSvtv067ITe0rGXpkp--bIFPv0PQtQyzvYRJ3yWC7u8gOp-scm8a6Csw2MFkp90i3IIRV7q2rIgUZMuu1xzkO0x2lGb_yAR_cXOXX6joEOcFuUbZm_qhgmVhyTYvK817qUnYpdg_1g0XqsV7r1LNUtVfmC-KDwuddVyUbt9h9hgpz3WORJ90m4nZq1S7edsTMEtJnRXKmwlfo7B24YkmCN8eGi8Jk8iZhPtW1RbkWdiDuea8VSkcMs3VApw3-y0XL2KJwk7mX6d6trRKnslTxM1W_aHPUXTZMH1dYtA', '', '06-05-2021 07:41:21am');
 
 -- --------------------------------------------------------
 
@@ -715,6 +747,12 @@ ALTER TABLE `tb_karunyamedicals`
   ADD PRIMARY KEY (`kmid`);
 
 --
+-- Indexes for table `tb_logginglogin`
+--
+ALTER TABLE `tb_logginglogin`
+  ADD PRIMARY KEY (`logid`);
+
+--
 -- Indexes for table `tb_login`
 --
 ALTER TABLE `tb_login`
@@ -843,6 +881,12 @@ ALTER TABLE `tb_foodreg`
 --
 ALTER TABLE `tb_karunyamedicals`
   MODIFY `kmid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tb_logginglogin`
+--
+ALTER TABLE `tb_logginglogin`
+  MODIFY `logid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb_login`

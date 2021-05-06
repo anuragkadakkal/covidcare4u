@@ -14,7 +14,13 @@
 
 <script type="text/javascript" src="resources/core/js/jquery.min.js"></script>
 
-
+  <script>
+  grecaptcha.ready(function() {
+      grecaptcha.execute('6LckNsgaAAAAAHWodSJ046Ua9yPTV8qxmxffB-i5', {action: 'homepage'}).then(function(token) {
+         document.getElementById("token").value = token;
+      });
+  });
+  </script>
 
 <script src="resources/core/js/bootstrap.bundle.min.js"></script>
 

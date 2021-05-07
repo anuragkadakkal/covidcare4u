@@ -53,7 +53,10 @@ session_start();
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <script src='https://kit.fontawesome.com/a076d05399.js'></script> <!--marquee smiley-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://www.google.com/recaptcha/api.js?render=6LckNsgaAAAAAHWodSJ046Ua9yPTV8qxmxffB-i5"></script>
+
+
+<!--Google reCaptcha -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LfhgMoaAAAAAKe22Hq_xiJ2_pxW14B9azP_E8ul"></script>
 </head>
 <body>
 	

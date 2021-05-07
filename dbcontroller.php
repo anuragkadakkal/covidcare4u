@@ -1,9 +1,9 @@
 <?php
 class DBController {
-	private $host = "localhost";
-	private $user = "root";
-	private $password = "";
-	private $database = "covidcare4u";
+	private $host = "remotemysql.com";
+	private $user = "nsxfpEpqt7";
+	private $password = "PvV4pugL62";
+	private $database = "nsxfpEpqt7";
 	private $conn;
 	
 	function __construct() {

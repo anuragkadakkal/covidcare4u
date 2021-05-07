@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con = mysqli_connect("localhost", "root", "", "covidcare4u");
+$con = mysqli_connect('remotemysql.com','nsxfpEpqt7','PvV4pugL62','nsxfpEpqt7');
 function saveUserInDatabase($con,$email,$username,$token,$provider){
     $check_user = mysqli_query($con, "select * from tb_firebaseauthusers where email='" . $email . "'");
     if (mysqli_num_rows($check_user) > 0) {

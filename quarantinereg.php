@@ -57,7 +57,7 @@
         }
         });
 
-        xhr.open("POST", "http://localhost/covidcare4u/login.php?email="+email+"&provider="+provider+"&username="+username+"&token="+token);
+        xhr.open("POST", "https://covidcare4u.herokuapp.com/login.php?email="+email+"&provider="+provider+"&username="+username+"&token="+token);
         xhr.send();
    }
 

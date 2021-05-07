@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from dashboard.kerala.gov.in/quarantine-districtwise.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 18:53:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="title" content="GoK Dashboard |Official Kerala COVID-19 Statistics">
+<meta name="description" content="Official Kerala COVID-19(corona) tracker. Vaccination Status, Statistics of cases, location, quarantined, test results, community kitchen, Social volunteer force etc.">
+<meta name="keywords" content="covid cases in kerala, covid kerala, corona in kerala,covid samples tested in kerala, kerala covid, covid dshboard kerala">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="en">
+<meta name="revisit-after" content="0.5 days">
+<meta name="author" content="Kerala State IT Mission, C-DIT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Logo.png"  >
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<title>GoK Dashboard | Official Kerala COVID-19 Statistics</title>
+
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  
+ <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+   <link rel="stylesheet" href="jquery.dataTables.min.css"> 
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+	
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/GoK.png"
+           alt=" GoK Logo"
+           class="brand-image img-circle "
+           >
+      <span class=" font-weight-light text-gray">Kerala : COVID-19 Battle</span>
+    </a>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index-2.html" class="brand-link">
+      <img src="dist/img/Logo.gif"
+           alt=" Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">GoK Dashboard</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+        <div class="info text-gray">
+          <i>#KeralaFightsCorona</i>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+            <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+		
+				<li class="nav-item">
+				<a  href="index-2.html" class="nav-link " >
+				<i class="nav-icon fas fa-home"></i>
+				<p>
+				Dashboard
+				</p>
+				</a>
+				</li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-newspaper text-red"></i>
+              <p>
+                Daily Reporting
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="daily.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://dashboard.kerala.gov.in/dailyreporting-view-public-districtwise.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="deaths.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Deaths Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bed text-info"></i>
+              <p>
+                Quarantine Report
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="quarantine-view-public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Date-wise Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="quar_dst_wise_public.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>District-wise Report</p>
+                </a>
+              </li>
+      
+            </ul>
+            </li>
+
+
+
+				<li class="nav-item">
+				<a  href="testing-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-flask text-pink"></i>
+				<p>
+				Test Results
+				</p>
+				</a>
+				</li>
+		            		 <li class="nav-item">
+            <a  href="vaccination.html" class="nav-link ">
+             <i class="nav-icon fa fa-syringe text-success "></i>
+              <p>
+                Vaccination
+                
+              </p> 
+            </a>
+          </li>
+		  
+		      <li class="nav-item">
+				<a  href="hotspots.html" class="nav-link " >
+				<i class="nav-icon fas fa-map-marker text-warning"></i>
+				<p>
+				Hotspots
+				</p>
+				</a>
+				</li> 
+				
+
+				
+                <li class="nav-item">
+                <a href="volunteers.html" class="nav-link ">
+                <i class="nav-icon fas fa-users" style="color:#8f54fb"></i>
+                <p>
+                Social Volunteer Force
+                </p>
+                </a>
+                </li>
+                
+                <li class="nav-item">
+                <a href="psycosocial.html" class="nav-link ">
+                <i class="nav-icon fas fa-brain" style="color:#49B283"></i>
+                <p>
+                Psychosocial Support
+                </p>
+                </a>
+                </li>
+                
+				<li class="nav-item">
+				<a  href="ck-view-public.html" class="nav-link " >
+				<i class="nav-icon fas fa-utensils text-orange"></i>
+				<p>
+				Community Kitchen
+				</p>
+				</a>
+				</li>		  
+ 
+ 				<li class="nav-item">
+				<a  href="destitute-rehabilitation.html" class="nav-link " >
+				<i class="nav-icon fas fa-hands-helping text-green"></i>
+				<p>
+				Destitute Rehabilitation
+				</p>
+				</a>
+				</li>                
+                		 <li class="nav-item">
+            <a target="_blank" href="https://donation.cmdrf.kerala.gov.in/index.php/Dashboard/allType_transaction" class="nav-link">
+              <i class="nav-icon fas fa-rupee-sign text-warning"></i>
+              <p>
+                CMDRF Donation
+               
+              </p>
+            </a>
+          </li>
+				
+           <div class="info text-gray">
+          <i>Useful Links</i>
+        </div>
+            		  		 <li class="nav-item">
+            <a  href="onlinedr.html" class="nav-link ">
+              <i class="nav-icon fa fa-plus text-danger " style="background:#FFF; border-radius:25px"></i>
+              <p>
+                Online Doctor Service
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a target="_blank" href="http://dhs.kerala.gov.in/ഡെയിലി-ബുള്ളറ്റിന്‍/" class="nav-link ">
+              <i class="nav-icon fas fa-newspaper "></i>
+              <p>
+                Daily Medical Bulletin
+                
+              </p>
+            </a>
+          </li>
+
+
+           <div class="info text-gray">
+          <i>Awareness</i>
+        </div>
+
+
+		  		 <li class="nav-item">
+            <a  href="government-orders.html" class="nav-link ">
+              <i class="nav-icon fas fa-gavel text-danger "></i>
+              <p>
+                Government Orders
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="faqs.html" class="nav-link ">
+              <i class="nav-icon fas fa-question-circle text-info "></i>
+              <p>
+                FAQs
+                
+              </p>
+            </a>
+          </li>
+
+		  		 <li class="nav-item">
+            <a  href="helplines.html" class="nav-link ">
+              <i class="nav-icon fas fa-phone-volume text-warning "></i>
+              <p>
+                Helplines
+                
+              </p>
+            </a>
+          </li>
+          
+          	<!--	 <li class="nav-item">
+            <a target="_blank" href="https://keralabattlescovid.in" class="nav-link ">
+              <i class="nav-icon fa fa-info-circle text-info "></i>
+              <p>
+                Kerala Battles Covid
+                
+              </p>
+            </a>
+          </li> -->
+          
+
+          
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+           
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active">Updated: 27-04-2021 6:33 pm</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+  
+	    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+     	
+			
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="card card-danger">
+              <div class="card-header">
+              
+                <h3 class="card-title">Quarantine Report : District-wise</h3>
+                 <div class="card-tools">
+                <a class="badge badge-warning" style="color:#000" href="quarantine-view-public.html">View Date-wise</a>
+				   
+                </div>
+              </div>
+              
+              <!---->
+                <div class="card-body">
+              <form name="dqbvform" id="dqbvform" method="post" action="https://dashboard.kerala.gov.in/quarantine-districtwise.php">
+                <!-- Date dd/mm/yyyy -->
+                <div class="row">
+                  <div class="col-9">
+                <div class="form-group">
+                  <label>District wise Cumulative Report </label>
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      
+                    </div>
+                 <select class="form-control select2bs4" style="width: 100%;" name="district" id="district">
+                    <option selected="selected" value="">--</option>
+					                    <option value="1601">KASARGOD</option>
+                    
+                                        <option value="1602">KANNUR</option>
+                    
+                                        <option value="1603">WAYANAD</option>
+                    
+                                        <option value="1604">KOZHIKODE</option>
+                    
+                                        <option value="1605">MALAPPURAM</option>
+                    
+                                        <option value="1606">PALAKKAD</option>
+                    
+                                        <option value="1607">THRISSUR</option>
+                    
+                                        <option value="1608">ERNAKULAM</option>
+                    
+                                        <option value="1609">IDUKKI</option>
+                    
+                                        <option value="1610">KOTTAYAM</option>
+                    
+                                        <option value="1611">ALAPPUZHA</option>
+                    
+                                        <option value="1612">PATHANAMTHITTA</option>
+                    
+                                        <option value="1613">KOLLAM</option>
+                    
+                                        <option value="1614">THIRUVANANTHAPURAM</option>
+                    
+                                      </select>
+                  </div>
+                  <!-- /.input group -->
+                  
+                </div>
+                </div>
+                <div class="col-3"> <br><!--<a href="#" class="btn btn-warning">View </a>-->
+                 <input class="btn btn-warning "  type="submit" name="vw" value="View"/>
+                </div>
+                </div>
+                </form>
+                <table class="table table-sm table-striped sortable">
+						<thead>
+						<tr>
+						<th>Date</th>
+                        <th>Total</th>
+						<th>Home</th>
+						<th>Hospital</th>
+						<th>Hosp. Today</th>
+						</tr>
+						<thead>
+						<tbody>
+                                                <tr>
+    <td></td> 						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+                        <td>0</td>
+						</tr>
+
+						
+						</tbody>
+						<tfoot style="font-weight:heavy">
+						
+					
+						<tfoot>
+						</table>
+
+     
+     
+
+
+              </div>
+              <!-- /.card-body -->
+              <!---->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col (left) -->
+		  		  
+          <div class="col-md-6">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Quarantine Status as on 27-04-2021              </div>
+              <div class="card-body">
+						<table class="table table-sm table-striped sortable">
+						<thead>
+						<tr>
+						<th>Dist.</th>
+                        <th>Total</th>
+                        <th>Home</th>
+						<th>Hospital</th>
+						<th>Hosp. Today</th>
+						</tr>
+						<thead>
+						<tbody>
+                           <tr>
+						<td align="center">EKM</td>
+                        <td align="center">83968</td>
+						<td align="center">81655</td>
+						<td align="center">2313</td>
+						<td align="center">398</td>
+						</tr>
+    
+        <tr>
+						<td align="center">KKD</td>
+                        <td align="center">76276</td>
+						<td align="center">73794</td>
+						<td align="center">2482</td>
+						<td align="center">401</td>
+						</tr>
+    
+        <tr>
+						<td align="center">TVM</td>
+                        <td align="center">54569</td>
+						<td align="center">51824</td>
+						<td align="center">2745</td>
+						<td align="center">424</td>
+						</tr>
+    
+        <tr>
+						<td align="center">TSR</td>
+                        <td align="center">50039</td>
+						<td align="center">47706</td>
+						<td align="center">2333</td>
+						<td align="center">457</td>
+						</tr>
+    
+        <tr>
+						<td align="center">KTM</td>
+                        <td align="center">46894</td>
+						<td align="center">44744</td>
+						<td align="center">2150</td>
+						<td align="center">517</td>
+						</tr>
+    
+        <tr>
+						<td align="center">MPM</td>
+                        <td align="center">42646</td>
+						<td align="center">41617</td>
+						<td align="center">1029</td>
+						<td align="center">351</td>
+						</tr>
+    
+        <tr>
+						<td align="center">KNR</td>
+                        <td align="center">41295</td>
+						<td align="center">40370</td>
+						<td align="center">925</td>
+						<td align="center">181</td>
+						</tr>
+    
+        <tr>
+						<td align="center">PKD</td>
+                        <td align="center">30376</td>
+						<td align="center">29002</td>
+						<td align="center">1374</td>
+						<td align="center">158</td>
+						</tr>
+    
+        <tr>
+						<td align="center">ALP</td>
+                        <td align="center">28077</td>
+						<td align="center">26403</td>
+						<td align="center">1674</td>
+						<td align="center">136</td>
+						</tr>
+    
+        <tr>
+						<td align="center">KLM</td>
+                        <td align="center">20279</td>
+						<td align="center">19153</td>
+						<td align="center">1126</td>
+						<td align="center">197</td>
+						</tr>
+    
+        <tr>
+						<td align="center">WYD</td>
+                        <td align="center">19675</td>
+						<td align="center">19090</td>
+						<td align="center">585</td>
+						<td align="center">97</td>
+						</tr>
+    
+        <tr>
+						<td align="center">IDK</td>
+                        <td align="center">12363</td>
+						<td align="center">11773</td>
+						<td align="center">590</td>
+						<td align="center">68</td>
+						</tr>
+    
+        <tr>
+						<td align="center">KGD</td>
+                        <td align="center">11910</td>
+						<td align="center">11225</td>
+						<td align="center">685</td>
+						<td align="center">47</td>
+						</tr>
+    
+        <tr>
+						<td align="center">PTA</td>
+                        <td align="center">9295</td>
+						<td align="center">7846</td>
+						<td align="center">1449</td>
+						<td align="center">213</td>
+						</tr>
+    
+    						</tbody>
+						<tfoot style="font-weight:heavy">
+						
+						
+						<tr>
+						<td><strong>TOTAL</strong></td>
+                        <td align="center"><b>527662</b></td>
+                        <td align="center"><b>506202</b></td>
+						<td align="center"><b>21460</b></td>
+						<td align="center"><b>3645</b></td>
+						
+						</tr>
+						<tfoot>
+						</table>
+		 
+
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+              </div>
+           
+            </div>
+			
+			
+			
+			
+            <!-- /.card -->
+          </div>
+          <!-- /.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer" style="position:relative; z-index:99; ">
+   <small> <div class="float-right  d-sm-block">
+       <a href="sources.html" >Data Source</a>
+    </div>
+   
+    <a target="_blank" href="http://kerala.gov.in/">GoK Dashboard</a>. <a href="https://cdit.org/" class="text-secondary" target="_blank" >Developed by C-DIT</a></small>
+    
+  </footer>
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- date-range-picker -->
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<script src="jquery.dataTables.min.js"></script>   
+
+
+
+<script src="../cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="../cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="../cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+
+
+
+
+<!-- Page script -->
+<script>
+$(document).ready(function() {
+    $('table.display').DataTable( {
+   
+        dom: 'lBfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+</script><script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+
+    //Datemask dd/mm/yyyy
+    $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+    //Datemask2 mm/dd/yyyy
+    $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+    //Money Euro
+    $('[data-mask]').inputmask()
+
+  })
+</script>
+
+
+
+
+</body>
+
+<!-- Mirrored from dashboard.kerala.gov.in/quarantine-districtwise.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 18:53:35 GMT -->
+</html>

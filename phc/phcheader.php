@@ -77,7 +77,7 @@
 				</p>
 				</a>
 				</li>
-        <li class="nav-item has-treeview">
+        <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-newspaper text-red"></i>
               <p>
@@ -99,9 +99,9 @@
                 </a>
               </li>    
             </ul>
-            </li>
+            </li> 
 
-            <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-viruses text-pink"></i>
               <p>
@@ -123,7 +123,7 @@
                 </a>
               </li>    
             </ul>
-            </li>
+            </li> -->
 
             <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -140,12 +140,18 @@
                   <p>View</p>
                 </a>
               </li>
-              <!-- <li class="nav-item">
-                <a href="kk.php" class="nav-link">
+              <li class="nav-item">
+                <a href="spotvaccinereg.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Second Dose</p>
+                  <p>Spot Reg</p>
                 </a>
-              </li> -->    
+              </li> 
+              <li class="nav-item">
+                <a href="viewspotvaccinereg.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Spot Reg View</p>
+                </a>
+              </li> 
             </ul>
             </li>  
 				

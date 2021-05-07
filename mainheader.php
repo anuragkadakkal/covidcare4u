@@ -96,7 +96,7 @@ session_start();
 				<li class="drop-down"><a href="#">Registration</a>
 					<ul>
 						<li><a href="customerreg.php">
-								Customer</a></li> 
+								User</a></li> 
 						<li><a href="medicalstorereg.php">
 								Karunya Medicals</a></li>
 						<li><a href="communitykitchenreg.php">
@@ -115,13 +115,6 @@ session_start();
 							</ul>
 						</li>
 
-							<!-- <li class="drop-down"><a href="#">Testing</a>
-								<ul>
-									<li><a  href="resources/downloads/mha.pdf">Antigen</a></li>
-									<li><a  href="resources/downloads/mha.pdf">RTPCR</a></li>
-									<li><a  href="resources/downloads/mha.pdf">Status</a></li>
-								</ul>
-							</li> -->
 
 						<li class="drop-down"><a href="#">Vaccination</a>
 							<ul>
@@ -129,104 +122,19 @@ session_start();
 								<!-- <li><a  href="vaccinestatus.php">Status</a></li> -->
 							</ul>
 						</li>
+
+						<li class="drop-down"><a href="#">Verify</a>
+							<ul>
+								<li><a data-toggle="modal" data-target="#exampleModal">Vaccine Certificate</a></li>
+							</ul>
+						</li>
 					</ul>
 				</li>
 
-				<!-- <li class="drop-down"><a href="#">Goods &amp; Services</a>
-					<ul>
-						<li><a href="home/addEssentialservices.html">Vehicle
-								Permit</a></li>
-
-						<li><a href="home/addShopPermit.html">Operation
-								Permit</a></li>
-						<li><a href="home/renewVehiclePermit.html">Renew
-								Vehicle Permit</a></li>
-
-					</ul></li> -->
-				<!--  <li class="drop-down"><a href="#">Info</a>
-					<ul>
-						<li><a class="view" href="resources/downloads/user%20manual.pdf">User
-								Manual</a></li>
-
-						<li><a class="view" href="resources/downloads/Covid19%20xxxxxxa%20Health%20Component.pdf">Health
-								component</a></li>
-						<li><a class="view" href="resources/downloads/Family%20-%20Hospital%20Health%20Care%20Management%20Module.pdf">Family-Hospital
-								Care</a></li>
-						<li><a class="view" href="resources/downloads/imp_feature.pdf">Important
-								Features</a></li>
-						<li class="drop-down "><a href="#">Help Line</a>
-							<ul>
-								<li><a class="view" href="resources/downloads/helpline.pdf">Help
-										line</a></li>
-							</ul></li>
-
-						<li class="drop-down"><a href="#">GO's</a>
-							<ul>
-								<li class="drop-down"><a href="#">GOK</a>
-									<ul>
-										<li><a class="view" href="resources/downloads/GO.pdf">GO
-												15-04-2020</a></li>
-										<li><a class="view" href="resources/downloads/GO2.pdf">GO
-												17-04-2020</a></li>
-										<li><a class="view" href="resources/downloads/other.pdf">GO
-										</a></li>
-										<li><a class="view" href="resources/downloads/GO%20Rt.pdf">GO
-												Rt 1690 COVID 19 transit instructions. </a></li>
-									</ul></li>
-								<li class="drop-down"><a href="#">Other States/UTs</a>
-									<ul>
-										<li><a class="view" href="resources/downloads/dadra.pdf">Dadra
-												Nager Haveli</a></li>
-										<li><a class="view" href="resources/downloads/goa.pdf">Goa</a></li>
-										<li><a class="view" href="resources/downloads/GO%20SOP%20ASSAM.pdf">Assam
-										</a></li>
-										<li><a class="view" href="resources/downloads/GO%20SOP%20Bihar.pdf">Bihar
-										</a></li>
-										<li><a class="view" href="resources/downloads/maharastra.pdf">Maharastra</a></li>
-									</ul></li>
-
-								<li><a class="view" href="resources/downloads/mha.pdf">MHA
-								</a></li>
-							</ul>
-						</li>
-						<li class="drop-down"><a href="#">Guide lines</a>
-							<ul>
-								<li><a class="view" href="resources/downloads/guildline.pdf">Guide
-										line 1</a></li>
-								<li><a class="view" href="resources/downloads/guildline1.pdf">Guide
-										line 2</a></li>
-
-							</ul></li>
-
-						<li class="drop-down"><a href="#">SOP For Stranded People</a>
-							<ul>
-								<li><a class="view" href="resources/downloads/Andhra%20Telangana.pdf">Andhra
-										Telangana</a></li>
-								<li><a class="view" href="resources/downloads/SOP-arunachal.pdf">Arunachal
-										Pradesh</a></li>
-								<li><a class="view" href="resources/downloads/Assam.pdf">Assam</a></li>
-
-								<li><a class="view" href="resources/downloads/Bihar.pdf">Bihar</a></li>
-								<li><a class="view" href="resources/downloads/%20Chhattisgarh.html">
-										Chhattisgarh </a></li>
-								<li><a class="view" href="resources/downloads/Dadra%20NagerHaveli.pdf">Dadra
-										Nager Haveli</a></li>
-								<li><a class="view" href="resources/downloads/goa.pdf">Goa</a></li>
-								<li><a class="view" href="resources/downloads/Gujarat.pdf">Gujarat</a></li>
-								<li><a class="view" href="resources/downloads/madhya%20pradesh.pdf">Madhya
-										Pradesh</a></li>
-								<li><a class="view" href="resources/downloads/maharastra.pdf">Maharastra</a></li>
-								<li><a class="view" href="resources/downloads/Uttarakhand.pdf">Uttarakhand</a></li>
-								<li><a class="view" href="resources/downloads/Tamilnadu.pdf">Tamilnadu</a></li>
-							</ul></li>
-
-						<li><a href="home/addCCCList.html">Covid
-								Care Center List</a></li>
-					</ul></li>  -->
 				
-				
+				<li><a href="sosdoctor.php"><button class="btn btn-outline-danger rounded ">&nbsp;<i class="fas fa-user-md">&nbsp;Doctor Booking&nbsp;</i></button></a></li>
 
-				<li><a href="sosambulance.php"><button class="btn btn-warning rounded btn-sm mr-2">&nbsp;<i class="fa fa-ambulance mr-1">&nbsp;SOS Ambulance</i></button></a></li>
+				<li><a href="sosambulance.php"><button class="btn btn-outline-warning rounded ">&nbsp;<i class="fa fa-ambulance mr-1">&nbsp;SOS Ambulance</i></button></a></li>
 				
 				<li><a href="" id="myModal" class="" data-toggle="modal" data-target="#exampleModalCenter">Login</a></li>
 			</ul>
@@ -286,6 +194,28 @@ Captcha End -->
 	  <input type="hidden" id="token" name="token">
 	</form>  
 
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Verify and Download Vaccination Certificate</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<form method="post" action="viecertificate.php">
+        	<input type="name" name="refkey" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Reference Key">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;
+        <button type="submit" class="btn btn-primary">Search</button></form>
+      </div>
     </div>
   </div>
 </div>

@@ -72,7 +72,7 @@
 					}
 					else if($c==6)
 					{
-						header("location:phc/drhome.php");
+						header("location:doctor/drhome.php");
 					}
 					else if($c==7)
 					{

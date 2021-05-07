@@ -24,7 +24,7 @@ class PDF extends PDF_Rotate
 include '../connection.php';
 $key=$_GET['t'];
 
-$sql="select tb_vaccinereg.*,tb_phc.fname as pname,tb_phc.address as padrs,tb_vaccine.*,tb_vaccinereg.vacdate,tb_vaccinereg.vacdtaffname,tb_vaccinebookhistory.vkey as bkkey from tb_vaccinebookhistory inner join tb_vaccinereg on tb_vaccinereg.vkey=tb_vaccinebookhistory.uid inner join tb_phc on tb_phc.loginid=tb_vaccinebookhistory.phcid inner join tb_vaccine on tb_vaccine.vid=tb_vaccinebookhistory.vid where tb_vaccinereg.vkey='".$key."'";
+$sql="select tb_vaccinereg.*,tb_phc.fname as pname,tb_phc.address as padrs,tb_vaccine.*,tb_vaccinereg.vacdate2,tb_vaccinereg.vacstaff2,tb_vaccinebookhistory.vkey as bkkey from tb_vaccinebookhistory inner join tb_vaccinereg on tb_vaccinereg.vkey=tb_vaccinebookhistory.uid inner join tb_phc on tb_phc.loginid=tb_vaccinebookhistory.phcid inner join tb_vaccine on tb_vaccine.vid=tb_vaccinebookhistory.vid where tb_vaccinereg.vkey='".$key."'";
    //echo $sql;exit;
   $result = mysqli_query($conn,$sql);
   while ($row=mysqli_fetch_array($result))
@@ -126,19 +126,33 @@ $pdf->Write (5,$row['vname']);
 
 $pdf->SetXY(120,-141);
 $pdf->SetFont('Arial','',12);
-$pdf->Write (5,$row['vacdate']);
+$pdf->Write (5,$row['vacdate2']);
 
 $pdf->SetXY(120,-132);
 $pdf->SetFont('Arial','',12);
-$pdf->Write (5,$row['vacdtaffname']);
+$pdf->Write (5,$row['vacstaff2']);
 
-$pdf->SetXY(120,-123);
-$pdf->SetFont('Arial','',12);
-$pdf->Write (5,$row['pname']." ,");
+if($row['vacphcname']==NULL || $row['vacphcaddre']==NULL)
+{
+	$pdf->SetXY(120,-123);
+	$pdf->SetFont('Arial','',12);
+	$pdf->Write (5,$row['pname']." ,");
 
-$pdf->SetXY(120,-113);
-$pdf->SetFont('Arial','',12);
-$pdf->Write (5,$row['padrs']);
+	$pdf->SetXY(120,-113);
+	$pdf->SetFont('Arial','',12);
+	$pdf->Write (5,$row['padrs']);
+}
+else
+{
+	$pdf->SetXY(120,-123);
+	$pdf->SetFont('Arial','',12);
+	$pdf->Write (5,$row['vacphcname']." ,");
+
+	$pdf->SetXY(120,-113);
+	$pdf->SetFont('Arial','',12);
+	$pdf->Write (5,$row['vacphcaddre']);
+}
+
 
 //----------------------------------------------------------------
 

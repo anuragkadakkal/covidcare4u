@@ -6,7 +6,7 @@
       include 'connection.php';
       include 'phcheader.php';
       $phcid = $_COOKIE['lkey'];
-      $sql="select * from tb_vaccinereg inner join tb_vaccinebookhistory on tb_vaccinereg.vkey=tb_vaccinebookhistory.uid where phcid='".$phcid."'";//echo $sql;exit;
+      $sql="select * from tb_vaccinereg inner join tb_vaccinebookhistory on tb_vaccinereg.vkey=tb_vaccinebookhistory.uid where phcid='".$phcid."' order by tb_vaccinereg.vid desc";//echo $sql;exit;
       $result = mysqli_query($conn,$sql);
 ?>
 
@@ -27,77 +27,71 @@
         <table class="table table-bordered" id="table"  data-toggle="table" data-height="460"  data-pagination="true"   data-search="true"> 
         <thead>
     <tr style="text-align: center;">
+      <th>Date</th>
       <th>Full Name</th>
       <th>Gender</th>
       <th>Phone #</th>
       <th>ID #</th>
-      <th>YOB</th>
-      <th>Document</th>
-      <th>Notify / Update</th>
-      <th>Active / Inactive</th>
+      <th>YOB - Age</th>
+      <th>Dose 1, Dose 2</th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
   <?php while ($row=mysqli_fetch_array($result))
   { ?>
     <tr style="text-align: center;">
+      <td><?php echo $row['bkdate']; ?></td>
       <td><?php echo $row['fname']; ?></td>
       <td><?php echo $row['gender']; ?></td>
       <td><?php echo $row['phone']; ?></td>
       <td><?php echo $row['idcard']; ?></td>
-      <td><?php echo $row['yob'];?></td>
-      <td><?php echo $row['idno']; ?></td>
-      <td><?php $status = $row['qfeedback'];
-                                            if($status==NULL)
-                                            { ?>
-                                               <font color="red"><b>NA</b></font>
-                                 <?php      }
-                                            if($status!=NULL)
-                                            {   ?>
-                                               <font color="green"><?php echo $status; ?></font>
-                                 <?php      }    ?></td>
-      <td><a href="../uploads/<?php echo $row['qkey']."/".$row['idcard']; ?>" download> <button class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i></button></a></td>
-      <td>
-        <button class="btn btn-warning" data-toggle="modal" data-target="#example<?php echo $row['qkey']; ?>">Notify</button>
-      </td>
-      <td><?php $status = $row['status'];
-                                            if($status==0)
-                                            { ?>
-                                               <font color="green"><b>Quarantine</b></font>
-                                 <?php      }
-                                            if($status==1)
-                                            {   ?>
-                                               <font color="red"><b>Non - Quarantine</b></font>
-                                 <?php      }    ?>
+      <td><?php echo $row['yob']." - ".date('Y')-$row['yob']." Yrs"?></td>
+      <td><?php echo $row['vacdate']." - ".$row['vacdtaffname']."<br>".$row['vacdate2']." - ".$row['vacstaff2']; ?></td>
+      <td><?php $vs=$row['vaccinestatus']; 
 
-</td> 
+if($vs==1|| $vs==3)
+{
+?><button class="btn btn-warning" data-toggle="modal" data-target="#example<?php echo $row['vkey']; ?>">Update</button><?php
+}
+if($vs==2)
+{
+  echo "<font color='green'><b>Partially Vaccinated[1]</b></font>";
+}
+if($vs==4)
+{
+  echo "<font color='violet'><b>Fully Vaccinated[1,2]</b></font>";
+}
+?>
+      </td>
     </tr> 
   <?php } ?> 
   </tbody>
 </table>
 
 <?php 
-$sql="select * from tb_quarreg where phcid='".$phcid."'"; //echo $sql;exit;
+$sql="select * from tb_vaccinereg inner join tb_vaccinebookhistory on tb_vaccinereg.vkey=tb_vaccinebookhistory.uid where phcid='".$phcid."' order by tb_vaccinereg.vid desc"; //echo $sql;exit;
 
   $result = mysqli_query($conn,$sql);
   while ($row=mysqli_fetch_array($result))
   {
      ?>
     <!-- Modal -->
-    <div class="modal fade" id="example<?php echo $row['qkey']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="example<?php echo $row['vkey']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Send Feedback</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">Update Status</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-           <form action="quarnotify.php" method="post" enctype="multipart/form-data">             
-              <input type="text" name="drname"  class="form-control input-sm" value="<?php echo $row['fname']." ".$row['lname']; ?>"><hr>
-              <textarea rows="3" class="form-control input-sm" name="msg" placeholder="Message content goes here..."><?php echo $row['qfeedback']; ?></textarea>
-              <input type="hidden" name="qkey" value="<?php echo $row['qkey']; ?>">
+           <form action="vacstatus.php" method="post" enctype="multipart/form-data">             
+              <input type="text" name="drname"  class="form-control input-sm" value="<?php echo $row['fname']; ?>" readonly><hr>
+              <input type="text" name="srname"  class="form-control input-sm" value="" placeholder="Vaccinated By"><hr>
+              <input type="hidden" name="uid" value="<?php echo $row['uid']; ?>">
+              <input type="hidden" name="vkey" value="<?php echo $row['vkey']; ?>">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;&nbsp;

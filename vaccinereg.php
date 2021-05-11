@@ -111,7 +111,7 @@
        .catch(function(error){
            //console.log(error);
            alert("Invalid OTP....Enter the correct OTP or reload the page again and generate new OTP");
-           window.location.replace("quarantinereg.php");
+           window.location.replace("vaccinereg.php");
        })
    }
    //=================End Login With Phone=========================

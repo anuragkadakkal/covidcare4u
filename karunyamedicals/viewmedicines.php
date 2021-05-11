@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
   include 'connection.php';
   include 'medicalheader.php';
 
@@ -88,4 +91,10 @@
                 </div>
                 <!-- /.container-fluid -->
 
-            <?php include 'medicalfooter.php'; ?>
+            <?php include 'medicalfooter.php'; }
+
+    else
+    {
+        Header("location:../index.php");
+    }
+?>

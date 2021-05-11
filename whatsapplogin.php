@@ -6,17 +6,16 @@
 		<div class="container ">
 
 			<header class="section-header">
-				<h3>Quarantine Registration</h3><br>
+				<h3>Doctor Appointment Booking - WhatsApp Login</h3><br>
 			</header>
 
-					<form class="form-signin" accept="#">
-    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Verify OTP To Continue</h1><br><br>
+					<form class="form-signin" action="whatslogin.php" method="post">
+    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Verify OTP To Continue</h1><br><br><br>
 
-    <input type="text" id="inputPhone" class="form-control" placeholder="[Enter Country Code + Phone Number] : Eg: +91**********" required="" autofocus="" ><br>
-    <center><div id="recaptcha-container"></div></center><br>
-    <button class="btn btn-outline-success btn-block" type="button" id="phoneloginbtn"><i class="fas fa-sign-in-alt"></i> SEND OTP</button><br>
+    <input type="text" id="inputPhone" name="phone" class="form-control" placeholder="Enter your Phone Number" required="" autofocus="" ><br>
+    <button class="btn btn-outline-success btn-block" type="submit" id="phonewhatsbtn"><i class="fab fa-whatsapp"></i>&nbsp;Send OTP</button>
     <input type="password" id="inputOtp" class="form-control" placeholder="OTP" required=""><br>
-    <button class="btn btn-outline-primary btn-block" type="button" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button><br><br><br><br>
+<!--     <button class="btn btn-outline-primary btn-block" type="button" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button> --><br><br><br><br>
 </form>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
@@ -46,7 +45,7 @@
             console.log(this.responseText);
             if(this.responseText=="Login Successfull" || this.responseText=="User Created"){
                 alert("OTP Verified");
-                location='quarbalance.php';
+                location='drbalance.php';
             }
             else if(this.responseText=="Please Verify Your Email to Get Login"){
                 alert("Please Verify Your Email to Login")
@@ -68,21 +67,24 @@
    var phoneinput=document.getElementById("inputPhone");
    var otpinput=document.getElementById("inputOtp");
    var verifyotp=document.getElementById("verifyotp");
+   var phonewhatsbtn=document.getElementById("phonewhatsbtn");
+
    document.getElementById("inputOtp").style.display = 'none';
    document.getElementById("verifyotp").style.display = 'none';
 
    loginphone.onclick=function(){
     document.getElementById("phoneloginbtn").style.display = 'none';
+    document.getElementById("phonewhatsbtn").style.display = 'none';
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
         'size': 'normal',
         'callback': function(response) {
-            //document.getElementById("inputPhone").readOnly = true;
-            document.getElementById("inputPhone").style.display = 'none'
+          document.getElementById("inputPhone").style.display = 'none'
             document.getElementById("recaptcha-container").style.display = 'none'
             document.getElementById("phoneloginbtn").style.display = 'none';
-            
             document.getElementById("inputOtp").style.display = 'block';
             document.getElementById("verifyotp").style.display = 'block';
+            document.getElementById("phonewhatsbtn").style.display = 'none';
+
             alert("Enter OTP");
         },
         'expired-callback': function() {
@@ -115,7 +117,7 @@
        .catch(function(error){
            //console.log(error);
            alert("Invalid OTP....Enter the correct OTP or reload the page again and generate new OTP");
-           window.location.replace("quarantinereg.php");
+           window.location.replace("sosdoctor.php");
        })
    }
    //=================End Login With Phone=========================

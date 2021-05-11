@@ -1,8 +1,7 @@
 <?php
     session_start();
-    setcookie('adminlogined',1);
-    if(isset($_COOKIE['adminlogined']) && $_COOKIE['adminlogined']==1)
-    {include 'medicalheader.php'; ?>
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { include 'medicalheader.php'; ?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">

@@ -1,6 +1,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 <?php
     session_start();
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
     //setcookie('phclogined',1);
     //if(isset($_COOKIE['phclogined']) && $_COOKIE['phclogined']==1)
    // {
@@ -154,10 +156,9 @@
 
 <?php 
     include 'vaccinefooter.php';
-   // }
-
-   // else
-   // {
-       // Header("location:../index.php");
-   // }
+   }
+    else
+    {
+        Header("location:../index.php");
+    }
 ?>

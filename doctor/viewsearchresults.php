@@ -1,5 +1,7 @@
 <?php
     session_start();
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
     include 'connection.php';
     include 'drheader.php';
     $drid = $_COOKIE['lkey'];
@@ -142,4 +144,10 @@ $sql="select * from tb_drbooking inner join tb_doctor on tb_doctor.loginid=tb_dr
 
 <?php 
     include 'drfooter.php';
+ }
+
+    else
+    {
+        Header("location:../index.php");
+    }
 ?>

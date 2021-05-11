@@ -1,9 +1,7 @@
 <?php
     session_start();
-    //setcookie('phclogined',1);
-   // if(isset($_COOKIE['phclogined']) && $_COOKIE['phclogined']==1)
-   // {
-
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
     include 'connection.php';
     include 'vaccineheader.php';
     $userkey=$_GET['t'];
@@ -60,7 +58,7 @@ $(document).ready(function(){
         var selectedCountry = $(".country option:selected").val();
         $.ajax({
             type: "POST",
-            url: "districtphcpolice.php",
+            url: "../districtphcpolice.php",
             data: { country : selectedCountry } 
         }).done(function(data){
             $("#response").html(data);
@@ -109,10 +107,9 @@ $(document).ready(function(){
 
 <?php 
     include 'vaccinefooter.php';
-    //}
-
-  //  else
-  //  {
-     //   Header("location:../index.php");
-    //}
+   }
+    else
+    {
+        Header("location:../index.php");
+    }
 ?>

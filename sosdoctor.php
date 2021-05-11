@@ -14,7 +14,8 @@
 
     <input type="text" id="inputPhone" class="form-control" placeholder="[Enter Country Code + Phone Number] : Eg: +91**********" required="" autofocus="" ><br>
     <center><div id="recaptcha-container"></div></center><br>
-    <button class="btn btn-outline-success btn-block" type="button" id="phoneloginbtn"><i class="fas fa-sign-in-alt"></i> SEND OTP</button><br>
+    <button class="btn btn-outline-success btn-block" type="button" id="phoneloginbtn"><i class="fas fa-sign-in-alt"></i>&nbsp; SEND OTP</button><br>
+    <a href="whatsapplogin.php"><button class="btn btn-outline-success btn-block" type="button" id="phonewhatsbtn"><i class="fab fa-whatsapp"></i>&nbsp; WhatsApp SignIn</button></a>
     <input type="password" id="inputOtp" class="form-control" placeholder="OTP" required=""><br>
     <button class="btn btn-outline-primary btn-block" type="button" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button><br><br><br><br>
 </form>
@@ -68,11 +69,14 @@
    var phoneinput=document.getElementById("inputPhone");
    var otpinput=document.getElementById("inputOtp");
    var verifyotp=document.getElementById("verifyotp");
+   var phonewhatsbtn=document.getElementById("phonewhatsbtn");
+
    document.getElementById("inputOtp").style.display = 'none';
    document.getElementById("verifyotp").style.display = 'none';
 
    loginphone.onclick=function(){
     document.getElementById("phoneloginbtn").style.display = 'none';
+    document.getElementById("phonewhatsbtn").style.display = 'none';
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
         'size': 'normal',
         'callback': function(response) {
@@ -81,6 +85,8 @@
             document.getElementById("phoneloginbtn").style.display = 'none';
             document.getElementById("inputOtp").style.display = 'block';
             document.getElementById("verifyotp").style.display = 'block';
+            document.getElementById("phonewhatsbtn").style.display = 'none';
+
             alert("Enter OTP");
         },
         'expired-callback': function() {
@@ -113,7 +119,7 @@
        .catch(function(error){
            //console.log(error);
            alert("Invalid OTP....Enter the correct OTP or reload the page again and generate new OTP");
-           window.location.replace("quarantinereg.php");
+           window.location.replace("sosdoctor.php");
        })
    }
    //=================End Login With Phone=========================

@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
+
   include 'connection.php';
   include 'kitchenheader.php';
 
@@ -79,4 +83,10 @@
                 </div>
                 <!-- /.container-fluid -->
 
-            <?php include 'kitchenfooter.php'; ?>
+            <?php include 'kitchenfooter.php';}
+
+    else
+    {
+        Header("location:../index.php");
+    }
+?>

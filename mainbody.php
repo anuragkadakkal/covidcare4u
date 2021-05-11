@@ -286,7 +286,7 @@
 
 					</p> --> <br>
 					<h4>Contact Us</h4>
-					<i class="fa fa-envelope mr-1 text-white mb-2"></i>directoratehealthcare@kerala.gov.in<br> <a href='resources/downloads/helplinesss.pdf' class="text-white"><i class="fa fa-phone mr-1 text-white"></i>Helpline</a>
+					<i class="fa fa-envelope mr-1 text-white mb-2"></i>directoratehealthcare@kerala.gov.in<br> <a href='resources/downloads/helpline.pdf' class="text-white view"><i class="fa fa-phone mr-1 text-white"></i>Helpline</a>
 
 					<!-- 	 -->
 					<h4 class="mt-5">Hit Count:&emsp;1</h4>

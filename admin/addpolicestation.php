@@ -1,7 +1,6 @@
 <?php
     session_start();
-    setcookie('adminlogined',1);
-    if(isset($_COOKIE['adminlogined']) && $_COOKIE['adminlogined']==1)
+    if(isset($_SESSION['adminlogined']) && $_SESSION['adminlogined']==1)
     {include 'adminheader.php'; ?>
 
                 <!-- Begin Page Content -->

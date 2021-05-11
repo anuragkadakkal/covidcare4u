@@ -206,8 +206,8 @@
         </div>
 
 
-		  		 <!-- <li class="nav-item">
-            <a  href="phcupdate.php" class="nav-link ">
+		  		<li class="nav-item">
+            <a  href="ambupdate.php" class="nav-link ">
               <i class="nav-icon  fas fa-user text-orange"></i>
               <p>
                 Update Profile
@@ -216,7 +216,7 @@
             </a>
           </li>
 
-		  		 <li class="nav-item">
+           <li class="nav-item">
             <a  href="passwordchange.php" class="nav-link ">
               <i class="nav-icon fas fa-key text-success"></i>
               <p>
@@ -224,7 +224,7 @@
                 
               </p>
             </a>
-          </li> -->
+          </li>
 
 		  		 <li class="nav-item">
             <a  href="logout.php" class="nav-link ">

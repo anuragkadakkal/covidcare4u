@@ -1,21 +1,14 @@
 <?php
     session_start();
-    setcookie('phclogined',1);
-    if(isset($_COOKIE['phclogined']) && $_COOKIE['phclogined']==1)
-    {
-
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
     include 'connection.php';
-    include 'phcheader.php';
+    include 'ambulanceheader.php';
     $lkey = $_COOKIE['lkey'];
-  $sql="select * from tb_phc inner join tb_login on tb_login.id=tb_phc.loginid where loginid='".$lkey."'";
-
+  $sql="select * from tb_ambulance inner join tb_login on tb_login.id=tb_ambulance.loginid where loginid='".$lkey."'";
+//echo $sql;exit;
   $result = mysqli_query($conn,$sql);
 ?>
-
-
-
-
-<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
   
      <!-- Main content -->
@@ -27,13 +20,13 @@
 
         <!-- Small boxes (Stat box) --><br><br><br><br><br>
         <h2 style="font-family: 'Open Sans', sans-serif;"><center><b>UPDATE PROFILE</b></center></h2><br>
-        <form role="form" method="POST" action="updatephcreg.php" name="myform">
+        <form role="form" method="POST" action="updateambreg.php" name="myform">
             <?php while ($row=mysqli_fetch_array($result))
   {  ?>
                             <div class="form-group">
                                 <input type="text" name="fname"  class="form-control input-sm" placeholder="PHC Name" value="<?php echo $row['fname']; ?>" readonly>
                               </div>
-<input type="hidden" name="key" value="<?php echo $row['phckey']; ?>">
+<input type="hidden" name="key" value="<?php echo $row['ambkey']; ?>">
                                           <div class="form-group">
                                             <textarea rows="2" name="address" class="form-control input-sm" placeholder="Address" readonly=""><?php echo $row['address']; ?></textarea>
                                         </div>
@@ -66,7 +59,7 @@
 
 
                               <div class="form-group">
-                              <input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number" value="<?php echo $row['phone']; ?>">
+                              <input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number" value="<?php echo $row['phno']; ?>">
                               </div> <br>
                             <input type="submit" value="Update" class="btn btn-info btn-block" ><!-- onclick="return checkAll()" -->
 
@@ -100,9 +93,8 @@
 
 
 <?php 
-    include 'phcfooter.php';
-    }
-
+    include 'ambulancefooter.php';
+ }
     else
     {
         Header("location:../index.php");

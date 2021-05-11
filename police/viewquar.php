@@ -1,33 +1,33 @@
 <?php
     session_start();
-    setcookie('phclogined',1);
-    if(isset($_COOKIE['phclogined']) && $_COOKIE['phclogined']==1)
-    {
-      include 'connection.php';
-      include 'phcheader.php';
-      $phcid = $_COOKIE['lkey'];
-      $sql="select * from tb_quarreg where phcid='".$phcid."'";//echo $sql;exit;
-      $result = mysqli_query($conn,$sql);
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
+  include 'connection.php';
+  include 'policeheader.php';
+
+  $phcid = $_COOKIE['lkey'];
+      $sql="select * from tb_quarreg where pcid='".$phcid."'";//echo $sql;exit;
+  $result = mysqli_query($conn,$sql);
 ?>
 
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Quarantine Report</h1>
+                    <p class="mb-4"></p>
 
-
-<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-
-  
-     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-
-
-
-        <!-- Small boxes (Stat box) --><br><br><br>
-        <h2 style="font-family: 'Open Sans', sans-serif;"><center><b>QUARANTINE DETAILS</b></center></h2><br>
-        <table class="table table-bordered" id="table"  data-toggle="table" data-height="460"  data-pagination="true"   data-search="true"> 
-        <thead>
-    <tr style="text-align: center;">
-      <th>Full Name</th>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Personal Details</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                                    <thead>
+                                        <tr>
+                                            <th>Full Name</th>
       <th>Address</th>
       <th>District</th>
       <th>Phone #</th>
@@ -35,11 +35,23 @@
       <th>ID #</th>
       <th>Feedback</th>
       <th>Document</th>
-      <th>Notify / Update</th>
-      <th>Active / Inactive</th>
-    </tr>
-  </thead>
-  <tbody>
+      <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Full Name</th>
+      <th>Address</th>
+      <th>District</th>
+      <th>Phone #</th>
+      <th>Start - End Date</th>
+      <th>ID #</th>
+      <th>Feedback</th>
+      <th>Document</th>
+      <th>Status</th>
+                                        </tr>
+                                    </tfoot>
+                                   <tbody>
   <?php while ($row=mysqli_fetch_array($result))
   { ?>
     <tr style="text-align: center;">
@@ -59,27 +71,45 @@
                                                <font color="green"><?php echo $status; ?></font>
                                  <?php      }    ?></td>
       <td><a href="../uploads/<?php echo $row['qkey']."/".$row['idcard']; ?>" download> <button class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i></button></a></td>
-      <td>
-        <button class="btn btn-warning" data-toggle="modal" data-target="#example<?php echo $row['qkey']; ?>">Notify</button>
-      </td>
+     
       <td><?php $status = $row['status'];
-                                            if($status==0)
-                                            { ?>
-                                               <font color="green"><b>Quarantine</b></font>
-                                 <?php      }
-                                            if($status==1)
-                                            {   ?>
-                                               <font color="red"><b>Non - Quarantine</b></font>
-                                 <?php      }    ?>
+$end=$row['edate'];
+$tday=date('Y-m-d');
+$edate=getDate(strtotime($end));
+$tdate=getDate(strtotime($tday));
+if($edate['mon']<=$tdate['mon'])
+{
+  if($edate['mday']<=$tdate['mday'])
+  {
+    echo "<font color='green'><b>Non Quarantine</b></font>";
+  }
+  else
+  {
+    echo "<font color='red'><b>Quarantine</b></font>";
+  }
+}
+else
+{
+  echo "<font color='red'><b>Quarantine</b></font>";
+}
+
+
+
+?>
 
 </td> 
     </tr> 
   <?php } ?> 
   </tbody>
-</table>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
 
 <?php 
-$sql="select * from tb_quarreg where phcid='".$phcid."'"; //echo $sql;exit;
+$sql="select * from tb_quarreg where pcid='".$phcid."'"; //echo $sql;exit;
 
   $result = mysqli_query($conn,$sql);
   while ($row=mysqli_fetch_array($result))
@@ -109,39 +139,14 @@ $sql="select * from tb_quarreg where phcid='".$phcid."'"; //echo $sql;exit;
       </div>
     </div>
 
-<?php } ?>              
+<?php } ?>     
+                <!-- /.container-fluid -->
 
-</div>
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+            <?php include 'policefooter.php'; 
+        }
 
-  <footer class="main-footer" style="position:relative; z-index:99; ">
-   <small><center>Designed and developed by Anurag A | CovidCare4U 2020</center></small>
-    
-  </footer>
-
-
-</div>
-<!-- ./wrapper -->
-
-
-
-
-
-
-<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-
-
-
-
-<?php 
-    include 'phcfooter.php';
-    }
-
-    else
-    {
-        Header("location:../index.php");
-    }
+else
+{
+    Header("location:../index.php");
+}
 ?>

@@ -1,8 +1,8 @@
 <?php
     session_start();
-    setcookie('adminlogined',1);
-    if(isset($_COOKIE['adminlogined']) && $_COOKIE['adminlogined']==1)
-    {include 'kitchenheader.php'; ?>
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
+include 'kitchenheader.php'; ?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -133,7 +133,7 @@ for ($x = 0; $x <= 100; $x++) { ?>
                 </div>
                 <!-- /.container-fluid --><?php
         include 'kitchenfooter.php';
-    }
+   }
 
     else
     {

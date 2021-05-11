@@ -1,5 +1,7 @@
 <?php
-  session_start();
+    session_start();
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
   $phcid=$_COOKIE['lkey'];
 
   include 'connection.php';
@@ -159,10 +161,10 @@ if(isset($_POST['idno'])&&isset($_POST['idno']))
 
 <?php 
     include 'phcfooter.php';
- /*   }
+}
 
     else
     {
         Header("location:../index.php");
-    }*/
+    }
 ?>

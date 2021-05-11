@@ -1,4 +1,5 @@
 <?php
-	//setcookie("drlogined",0);
-	header("Location: ../index.php")
+	session_start();
+	unset($_SESSION["logined"]);
+	header("Location: ../index.php");
 ?>

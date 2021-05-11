@@ -1,5 +1,7 @@
-<?php  
-  session_start();
+<?php
+    session_start();
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
   include 'vaccineheader.php';
   include 'connection.php';
   $sql="select * from tb_vaccinereg where phone='".trim($_SESSION['email'])."'";//echo $sql;exit;
@@ -185,4 +187,9 @@ else //dose 1 and 2 taken  ---status=4
 
 </div>
 <!-- ./wrapper -->
-<?php  include 'vaccinefooter.php'; ?>
+<?php  include 'vaccinefooter.php'; }
+    else
+    {
+        Header("location:../index.php");
+    }
+?>

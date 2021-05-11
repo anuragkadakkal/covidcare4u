@@ -1,8 +1,7 @@
 <?php
     session_start();
-    setcookie('phclogined',1);
-    if(isset($_COOKIE['phclogined']) && $_COOKIE['phclogined']==1)
-    {
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
       include 'connection.php';
       include 'phcheader.php';
       $phcid = $_COOKIE['lkey'];
@@ -63,14 +62,29 @@
         <button class="btn btn-warning" data-toggle="modal" data-target="#example<?php echo $row['qkey']; ?>">Notify</button>
       </td>
       <td><?php $status = $row['status'];
-                                            if($status==0)
-                                            { ?>
-                                               <font color="green"><b>Quarantine</b></font>
-                                 <?php      }
-                                            if($status==1)
-                                            {   ?>
-                                               <font color="red"><b>Non - Quarantine</b></font>
-                                 <?php      }    ?>
+$end=$row['edate'];
+$tday=date('Y-m-d');
+$edate=getDate(strtotime($end));
+$tdate=getDate(strtotime($tday));
+if($edate['mon']<=$tdate['mon'])
+{
+  if($edate['mday']<=$tdate['mday'])
+  {
+    echo "<font color='green'><b>Non Quarantine</b></font>";
+  }
+  else
+  {
+    echo "<font color='red'><b>Quarantine</b></font>";
+  }
+}
+else
+{
+  echo "<font color='red'><b>Quarantine</b></font>";
+}
+
+
+
+?>
 
 </td> 
     </tr> 
@@ -138,7 +152,7 @@ $sql="select * from tb_quarreg where phcid='".$phcid."'"; //echo $sql;exit;
 
 <?php 
     include 'phcfooter.php';
-    }
+       }
 
     else
     {

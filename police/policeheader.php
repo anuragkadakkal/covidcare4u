@@ -156,23 +156,21 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu 
+             
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Jobs</span>
+                    <i class="fas fa-procedures"></i>
+                    <span>Quarantine</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Services</h6>
-                        <a class="collapse-item" href="jobrequests.php">View Jobs</a>
-                        <a class="collapse-item" href="utilities-other.html">View Applications</a>
-                        <a class="collapse-item" href="utilities-other.html">Assign Applications</a>
+                        <a class="collapse-item" href="viewquar.php">View Details</a>
                     </div>
                 </div>
-            </li> -->
+            </li>
 
             <hr class="sidebar-divider d-none d-md-block">
 

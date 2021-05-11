@@ -1,5 +1,7 @@
 <?php
     session_start();
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
+    { 
       include 'connection.php';
       include 'ambulanceheader.php';
       $ambid = $_COOKIE['lkey'];
@@ -43,7 +45,10 @@
   </thead>
  <?php if($flag==1) {?> 
   <tbody>
-  <?php while ($row=mysqli_fetch_array($result))
+  <?php $sql="select tb_sosambreg.*, tb_ambulance.fname as ambfname,tb_ambulance.lname as amblname,tb_ambulance.phno from tb_sosambreg inner join tb_ambulance on tb_ambulance.ambid=tb_sosambreg.ambid where tb_sosambreg.ambid='".$ambid."' order by sosid desc";
+      //echo $sql;exit;
+      $result = mysqli_query($conn,$sql);
+      while ($row=mysqli_fetch_array($result))
   { ?>
     <tr style="text-align: center;">
       <td><?php echo $row['curdate']; ?></td>
@@ -124,4 +129,9 @@ $sql="select tb_sosambreg.*, tb_ambulance.fname as ambfname,tb_ambulance.lname a
 
 <?php 
     include 'ambulancefooter.php';
+ }
+    else
+    {
+        Header("location:../index.php");
+    }
 ?>

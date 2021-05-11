@@ -8,7 +8,7 @@
     	$en = md5($_POST["pass"]);
 		$url = "https://www.google.com/recaptcha/api/siteverify";
 		$data = [
-			'secret' => "6LfhgMoaAAAAAF1UXZ9_ASAEBlptTWH600da8sda",
+			'secret' => "6LckNsgaAAAAABW8P-i0-c1cU19qUhbyOpY2BDoN",
 			'response' => $_POST['token'],
 		];
 
@@ -24,6 +24,7 @@
   		$response = file_get_contents($url, false, $context);
 
 		$res = json_decode($response, true);
+		//echo $res;exit;
 		if($res['success'] == true)
 		{
 			$sql="insert into tb_logginglogin(logtoken,loginusername,curdate) values('".$_POST['token']."','".$usr."','".date("d-m-Y h:i:sa")."')";
@@ -44,39 +45,45 @@
 				if($d==1)
 				{
 					setcookie("lkey",$b);
-					setcookie("logined",1);
 					if ($c==0)
 					{
-						header("location:admin/adminhome.php");
+						$_SESSION["logined"] = 1;
+						header("location:admin/adminhome.php"); //completed session
 					}
 					else if($c==1)
 					{
-						header("location:customerhome.php");
+						setcookie("logined",1);
+						header("location:customerhome.php"); //completed session
 					}
 					else if($c==2)
 					{
-
-						header("location:police/policehome.php");
+						$_SESSION["logined"] = 1;
+						header("location:police/policehome.php"); //police completed
 					}
 					else if($c==3)
 					{
-						header("location:kitchen/kitchenhome.php");
+						$_SESSION["logined"] = 1;
+						header("location:kitchen/kitchenhome.php"); //community kitchen completed
 					}
 					else if($c==4)
 					{
-						header("location:karunyamedicals/medicalhome.php");
+						$_SESSION["logined"] = 1;
+						header("location:karunyamedicals/medicalhome.php"); //karunya medicals completed
 					}
 					else if($c==5)
 					{
-						header("location:phc/phchome.php");
+						$_SESSION["logined"] = 1;
+						header("location:phc/phchome.php"); //phc completed
 					}
 					else if($c==6)
 					{
-						header("location:doctor/drhome.php");
+						$_SESSION["logined"] = 1;
+						header("location:doctor/drhome.php"); //doctor completed
 					}
 					else if($c==7)
 					{
-						header("location:ambulance/ambulancehome.php");
+						$_SESSION["logined"] = 1;
+						header("location:ambulance/ambulancehome.php"); //ambulance completed
 					}
 					else{}
 				}

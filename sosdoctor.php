@@ -156,8 +156,15 @@
   }
 
    verifyotp.onclick=function(){
-       confirmationResult.confirm(otpinput.value).then(function(response){
+      verifyotp.disabled=true;
+      verifyotp.textContent="Verifying OTP, Please Wait";
+      setTimeout(timeManage, 3000);
+      function timeManage(){
+
+        confirmationResult.confirm(otpinput.value).then(function(response){
            console.log(response);
+           verifyotp.disabled=false;
+           verifyotp.textContent="Verified";           
             var userobj=response.user;
             var token=userobj.xa;
             var provider="phone";
@@ -171,6 +178,10 @@
            alert("Invalid OTP....Enter the correct OTP or reload the page again and generate new OTP");
            window.location.replace("sosdoctor.php");
        })
+        
+      }
+      
+       
    }
    //=================End Login With Phone=========================
 

@@ -6,7 +6,6 @@
     $sql="select * from tb_policestation where district='".$district."'";
     $result = mysqli_query($conn,$sql);
 
-    // Display city dropdown based on country name
     if($district !== 'null'){
 
 
@@ -18,8 +17,7 @@
     }
         echo "</select>";
     
-
-    }
+}
 
     if($district == 'null'){
         echo "<select class='form-control bfh-states' name='model' readonly>";

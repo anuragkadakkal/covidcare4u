@@ -31,6 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="jquery.dataTables.min.css"> 
+  <link rel="icon" href="../resources/images/covid-logo.png" type="image/icon type">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

@@ -8,109 +8,220 @@
 			<header class="section-header">
 				<h3>User Registration</h3><br>
 			</header>
-<script>
-	function checkAll()
-   {
-     var fname = document.forms["myform"]["fname"].value;
-     var lname = document.forms["myform"]["lname"].value;
-     var email = document.forms["myform"]["email"].value;
-     var address = document.forms["myform"]["address"].value;
-     var phno = document.forms["myform"]["phno"].value;
-     var district = document.forms["myform"]["district"].value;
-     var pincode = document.forms["myform"]["pincode"].value;
-	 var pass = document.forms["myform"]["pass"].value;
-     var conpass = document.forms["myform"]["conpass"].value;
-     
-     if(!/^[A-Za-z ]{3,16}$/.test(fname))
-     {
-       alert('Enter Correct First Name [A-Z or a-z]');
-       return false;
-     } 
-     
-     if(!/^[A-Za-z ]{1,16}$/.test(lname))
-     {
-       alert('Enter Correct Last Name [A-Z or a-z]');
-       return false;
-     }  
 
-	 if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) 
-     {
-        alert("You have entered an invalid email address!")
-        return false;
-     }
+<script type="text/javascript">
 
-     if(address=="")
-     {
-       alert('Enter Correct Address');
-       return false;
-     } 
+	function firstName() {
+		var f1 = document.getElementById("f1");
+		var fname = document.getElementById('fname').value;
 
-     if(!/^[6-9]{1}[0-9]{9}$/.test(phno))
-     {
-       alert('Enter Correct Phone starting with 6 7 8 9 digits [10-characters]');
-       return false;
-     }
+		if(!/^[A-Za-z ]{3,16}$/.test(fname))
+	     {
+	       f1.textContent = "**Invalid First Name";
+	       var x = document.getElementById("fname");
+	       x.focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f1.textContent = "";
+	     	return true;
+	     }
+	}
 
-     if(district=="null") 
-     {
-       alert('Select any District');
-       return false;
-     }
+	function lastName() {
+		var f2 = document.getElementById("f2");
+		var lname = document.getElementById('lname').value;
 
-     if(!/^[0-9]{6}$/.test(pincode))
-     {
-       alert('Enter Correct Pincode [1-9 6-characters]');
-       return false;
-     }
+		if(!/^[A-Za-z ]{1,16}$/.test(lname))
+	     {
+	       f2.textContent = "**Invalid Last Name";
+	       document.getElementById("lname").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f2.textContent = "";
+	     	return true;
+	     }
+	}
 
-	 if(pass==conpass)
-      {
-        if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(pass))
-        {
-          alert("Password must have atleast 1 uppercase 1 lowercase 1 digit and 6 to 20 character length");
-          return false;
-        }
-      }
-      else
-      {
-        alert("Password Mismatch");
-        return false
-      }
+	function emailUser() {
+		var f3 = document.getElementById("f3");
+		var email = document.getElementById('email').value;
 
-   }
+		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))
+	     {
+	       f3.textContent = "**Invalid Email Format";
+	       document.getElementById("email").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f3.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function addrUser() {
+		var f4 = document.getElementById("f4");
+		var address = document.getElementById('address').value;
+
+		if (!/^[#.0-9a-zA-Z\s,-]{8,50}$/.test(address))
+	     {
+	       f4.textContent = "**Invalid Address Format";
+	       document.getElementById("address").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f4.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function phoneUser() {
+		var f5 = document.getElementById("f5");
+		var phone = document.getElementById('phone').value;
+
+		if(!/^[6-9]{1}[0-9]{9}$/.test(phone))
+	     {
+	       f5.textContent = "**Invalid Phone # Format";
+	       document.getElementById("phone").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f5.textContent = "";
+	     	return true;
+	     }
+	}
+
+	
+
+	function distUser() {
+
+		var f7 = document.getElementById("f7");
+		var district = document.getElementById('district').value;
+
+		if(district=="null")
+	     {
+	       f7.textContent = "**Select any District";
+	       document.getElementById("district").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f7.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function distPin() {
+
+		var f8 = document.getElementById("f8");
+		var pincode = document.getElementById('pincode').value;
+
+		if(!/^[0-9]{6}$/.test(pincode))
+	     {
+	       f8.textContent = "**Enter Correct Pincode";
+	       document.getElementById("pincode").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f8.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function passUser() {
+		var f9 = document.getElementById("f9");
+		var pass = document.getElementById('pass').value;
+
+		if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(pass))
+	     {
+	       f9.textContent = "**Password Must Have 1(Uppercase,Lowercase,Digit) & 6 to 20 Character Length";
+	       document.getElementById("pass").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f9.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function conpassUser() {
+		var f10 = document.getElementById("f10");
+		var conpass = document.getElementById('conpass').value;
+		var pass = document.getElementById('pass').value;
+
+		if(conpass!=pass)
+	     {
+	       f10.textContent = "**Password Doesn't Match";
+	       document.getElementById("conpass").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f10.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function checkAll() {
+
+		if(firstName()&&lastName()&&emailUser()&&addrUser()&&phoneUser()&&distUser()&&distPin()&&passUser()&&conpassUser())
+	     {
+	       return true;
+	     }
+	     else
+	     {
+	     	return false;
+	     }
+	}
+
+
 </script>
+
 					<form role="form" method="POST" action="customerreg1.php" name="myform">
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="fname" class="form-control input-sm" placeholder="First Name">
+									<input type="text" name="fname"  class="form-control input-sm" placeholder="First Name" id="fname" onkeyup="firstName()">
+									<span style="color: red;font-size: 14px" id="f1"></span>
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="lname"  class="form-control input-sm" placeholder="Last Name">
+									<input type="text" name="lname"  class="form-control input-sm" placeholder="Last Name" id="lname" onkeyup="lastName()">
+									<span style="color: red;font-size: 14px" id="f2"></span>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<input type="email" name="email"  class="form-control input-sm" placeholder="Email Address" value="">
+							<input type="email" name="email"  class="form-control input-sm" placeholder="Email Address" value="" id="email" onkeyup="emailUser()">
+							<span style="color: red;font-size: 14px" id="f3"></span>
 						</div>
 
 						<div class="form-group">
-							<textarea rows="2" class="form-control input-sm" name="address" placeholder="Address"></textarea>
+							<textarea rows="2" class="form-control input-sm" name="address" placeholder="Address" id="address" onkeyup="addrUser()"></textarea>
+							<span style="color: red;font-size: 14px" id="f4"></span>
 						</div>
 
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number">
+									<input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number" id="phone" onkeyup="phoneUser()">
+									<span style="color: red;font-size: 14px" id="f5"></span>
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
 									<div class="form-check"><label class="form-check-input" for="exampleRadios1" style="color: black;font-weight: bold;">Gender</label><br>
-										<input class="form-check-input" type="radio" name="gender" value="Male" checked>
+										<input class="form-check-input" type="radio" name="gender" value="Male" checked="">
 										<label class="form-check-label" for="exampleRadios1" style="color: grey;">
 										Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										</label>
@@ -127,36 +238,40 @@
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<select class="form-control bfh-states" name="district" data-country="US" data-state="CA">
+									<select class="form-control bfh-states" name="district" data-country="US" data-state="CA" id="district" onclick="distUser()">
 										<option value="null">Select District</option>
 										<option value="Trivandrum">Trivandrum</option>
 										<option value="Kollam">Kollam</option>
 										<option value="Idukki">Idukki</option>
 										<option value="Kottayam">Kottayam</option>
 									</select>
-
+									<span style="color: red;font-size: 14px" id="f7"></span>
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode">
+									<input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode" id="pincode" onkeyup="distPin()">
+									<span style="color: red;font-size: 14px" id="f8"></span>
 								</div>
+								
 							</div>
 						</div>
 
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="password" name="pass" class="form-control input-sm" placeholder="Password">
+									<input type="password" name="pass" class="form-control input-sm" placeholder="Password" id="pass" onkeyup="passUser()">
+									<span style="color: red;font-size: 14px" id="f9"></span>
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="password" name="conpass" class="form-control input-sm" placeholder="Confirm Password">
+									<input type="password" name="conpass" class="form-control input-sm" placeholder="Confirm Password" id="conpass" onkeyup="conpassUser()">
+									<span style="color: red;font-size: 14px" id="f10"></span>
 								</div>
 							</div>
 						</div><br>
-						<input type="submit" value="Register" class="btn btn-info btn-block" > <!-- onclick="return checkAll()" -->
+						<input type="submit" value="Register" class="btn btn-info btn-block" onclick="return checkAll()"> 
 					</form>
 <br>
 			</div>

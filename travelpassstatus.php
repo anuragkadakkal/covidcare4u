@@ -16,6 +16,12 @@ session_start();
   {
     $flag=1;$count++;$ar[$count]=$row['id'];
   }
+  if($flag==0)
+  {
+     echo "<SCRIPT type='text/javascript'>alert('No data found...');
+       window.location.replace(\"customerhome.php\");
+       </SCRIPT>"; 
+  }
 ?>
 
     <br><br>

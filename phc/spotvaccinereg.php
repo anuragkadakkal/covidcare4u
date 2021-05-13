@@ -7,7 +7,56 @@
     include 'phcheader.php';
 ?>
 
+<script type="text/javascript">
+  function phoneUser() {
+    var f5 = document.getElementById("f5");
+    var phone = document.getElementById('phone').value;
 
+    if(!/^[6-9]{1}[0-9]{9}$/.test(phone))
+       {
+         f5.textContent = "**Invalid Phone # Format";
+         document.getElementById("phone").focus();
+         return false;
+       }
+       else
+       {
+        f5.textContent = "";
+        return true;
+       }
+  }
+
+  function userIdno() {
+
+    var f17 = document.getElementById("f17");
+    var idno = document.getElementById('idno').value;
+
+    if(!/^[0-9/-]{11,18}$/.test(idno))
+       {
+         f17.textContent = "**Enter Correct ID Card #";
+         document.getElementById("idno").focus();
+         return false;
+       }
+       else
+       {
+        f17.textContent = "";
+        return true;
+       }
+  }
+
+  function checkAll() {
+
+    if(phoneUser()&&userIdno())
+       {
+         return true;
+       }
+       else
+       {
+        return false;
+       }
+  }
+
+
+</script>
 
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -27,17 +76,19 @@
           <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number">
+                  <input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number" id="phone" onkeyup="phoneUser()">
+                  <span style="color: red;font-size: 14px" id="f5"></span>
                 </div>
               </div>
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <input type="text" name="idno"  class="form-control input-sm" placeholder="ID #">
+                  <input type="text" name="idno"  class="form-control input-sm" placeholder="ID Card #" id="idno" onkeyup="userIdno()">
+                  <span style="color: red;font-size: 14px" id="f17"></span>
                 </div>
               </div>
             </div>
             <div class="form-group">
-              <input type="submit" value="Search" class="btn btn-info btn-block">
+              <input type="submit" value="Search" class="btn btn-info btn-block" onclick="return checkAll()">
             </div>
             
           </form>

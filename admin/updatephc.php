@@ -22,49 +22,124 @@
                             <h6 class="m-0 font-weight-bold text-primary">Updation Form</h6>
                         </div>
                         <div class="card-body" >
-						<script>
-	function checkAll()
-   {
-     var address = document.forms["myform"]["address"].value;
-	 var email = document.forms["myform"]["email"].value;
-	 var district = document.forms["myform"]["district"].value;
-	 var pincode = document.forms["myform"]["pincode"].value;
-     var phno = document.forms["myform"]["phno"].value;
+<script>
+	
+  function fnameUser() {
+    var ff = document.getElementById("ff");
+    var fname = document.getElementById('fname').value;
 
-     if(address=="")
-     {
-       alert('Enter Correct Address');
-       return false;
-     } 
+    if (!/^[#.0-9a-zA-Z\s,-]{5,50}$/.test(fname))
+       {
+         ff.textContent = "**Invalid PHC Name";
+         document.getElementById("fname").focus();
+         return false;
+       }
+       else
+       {
+        ff.textContent = "";
+        return true;
+       }
+  }
 
-	 if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) 
-     {
-        alert("You have entered an invalid email address!")
+
+  function addrUser() {
+    var f4 = document.getElementById("f4");
+    var address = document.getElementById('address').value;
+
+    if (!/^[#.0-9a-zA-Z\s,-]{8,50}$/.test(address))
+       {
+         f4.textContent = "**Invalid Address Format";
+         document.getElementById("address").focus();
+         return false;
+       }
+       else
+       {
+        f4.textContent = "";
+        return true;
+       }
+  }
+
+  function emailUser() {
+    var zz = document.getElementById("zz");
+    var emailusers = document.getElementById('emailusers').value;
+
+    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailusers))
+       {
+         zz.textContent = "**Invalid Email Format";
+         document.getElementById("emailusers").focus();
+         return false;
+       }
+       else
+       {
+        zz.textContent = "";
+        return true;
+       }
+  }
+  
+  function distUser() {
+
+    var f7 = document.getElementById("f7");
+    var district = document.getElementById('district').value;
+
+    if(district=="null")
+       {
+         f7.textContent = "**Select any District";
+         document.getElementById("district").focus();
+         return false;
+       }
+       else
+       {
+        f7.textContent = "";
+        return true;
+       }
+  }
+
+  function distPin() {
+
+    var f8 = document.getElementById("f8");
+    var pincode = document.getElementById('pincode').value;
+
+    if(!/^[0-9]{6}$/.test(pincode))
+       {
+         f8.textContent = "**Enter Correct Pincode";
+         document.getElementById("pincode").focus();
+         return false;
+       }
+       else
+       {
+        f8.textContent = "";
+        return true;
+       }
+  }
+
+  function phoneUser() {
+    var f5 = document.getElementById("f5");
+    var phone = document.getElementById('phone').value;
+
+    if(!/^[6-9]{1}[0-9]{9}$/.test(phone))
+       {
+         f5.textContent = "**Invalid Phone # Format";
+         document.getElementById("phone").focus();
+         return false;
+       }
+       else
+       {
+        f5.textContent = "";
+        return true;
+       }
+  }
+
+  function checkAll() {
+
+    if(fnameUser()&&addrUser()&&emailUser()&&distUser()&&distPin()&&phoneUser())
+       {
+         return true;
+       }
+       else
+       {
         return false;
-     }
-
-	 if(district=="null") 
-     {
-       alert('Select any District');
-       return false;
-     }
-
-
-     if(!/^[0-9]{6}$/.test(pincode))
-     {
-       alert('Enter Correct Pincode [1-9 6-characters]');
-       return false;
-     }
-     
-
-     if(!/^[6-9]{1}[0-9]{9}$/.test(phno))
-     {
-       alert('Enter Correct Phone starting with 6 7 8 9 digits [10-characters]');
-       return false;
-     }
-
-
-   }
+       }
+  }
 </script>
 
 <?php 
@@ -78,33 +153,40 @@ $key=$_GET['t'];
                       {   ?>
 
                         <div class="form-group">
-                                <input type="text" name="fname"  class="form-control input-sm" placeholder="PHC Name" value="<?php echo $row['fname']; ?>">
+                                <input type="text" name="fname"  class="form-control input-sm" placeholder="PHC Name" value="<?php echo $row['fname']; ?>" id="fname" onkeyup="fnameUser()"></textarea>
+              <span style="color: red;font-size: 14px" id="ff"></span>
                               </div>
 										  <div class="form-group">
-              			    				<textarea rows="2" name="address" class="form-control input-sm" placeholder="Address"><?php echo $row['address']; ?></textarea>
+              			    				<textarea rows="2" name="address" class="form-control input-sm" placeholder="Address" id="address" onkeyup="addrUser()"><?php echo $row['address']; ?></textarea>
+                                <span style="color: red;font-size: 14px" id="f4"></span>
               			    			</div>
               			    			<div class="form-group">
-              			    				<input type="email" name="email"  class="form-control input-sm" placeholder="Email Address" value="<?php echo $row['email']; ?>">
+              			    				<input type="email" name="email"  class="form-control input-sm" placeholder="Email Address" value="<?php echo $row['email']; ?>" id="emailusers" onkeyup="emailUser()">
+                                <span style="color: red;font-size: 14px" id="zz"></span>
               			    			</div>
               			    			
 
               			    			
-<input type="hidden" name="key"  value="<?php echo $key; ?>">
+                <input type="hidden" name="key"  value="<?php echo $key; ?>">
                               <div class="row">
               			    				<div class="col-xs-6 col-sm-6 col-md-6">
                                   <div class="form-group"><?php $d=$row['district']; ?>
-              			               				<select class="form-control bfh-states" data-country="US" data-state="CA" name="district">
-              			               					<option value="null">District</option>
-              			               					<option value="Idukki"<?php if($d=='Idukki'){echo "selected"; } ?>>Idukki</option>
-              			               					<option value="Kottayam" <?php if($d=='Kottayam'){echo "selected"; } ?>>Kottayam</option>
+              			               				<select class="form-control bfh-states" data-country="US" data-state="CA" name="district" id="district" onclick="distUser()">
+              			               					<option value="null">Select District</option>
+                                            <option value="Trivandrum"<?php if($d=='Trivandrum'){echo "selected"; } ?>>Trivandrum</option>
+                                            <option value="Kollam" <?php if($d=='Kollam'){echo "selected"; } ?>>Kollam</option>
+                                            <option value="Idukki"<?php if($d=='Idukki'){echo "selected"; } ?>>Idukki</option>
+                                            <option value="Kottayam" <?php if($d=='Kottayam'){echo "selected"; } ?>>Kottayam</option>
               			               				</select>
+                                          <span style="color: red;font-size: 14px" id="f7"></span>
 
               			    					</div>
               			    				</div>
               			    				<div class="col-xs-6 col-sm-6 col-md-6">
                                   <div class="form-group">
 								  <div class="form-group">
-								  <input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode" value="<?php echo $row['pincode']; ?>">
+								  <input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode" value="<?php echo $row['pincode']; ?>" id="pincode" onkeyup="distPin()">
+                  <span style="color: red;font-size: 14px" id="f8"></span>
               			               				
               			    					</div>
               			    					</div>
@@ -113,7 +195,8 @@ $key=$_GET['t'];
 
 
                               <div class="form-group">
-							  <input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number" value="<?php echo $row['phone']; ?>">
+							  <input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number" value="<?php echo $row['phone']; ?>" id="phone" onkeyup="phoneUser()">
+                  <span style="color: red;font-size: 14px" id="f5"></span>
                               </div> <br>
   			    			<input type="submit" value="Update" class="btn btn-info btn-block" onclick="return checkAll()">
 <?php } ?>

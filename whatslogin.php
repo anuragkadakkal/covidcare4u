@@ -2,7 +2,7 @@
 session_start();
 $num = "91".$_POST['phone'];
 $_SESSION['email']=$num;
-$chatApiToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjMxNTk0MzYsInVzZXIiOiI5MTczNTYzMDgxMjgifQ.qJ8mCirmqpeP7c3tfhLZndMomHBMLVeRVc5pzvlxSfM"; // Get it from https://www.phphive.info/255/get-whatsapp-password/
+$chatApiToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjMzOTg2MTUsInVzZXIiOiI5MTczNTYzMDgxMjgifQ.9nYapWGr-Rm6hGK-l5oSdmzTYjQ6ooaWj5u9qmSy8SM"; // Get it from https://www.phphive.info/255/get-whatsapp-password/
  
 $number = $num; // Number
 $k1=md5(microtime());

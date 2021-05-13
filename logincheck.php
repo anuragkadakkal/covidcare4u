@@ -48,42 +48,50 @@
 					if ($c==0)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:admin/adminhome.php"); //completed session
+						header("location:admin/adminhome.php"); 
+						/*Admin SESSION - Completed - Validation Completed*/
 					}
 					else if($c==1)
 					{
 						setcookie("logined",1);
-						header("location:customerhome.php"); //completed session
+						header("location:customerhome.php");
+						/*Customer SESSION - Completed - Validation Completed*/
 					}
 					else if($c==2)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:police/policehome.php"); //police completed
+						header("location:police/policehome.php"); 
+						/*Police Station SESSION - Completed - Validation Completed*/
 					}
 					else if($c==3)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:kitchen/kitchenhome.php"); //community kitchen completed
+						header("location:kitchen/kitchenhome.php");
+						/*Community SESSION - Completed - Validation Completed*/
 					}
 					else if($c==4)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:karunyamedicals/medicalhome.php"); //karunya medicals completed
+						header("location:karunyamedicals/medicalhome.php"); 
+						/*Karunya Medicals SESSION - Completed - Validation Completed*/
 					}
 					else if($c==5)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:phc/phchome.php"); //phc completed
+						header("location:phc/phchome.php");
+						/*PHC SESSION - Completed - Validation Completed*/
 					}
 					else if($c==6)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:doctor/drhome.php"); //doctor completed
+						header("location:doctor/drhome.php"); 
+						/*Doctor SESSION - Completed - Validation Completed*/
 					}
 					else if($c==7)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:ambulance/ambulancehome.php"); //ambulance completed
+						header("location:ambulance/ambulancehome.php"); 
+						/*Ambulance SESSION - Completed - Validation Completed*/
 					}
 					else{}
 				}

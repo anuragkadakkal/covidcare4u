@@ -20,7 +20,37 @@
       <div class="container-fluid">
         <div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid">
 
+<script type="text/javascript">
+  function distUser() {
 
+    var f7 = document.getElementById("f7");
+    var district = document.getElementById('district').value;
+
+    if(district=="null")
+       {
+         f7.textContent = "**Select any District";
+         document.getElementById("district").focus();
+         return false;
+       }
+       else
+       {
+        f7.textContent = "";
+        return true;
+       }
+  }
+
+  function checkAll() {
+
+    if(distUser())
+       {
+         return true;
+       }
+       else
+       {
+        return false;
+       }
+  }
+</script>
 
         <!-- Small boxes (Stat box) --><br><br><br>
         <h2 style="font-family: 'Open Sans', sans-serif;"><center><b>VIEW PHC DOCTOR'S NOTIFICATIONS</b></center></h2><br>
@@ -29,13 +59,14 @@
           <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <select class="form-control bfh-states country" name="district" data-country="US" data-state="CA">
-                <option value="null">Select District</option>
-                <option value="Trivandrum">Trivandrum</option>
-                <option value="Kollam">Kollam</option>
-                <option value="Idukki">Idukki</option>
-                <option value="Kottayam">Kottayam</option>
-              </select>
+                  <select class="form-control bfh-states country" name="district" data-country="US" data-state="CA" id="district" onclick="distUser()">
+                    <option value="null">Select District</option>
+                    <option value="Trivandrum">Trivandrum</option>
+                    <option value="Kollam">Kollam</option>
+                    <option value="Idukki">Idukki</option>
+                    <option value="Kottayam">Kottayam</option>
+                  </select>
+                  <span style="color: red;font-size: 14px" id="f7"></span>
               <input type="hidden" name="userkey" value="<?php echo $userkey; ?>">
               <?php 
                 if(isset($sch))
@@ -57,7 +88,7 @@
               </div>
             </div>
             </div>
-               <input type="submit" value="Search" class="btn btn-info btn-block" > 
+               <input type="submit" value="Search" class="btn btn-info btn-block" onclick="return checkAll()"> 
           </form>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -67,7 +98,7 @@ $(document).ready(function(){
         var selectedCountry = $(".country option:selected").val();
         $.ajax({
             type: "POST",
-            url: "districtphcpolice.php",
+            url: "../districtphcpolice.php",
             data: { country : selectedCountry } 
         }).done(function(data){
             $("#response").html(data);
@@ -79,7 +110,7 @@ $(document).ready(function(){
         var selectedCountry = $(".country option:selected").val();
         $.ajax({
             type: "POST",
-            url: "districtpolice.php",
+            url: "../districtpolice.php",
             data: { country : selectedCountry } 
         }).done(function(data){
             $("#response1").html(data);

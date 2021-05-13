@@ -112,7 +112,7 @@ $sql="select * from tb_quarreg where phcid='".$phcid."'"; //echo $sql;exit;
           <div class="modal-body">
            <form action="quarnotify.php" method="post" enctype="multipart/form-data">             
               <input type="text" name="drname"  class="form-control input-sm" value="<?php echo $row['fname']." ".$row['lname']; ?>"><hr>
-              <textarea rows="3" class="form-control input-sm" name="msg" placeholder="Message content goes here..."><?php echo $row['qfeedback']; ?></textarea>
+              <textarea rows="3" class="form-control input-sm" name="msg" placeholder="Message content goes here..." required=""><?php echo $row['qfeedback']; ?></textarea>
               <input type="hidden" name="qkey" value="<?php echo $row['qkey']; ?>">
           </div>
           <div class="modal-footer">

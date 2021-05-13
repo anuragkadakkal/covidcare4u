@@ -39,7 +39,7 @@
   	{
         $_SESSION['email'] = $email;
         $_SESSION['pass'] = $pass;
-        echo "<SCRIPT type='text/javascript'>window.location.replace(\"policemail.php\");</SCRIPT>";
+        echo "<SCRIPT type='text/javascript'>window.location.replace(\"phcmail.php\");</SCRIPT>";
       
   	}
   	else

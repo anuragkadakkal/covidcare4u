@@ -1,6 +1,36 @@
 <?php 
 include 'mainheader.php'; ?>
-    
+    <script type="text/javascript">
+	function whatsOtp() {
+
+		var wh1 = document.getElementById("wh1");
+		var keywhats = document.getElementById('keywhats').value;
+
+		if(!/^[0-9a-zA-Z]{8}$/.test(keywhats))
+	     {
+	       wh1.textContent = "**Enter Correct OTP - 8 Character Long";
+	       document.getElementById("keywhats").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	wh1.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function checkwAll() {
+
+		if(whatsOtp())
+	     {
+	       return true;
+	     }
+	     else
+	     {
+	     	return false;
+	     }
+	}
+</script>
     <br><br>
 	<section id="about" style="background-color: #ecf5ff; box-shadow: 0px 0px 12px 0px #aeb8ba;">
 		<div class="container ">
@@ -12,8 +42,9 @@ include 'mainheader.php'; ?>
 					<form class="form-signin" action="drbalancewhats.php" method="post">
     <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Verify OTP To Continue</h1><br><br><br>
     <input type="text" class="form-control" placeholder="Phone Number" value="<?php echo $_SESSION['email']; ?>" readonly><br>
-    <input type="password"  class="form-control" placeholder="OTP" required="" name="otp"><br>
-    <button class="btn btn-outline-primary btn-block" type="sibmit" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button><br><br><br><br>
+    <input type="password"  class="form-control" placeholder="OTP" required="" name="otp" id="keywhats" onkeyup="whatsOtp()">
+									<span style="color: red;font-size: 14px" id="wh1"></span> <br>
+    <button class="btn btn-outline-primary btn-block" type="sibmit" id="verifyotp" onclick="return checkwAll()"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button><br><br><br><br>
 </form>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>

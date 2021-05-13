@@ -22,7 +22,7 @@
     $status = 0;
     $k1=md5(microtime());
 	$filekey=substr($k1,0,8);
-    $curdate = date('d-m-y');
+    $curdate = date('Y-m-d');
 
     $sql="insert into tb_medicine (filekey,fname,address,items,phno,qstatus,district,pincode,status,curdate,medkey,loginid) values ('".$filekey."','".$firstname."','".$address."','".$foods."','".$phno."','".$qstatus."','".$dist."','".$pin."','".$status."','".$curdate."','".$kitkey."','".$loginid."')"; // echo $sql;exit;
     $ex1=mysqli_query($conn,$sql);

@@ -15,75 +15,217 @@
 			<header class="section-header">
 				<h3>Inter-District Travel Pass</h3><br>
 			</header>
-			<script>
+<script type="text/javascript">
+	function distUser() {
 
-	function checkDet()
-   {
-     var tdate = document.forms["myform"]["tdate"].value;
-     var rdate = document.forms["myform"]["rdate"].value;
-     var from = document.forms["myform"]["from"].value;
-     var to = document.forms["myform"]["to"].value;
-     var vehno = document.forms["myform"]["vehno"].value;
-     var count = document.forms["myform"]["count"].value;
-     var email = document.forms["myform"]["email"].value;
-	 var namelist = document.forms["myform"]["namelist"].value;
-     var purpose = document.forms["myform"]["purpose"].value;
-     
-     if(tdate=="")
-     {
-       alert('Select any Journey date');
-       return false;
-     } 
-     
-     if(rdate=="")
-     {
-       alert('Select any Return Journey date');
-       return false;
-     } 
+		var f7 = document.getElementById("f7");
+		var district = document.getElementById('district').value;
 
-	 if(!/^[A-Za-z ]{1,16}$/.test(from))
-     {
-       alert('Enter Correct From Place Name');
-       return false;
-     } 
-     
-     if(!/^[A-Za-z ]{1,16}$/.test(to))
-     {
-       alert('Enter Correct To Place Name');
-       return false;
-     }  
+		if(district=="null")
+	     {
+	       f7.textContent = "**Select any Police Station";
+	       document.getElementById("district").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f7.textContent = "";
+	     	return true;
+	     }
+	}
 
-	 if(vehno=="") 
-     {
-        alert("You Have Entered Invalid Vehicle Number")
-        return false;
-     }
+	function startDate() {
 
-	 if(!/^[0-9]{1}$/.test(count))
-     {
-       alert('Enter Correct Passenger Count');
-       return false;
-     }
+		var s1 = document.getElementById("s1");
+		var sdate = document.getElementById('sdate').value;
 
-	 if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) 
-     {
-        alert("You have entered an invalid email address!")
-        return false;
-     }
+		if(sdate=="")
+	     {
+	       s1.textContent = "**Select Any Travel Date";
+	       document.getElementById("sdate").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	s1.textContent = "";
+	     	return true;
+	     }
+	}
 
-	 if(!/^[A-Za-z, ]{3,100}$/.test(namelist))
-     {
-       alert('Enter Names Seperated by Comma');
-       return false;
-     } 
+	function endDate() {
 
-	 if(!/^[A-Za-z. ]{3,30}$/.test(purpose))
-     {
-       alert('Enter Any Purpose');
-       return false;
-     } 
+		var e1 = document.getElementById("e1");
+		var edate = document.getElementById('edate').value;
 
-   }
+		if(edate=="")
+	     {
+	       e1.textContent = "**Select Any Return Date";
+	       document.getElementById("edate").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	e1.textContent = "";
+	     	return true;
+	     }
+	}
+	function firstNames() {
+		var f1s = document.getElementById("f1s");
+		var fname = document.getElementById('fnames').value;
+
+		if(!/^[A-Za-z ]{5,16}$/.test(fname))
+	     {
+	       f1s.textContent = "**Invalid From Place";
+	       var x = document.getElementById("fnames");
+	       x.focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f1s.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function lastNames() {
+		var top = document.getElementById("top");
+		var ln = document.getElementById('ln').value;
+
+		if(!/^[A-Za-z ]{5,16}$/.test(ln))
+	     {
+	       top.textContent = "**Invalid From Place";
+	       var x = document.getElementById("ln");
+	       x.focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	top.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function vehNames() {
+		var top1 = document.getElementById("top1");
+		var vn = document.getElementById('vn').value;
+		vn.toUpperCase();
+
+		if(!/^[klKL]{2}[-]{1}[0-9]{1,2}[-]{1}[a-zA-z]{1,2}[-]{1}[0-9]{1,4}$/.test(vn))
+	     {
+	       top1.textContent = "**Invalid Correct Vehicle Number [KL-XX-XX-XXXX]";
+	       var x = document.getElementById("vn");
+	       x.focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	top1.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function totTravel() {
+
+		var top2 = document.getElementById("top2");
+		var tot = document.getElementById('tot').value;
+
+		if(!/^[0-9]{1}$/.test(tot))
+	     {
+	       top2.textContent = "**Enter Correct Passenger(s) Count";
+	       document.getElementById("tot").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	top2.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function emailUser() {
+		var f3 = document.getElementById("f3");
+		var email = document.getElementById('email').value;
+
+		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))
+	     {
+	       f3.textContent = "**Invalid Email Format";
+	       document.getElementById("email").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f3.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function travelNames() {
+		var f1s = document.getElementById("tna");
+		var fname = document.getElementById('tnames').value;
+
+		if(!/^[A-Za-z ,_-]{5,56}$/.test(fname))
+	     {
+	       f1s.textContent = "**Invalid Traveler(s) Name";
+	       var x = document.getElementById("tnames");
+	       x.focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f1s.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function purpUser() {
+		var f20 = document.getElementById("f20");
+		var purpose = document.getElementById('purpose').value;
+
+		if (!/^[#.0-9a-zA-Z\s,-]{3,50}$/.test(purpose))
+	     {
+	       f20.textContent = "**Invalid Purpose";
+	       document.getElementById("purpose").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f20.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function fileCheck() {
+
+		var f8 = document.getElementById("f8");
+		var file = document.getElementById('file').value;
+
+		var file=file.split('.').pop();
+		if(file!="pdf")
+	     {
+	        f8.textContent = "**Select PDF File";
+	      	document.getElementById("file").focus();
+	     	return false;
+	     }
+	     else
+	     {
+	     	f8.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function checkAlls(){
+		if(distUser()&&startDate()&&endDate()&&firstNames()&&lastNames()
+			&&vehNames()&&totTravel()&&emailUser()&&travelNames()&&purpUser()&&fileCheck())
+	     {
+	       return true;
+	     }
+	     else
+	     {
+	     	return false;
+	     }
+	}
+
+
 </script>
 					<form role="form" method="POST" action="applypass.php" name="myform" enctype="multipart/form-data">
 						<?php
@@ -95,7 +237,7 @@
 	} 
 ?>
 						<div class="form-group">
-							<select class="form-control bfh-states" name="pkey" data-country="US" data-state="CA">
+							<select class="form-control bfh-states" name="pkey" data-country="US" data-state="CA" id="district" onclick="distUser()">
 									<option value="null">Select Police Station</option>
 								<?php $sql= "select * from tb_policestation where district='".$district."'";
 	$result = mysqli_query($conn,$sql);
@@ -105,29 +247,20 @@
 										<option value="<?php echo $row['loginid']; ?>"><?php echo $row['address']; ?></option>
 <?php } ?>
 									</select>
+									<span style="color: red;font-size: 14px" id="f7"></span>
 						</div>
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="tdate" class="form-control input-sm" placeholder="Travel Date" onfocus="(this.type='date')">
-								</div>
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6">
-								<div class="form-group">
-									<input type="text" name="rdate"  class="form-control input-sm" placeholder="Return Date" onfocus="(this.type='date')">
-								</div>
-							</div>
-						</div>
+									<input type="text" name="tdate" class="form-control input-sm" placeholder="Travel Date" onfocus="(this.type='date')" id="sdate" onfocusout="startDate()">
+									<span style="color: red;font-size: 14px" id="s1"></span>
 
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-6">
-								<div class="form-group">
-									<input type="text" name="from"  class="form-control input-sm" placeholder="From Place">
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="to"  class="form-control input-sm" placeholder="To Place">
+									<input type="text" name="rdate"  class="form-control input-sm" placeholder="Return Date" onfocus="(this.type='date')" id="edate" onfocusout="endDate()">
+									<span style="color: red;font-size: 14px" id="e1"></span>
 								</div>
 							</div>
 						</div>
@@ -135,33 +268,56 @@
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="vehno"  class="form-control input-sm" placeholder="Vehicle Registration Number">
+									<input type="text" name="from"  class="form-control input-sm" placeholder="From Place" id="fnames" onkeyup="firstNames()">
+									<span style="color: red;font-size: 14px" id="f1s"></span>
+
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="count"  class="form-control input-sm" placeholder="Total Travellers">
+									<input type="text" name="to"  class="form-control input-sm" placeholder="To Place" 
+									id="ln" onkeyup="lastNames()">
+									<span style="color: red;font-size: 14px" id="top"></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="text" name="vehno"  class="form-control input-sm" placeholder="Vehicle Registration Number" id="vn" onkeyup="vehNames()"  oninput="this.value = this.value.toUpperCase()">
+									<span style="color: red;font-size: 14px" id="top1"></span>
+								</div>
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="number" name="count"  class="form-control input-sm" placeholder="Total Travellers" id='tot' onkeyup="totTravel()">
+									<span style="color: red;font-size: 14px" id="top2"></span>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<input type="email" name="email"  class="form-control input-sm" placeholder="Email">
+							<input type="email" name="email"  class="form-control input-sm" placeholder="Email" id="email" onkeyup="emailUser()">
+							<span style="color: red;font-size: 14px" id="f3"></span>
 						</div>
 
 						<div class="form-group">
-							<textarea rows="2" class="form-control input-sm" name="namelist" placeholder="Traveller(s) Name"></textarea>
+							<textarea rows="2" class="form-control input-sm" name="namelist" placeholder="Traveller(s) Name" id="tnames" onkeyup="travelNames()"></textarea>
+							<span style="color: red;font-size: 14px" id="tna"></span>
 						</div>
 
 						<div class="form-group">
-							<textarea rows="2" class="form-control input-sm" name="purpose" placeholder="Description of Purpose"></textarea>
+							<textarea rows="2" class="form-control input-sm" name="purpose" placeholder="Description of Purpose" id="purpose" onkeyup="purpUser()"></textarea>
+							<span style="color: red;font-size: 14px" id="f20"></span>
 						</div>
 
 						<div class="form-group">
 							<span><b>Aadhar / Driving Licence</b></span>
-							<input type="file" name="aadharfile"  class="form-control input-sm" >
+							<input type="file" name="aadharfile"  class="form-control input-sm" id="file" onchange="fileCheck()">
+							<span style="color: red;font-size: 14px" id="f8"></span>
 						</div>
-						<input type="submit" value="Apply" class="btn btn-info btn-block"  onclick="return checkDet()">
+						<input type="submit" value="Apply" class="btn btn-info btn-block"  onclick="return checkAlls()">
 					</form>
 
 			</div>

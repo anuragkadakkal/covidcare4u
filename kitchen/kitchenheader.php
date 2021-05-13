@@ -10,73 +10,7 @@
     <meta name="author" content="">
 
 
-    <script>
    
-    function checkEng()
-    {
-      var fname = document.forms["myform"]["fname"].value;
-      var lname = document.forms["myform"]["lname"].value;
-      var email = document.forms["myform"]["email"].value;
-      var address = document.forms["myform"]["address"].value;
-      var phno = document.forms["myform"]["phno"].value;
-      var district = document.forms["myform"]["district"].value;
-      var section = document.forms["myform"]["section"].value;
-      var pincode = document.forms["myform"]["pincode"].value;
-     
-
-      if(!/^[A-Za-z ]{3,16}$/.test(fname))
-      {
-        alert('Enter Correct First Name [A-Z or a-z]');
-        return false;
-      } 
-      
-      if(!/^[A-Za-z ]{1,16}$/.test(lname))
-      {
-        alert('Enter Correct Last Name [A-Z or a-z]');
-        return false;
-      }  
-
-      if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) 
-      {
-        alert("You have entered an invalid email address!")
-        return false;
-      }
-
-      if(address=="")
-      {
-        alert('Enter Correct Address');
-        return false;
-      } 
-
-      if(!/^[6-9]{1}[0-9]{9}$/.test(phno))
-      {
-        alert('Enter Correct Phone starting with 6 7 8 9 digits [10-characters]');
-        return false;
-      }
-
-      if(district=="null") 
-      {
-        alert('Select any District');
-        return false;
-      }
-
-      if(section=="null") 
-      {
-        alert('Select any Section');
-        return false;
-      }
-
-      if(!/^[0-9]{6}$/.test(pincode))
-      {
-        alert('Enter Correct Pincode [1-9 6-characters]');
-        return false;
-      }
-
-
-    }
-
-    </script>
-
     <title>CovidCare4U -Community Kitchen Homepage</title>
 
     <!-- Custom fonts for this template -->
@@ -90,6 +24,7 @@
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="icon" href="../resources/images/covid-logo.png" type="image/icon type">
 
 </head>
 

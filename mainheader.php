@@ -15,7 +15,7 @@ session_start();
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="all,follow">
-
+<link rel="icon" href="resources/images/covid-logo.png" type="image/icon type">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
@@ -96,7 +96,7 @@ session_start();
 				<li class="drop-down"><a href="#">Registration</a>
 					<ul>
 						<li><a href="customerreg.php">
-								User</a></li> 
+								Public User</a></li> 
 						<li><a href="medicalstorereg.php">
 								Karunya Medicals</a></li>
 						<li><a href="communitykitchenreg.php">
@@ -159,11 +159,11 @@ session_start();
 <input type="hidden" name="do" value="contact" />
       <div class="modal-body">
 		<div class="input-group input-group-lg">
-			<input type="email" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Username">
+			<input type="email" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Username" required="">
 		</div>
 <br>
 		<div class="input-group input-group-lg">
-			<input type="password" name="pass" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Password">
+			<input type="password" name="pass" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Password" required="">
 		</div>
 
 		<div class="input-group input-group-lg">
@@ -197,7 +197,37 @@ Captcha End -->
     </div>
   </div>
 </div>
+<script type="text/javascript">
+	function distPin() {
 
+		var f7 = document.getElementById("f7");
+		var key = document.getElementById('key').value;
+
+		if(!/^[0-9a-zA-Z]{8}$/.test(key))
+	     {
+	       f7.textContent = "**Enter Correct Key - 8 Character Long";
+	       document.getElementById("key").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f7.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function checkAll() {
+
+		if(distPin())
+	     {
+	       return true;
+	     }
+	     else
+	     {
+	     	return false;
+	     }
+	}
+</script>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -209,12 +239,13 @@ Captcha End -->
       </div>
       <div class="modal-body">
       	<form method="post" action="viecertificate.php">
-        	<input type="name" name="refkey" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Reference Key">
+        	<input type="name" name="refkey" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Reference Key" id="key" onkeyup="distPin()">
+									<span style="color: red;font-size: 14px" id="f7"></span>
         
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;
-        <button type="submit" class="btn btn-primary">Search</button></form>
+        <button type="submit" class="btn btn-primary" onclick="return checkAll()">Search</button></form>
       </div>
     </div>
   </div>

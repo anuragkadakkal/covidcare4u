@@ -17,7 +17,91 @@
       <div class="container-fluid">
         <div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid">
 
+<script type="text/javascript">
+  function firstName() {
+    var f1 = document.getElementById("f1");
+    var fname = document.getElementById('fname').value;
 
+    if(!/^[A-Za-z ]{3,16}$/.test(fname))
+       {
+         f1.textContent = "**Invalid First Name";
+         var x = document.getElementById("fname");
+         x.focus();
+         return false;
+       }
+       else
+       {
+        f1.textContent = "";
+        return true;
+       }
+  }
+
+  function lastName() {
+    var f2 = document.getElementById("f2");
+    var lname = document.getElementById('lname').value;
+
+    if(!/^[A-Za-z ]{1,16}$/.test(lname))
+       {
+         f2.textContent = "**Invalid Last Name";
+         document.getElementById("lname").focus();
+         return false;
+       }
+       else
+       {
+        f2.textContent = "";
+        return true;
+       }
+  }
+
+  function userIdno() {
+
+    var f17 = document.getElementById("f17");
+    var idno = document.getElementById('idno').value;
+
+    if(!/^[0-9/-]{11,18}$/.test(idno))
+       {
+         f17.textContent = "**Enter Correct ID Card #";
+         document.getElementById("idno").focus();
+         return false;
+       }
+       else
+       {
+        f17.textContent = "";
+        return true;
+       }
+  }
+
+  function yearBirth() {
+    var f22 = document.getElementById("f22");
+    var yob = document.getElementById('yob').value;
+
+    if(!/^[0-9]{4}$/.test(yob))
+       {
+         f22.textContent = "**Invalid Year Of Birth";
+         var x = document.getElementById("yob");
+         x.focus();
+         return false;
+       }
+       else
+       {
+        f22.textContent = "";
+        return true;
+       }
+  }
+
+  function checkAll() {
+
+    if(firstName()&&lastName()&&userIdno()&&yearBirth())
+       {
+         return true;
+       }
+       else
+       {
+        return false;
+       }
+  }
+
+</script>
 
         <!-- Small boxes (Stat box) --><br><br><br><br><br><br><br><br><br>
         <h2 style="font-family: 'Open Sans', sans-serif;"><center><b>VACCINE REGISTRATION DETAILS</b></center></h2><br>
@@ -26,23 +110,17 @@
           <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <input type="text" name="fname" class="form-control input-sm" placeholder="First Name">
+                  <input type="text" name="fname" class="form-control input-sm" placeholder="First Name" id="fname" onkeyup="firstName()">
+                  <span style="color: red;font-size: 14px" id="f1"></span>
                 </div>
               </div>
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <input type="text" name="lname"  class="form-control input-sm" placeholder="Last Name">
+                  <input type="text" name="lname"  class="form-control input-sm" placeholder="Last Name" id="lname" onkeyup="lastName()">
+                  <span style="color: red;font-size: 14px" id="f2"></span>
                 </div>
               </div>
             </div>
-
-            <!-- <div class="form-group">
-              <input type="email" name="email"  class="form-control input-sm" placeholder="Email Address" value="">
-            </div>
-<input type="hidden" name="phckey" value="<?php //echo $_COOKIE['lkey']; ?>">
-            <div class="form-group">
-              <textarea rows="2" class="form-control input-sm" name="address" placeholder="Address"></textarea>
-            </div> -->
 
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6">
@@ -70,51 +148,22 @@
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <input type="text" name="idcard" class="form-control input-sm" placeholder="ID Card #">
+                  <input type="text" name="idcard" class="form-control input-sm" placeholder="ID Card #" id="idno" onkeyup="userIdno()">
+                  <span style="color: red;font-size: 14px" id="f17"></span>
                 </div>
               </div>
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <input type="text" name="age" class="form-control input-sm" placeholder="Year of Birth">
+                  <input type="text" name="age" class="form-control input-sm" placeholder="Year of Birth" id="yob" onkeyup="yearBirth()">
+                  <span style="color: red;font-size: 14px" id="f22"></span>
                 </div>
               </div>
             </div>
 
-            <!-- <div class="row">
-              <div class="col-xs-6 col-sm-6 col-md-6">
-                <div class="form-group">
-                  <input type="text" name="qual" class="form-control input-sm" placeholder="Qualifications [Seperated by commas]">
-                </div>
-              </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              
-                <div class="form-group">
-                  <select class="form-control bfh-states" name="specs" data-country="US" data-state="CA">
-                    <option value="null">Specialization Field</option>
-                    <option value="Pediatrics">Pediatrics</option>
-                    <option value="Ayurveda">Ayurveda</option>
-                    <option value="Physical Medicine">Physical Medicine</option>
-                    <option value="Dermatology">Dermatology</option>
-                    <option value="Cardiology">Cardiology</option>
-                    <option value="ENT">ENT</option>
-                    <option value="Ophthalmology">Ophthalmology</option>
-                  </select>
-                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="form-group">
-                  <select class="form-control bfh-states" name="exp" data-country="US" data-state="CA">
-                    <option value="null">Work Experience</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="5+">>5</option>
-                  </select>
-                </div> -->
 
             </div><br>
             <div class="form-group">
-              <input type="submit" value="Register" class="btn btn-info btn-block">
+              <input type="submit" value="Register" class="btn btn-info btn-block" onclick="return checkAll()">
             </div>
             
           </form>

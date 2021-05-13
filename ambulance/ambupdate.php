@@ -16,7 +16,54 @@
       <div class="container-fluid">
         <div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid"><div class="container-fluid">
 
+<script type="text/javascript">
+  function checkEmail(){
+    var e1 = document.getElementById("e1");
+    var emailaddress = document.getElementById('emailaddress').value;
 
+    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailaddress))
+       {
+         e1.textContent = "**Invalid Email Format";
+         document.getElementById("emailaddress").focus();
+         return false;
+       }
+       else
+       {
+        e1.textContent = "";
+        return true;
+       }
+  }
+
+  function phoneUser() {
+    var f5 = document.getElementById("f5");
+    var phone = document.getElementById('phone').value;
+
+    if(!/^[6-9]{1}[0-9]{9}$/.test(phone))
+       {
+         f5.textContent = "**Invalid Phone # Format";
+         document.getElementById("phone").focus();
+         return false;
+       }
+       else
+       {
+        f5.textContent = "";
+        return true;
+       }
+  }
+
+  function checkAll() {
+
+    if(checkEmail()&&phoneUser())
+       {
+         return true;
+       }
+       else
+       {
+        return false;
+       }
+  }
+
+</script>
 
         <!-- Small boxes (Stat box) --><br><br><br><br><br>
         <h2 style="font-family: 'Open Sans', sans-serif;"><center><b>UPDATE PROFILE</b></center></h2><br>
@@ -31,7 +78,8 @@
                                             <textarea rows="2" name="address" class="form-control input-sm" placeholder="Address" readonly=""><?php echo $row['address']; ?></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" name="email"  class="form-control input-sm" placeholder="Email Address" value="<?php echo $row['username']; ?>">
+                                            <input type="email" name="email"  class="form-control input-sm" placeholder="Email Address" value="<?php echo $row['username']; ?>" id="emailaddress" onkeyup="checkEmail()">
+                                            <span style="color: red;font-size: 14px" id="e1"></span>
                                         </div>
                                         
 
@@ -59,9 +107,10 @@
 
 
                               <div class="form-group">
-                              <input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number" value="<?php echo $row['phno']; ?>">
+                              <input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number" value="<?php echo $row['phno']; ?>" id="phone" onkeyup="phoneUser()">
+                  <span style="color: red;font-size: 14px" id="f5"></span>
                               </div> <br>
-                            <input type="submit" value="Update" class="btn btn-info btn-block" ><!-- onclick="return checkAll()" -->
+                            <input type="submit" value="Update" class="btn btn-info btn-block" onclick="return checkAll()">
 
                 
                         <?php } ?>

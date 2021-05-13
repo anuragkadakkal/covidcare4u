@@ -89,7 +89,7 @@ $sql="select * from tb_vaccinereg inner join tb_vaccinebookhistory on tb_vaccine
           <div class="modal-body">
            <form action="vacstatus.php" method="post" enctype="multipart/form-data">             
               <input type="text" name="drname"  class="form-control input-sm" value="<?php echo $row['fname']; ?>" readonly><hr>
-              <input type="text" name="srname"  class="form-control input-sm" value="" placeholder="Vaccinated By"><hr>
+              <input type="text" name="srname"  class="form-control input-sm" value="" placeholder="Vaccinated By" required=""><hr>
               <input type="hidden" name="uid" value="<?php echo $row['uid']; ?>">
               <input type="hidden" name="vkey" value="<?php echo $row['vkey']; ?>">
           </div>

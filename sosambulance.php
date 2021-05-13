@@ -9,13 +9,52 @@
 				<h3>SOS Ambulance Service</h3><br>
 			</header>
 
+      <script type="text/javascript">
+  
+  function phoneUser() {
+    var f5 = document.getElementById("f5");
+    var inputPhone = document.getElementById('inputPhone').value;
+    if(!/^[6-9]{1}[0-9]{9}$/.test(inputPhone))
+       {
+         f5.textContent = "**Invalid Phone # Format";
+         document.getElementById("inputPhone").focus();
+         return false;
+       }
+       else
+       {
+        f5.textContent = "";
+        return true;
+       }
+  }
+
+  function otpUser() {
+    var f6 = document.getElementById("f6");
+    var inputOtp = document.getElementById('inputOtp').value;
+    if(!/^[0-9]{6}$/.test(inputOtp))
+       {
+         f6.textContent = "**Enter 6 Digit OTP";
+         document.getElementById("inputOtp").focus();
+         return false;
+       }
+       else
+       {
+        f6.textContent = "";
+        return true;
+       }
+  }
+</script>
+
 					<form class="form-signin" accept="#">
     <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Verify OTP To Continue</h1><br><br>
 
-    <input type="text" id="inputPhone" class="form-control" placeholder="[Enter Country Code + Phone Number] : Eg: +91**********" required="" autofocus="" ><br>
+    <input type="number"  class="form-control" placeholder="Phone Number" id="inputPhone"  onkeyup="phoneUser()">
+                  <span style="color: red;font-size: 14px" id="f5"></span>
+    <br>
+
     <center><div id="recaptcha-container"></div></center><br>
-    <button class="btn btn-outline-success btn-block" type="button" id="phoneloginbtn"><i class="fas fa-sign-in-alt"></i> SEND OTP</button><br>
-    <input type="password" id="inputOtp" class="form-control" placeholder="OTP" required=""><br>
+    <button class="btn btn-outline-success btn-block" type="button" id="phoneloginbtn" ><i class="fas fa-sign-in-alt"></i> SEND OTP</button><br>
+    <input type="password" id="inputOtp" class="form-control" placeholder="OTP" required="" onclick="otpUser()">
+    <span style="color: red;font-size: 14px" id="f6"></span><br>
     <button class="btn btn-outline-primary btn-block" type="button" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button><br><br><br><br>
 </form>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
@@ -72,6 +111,17 @@
    document.getElementById("verifyotp").style.display = 'none';
 
    loginphone.onclick=function(){
+
+    var inputPhone = document.getElementById('inputPhone').value;
+    if(!/^[6-9]{1}[0-9]{9}$/.test(inputPhone))
+       {
+         f5.textContent = "**Invalid Phone # Format";
+         document.getElementById("inputPhone").focus();
+         return false;
+       }
+       else
+       {
+        f5.textContent = "";
     document.getElementById("phoneloginbtn").style.display = 'none';
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
         'size': 'normal',
@@ -91,13 +141,14 @@
 
         var cverify=window.recaptchaVerifier;
 
-        firebase.auth().signInWithPhoneNumber(phoneinput.value,cverify).then(function(response){
+        firebase.auth().signInWithPhoneNumber('+91'+phoneinput.value,cverify).then(function(response){
             //console.log(response);
             window.confirmationResult=response;
         }).catch(function(error){
             console.log(error);
         })
    }
+  }
 
    verifyotp.onclick=function(){
        confirmationResult.confirm(otpinput.value).then(function(response){
@@ -105,7 +156,7 @@
             var userobj=response.user;
             var token=userobj.xa;
             var provider="phone";
-            var email=phoneinput.value;
+            var email='+91'+phoneinput.value;
             if(token!=null && token!=undefined && token!=""){
             sendDatatoServerPhp(email,provider,token,email);
             }

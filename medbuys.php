@@ -101,7 +101,7 @@ if(isset($_SESSION["cart_item"])){
 
 		<?php		$fooditems=$fooditems.($item["name"]." - ".$item["quantity"]." , ");  ?>
 
-				<td style="text-align:center;"><button class="btn btn-warning"><a href="medbuys.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></button></td>
+				<td style="text-align:center;"><button class="btn btn-warning"><a href="medbuys.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" height="28px" width="26px" alt="Remove Item" /></a></button></td>
 				</tr>
 				<?php
 				$total_quantity += $item["quantity"];

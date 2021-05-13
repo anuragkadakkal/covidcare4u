@@ -1,4 +1,5 @@
 <?php 
+//http://chat-api.phphive.info/login/gui
     include 'mainheader.php'; ?>
     
     <br><br>
@@ -8,12 +9,43 @@
 			<header class="section-header">
 				<h3>Doctor Appointment Booking - WhatsApp Login</h3><br>
 			</header>
+<script type="text/javascript">
+   function phoneUser() {
+    var f5 = document.getElementById("f5");
+    var inputPhone = document.getElementById('inputPhone').value;
+    if(!/^[6-9]{1}[0-9]{9}$/.test(inputPhone))
+       {
+         f5.textContent = "**Invalid Phone # Format";
+         document.getElementById("inputPhone").focus();
+         return false;
+       }
+       else
+       {
+        f5.textContent = "";
+        return true;
+       }
+  }
+
+  function checkAll() {
+
+    if(phoneUser())
+       {
+         return true;
+       }
+       else
+       {
+        return false;
+       }
+  }
+</script>
 
 					<form class="form-signin" action="whatslogin.php" method="post">
     <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Verify OTP To Continue</h1><br><br><br>
 
-    <input type="text" id="inputPhone" name="phone" class="form-control" placeholder="Enter your Phone Number" required="" autofocus="" ><br>
-    <button class="btn btn-outline-success btn-block" type="submit" id="phonewhatsbtn"><i class="fab fa-whatsapp"></i>&nbsp;Send OTP</button>
+    <input type="text" id="inputPhone" name="phone" class="form-control" placeholder="Enter your Phone Number" id="inputPhone"  onkeyup="phoneUser()">
+                  <span style="color: red;font-size: 14px" id="f5"></span>
+                  <br>
+    <button class="btn btn-outline-success btn-block" type="submit" id="phonewhatsbtn" onclick="return checkAll()"><i class="fab fa-whatsapp"></i>&nbsp;Send OTP</button>
     <input type="password" id="inputOtp" class="form-control" placeholder="OTP" required=""><br>
 <!--     <button class="btn btn-outline-primary btn-block" type="button" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button> --><br><br><br><br>
 </form>

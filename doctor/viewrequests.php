@@ -70,7 +70,73 @@ if($s==2)
   <?php } }else{ ?><tbody><tr style="text-align: center;">
       <td colspan="8" rowspan="2"><h4 style="color: red">No Data Available</h4></td></tr> </tbody><?php } ?> 
 </table>
+<script type="text/javascript">
+  function addrUser() {
+    var f4 = document.getElementById("f4");
+    var address = document.getElementById('address').value;
 
+    if (!/^[#.0-9a-zA-Z\s,-]{8,50}$/.test(address))
+       {
+         f4.textContent = "**Invalid Message Format";
+         document.getElementById("address").focus();
+         return false;
+       }
+       else
+       {
+        f4.textContent = "";
+        return true;
+       }
+  }
+
+  function startDate() {
+
+    var s1 = document.getElementById("s1");
+    var sdate = document.getElementById('sdate').value;
+
+    if(sdate=="")
+       {
+         s1.textContent = "**Select Any Date";
+         document.getElementById("sdate").focus();
+         return false;
+       }
+       else
+       {
+        s1.textContent = "";
+        return true;
+       }
+    }
+
+  function distUser() {
+
+    var f6 = document.getElementById("f6");
+    var district = document.getElementById('district').value;
+
+    if(district=="null")
+       {
+         f6.textContent = "**Select any District";
+         document.getElementById("district").focus();
+         return false;
+       }
+       else
+       {
+        f6.textContent = "";
+        return true;
+       }
+  }
+function checkAll() {
+
+    if(addrUser()&&startDate()&&distUser())
+       {
+         return true;
+       }
+       else
+       {
+        return false;
+       }
+  }
+
+
+</script>
 <?php 
 $sql="select * from tb_drbooking inner join tb_doctor on tb_doctor.loginid=tb_drbooking.dbdrid where dbdrid='".$drid."' order by dbid desc"; //echo $sql;exit;
 
@@ -91,10 +157,12 @@ $sql="select * from tb_drbooking inner join tb_doctor on tb_doctor.loginid=tb_dr
           <div class="modal-body">
            <form action="drnotify.php" method="post" enctype="multipart/form-data">             
               <input type="text" name="drname"  class="form-control input-sm" value="<?php echo $row['dbname']." - ".$row['dbaddress']." - ".$row['dbemail']; ?>" readonly><hr>
-              <textarea rows="3" class="form-control input-sm" name="msg" placeholder="Message content goes here..."></textarea><hr>
-              <input type="text" name="apdate" class="form-control input-sm" placeholder="Appointment Date" onfocus="(this.type='date')"><hr>
-              <select class="form-control" name="slot">
-                <option>Select Time Slot</option>
+              <textarea rows="3" class="form-control input-sm" name="msg" placeholder="Message content goes here..." id="address" onkeyup="addrUser()"></textarea>
+              <span style="color: red;font-size: 14px" id="f4"></span><hr>
+              <input type="text" name="apdate" class="form-control input-sm" placeholder="Appointment Date" onfocus="(this.type='date')" id="sdate" onfocusout="startDate()">
+                  <span style="color: red;font-size: 14px" id="s1"></span><hr>
+              <select class="form-control" name="slot" id="district" onclick="distUser()">
+                <option value="null">Select Time Slot</option>
                 <option value="9am-10am"> 9am-10am </option>
                 <option value="10am-11am"> 10am-11am </option>
                 <option value="11am-12pm"> 11am-12pm </option>
@@ -103,13 +171,14 @@ $sql="select * from tb_drbooking inner join tb_doctor on tb_doctor.loginid=tb_dr
                 <option value="2.30pm-3.30pm"> 2.30pm-3.30pm </option>
                 <option value="4.30pm-5.30pm"> 4.30pm-5.30pm </option>
               </select>
+              <span style="color: red;font-size: 14px" id="f6"></span>
               <input type="hidden" name="dbkey" value="<?php echo $row['dbkey']; ?>">
               <input type="hidden" name="dbemail" value="<?php echo $row['dbemail']; ?>">
               <input type="hidden" name="drphno" value="<?php echo $row['phno']; ?>">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;&nbsp;
-            <button type="submit" class="btn btn-primary">Send</button></form>
+            <button type="submit" class="btn btn-primary" onclick="return checkAll()">Send</button></form>
           </div>
         </div>
       </div>

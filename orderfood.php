@@ -14,55 +14,75 @@ unset($_SESSION["cart_item"]);
 			<header class="section-header">
 				<h3>Order Foods - Community Kitchen</h3><br>
 			</header>
-			<script>
-	function checkAll()
-   {
-     var fname = document.forms["myform"]["fname"].value;     
-     var address = document.forms["myform"]["address"].value;
-	 var items = document.forms["myform"]["items"].value;
-     var phno = document.forms["myform"]["phno"].value;
-     var district = document.forms["myform"]["district"].value;
-     var pincode = document.forms["myform"]["pincode"].value;
-	 
-     
-     if(!/^[A-Za-z ]{3,16}$/.test(fname))
-     {
-       alert('Enter Correct Full Name [A-Z or a-z]');
-       return false;
-     } 
+<script type="text/javascript">
+	
+	function distUser() {
 
-	 if(address=="")
-     {
-       alert('Enter Correct Address');
-       return false;
-     } 
-     
-     if(items=="")
-     {
-       alert('Enter any Food Details');
-       return false;
-     }  
+		var f7 = document.getElementById("f7");
+		var district = document.getElementById('district').value;
+
+		if(district=="null")
+	     {
+	       f7.textContent = "**Select any Community Kitchen";
+	       document.getElementById("district").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f7.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function purpUser() {
+		var f20 = document.getElementById("f20");
+		var purpose = document.getElementById('purpose').value;
+
+		if (!/^[#.0-9a-zA-Z\s,-]{3,50}$/.test(purpose))
+	     {
+	       f20.textContent = "**Invalid Address";
+	       document.getElementById("purpose").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f20.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function phoneUser() {
+		var f5 = document.getElementById("f5");
+		var phone = document.getElementById('phone').value;
+
+		if(!/^[6-9]{1}[0-9]{9}$/.test(phone))
+	     {
+	       f5.textContent = "**Invalid Phone # Format";
+	       document.getElementById("phone").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f5.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function checkAll() {
+
+		if(distUser()&&purpUser()&&phoneUser())
+	     {
+	       return true;
+	     }
+	     else
+	     {
+	     	return false;
+	     }
+	}
 
 
-     if(!/^[6-9]{1}[0-9]{9}$/.test(phno))
-     {
-       alert('Enter Correct Phone starting with 6 7 8 9 digits [10-characters]');
-       return false;
-     }
 
-     if(district=="null") 
-     {
-       alert('Select any District');
-       return false;
-     }
 
-     if(!/^[0-9]{6}$/.test(pincode))
-     {
-       alert('Enter Correct Pincode [1-9 6-characters]');
-       return false;
-     }
-
-   }
 </script>
 					<form role="form" method="POST" action="foodbuys.php" name="myform"> <!-- orderfoodreg.php -->
 <?php
@@ -75,7 +95,7 @@ unset($_SESSION["cart_item"]);
 ?>
 
 						<div class="form-group">
-							<select class="form-control bfh-states" name="kitkey" data-country="US" data-state="CA">
+							<select class="form-control bfh-states" name="kitkey" data-country="US" data-state="CA" id="district" onclick="distUser()">
 									<option value="null">Select Communtiy Kitchen</option>
 								<?php $sql= "select * from tb_communitykitchen where cmdistrict='".$district."'";
 	$result = mysqli_query($conn,$sql);
@@ -85,6 +105,7 @@ unset($_SESSION["cart_item"]);
 										<option value="<?php echo $row['loginid']; ?>"><?php echo $row['cmname']; ?></option>
 <?php } ?>
 									</select>
+									<span style="color: red;font-size: 14px" id="f7"></span>
 						</div>
 
                         <div class="form-group">
@@ -92,7 +113,8 @@ unset($_SESSION["cart_item"]);
 						</div>
 
                         <div class="form-group">
-							<textarea rows="2" class="form-control input-sm" name="address" placeholder="Address"></textarea>
+							<textarea rows="2" class="form-control input-sm" name="address" placeholder="Address" id="purpose" onkeyup="purpUser()"></textarea>
+							<span style="color: red;font-size: 14px" id="f20"></span>
 						</div>
 
                      <!--    <div class="form-group">
@@ -102,7 +124,8 @@ unset($_SESSION["cart_item"]);
                         <div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="phno" class="form-control input-sm" placeholder="Phone Number">
+									<input type="number" name="phno" class="form-control input-sm" placeholder="Phone Number" id="phone" onkeyup="phoneUser()">
+									<span style="color: red;font-size: 14px" id="f5"></span>
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
@@ -129,7 +152,7 @@ unset($_SESSION["cart_item"]);
 								
 
 						
-						<input type="submit" value="Select Food(s)" class="btn btn-info btn-block" ><!-- onclick="return checkAll()" -->
+			<input type="submit" value="Select Food(s)" class="btn btn-info btn-block" onclick="return checkAll()">
 					</form><br><br><br>
 
 			</div>

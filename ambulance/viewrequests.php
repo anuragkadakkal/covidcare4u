@@ -65,6 +65,37 @@
   <?php } }else{ ?><tbody><tr style="text-align: center;">
       <td colspan="8" rowspan="2"><h4 style="color: red">No Data Available</h4></td></tr> </tbody><?php } ?> 
 </table>
+<script type="text/javascript">
+  function purpUser() {
+    var f20 = document.getElementById("f20");
+    var purpose = document.getElementById('purpose').value;
+
+    if (!/^[#.0-9a-zA-Z\s,-]{3,50}$/.test(purpose))
+       {
+         f20.textContent = "**Invalid Purpose";
+         document.getElementById("purpose").focus();
+         return false;
+       }
+       else
+       {
+        f20.textContent = "";
+        return true;
+       }
+  }
+
+  function checkAll() {
+
+    if(purpUser())
+       {
+         return true;
+       }
+       else
+       {
+        return false;
+       }
+  }
+
+</script>
 
 <?php 
 $sql="select tb_sosambreg.*, tb_ambulance.fname as ambfname,tb_ambulance.lname as amblname,tb_ambulance.phno from tb_sosambreg inner join tb_ambulance on tb_ambulance.ambid=tb_sosambreg.ambid where tb_sosambreg.ambid='".$ambid."' order by sosid desc"; //echo $sql;exit;
@@ -86,7 +117,8 @@ $sql="select tb_sosambreg.*, tb_ambulance.fname as ambfname,tb_ambulance.lname a
           <div class="modal-body">
            <form action="drnotify.php" method="post" enctype="multipart/form-data">             
               <input type="text" name="drname"  class="form-control input-sm" value="<?php echo $row['fname']." ".$row['lname']." - ".$row['address']." - ".$row['email']; ?>"><hr>
-              <textarea rows="3" class="form-control input-sm" name="msg" placeholder="Message content goes here..."></textarea>
+              <textarea rows="3" class="form-control input-sm" name="msg" placeholder="Message content goes here..." id="purpose" onkeyup="purpUser()"></textarea>
+              <span style="color: red;font-size: 14px" id="f20"></span>
               <input type="hidden" name="soskey" value="<?php echo $row['soskey']; ?>">
               <input type="hidden" name="drvname" value="<?php echo $row['ambfname']." ".$row['amblname']; ?>">
               <input type="hidden" name="phones" value="<?php echo $row['phno']; ?>">
@@ -94,7 +126,7 @@ $sql="select tb_sosambreg.*, tb_ambulance.fname as ambfname,tb_ambulance.lname a
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;&nbsp;
-            <button type="submit" class="btn btn-primary">Send</button></form>
+            <button type="submit" class="btn btn-primary" onclick="return checkAll()">Send</button></form>
           </div>
         </div>
       </div>

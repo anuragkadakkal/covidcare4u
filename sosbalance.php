@@ -10,8 +10,129 @@ $phone=substr($phone,3,12);//exit;
 		<div class="container ">
 
 			<header class="section-header">
-				<h3>Quarantine Registration [OTP Verified]</h3><br>
+				<h3>SOS Ambulance Service [OTP Verified]</h3><br>
 			</header>
+
+			<script type="text/javascript">
+	function firstName() {
+		var f1 = document.getElementById("f1");
+		var fname = document.getElementById('fname').value;
+
+		if(!/^[A-Za-z ]{5,16}$/.test(fname))
+	     {
+	       f1.textContent = "**Invalid First Name";
+	       var x = document.getElementById("fname");
+	       x.focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f1.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function lastName() {
+		var f2 = document.getElementById("f2");
+		var lname = document.getElementById('lname').value;
+
+		if(!/^[A-Za-z ]{1,16}$/.test(lname))
+	     {
+	       f2.textContent = "**Invalid Last Name";
+	       document.getElementById("lname").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f2.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function emailUser() {
+		var f4 = document.getElementById("f4");
+		var email = document.getElementById('email').value;
+
+		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))
+	     {
+	       f4.textContent = "**Invalid Email Format";
+	       document.getElementById("email").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f4.textContent = "";
+	     	return true;
+	     }
+	}
+
+	
+	function distUser() {
+
+		var f6 = document.getElementById("f6");
+		var district = document.getElementById('district').value;
+
+		if(district=="null")
+	     {
+	       f6.textContent = "**Select any District";
+	       document.getElementById("district").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f6.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function addrUser() {
+		var f3 = document.getElementById("f3");
+		var address = document.getElementById('address').value;
+
+		if (!/^[#.0-9a-zA-Z\s,-]{8,50}$/.test(address))
+	     {
+	       f3.textContent = "**Invalid Address Format";
+	       document.getElementById("address").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f3.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function purpUser() {
+		var f20 = document.getElementById("f20");
+		var purpose = document.getElementById('purpose').value;
+
+		if (!/^[#.0-9a-zA-Z\s,-]{3,50}$/.test(purpose))
+	     {
+	       f20.textContent = "**Invalid Purpose";
+	       document.getElementById("purpose").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f20.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function checkAll() {
+
+		if(firstName()&&lastName()&&emailUser()&&distUser()&&addrUser()&&purpUser())
+	     {
+	       return true;
+	     }
+	     else
+	     {
+	     	return false;
+	     }
+	}
+
+
+</script>
 					<form role="form" method="POST" action="sosambulancereg.php" name="myform" enctype="multipart/form-data">
 
 						
@@ -20,28 +141,32 @@ $phone=substr($phone,3,12);//exit;
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="fname"  class="form-control input-sm" placeholder="First Name">
+									<input type="text" name="fname"  class="form-control input-sm" placeholder="First Name" id="fname" onkeyup="firstName()">
+									<span style="color: red;font-size: 14px" id="f1"></span>
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group" >
-									<input type="text" name="lname"  class="form-control input-sm" placeholder="Last Name">
+									<input type="text" name="lname"  class="form-control input-sm" placeholder="Last Name" id="lname" onkeyup="lastName()">
+									<span style="color: red;font-size: 14px" id="f2"></span>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-                        	<input type="email" name="emailid"  class="form-control input-sm" placeholder="Email ID">
+                        	<input type="email" name="emailid"  class="form-control input-sm" placeholder="Email ID" id="email" onkeyup="emailUser()">
+									<span style="color: red;font-size: 14px" id="f4"></span>						
 						</div>
 
 						<div class="form-group">
-                        	<select class="form-control bfh-states country" name="district" data-country="US" data-state="CA">
-								<option value="null">Select District</option>
-								<option value="Trivandrum">Trivandrum</option>
-								<option value="Kollam">Kollam</option>
-								<option value="Idukki">Idukki</option>
-								<option value="Kottayam">Kottayam</option>
-							</select>
+                        	<select class="form-control bfh-states country" name="district" data-country="US" data-state="CA" id="district" onclick="distUser()">
+										<option value="null">Select District</option>
+										<option value="Trivandrum">Trivandrum</option>
+										<option value="Kollam">Kollam</option>
+										<option value="Idukki">Idukki</option>
+										<option value="Kottayam">Kottayam</option>
+									</select>
+									<span style="color: red;font-size: 14px" id="f6"></span>
 						</div>
 
 						<div class="form-group">
@@ -64,18 +189,20 @@ $phone=substr($phone,3,12);//exit;
 						<input type="hidden" name="phone"  class="form-control input-sm" value="<?php echo $phone; ?>">
 
 						<div class="form-group">
-							<textarea class="form-control" name="address" placeholder="Enter your address here..."></textarea>
+							<textarea class="form-control" name="address" placeholder="Enter your address here..." id="address" onkeyup="addrUser()"></textarea>
+							<span style="color: red;font-size: 14px" id="f3"></span>
 						</div>
 
 						<div class="form-group">
-							<textarea class="form-control" name="purpose" placeholder="Enter your purpose here..."></textarea>
+							<textarea class="form-control" name="purpose" placeholder="Enter your purpose here..." id="purpose" onkeyup="purpUser()"></textarea>
+							<span style="color: red;font-size: 14px" id="f20"></span>
 						</div>
 						<!-- <div class="form-group">
                         <label class="form-check-input" for="exampleRadios1" style="color: black;font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Identity Card</label>&nbsp;<br>
 							<input type="file" name="aadharfile"  class="form-control input-sm" >
 						</div> -->
 <br>
-						<input type="submit" value="Register" class="btn btn-warning btn-block" > <!-- onclick="return checkAll()" -->
+						<input type="submit" value="Register" class="btn btn-outline-warning btn-block" onclick="return checkAll()">
 					</form>
 <br><br>
 			</div>

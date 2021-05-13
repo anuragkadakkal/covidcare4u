@@ -21,7 +21,7 @@
     $status = 0;
     $k1=md5(microtime());
 	$filekey=substr($k1,0,8);
-    $curdate = date('d-m-y');
+    $curdate = date('Y-m-d');
 
     $sql="insert into tb_food (filekey,fname,address,items,phno,qstatus,district,pincode,status,curdate,kitkey,loginid) values ('".$filekey."','".$firstname."','".$address."','".$foods."','".$phno."','".$qstatus."','".$dist."','".$pin."','".$status."','".$curdate."','".$kitkey."','".$loginid."')"; 
     $ex1=mysqli_query($conn,$sql);

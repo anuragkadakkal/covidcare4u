@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
   
  <!-- Select2 -->
+ <link rel="icon" href="../resources/images/covid-logo.png" type="image/icon type">
   <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
   <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -81,7 +82,7 @@
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-               <i class="fas fa-stethoscope text-warning"></i>
+               <i class="fas fa-stethoscope nav-icon text-warning"></i>
               <p>
                 Appointments
                 <i class="fas fa-angle-left right"></i>
@@ -99,8 +100,28 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Date Wise</p>
                 </a>
-              </li>   
+              </li>
+
             </ul>
+
+            </li>
+            <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+               <i class="fas fa-bell nav-icon text-info"></i>
+              <p>
+                Notifications
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="viewnotifications.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View</p>
+                </a>
+              </li>
+            </ul>
+
             </li> 
           
 

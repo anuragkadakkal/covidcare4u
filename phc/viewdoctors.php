@@ -94,12 +94,15 @@ $sql="select * from tb_doctor inner join tb_login on tb_login.id=tb_doctor.login
           <div class="modal-body">
            <form action="drnotify.php" method="post" enctype="multipart/form-data">             
               <input type="text" name="drname"  class="form-control input-sm" value="<?php echo "Dr. ".$row['fname']." ".$row['lname']; ?>"><hr>
-              <textarea rows="3" class="form-control input-sm" name="msg" placeholder="Message content goes here..."></textarea>
-              <input type="hidden" name="drid" value="<?php echo $row['id']; ?>">
+        <textarea rows="3" class="form-control input-sm" name="msg" placeholder="Message content goes here..." 
+        required="" ></textarea>
+ 
+
+            <input type="hidden" name="drid" value="<?php echo $row['id']; ?>">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;&nbsp;
-            <button type="submit" class="btn btn-primary">Send</button></form>
+            <button type="submit" class="btn btn-primary"  >Send</button></form>
           </div>
         </div>
       </div>

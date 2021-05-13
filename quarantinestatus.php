@@ -1,6 +1,54 @@
 <?php
 include 'mainheader.php';
      ?>
+<script type="text/javascript">
+     	function phoneUser() {
+		var f5 = document.getElementById("f5");
+		var phone = document.getElementById('phone').value;
+
+		if(!/^[6-9]{1}[0-9]{9}$/.test(phone))
+	     {
+	       f5.textContent = "**Invalid Phone # Format";
+	       document.getElementById("phone").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	f5.textContent = "";
+	     	return true;
+	     }
+	}
+	function distPin() {
+
+		var keyspan = document.getElementById("keyspan");
+		var trkey = document.getElementById('trkey').value;
+
+		if(!/^[0-9a-zA-Z]{8}$/.test(trkey))
+	     {
+	       keyspan.textContent = "**Enter Correct Key - 8 Character Long";
+	       document.getElementById("trkey").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	keyspan.textContent = "";
+	     	return true;
+	     }
+	}
+
+	function checkAll() {
+
+		if(phoneUser()&&distPin())
+	     {
+	       return true;
+	     }
+	     else
+	     {
+	     	return false;
+	     }
+	}
+
+  </script>
     
     <br><br>
 	<section id="about" style="background-color: #ecf5ff; box-shadow: 0px 0px 12px 0px #aeb8ba;">
@@ -13,17 +61,19 @@ include 'mainheader.php';
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="phno" class="form-control input-sm" placeholder="Phone #" value="">
+									<input type="text" name="phno" class="form-control input-sm" placeholder="Phone #" id="phone" onkeyup="phoneUser()">
+									<span style="color: red;font-size: 14px" id="f5"></span>
 								</div>
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="trid"  class="form-control input-sm" placeholder="Tracking ID">
+									<input type="text" name="trid"  class="form-control input-sm" placeholder="Tracking ID"  id="trkey" onkeyup="distPin()">
+									<span style="color: red;font-size: 14px" id="keyspan"></span>
 								</div>
 							</div>
 						</div>
 						
-						<input type="submit" value="Track" class="btn btn-info btn-block" > <!-- onclick="return checkAll()" -->
+						<input type="submit" value="Track" class="btn btn-info btn-block" onclick="return checkAll()" >
 					</form>
 <br><br><br><br><br>
 			</div>

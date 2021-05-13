@@ -24,7 +24,7 @@
   		$response = file_get_contents($url, false, $context);
 
 		$res = json_decode($response, true);
-		echo $res['success'];exit;
+		//echo $res['success'];exit;
 		if($res['success'] == true)
 		{
 			$sql="insert into tb_logginglogin(logtoken,loginusername,curdate) values('".$_POST['token']."','".$usr."','".date("d-m-Y h:i:sa")."')";

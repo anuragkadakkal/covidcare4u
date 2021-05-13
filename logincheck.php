@@ -8,7 +8,7 @@
     	$en = md5($_POST["pass"]);
 		$url = "https://www.google.com/recaptcha/api/siteverify";
 		$data = [
-			'secret' => "6LckNsgaAAAAABW8P-i0-c1cU19qUhbyOpY2BDoN",
+			'secret' => "6LfhgMoaAAAAAF1UXZ9_ASAEBlptTWH600da8sda",
 			'response' => $_POST['token'],
 		];
 

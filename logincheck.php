@@ -24,6 +24,7 @@
   		$response = file_get_contents($url, false, $context);
 
 		$res = json_decode($response, true);
+		echo $res['success'];exit;
 		if($res['success'] == true)
 		{
 			$sql="insert into tb_logginglogin(logtoken,loginusername,curdate) values('".$_POST['token']."','".$usr."','".date("d-m-Y h:i:sa")."')";
@@ -44,39 +45,53 @@
 				if($d==1)
 				{
 					setcookie("lkey",$b);
-					setcookie("logined",1);
 					if ($c==0)
 					{
-						header("location:admin/adminhome.php");
+						$_SESSION["logined"] = 1;
+						header("location:admin/adminhome.php"); 
+						/*Admin SESSION - Completed - Validation Completed*/
 					}
 					else if($c==1)
 					{
+						setcookie("logined",1);
 						header("location:customerhome.php");
+						/*Customer SESSION - Completed - Validation Completed*/
 					}
 					else if($c==2)
 					{
-
-						header("location:police/policehome.php");
+						$_SESSION["logined"] = 1;
+						header("location:police/policehome.php"); 
+						/*Police Station SESSION - Completed - Validation Completed*/
 					}
 					else if($c==3)
 					{
+						$_SESSION["logined"] = 1;
 						header("location:kitchen/kitchenhome.php");
+						/*Community SESSION - Completed - Validation Completed*/
 					}
 					else if($c==4)
 					{
-						header("location:karunyamedicals/medicalhome.php");
+						$_SESSION["logined"] = 1;
+						header("location:karunyamedicals/medicalhome.php"); 
+						/*Karunya Medicals SESSION - Completed - Validation Completed*/
 					}
 					else if($c==5)
 					{
+						$_SESSION["logined"] = 1;
 						header("location:phc/phchome.php");
+						/*PHC SESSION - Completed - Validation Completed*/
 					}
 					else if($c==6)
 					{
-						header("location:doctor/drhome.php");
+						$_SESSION["logined"] = 1;
+						header("location:doctor/drhome.php"); 
+						/*Doctor SESSION - Completed - Validation Completed*/
 					}
 					else if($c==7)
 					{
-						header("location:ambulance/ambulancehome.php");
+						$_SESSION["logined"] = 1;
+						header("location:ambulance/ambulancehome.php"); 
+						/*Ambulance SESSION - Completed - Validation Completed*/
 					}
 					else{}
 				}
@@ -108,3 +123,7 @@
 	        </SCRIPT>";
 	}
 ?>
+
+
+
+

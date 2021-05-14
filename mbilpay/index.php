@@ -27,7 +27,7 @@ function getCallbackUrl()
 {
 	//$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 	//return $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . 'response.php';
-	return "response.php";
+	return "https://covidcare4u.herokuapp.cpm/mbilpay/response.php";
 }
 
 ?>

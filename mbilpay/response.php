@@ -1,6 +1,6 @@
 <?php
 $t=$_GET['t'];
-header( "refresh:10;url=../medbillpay.php?t=$t" );
+header( "refresh:10;url=https://covidcare4u.herokuapp.com/medbillpay.php?t=$t" );
 $postdata = $_POST;
 $msg = '';
 if (isset($postdata ['key'])) {
@@ -39,7 +39,7 @@ else exit(0);
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>KSEBLive Bill Payment</title>
+<title>Karunya Medicals Bill Payment</title>
 </head>
 <style type="text/css">
 	.main {

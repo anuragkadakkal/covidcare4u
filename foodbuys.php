@@ -103,7 +103,7 @@ if(isset($_SESSION["cart_item"])){
 
 				<td style="text-align:center;"><button class="btn btn-warning"><a href="foodbuys.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" height="28px" width="26px" alt="Remove Item" /></a></button></td>
 				</tr>
-				<?phpheight="28px" width="26px"
+				<?php
 				$total_quantity += $item["quantity"];
 				$total_price += ($item["price"]*$item["quantity"]);
 		}
@@ -126,7 +126,7 @@ if(isset($_SESSION["cart_item"])){
 	<input type="hidden" name="gender" value="<?php echo $_SESSION['gender'];?>">
 	<input type="hidden" name="district" value="<?php echo $_SESSION['district'];?>">
 	<input type="hidden" name="pincode" value="<?php echo $_SESSION['pincode'];?>">
-
+	
 
 	<input type="hidden" name="totprice" value="<?php echo $totalprice;?>">
 	<input type="hidden" name="fooditems" value="<?php echo $fooditems;?>">
@@ -169,8 +169,8 @@ if(isset($_SESSION["cart_item"])){
 		<tbody>
 				
 			<?php
-			$curdate = date("l jS \of F Y"); //echo $curdate;exit;
-				$product_array = $db_handle->runQuery("SELECT * FROM tb_foodreg where loginid='".$_SESSION['kitkey']."' and ftime='".$curdate."' and fqty>'0'");
+			$curdate = date("l jS \of F Y");
+				$product_array = $db_handle->runQuery("SELECT * FROM tb_foodreg where loginid='".$_SESSION['kitkey']."' and ftime='".$curdate."' and fqty>'0'");//echo $_SESSION['kitkey'];exit;
 				if (!empty($product_array)) { 
 					foreach($product_array as $key=>$value){ ?>
 						<form method="post" action="foodbuys.php?action=add&code=<?php echo $product_array[$key]["fkey"]; ?>">
@@ -186,7 +186,7 @@ if(isset($_SESSION["cart_item"])){
 				}
 			?>
 		</tbody>
-	</table>
+	</table><br><br>
 
 
 
@@ -196,7 +196,7 @@ if(isset($_SESSION["cart_item"])){
 </div>
 
 
-		</div><br><br><br><br>
+		</div><br><br>
 	</section>
 
 	

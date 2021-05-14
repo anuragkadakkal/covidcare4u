@@ -1,6 +1,6 @@
 <?php
 $t=$_GET['t'];
-header( "refresh:10;url=https://covidcare4u.herokuapp.com/medbillpay.php?t=$t" );
+header( "refresh:10;url=../medbillpay.php?t=$t" );
 $postdata = $_POST;
 $msg = '';
 if (isset($postdata ['key'])) {

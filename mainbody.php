@@ -70,7 +70,7 @@
 								
 							<ul style="align-items: center;">
 								<li style="list-style: none;">
-									<h2 style="font-family: 'Inconsolata', monospace;">Covid-19 INDIA<br><h6 style="font-family: 'Inconsolata', monospace;">&nbsp;as on : 16 July 2020, 08:00 IST</h6><br></h2>
+									<h2 style="font-family: 'Inconsolata', monospace;">Covid-19 KERALA<br><h6 style="font-family: 'Inconsolata', monospace;">&nbsp;as on : 16 July 2020, 08:00 IST</h6><br></h2>
 									<img src="assets/images/icon-infected.png" alt="Active Status">
 									<strong>331146</strong>
 									<span style="color:#D60077">Active Cases</span> &nbsp;&nbsp;

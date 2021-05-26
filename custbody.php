@@ -7,6 +7,7 @@
 		<div class="container">
 			<div class="intro-img "style="opacity: 0.8;">
 				<img src='resources/images/coronavirus_214.png' class="img-fluid ml-5" alt=""  >
+				<p style="padding-left: 36%"><iframe src="https://free.timeanddate.com/clock/i7sl1sm3/n1892/fn17/fs12/fcfff/tct/pct/tt0/tw1/tm1/td1/tb2" frameborder="0" width="204" height="17" allowtransparency="true"></iframe></p>
 			</div>
 			<div class="intro-info">
 <!-- Marquee Start -->
@@ -68,7 +69,7 @@
 								
 							<ul style="align-items: center;">
 								<li style="list-style: none;">
-									<h2 style="font-family: 'Inconsolata', monospace;">Covid-19 INDIA<br><h6 style="font-family: 'Inconsolata', monospace;">&nbsp;as on : 16 July 2020, 08:00 IST</h6><br></h2>
+									<h2 style="font-family: 'Inconsolata', monospace;">Covid-19 KERALA<br><h6 style="font-family: 'Inconsolata', monospace;">&nbsp;as on : 16 July 2020, 08:00 IST</h6><br></h2>
 									<img src="assets/images/icon-infected.png" alt="Active Status">
 									<strong>331146</strong>
 									<span style="color:#D60077">Active Cases</span> &nbsp;&nbsp;

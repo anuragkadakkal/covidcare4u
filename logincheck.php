@@ -8,7 +8,7 @@
     	$en = md5($_POST["pass"]);
 		$url = "https://www.google.com/recaptcha/api/siteverify";
 		$data = [
-			'secret' => "6LfhgMoaAAAAAF1UXZ9_ASAEBlptTWH600da8sda",
+			'secret' => "6LckNsgaAAAAABW8P-i0-c1cU19qUhbyOpY2BDoN",
 			'response' => $_POST['token'],
 		];
 
@@ -24,7 +24,7 @@
   		$response = file_get_contents($url, false, $context);
 
 		$res = json_decode($response, true);
-		//echo $res['success'];exit;
+		//echo $res;exit;
 		if($res['success'] == true)
 		{
 			$sql="insert into tb_logginglogin(logtoken,loginusername,curdate) values('".$_POST['token']."','".$usr."','".date("d-m-Y h:i:sa")."')";
@@ -47,8 +47,12 @@
 					setcookie("lkey",$b);
 					if ($c==0)
 					{
-						$_SESSION["logined"] = 1;
-						header("location:admin/adminhome.php"); 
+						$_SESSION["auth"] = 1;
+						//header("location:admin/adminhome.php");
+						echo "<SCRIPT type='text/javascript'>alert('Use Google Authenticator For Authentication');
+       window.location.replace(\"auth/index.php\");
+       </SCRIPT>";
+						//header("location:auth/index.php"); 
 						/*Admin SESSION - Completed - Validation Completed*/
 					}
 					else if($c==1)
@@ -123,7 +127,3 @@
 	        </SCRIPT>";
 	}
 ?>
-
-
-
-

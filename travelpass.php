@@ -194,6 +194,24 @@
 	     }
 	}
 
+	function cardUser() {
+		var cno = document.getElementById("cno");
+		var cardno = document.getElementById('cardno').value;
+
+		if (!/^[0-9]{1,3}[/]{1}[0-9]{4}[/]{1}[0-9]{4}$/.test(cardno))
+	    {
+	    	//24/4688/2016
+	    	cno.textContent = "**Invalid Driving License Number Format";
+	    	document.getElementById("cardno").focus();
+	    	return false;
+	    }
+	    else
+	    {
+	    	cno.textContent = "";
+	     	return true;
+	    }
+	}
+
 	function fileCheck() {
 
 		var f8 = document.getElementById("f8");
@@ -313,7 +331,12 @@
 						</div>
 
 						<div class="form-group">
-							<span><b>Aadhar / Driving Licence</b></span>
+							<input type="text" name="cardno"  class="form-control input-sm" placeholder="ID Card #" id="cardno" onkeyup="cardUser()">
+							<span style="color: red;font-size: 14px" id="cno"></span>
+						</div>
+
+						<div class="form-group">
+							<span><b>Driving Licence</b></span>
 							<input type="file" name="aadharfile"  class="form-control input-sm" id="file" onchange="fileCheck()">
 							<span style="color: red;font-size: 14px" id="f8"></span>
 						</div>

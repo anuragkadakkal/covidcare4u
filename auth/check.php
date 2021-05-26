@@ -19,7 +19,7 @@ if (!$checkResult) {
 else
 {
     $_SESSION["logined"] = 1;
-    echo "<SCRIPT type='text/javascript'>alert('Authentication Successful');
+    echo "<SCRIPT type='text/javascript'>alert('Authentication Successfull');
        window.location.replace(\"../admin/adminhome.php\");
        </SCRIPT>";
 }

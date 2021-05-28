@@ -1,7 +1,7 @@
 	<!--==========================
     Intro Section
   ============================-->
-  
+   <?php  include 'curl.php'; ?><!-- GOK Direct Data Fetching -->
   <section id="intro" class="clearfix">
 		
 		<div class="container">
@@ -31,7 +31,7 @@
 						quality in public services and welfare measures.</p>
 				</div>
 				<div>
-					<a href="#about" class="btn-services scrollto">Read More</a>
+					<a href="#about" class="btn-services scrollto">Read More</a><a href="#services" class="btn-services scrollto" > Daily Report</a>
 					<!-- <a href="#scrolldashboard" class="btn-services scrollto bg-info"> Dashboards <i class="fa fa-arrow-down"></i>
 					</a> -->
 				</div>
@@ -69,22 +69,59 @@
 								
 							<ul style="align-items: center;">
 								<li style="list-style: none;">
-									<h2 style="font-family: 'Inconsolata', monospace;">Covid-19 KERALA<br><h6 style="font-family: 'Inconsolata', monospace;">&nbsp;as on : 16 July 2020, 08:00 IST</h6><br></h2>
+									<h2 style="font-family: 'Inconsolata', monospace;">Covid-19 KERALA - Daily Statistics<br><h6 style="font-family: 'Inconsolata', monospace;">&nbsp;as on : 
+									<?php
+									$str=$arr[0];
+									$date=date_create($str);
+									echo date_format($date,"D d M Y").", "; 
+									echo $arr[1].$arr[2]; 
+
+									?> IST</h6><br></h2>
+									<img src="assets/images/icon-active.png" alt="Inactive Status">
+									<strong><?php $pos=array_search("Statistics",$arr); echo $arr[$pos+1]; ?></strong>
+									<span style="color:orange">Total Confirmed </span>&nbsp;&nbsp;
+
 									<img src="assets/images/icon-infected.png" alt="Active Status">
-									<strong>331146</strong>
-									<span style="color:#D60077">Active Cases</span> &nbsp;&nbsp;
+									<strong><?php $pos=array_search("Active",$arr); echo $arr[$pos-1]; ?></strong>
+									<span style="color:#D60077">Active Cases <?php echo $arr[$pos+2]; ?></span>&nbsp;&nbsp;<br><br>
 								
 									<img src="assets/images/icon-inactive.png" alt="Inactive Status">
-									<strong>612814</strong>
-									<span style="color:green">Cured / Discharged </span> &nbsp;&nbsp;
+									<strong><?php $pos=array_search("Recovered",$arr); echo $arr[$pos-2].$arr[$pos-1]; ?></strong>
+									<span style="color:green">Recovered <?php echo $arr[$pos+1]; ?> </span> &nbsp;&nbsp;
 						
 									<img src="assets/images/icon-death.png" alt="Death Status">
-									<strong>24915</strong>
-									<span style="color:red">Deaths  </span> &nbsp;&nbsp;<br>
+									<strong><?php $pos=array_search("Deaths",$arr);echo $arr[$pos-2].$arr[$pos-1]; ?></strong>
+									<span style="color:red">Deaths <?php echo $arr[$pos+1]; ?> </span>&nbsp;&nbsp;
 							
-									<img src="assets/images/icon-active.png" alt="Inactive Status">
-									<strong>1</strong>
-									<span style="color:orange">Migrated </span>
+									
+								</li><br><br>
+								<li style="list-style: none;text-align: center;">
+									<h2 style="font-family: 'Inconsolata', monospace;">Covid-19 KERALA - Vaccination Report<br></h2>
+									<i class="fas fa-syringe text-success ">
+									<strong ><?php $pos=array_search("≈",$arr);
+									echo "People Vaccinated : "; $pos=array_search("People",$arr);
+									echo $arr[$pos-1]; $pos=array_search("≈",$arr);
+									echo " (".$arr[$pos+1].")";?></strong></i><br>
+
+									<i class="fas fa-syringe text-info ">
+									<strong><?php $pos=array_search("First",$arr);
+									echo "First Dose : ".$arr[$pos+2]."<br>"; ?></strong>
+									</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								
+									<i class="fas fa-syringe text-info ">
+									<strong><?php $pos=array_search("Second",$arr);
+									echo "Second Dose : ".$arr[$pos+2]; ?></strong></i><br>
+						
+									<i class="fas fa-syringe text-primary ">
+									<strong><?php $stringneeded = string_between_two_string($response, 'Second', 'Cumulative Summary of Kerala');
+									$arr=preg_split("/\s+/", trim($stringneeded));
+									$pos=array_search("Total",$arr);
+									echo "Total : ".$arr[$pos+1]." Vaccinations"; ?></strong></i><br><br>
+									<p style="font-family: 'Inconsolata', monospace; size: 2px;">
+<?php $pos=array_search("Projected",$arr);
+echo "<sup>*</sup>2021 Projected population of Kerala is ".$arr[$pos+5]." as per the report of <br>National Commission on Population<br>"; ?><br></p>
+							
+									
 								</li>
 							</ul>
 

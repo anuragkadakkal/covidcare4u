@@ -48,6 +48,7 @@
 					if ($c==0)
 					{
 						$_SESSION["auth"] = 1;
+						$_SESSION["emailvalid"] = 1;
 						//header("location:admin/adminhome.php");
 						echo "<SCRIPT type='text/javascript'>alert('Use Google Authenticator For Authentication');
        window.location.replace(\"auth/index.php\");

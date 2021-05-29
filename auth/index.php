@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+if(isset($_SESSION['emailvalid']))
+{
 require "Authenticator.php";
 
 
@@ -67,8 +68,8 @@ if (!isset($_SESSION['failed'])) {
                             
                             <img style="text-align: center;;" class="img-fluid" src="<?php   echo $qrCodeUrl ?>" alt="Verify this Google Authenticator"><br><br>        
                             <input type="text" class="form-control" name="code" placeholder="******" style="font-size: xx-large;width: 200px;border-radius: 0px;text-align: center;display: inline;color: #0275d8;"><br> <br>    
-                            <button type="submit" class="btn btn-md btn-primary" style="width: 200px;border-radius: 0px;">Verify</button>
-                            <a href="../index.php"><button type="button" class="btn btn-md btn-danger" style="width: 200px;border-radius: 0px;">Back To Home</button></a>
+                        <button type="submit" class="btn btn-md btn-primary" style="width: 200px;border-radius: 0px;">Verify</button>
+                        <a href="../index.php"><button type="button" class="btn btn-md btn-danger" style="width: 200px;border-radius: 0px;">Back To Home</button></a>
 
                     </div>
 
@@ -78,3 +79,8 @@ if (!isset($_SESSION['failed'])) {
     </div>
 </body>
 </html>
+<?php }
+else
+{
+    header("location: ../index.php");
+}

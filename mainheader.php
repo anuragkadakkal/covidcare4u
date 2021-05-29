@@ -220,7 +220,7 @@ Captcha End -->
 	     }
 	}
 
-	function checkAll() {
+	function checkCertificate()() {
 
 		if(distPin())
 	     {
@@ -249,7 +249,7 @@ Captcha End -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;
-        <button type="submit" class="btn btn-primary" onclick="return checkAll()">Search</button></form>
+        <button type="submit" class="btn btn-primary" onclick="return checkCertificate()">Search</button></form>
       </div>
     </div>
   </div>

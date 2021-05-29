@@ -35,6 +35,7 @@
 				<div>
 					<a href="#about" class="btn-services scrollto" style="margin-left: auto;">Read More</a>
 					<a href="#services" class="btn-services scrollto" > Daily Report</a>
+					<a data-toggle="modal" data-target="#exampleModalDB" class="btn-services" ><i class="fa fa-download" aria-hidden="true">&nbsp;Bulletin</i></a>
 					<a href="cmdrf.php" class="btn-services bg-info" style="padding-left: 57px;">Chief Minister's Distress Relief Fund - Donation Statistics</a>	
 				</div>
 				<div>
@@ -55,6 +56,61 @@
 
 		</div>
 	</section>
+
+<script type="text/javascript">
+	function startDate() {
+
+		var s1 = document.getElementById("s1");
+		var sdate = document.getElementById('sdate').value;
+
+		if(sdate=="")
+	     {
+	       s1.textContent = "**Select Any Bulletin Date";
+	       document.getElementById("sdate").focus();
+	       return false;
+	     }
+	     else
+	     {
+	     	s1.textContent = "";
+	     	return true;
+	     }
+	}
+	function checkAll(){
+		if(startDate())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+</script>
+
+<div class="modal fade" id="exampleModalDB" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Download Daily Bulletin - DHS Kerala Report</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<form method="post" action="viewbulletin.php">
+        		<input type="text" name="tdate" class="form-control input-sm" placeholder="Select Any Date" onfocus="(this.type='date')" id="sdate" onfocusout="startDate()">
+				<span style="color: red;font-size: 14px" id="s1"></span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;
+        <button type="submit" class="btn btn-primary" onclick="return checkAll()">Search</button></form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 	<!-- #intro -->
 	<main id="main"> <!--==========================
       Services Section

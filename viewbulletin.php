@@ -3,8 +3,9 @@
 	include 'mainheader.php';
 	$key=date_create($_POST['tdate']);
 
+	
 	$y=date_format($key,"Y");
-	$m=date_format($key,"M");
+	$m=date_format($key,"F");
 	$M=date_format($key,"m");
 	$d=date_format($key,"d");
 	$key=date_format($key,'Y-m-d');

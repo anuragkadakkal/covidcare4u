@@ -16,7 +16,7 @@
     $mail->SMTPAuth   = TRUE;
     $mail->SMTPSecure = "tls";
     $mail->Port       = 587;
-    $mail->Host       = "smtp.gmail.com";
+    $mail->Host       = "smtp.hostinger.com";
 
     $email = $_SESSION['emailid'];
     $msg = $_SESSION['msg'];
@@ -26,7 +26,7 @@
 
     $mail->IsHTML(true);
     $mail->AddAddress($email, "");
-    $mail->SetFrom("otpforfree@gmail.com", "KL-COVIDCARE4U");
+    $mail->SetFrom("otp@covidcare4u.online", "KL-COVIDCARE4U");
     $mail->Subject = "SOS Ambulance - Notification";
 
 

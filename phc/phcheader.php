@@ -1,6 +1,6 @@
 <?php
 // this MUST be called prior to any output including whitespaces and line breaks!
-
+  include '../curl.php'; //<!-- GOK Direct Data Fetching -->
   include 'connection.php';
 
   $lkey = $_COOKIE['lkey'];
@@ -11,6 +11,7 @@
   {
     $name=$row['fname'];
     $address=$row['address'];
+    $di=$row['district'];
   }
 ?>
 <!DOCTYPE html>
@@ -31,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="jquery.dataTables.min.css"> 
-  <link rel="icon" href="../resources/images/covid-logo.png" type="image/icon type">
+  <link rel="icon" href="../logo.png" type="image/icon type">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -41,7 +42,7 @@
     <ul class="navbar-nav">
 	
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="phchome.php"><i class="fas fa-bars text-success"><span class=" font-weight-light text-success">&nbsp;&nbsp;<?php echo $name." : ".$address;?></span>
+        <a class="nav-link" data-widget="pushmenu" href="index.php"><i class="fas fa-bars text-success"><span class=" font-weight-light text-success">&nbsp;&nbsp;<?php echo $name." : ".$address;?></span>
           </i></a>
       </li>
 
@@ -52,7 +53,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="phchome.php" class="brand-link">
+    <a href="index.php" class="brand-link">
       <span class="brand-text font-weight-light">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CovidCare4U <i class="nav-icon fas fa-home"></i></span>
     </a>
 
@@ -71,7 +72,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 		
 				<li class="nav-item">
-				<a  href="phchome.php" class="nav-link " >
+				<a  href="index.php" class="nav-link " >
 				<i class="nav-icon fas fa-home"></i>
 				<p>
 				Dashboard
@@ -136,25 +137,38 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="addvac.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Vaccine</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="viewvac.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Vaccine</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="viewvaccinereg.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>View</p>
+                  <p>View Bookings</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="spotvaccinereg.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Spot Reg</p>
+                  <p>Spot Registration</p>
                 </a>
               </li> 
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="viewspotvaccinereg.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Spot Reg View</p>
                 </a>
-              </li> 
+              </li>  -->
             </ul>
-            </li>  
+            </li> 
+
 				
            <div class="info text-gray">
           <i>Services</i>
@@ -282,17 +296,4 @@
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <!-- <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-           
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active">Updated: 27-04-2021 6:33 pm</li>
-            </ol>
-          </div>
-        </div>
-      </div></.container-fluid 
-    </section> -->
+  

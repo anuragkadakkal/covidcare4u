@@ -9,7 +9,7 @@
 	$dist = $_POST['district'];
   $brand = $_POST['brand'];
   $model = $_POST['model']; //echo $model;exit;
-  $phcid = $_POST['phckey'];
+  $phcid = $_POST['phcid'];
 	$pin = $_POST['pincode'];
 	$pass = md5($_POST['pass']);
 	$conpass = $_POST['conpass'];
@@ -35,13 +35,13 @@
     $sql3="insert into tb_ambulance(ambkey,fname,lname,address,phno,district,pincode,brand,model,rcbook,drlicence,phcid,loginid) values ('".$k2."','".$firstname."','".$lastname."','".$address."','".$phno."','".$dist."','".$pin."','".$brand."','".$model."','".$filename."','".$filename1."','".$phcid."','".$loginid."')"; //echo $sql3;exit;
     $ex2=mysqli_query($conn,$sql3);
 
-    if($ex1 && $ex2)
+    if($ex2)
   	{
       $path="Uploads/".$k2;
-      mkdir($path);
+      mkdir($path,0777);
       move_uploaded_file($_FILES['aadharfile']["tmp_name"],$path."/".$_FILES['aadharfile']["name"]);
       move_uploaded_file($_FILES['aadharfile1']["tmp_name"],$path."/".$_FILES['aadharfile1']["name"]);
-      echo "<SCRIPT type='text/javascript'>alert('Registration Successful');
+      echo "<SCRIPT type='text/javascript'>alert('Registration Successfull');
        window.location.replace(\"index.php\");
        </SCRIPT>";
   	}

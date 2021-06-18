@@ -57,7 +57,7 @@
                                             {   ?>
                                                <font color="green"><?php echo $status; ?></font>
                                  <?php      }    ?></td>
-      <td><a href="../uploads/<?php echo $row['qkey']."/".$row['idcard']; ?>" download> <button class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i></button></a></td>
+      <td><a href="../Uploads/<?php echo $row['qkey']."/".$row['idcard']; ?>" download> <button class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i></button></a></td>
       <td>
         <button class="btn btn-warning" data-toggle="modal" data-target="#example<?php echo $row['qkey']; ?>">Notify</button>
       </td>

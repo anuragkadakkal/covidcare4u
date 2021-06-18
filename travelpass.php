@@ -146,7 +146,7 @@
 		var f3 = document.getElementById("f3");
 		var email = document.getElementById('email').value;
 
-		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))
+		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/.test(email))
 	     {
 	       f3.textContent = "**Invalid Email Format";
 	       document.getElementById("email").focus();
@@ -218,17 +218,23 @@
 		var file = document.getElementById('file').value;
 
 		var file=file.split('.').pop();
-		if(file!="pdf")
-	     {
-	        f8.textContent = "**Select PDF File";
-	      	document.getElementById("file").focus();
-	     	return false;
-	     }
-	     else
-	     {
-	     	f8.textContent = "";
-	     	return true;
-	     }
+		/*if(file!="jpg")
+		{
+		  f8.textContent = "**Select .jpg/.jpeg File";
+			document.getElementById("file").focus();
+			return false;
+		}*/
+		if(file=="jpeg" || file=='jpg')
+		{
+		  f8.textContent = "";
+			return true;
+		}
+		else
+		{
+			f8.textContent = "**Select .jpg/.jpeg File";
+			document.getElementById("file").focus();
+			return false;
+		}
 	}
 
 	function checkAlls(){

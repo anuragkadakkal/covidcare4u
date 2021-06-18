@@ -22,7 +22,7 @@
 
 
         <!-- Small boxes (Stat box) --><br><br><br>
-        <h2 style="font-family: 'Open Sans', sans-serif;"><center><b>PHC DOCTOR DETAILS</b></center></h2><br>
+        <h2 style="font-family: 'Open Sans', sans-serif;"><center><b>PHC NOTIFICATION DETAILS</b></center></h2><br>
         <table class="table table-bordered" id="table"  data-toggle="table" data-height="460"  data-pagination="true"   data-search="true"> 
         <thead>
     <tr style="text-align: center;">

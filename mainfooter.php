@@ -16,7 +16,7 @@
 
   <script>
   grecaptcha.ready(function() {
-      grecaptcha.execute('6LfhgMoaAAAAAKe22Hq_xiJ2_pxW14B9azP_E8ul', {action: 'homepage'}).then(function(token) {
+      grecaptcha.execute('6Le-fhwbAAAAAEza3KHbMTa3awrn9JS-ADH6ZwUg', {action: 'homepage'}).then(function(token) {
          document.getElementById("token").value = token;
       });
   });

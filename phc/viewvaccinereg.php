@@ -1,7 +1,6 @@
 <?php
     session_start();
-    setcookie('phclogined',1);
-    if(isset($_COOKIE['phclogined']) && $_COOKIE['phclogined']==1)
+    if(isset($_SESSION['logined']) && $_SESSION['logined']==1)
     {
       include 'connection.php';
       include 'phcheader.php';
@@ -46,7 +45,7 @@
       <td><?php echo $row['gender']; ?></td>
       <td><?php echo $row['phone']; ?></td>
       <td><?php echo $row['idcard']; ?></td>
-      <td><?php echo $row['yob']." - ".date('Y')-$row['yob']." Yrs"?></td>
+      <td><?php echo date('Y')-$row['yob']." Yrs"; ?></td>
       <td><?php echo $row['vacdate']." - ".$row['vacdtaffname']."<br>".$row['vacdate2']." - ".$row['vacstaff2']; ?></td>
       <td><?php $vs=$row['vaccinestatus']; 
 
@@ -95,7 +94,7 @@ $sql="select * from tb_vaccinereg inner join tb_vaccinebookhistory on tb_vaccine
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;&nbsp;
-            <button type="submit" class="btn btn-primary">Send</button></form>
+            <button type="submit" class="btn btn-primary">Update</button></form>
           </div>
         </div>
       </div>

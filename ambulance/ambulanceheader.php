@@ -1,4 +1,5 @@
 <?php
+  include '../curl.php'; //<!-- GOK Direct Data Fetching -->
   include 'connection.php';
   $lkey=$_COOKIE["lkey"];
   $sql="select * from tb_ambulance where loginid='".$lkey."'";
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
   
  <!-- Select2 -->
- <link rel="icon" href="../resources/images/covid-logo.png" type="image/icon type">
+ <link rel="icon" href="../logo.png" type="image/icon type">
   <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
   <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -37,7 +38,7 @@
     <ul class="navbar-nav">
 	
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="ambulancehome.php"><i class="fas fa-bars text-success"><span class=" font-weight-light text-success">&nbsp;&nbsp;<?php echo $fullname; ?></span>
+        <a class="nav-link" data-widget="pushmenu" href="index.php"><i class="fas fa-bars text-success"><span class=" font-weight-light text-success">&nbsp;&nbsp;<?php echo $fullname; ?></span>
           </i></a>
       </li>
 
@@ -48,7 +49,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="ambulancehome.php" class="brand-link">
+    <a href="index.php" class="brand-link">
       <span class="brand-text font-weight-light">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CovidCare4U <i class="nav-icon fas fa-home"></i></span>
     </a>
 
@@ -67,7 +68,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 		
 				<li class="nav-item">
-				<a  href="ambulancehome.php" class="nav-link " >
+				<a  href="index.php" class="nav-link " >
 				<i class="nav-icon fas fa-home text-success"></i>
 				<p>
 				Dashboard

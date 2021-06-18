@@ -16,7 +16,7 @@
   }
   else
   {  $flag=1;
-    $sql="select tb_vaccinereg.fname,tb_vaccinereg.phone,tb_vaccinereg.gender,tb_vaccinereg.idcard,tb_vaccinereg.yob,tb_vaccinereg.vaccinestatus,tb_vaccinereg.vacdate,tb_vaccinereg.vacdate2,tb_vaccinereg.vacdtaffname,tb_vaccinereg.vacstaff2,tb_vaccinereg.vkey,tb_vaccinebookhistory.uid from tb_vaccinereg inner join tb_vaccinebookhistory on tb_vaccinereg.vkey=tb_vaccinebookhistory.uid where phcid='".$phcid."' order by tb_vaccinereg.vid desc";//echo $sql;exit;
+    $sql="select tb_vaccinereg.fname,tb_vaccinereg.phone,tb_vaccinereg.gender,tb_vaccinereg.idcard,tb_vaccinereg.yob,tb_vaccinereg.vaccinestatus,tb_vaccinereg.vacdate,tb_vaccinereg.vacdate2,tb_vaccinereg.vacdtaffname,tb_vaccinereg.vacstaff2,tb_vaccinereg.vkey,tb_vaccinebookhistory.uid from tb_vaccinereg inner join tb_vaccinebookhistory on tb_vaccinereg.vkey=tb_vaccinebookhistory.uid where phcid='".$phcid."' and tb_vaccinereg.vaccinestatus!='2' order by tb_vaccinereg.vid desc";//echo $sql;exit;
   }
 
   
@@ -73,11 +73,15 @@
       <td><?php echo $row['gender']; ?></td>
       <td><?php echo $row['phone']; ?></td>
       <td><?php echo $row['idcard']; ?></td>
-      <td><?php echo $row['yob']." - ".date('Y')-$row['yob']." Yrs"?></td>
+      <td><?php echo date('Y')-$row['yob']." Yrs"; ?></td>
       <td><?php echo $row['vacdate']." - ".$row['vacdtaffname']."<br>".$row['vacdate2']." - ".$row['vacstaff2']; ?></td>
       <td><?php $vs=$row['vaccinestatus']; 
 /*<button class="btn btn-warning" data-toggle="modal" data-target="#example<?php echo $row['vkey']; ?>">Update</button>*/
-if($vs==2)
+if($vs==1)
+{
+  echo "<font color='red'><b>NA</b></font>";
+}
+else if($vs==3 || $vs==2)
 {
  ?><a href="../fpdf/dose1.php?t=<?php echo $row['vkey']; ?>" download><button class="btn btn-outline-success"><i class="fas fa-download">&nbsp;Dose 1</i></button></a>&nbsp; <button class="btn btn-warning" data-toggle="modal" data-target="#example<?php echo $row['vkey']; ?>">Update</button> <?php
 }
@@ -126,7 +130,7 @@ if(isset($_POST['idno'])&&isset($_POST['idno']))
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;&nbsp;
-            <button type="submit" class="btn btn-primary">Send</button></form>
+            <button type="submit" class="btn btn-primary">Update</button></form>
           </div>
         </div>
       </div>

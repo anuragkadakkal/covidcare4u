@@ -68,7 +68,7 @@
                                             }
                                             else
                                             { ?>
-                                              <a href="../uploads/<?php echo $row['filekey']."/".$flag; ?>" download> <button class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i></button></a>
+                                              <a href="../Uploads/<?php echo $row['filekey']."/".$flag; ?>" download> <button class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i></button></a>
                                           <?php   }
 
 

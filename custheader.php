@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && @$_POST['do'] == 'contact') {
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-    <link rel="icon" href="resources/images/covid-logo.png" type="image/icon type">
+    <link rel="icon" href="logo.png" type="image/icon type">
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"></script>

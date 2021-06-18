@@ -53,7 +53,7 @@
 
     <center><div id="recaptcha-container"></div></center><br>
     <button class="btn btn-outline-success btn-block" type="button" id="phoneloginbtn" ><i class="fas fa-sign-in-alt"></i> SEND OTP</button><br>
-    <input type="password" id="inputOtp" class="form-control" placeholder="OTP" required="" onclick="otpUser()">
+    <input type="password" id="inputOtp" class="form-control" placeholder="OTP" required="" >
     <span style="color: red;font-size: 14px" id="f6"></span><br>
     <button class="btn btn-outline-primary btn-block" type="button" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button><br><br><br><br>
 </form>
@@ -87,7 +87,7 @@
             console.log(this.responseText);
             if(this.responseText=="Login Successfull" || this.responseText=="User Created"){
                 //alert("OTP Verified");
-                location='vaccine/vaccinehome.php';
+                location='vaccine/index.php';
             }
             else if(this.responseText=="Please Verify Your Email to Get Login"){
                 alert("Please Verify Your Email to Login")
@@ -98,7 +98,7 @@
         }
         });
 
-       xhr.open("POST", "https://covidcare4u.herokuapp.com/login.php?email="+email+"&provider="+provider+"&username="+username+"&token="+token);
+        xhr.open("POST", "http://covidcare4u.online/login.php?email="+email+"&provider="+provider+"&username="+username+"&token="+token);
         xhr.send();
    }
    //===========================End Saving Details in My Server=======================
@@ -170,7 +170,9 @@
        })
        .catch(function(error){
            //console.log(error);
-           alert("Invalid OTP....Enter the correct OTP or reload the page again and generate new OTP");
+           verifyotp.disabled=true;
+           verifyotp.textContent="Verification Failed";
+           alert("Verification Failed");
            window.location.replace("vaccinereg.php");
        })
         

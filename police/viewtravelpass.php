@@ -34,6 +34,7 @@
                                             <th>Passengers</th>
                                             <th>Name(s)</th>
                                             <th>Purpose</th>
+                                            <th>ID #</th>
                                             <th>Id Card</th>
                                             <th>Feedback</th>
                                             <th>Approve / Reject</th>
@@ -49,6 +50,7 @@
                                             <th>Passengers</th>
                                             <th>Name(s)</th>
                                             <th>Purpose</th>
+                                            <th>ID #</th>
                                             <th>Id Card</th>
                                             <th>Feedback</th>
                                             <th>Approve / Reject</th>
@@ -66,7 +68,8 @@
                                             <td><?php echo $row['personcount']; ?></td>
                                             <td><?php echo $row['namelist']; ?></td>
                                             <td><?php echo $row['purpose']; ?></td>
-                                            <td><a href="../uploads/<?php echo $row['passkey']."/".$row['filename']; ?>" download> <button class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i></button></a></td>
+                                            <td><?php echo $row['idnumber']; ?></td>
+                                            <td><a href="https://storage.googleapis.com/covidcare4ubucket/<?php echo $row['passkey']."/".$row['filename']; ?>" download target="_blank"> <button class="btn btn-success"><i class="fa fa-download" aria-hidden="true"></i></button></a></td>
                                             <td><?php echo $row['feedback']; ?></td>
                                             <td><?php 
                                                 $status = $row['status']; 
@@ -78,12 +81,12 @@
                                 <?php  }   
 else if($status==2) {   ?>
 
-<font color='red'><b>Rejected</b></font>&nbsp;&nbsp;<a href="approvepass.php?t=<?php echo $row['passkey']; ?>"><button class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i></button></a>&nbsp;&nbsp;
+<font color='red'><b>Rejected</b></font><!-- &nbsp;&nbsp;<a href="approvepass.php?t=<?php echo $row['passkey']; ?>"><button class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i></button></a>&nbsp;&nbsp; -->
 
 
 <?php }    else if($status==1) { ?>
 
-    <font color='green'><b>Approved</b></font>&nbsp;&nbsp;<button class="btn btn-danger" data-toggle="modal" data-target="#example<?php echo $row['passkey']; ?>"><i class="fa fa-times" aria-hidden="true"></i></button></a>&nbsp;&nbsp;
+    <font color='green'><b>Approved</b></font><!-- &nbsp;&nbsp;<button class="btn btn-danger" data-toggle="modal" data-target="#example<?php echo $row['passkey']; ?>"><i class="fa fa-times" aria-hidden="true"></i></button></a>&nbsp;&nbsp; -->
 
 <?php }
                                       ?>          

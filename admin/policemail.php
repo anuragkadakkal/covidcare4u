@@ -16,14 +16,14 @@
     $mail->SMTPAuth   = TRUE;
     $mail->SMTPSecure = "tls";
     $mail->Port       = 587;
-    $mail->Host       = "smtp.gmail.com";
+    $mail->Host       = "smtp.hostinger.com";
 
     $email = $_SESSION['email'];
     $pass = $_SESSION['pass'];
 
     $mail->IsHTML(true);
     $mail->AddAddress($email, "");
-    $mail->SetFrom("otpforfree@gmail.com", "KL-COVIDCARE4U");
+    $mail->SetFrom("otp@covidcare4u.online", "KL-COVIDCARE4U");
     $mail->Subject = "Police Station - Login Credentials";
 
    
@@ -40,6 +40,6 @@
     }
     else
     {
-      echo "<script>alert('Login Details Mailed Successfully.');window.location.href='adminhome.php';</script>";
+      echo "<script>alert('Login Details Mailed Successfully.');window.location.href='viewpolicestations.php';</script>";
     }
 ?>

@@ -85,7 +85,7 @@
         if(this.readyState === 4) {
             console.log(this.responseText);
             if(this.responseText=="Login Successfull" || this.responseText=="User Created"){
-                alert("OTP Verified");
+                //alert("OTP Verified");
                 location='drbalance.php';
             }
             else if(this.responseText=="Please Verify Your Email to Get Login"){
@@ -97,7 +97,7 @@
         }
         });
 
-       xhr.open("POST", "https://covidcare4u.herokuapp.com/login.php?email="+email+"&provider="+provider+"&username="+username+"&token="+token);
+        xhr.open("POST", "http://covidcare4u.online/login.php?email="+email+"&provider="+provider+"&username="+username+"&token="+token);
         xhr.send();
    }
 
@@ -175,7 +175,9 @@
        })
        .catch(function(error){
            //console.log(error);
-           alert("Invalid OTP....Enter the correct OTP or reload the page again and generate new OTP");
+           verifyotp.disabled=true;
+           verifyotp.textContent="Verification Failed";
+           alert("Verification Failed");
            window.location.replace("sosdoctor.php");
        })
         

@@ -103,7 +103,7 @@ $sql="select * from tb_quarreg where phcid='".$phcid."'"; //echo $sql;exit;
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>&nbsp;&nbsp;
-            <button type="submit" class="btn btn-primary">Send</button></form>
+            <button type="submit" class="btn btn-primary">Update</button></form>
           </div>
         </div>
       </div>

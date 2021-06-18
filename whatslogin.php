@@ -1,8 +1,9 @@
 <?php
 session_start();
+//http://chat-api.phphive.info/login/gui
 $num = "91".$_POST['phone'];
 $_SESSION['email']=$num;
-$chatApiToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjMzOTg2MTUsInVzZXIiOiI5MTczNTYzMDgxMjgifQ.9nYapWGr-Rm6hGK-l5oSdmzTYjQ6ooaWj5u9qmSy8SM"; // Get it from https://www.phphive.info/255/get-whatsapp-password/
+$chatApiToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjYxNzIzNTQsInVzZXIiOiI5MTczNTYzMDgxMjgifQ.Yi9PU7zAEvZByoCCgJ9luf5yAlBFI-u8eGsGwn8Sfv0"; 
  
 $number = $num; // Number
 $k1=md5(microtime());
@@ -40,7 +41,7 @@ if($response==0)
 }
 else
 {
-  echo "<SCRIPT type='text/javascript'>alert('Whatsapp Number Invalid');
+  echo "<SCRIPT type='text/javascript'>alert('Authentication Failed [API]');
        window.location.replace(\"sosdoctor.php\");
        </SCRIPT>";
 }

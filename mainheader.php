@@ -15,7 +15,7 @@ session_start();
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="all,follow">
-<link rel="icon" href="resources/images/covid-logo.png" type="image/icon type">
+<link rel="icon" href="logo.png" type="image/icon type">
 <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
@@ -55,10 +55,23 @@ session_start();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!--Google reCaptchaV3 Code-->
-<script src="https://www.google.com/recaptcha/api.js?render=6LfhgMoaAAAAAKe22Hq_xiJ2_pxW14B9azP_E8ul"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Le-fhwbAAAAAEza3KHbMTa3awrn9JS-ADH6ZwUg"></script>
 
 
 </head>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/60c88c357f4b000ac037b2c4/1f87m7d99';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 <body>
 	
 	
@@ -136,7 +149,7 @@ session_start();
 				</li>
 
 				
-				<li><a href="sosdoctor.php"><button class="btn btn-outline-danger rounded ">&nbsp;<i class="fas fa-user-md">&nbsp;Doctor Booking&nbsp;</i></button></a></li>
+				<li><a href="sosdoctor.php"><button class="btn btn-outline-danger rounded ">&nbsp;<i class="fa fa-user-md" aria-hidden="true">&nbsp;Doctor Booking&nbsp;</i></button></a></li>
 
 				<li><a href="sosambulance.php"><button class="btn btn-outline-warning rounded ">&nbsp;<i class="fa fa-ambulance mr-1">&nbsp;SOS Ambulance</i></button></a></li>
 				
@@ -188,9 +201,9 @@ Captcha End -->
        <div class="modal-footer">
 		
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a style="text-decoration: none; cursor:pointer;">
+		<!-- <a style="text-decoration: none; cursor:pointer;">
 		Forgot Password
-		</a>
+		</a> -->
 		&nbsp;&nbsp;&nbsp;
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button name="post" type="submit"  value="Submit" class="btn btn-primary" style="cursor:pointer">Log In</button>

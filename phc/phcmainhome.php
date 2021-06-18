@@ -1,4 +1,26 @@
-  
+
+  <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+           
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item active"><h6 style="font-family: 'Inconsolata', monospace;text-align: center;">Covid-19 KERALA - Statistics<br>as on : 
+                  <?php
+                  $str=$arr[0];
+                  $date=date_create($str);
+                  echo date_format($date,"D d M Y").", "; 
+                  echo $arr[1].$arr[2]; 
+                  ?> IST
+               <b><br>[Source : <a href="https://dashboard.kerala.gov.in/" target="_blank" class="text-info">GoK Dashboard]</a></b></h6></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section> 
+
      <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -12,7 +34,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                              <h3 class="my-0 my-lg-1">1460364<span class="d-block d-sm-none"></span></h3>
+                              <h3 class="my-0 my-lg-1"><?php $pos=array_search("Statistics",$arr); echo $arr[$pos+1]; ?><span class="d-block d-sm-none"></span></h3>
 
                 <p class="my-0 my-lg-3">Total Confirmed</p>
               </div>
@@ -27,9 +49,9 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3 class="my-0 my-lg-1">247181<span class="d-block d-sm-none"></span></h3>
+                <h3 class="my-0 my-lg-1"><?php $pos=array_search("Active",$arr); echo $arr[$pos-1]; ?><span class="d-block d-sm-none"></span></h3>
 
-                <p class="my-0 my-lg-3">Active Cases</p>
+                <p class="my-0 my-lg-3">Active Cases <?php echo $arr[$pos+2]; ?></p>
               </div>
               <div class="icon">
                 <i class="fa fa-prescription"></i>
@@ -42,9 +64,9 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3 class="my-0 my-lg-1">1207680 <span class="d-block d-sm-none"></span></h3>
+                <h3 class="my-0 my-lg-1"><?php $pos=array_search("Recovered",$arr); echo $arr[$pos-2].$arr[$pos-1]; ?> <span class="d-block d-sm-none"></span></h3>
 
-                 <p class="my-0 my-lg-3">Recovered</p>
+                 <p class="my-0 my-lg-3">Recovered <?php echo $arr[$pos+1]; ?></p>
               </div>
               <div class="icon">
                 <i class="fa fa-grin-hearts"></i>
@@ -58,9 +80,10 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3 class="my-0 my-lg-1">5170<span class="d-block d-sm-none"></span></h3>
+                <h3 class="my-0 my-lg-1"><?php $pos=array_search("Deaths",$arr);echo $arr[$pos-2].$arr[$pos-1]; ?>
+<span class="d-block d-sm-none"></span></h3>
 
-                <p class="my-0 my-lg-3">Deaths</p>
+                <p class="my-0 my-lg-3">Deaths <?php echo $arr[$pos+1]; ?></p>
               </div>
               <div class="icon">
                 <i class="fa fa-frown"></i>
@@ -77,8 +100,11 @@
             <div class="small-box bg-light" style="background:#e5f7e9!important; border: 1px solid #80c590;">
               <div class="inner pb-0 ">
            
-                <h3 class="text-success">58,85,342</h3>
-				<p>People Vaccinated</p>
+                <h3 class="text-success"><?php $pos=array_search("≈",$arr);
+                  $pos=array_search("People",$arr);
+                  echo $arr[$pos-1]; $pos=array_search("≈",$arr);
+                  ?></h3>
+				<p>People Vaccinated <?php echo " (".$arr[$pos+1].")"; ?></p>
 
               </div>
               <div class="icon">
@@ -96,16 +122,21 @@
                   
                   <tr>
                     <td>First dose</td>
-                    <td align="left">58,85,342</td>
+                    <td align="left"><?php $pos=array_search("First",$arr);
+                  echo $arr[$pos+2]."<br>"; ?></td>
                     
                   </tr>
                   <tr>
                     <td>Second dose</td>
-                    <td align="left">11,06,058</td>
+                    <td align="left"><?php $pos=array_search("Second",$arr);
+                  echo $arr[$pos+2]; ?></td>
                   </tr>
                   <tr>
                     <td><strong>Total</strong></td>
-                    <td align="left"><strong>69,91,400 vaccinations</strong></td>
+                    <td align="left"><strong><?php $stringneeded = string_between_two_string($response, 'Second', 'Cumulative Summary of Kerala');
+                  $arr=preg_split("/\s+/", trim($stringneeded));
+                  $pos=array_search("Total",$arr);
+                  echo $arr[$pos+1]." Vaccinations"; ?></strong></td>
                   </tr>
                 </table>
 			<!-- 	<small>*2021 Projected population of Kerala is 3,65,69,000 as per report of National Commission on Population</small> -->

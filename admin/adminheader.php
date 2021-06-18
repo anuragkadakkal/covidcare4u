@@ -3,6 +3,16 @@
 
 <head>
 
+    <link href="resources/core/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="resources/core/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">$(document).on('click','.view',function(e){e.preventDefault();$('#pdf').modal({backdrop:'static',keyboard:false});newSrc=$(this).attr("href");$("#pdfView").html('<object type="application/pdf" data="'+newSrc+'" width="100%" height="500" id="pdfView" style="height: 85vh;">Your browser does not support pdf view, instead you can <a href="'+newSrc+'" target="_blank">Download Here</a></object>');$("#pdf").modal('show');});function nrefresh(){$.ajax({url:'../home/captcha',success:function(){d=new Date();$("#captcha").attr("src","../home/captcha?"+d.getTime());$("#ncaptchaCode").val("");$("#ncaptchaCode").focus();},});}function sendMessageWithCaptcha(mobile,captcha,otpCallback){$.ajax({url:'../home/sendMessageWithCaptcha',data:{mobile:mobile,_csrf:$("#csrf").val(),captchaCode:captcha},type:"POST",success:function(data){if(data=='F'){alert("Invalid Captcha!");nrefresh();}else{otpCallback();alert("OTP send to your mobile number. Please proceed with OTP.");timer(180);}},error:function(jqXHR,textStatus,errorThrown){if(jqXHR.status==403){location.reload();}}});}</script>
+    
+    
+    
+    
+    
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +40,25 @@
 </head>
 
 <body id="page-top">
+<div class="modal fade in " id="pdf" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 9999">
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="card ">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
 
+                <div class="header  header-navy text-center ">
+                    <h4 class="card-title"></h4>
+
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="pdfView"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -38,7 +66,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminhome.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -49,8 +77,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="adminhome.php">
+            <li class="nav-item"> 
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Homepage</span></a>
             </li>
@@ -129,6 +157,13 @@
                     </div>
                 </div>
             </li> 
+
+            
+        <!--      <li class="nav-item"> 
+                <a class="nav-link view" href="https://dashboard.tawk.to/login">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Homepage</span></a>
+            </li> -->
 
 
            

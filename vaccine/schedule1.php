@@ -51,18 +51,27 @@
   }
 </script>
         <!-- Small boxes (Stat box) --><br><br><br>
-        <h2 style="font-family: 'Open Sans', sans-serif;"><center><b>VIEW PHC DOCTOR'S NOTIFICATIONS</b></center></h2><br>
+        <h2 style="font-family: 'Open Sans', sans-serif;"><center><b>SELECT PHC - VACCINATION CENTRE</b></center></h2><br>
         
             <form role="form" method="POST" action="viewsearchresultnotify.php" name="myform">
           <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                   <select class="form-control bfh-states country" name="district" data-country="US" data-state="CA" id="district" onclick="distUser()">
-                    <option value="null">Select District</option>
                     <option value="Trivandrum">Trivandrum</option>
-                    <option value="Kollam">Kollam</option>
-                    <option value="Idukki">Idukki</option>
-                    <option value="Kottayam">Kottayam</option>
+                                          <option value="Kollam">Kollam</option>
+                                          <option value="Idukki">Idukki</option>
+                                          <option value="Kottayam">Kottayam</option>
+                                          <option value="Wayanad">Wayanad</option>
+                                          <option value="Ernakulam">Ernakulam</option>
+                                          <option value="Alappuzha">Alappuzha</option>
+                                          <option value="kozhikode">Kozhikode</option>
+                                          <option value="Thrissur">Thrissur</option>
+                                          <option value="Palakkad">Palakkad</option>
+                                          <option value="Kannur">Kannur</option>
+                                          <option value="Malappuram">Malappuram</option>
+                                          <option value="Pathanamthitta">Pathanamthitta</option>
+                                          <option value="Kasargode">Kasargode</option>
                   </select>
                   <span style="color: red;font-size: 14px" id="f7"></span>
               <input type="hidden" name="userkey" value="<?php echo $userkey; ?>">

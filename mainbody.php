@@ -177,7 +177,8 @@
 									echo "Total : ".$arr[$pos+1]." Vaccinations"; ?></strong></i><br><br>
 									<p style="font-family: 'Inconsolata', monospace; size: 2px;">
 <?php $pos=array_search("Projected",$arr);
-echo "<sup>*</sup>2021 Projected population of Kerala is ".$arr[$pos+5]." as per the report of <br>National Commission on Population<br>"; ?><br></p>
+echo "<sup>*</sup>2021 Projected population of Kerala is ".$arr[$pos+5]." as per the report of <br>National Commission on Population"; ?></p>
+<p class="text-info" style="font-family: 'Inconsolata', monospace;"><b>[Source : <a href="https://dashboard.kerala.gov.in/" target="_blank" class="text-info">GoK Dashboard]</a></b></p>
 							
 									
 								</li>
@@ -380,7 +381,8 @@ echo "<sup>*</sup>2021 Projected population of Kerala is ".$arr[$pos+5]." as per
 
 					</p> --> <br>
 					<h4>Contact Us</h4>
-					<i class="fa fa-envelope mr-1 text-white mb-2"></i>directoratehealthcare@kerala.gov.in<br> <a href='resources/downloads/helpline.pdf' class="text-white view"><i class="fa fa-phone mr-1 text-white"></i>Helpline</a>
+					<i class="fa fa-envelope mr-1 text-white mb-2"></i>directoratehealthcare@kerala.gov.in<br> 
+					<a href='' class="text-white"><i class="fa fa-phone mr-1 text-white"></i>Helpline</a>
 
 					<!-- 	 -->
 					<h4 class="mt-5">Hit Count:&emsp;1</h4>

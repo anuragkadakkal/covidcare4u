@@ -38,6 +38,7 @@ session_start();
               <thead>
                 <tr>
                   <th scope="col">Date</th>
+                  <th scope="col">From</th>
                   <th scope="col">To</th>
                    <th scope="col">Description</th>
                   <th scope="col">Status</th>
@@ -54,6 +55,7 @@ session_start();
               <tbody>
                 <tr>
                   <td><?php echo $row['curdate']; ?></td>
+                  <td><?php echo $row['fromplace']; ?></td>
                   <td><?php echo $row['toplace']; ?></td>
                   <td><?php echo $row['purpose']; ?></td>
                   <td><?php if($row['status']=='0')

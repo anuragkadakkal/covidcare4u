@@ -135,7 +135,7 @@ $pdf->Write (5,"Vaccination at");
 
 $pdf->SetXY(120,-150);
 $pdf->SetFont('Arial','',12);
-$pdf->Write (5,$row['vbkdate']." [9.00am - 2.00pm]");
+$pdf->Write (5,$row['vacdate2']." [9.00am - 2.00pm]");
 
 $pdf->SetXY(120,-141);
 $pdf->SetFont('Arial','',12);

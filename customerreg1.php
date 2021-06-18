@@ -31,7 +31,7 @@
 
     if($ex1 && $ex2)
   	{
-      echo "<SCRIPT type='text/javascript'>alert('Registration Successful');
+      echo "<SCRIPT type='text/javascript'>alert('Registration Successfull');
        window.location.replace(\"index.php\");
        </SCRIPT>";
   	}

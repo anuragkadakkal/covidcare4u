@@ -3,7 +3,7 @@
  if(isset($_POST["country"])){
     // Capture selected country
     $district = $_POST["country"];
-    $sql="select * from tb_policestation where district='".$district."'";
+    $sql="select * from tb_policestation inner join tb_login on tb_login.id=tb_policestation.loginid where district='".$district."' and status='1'";
     $result = mysqli_query($conn,$sql);
 
     if($district !== 'null'){

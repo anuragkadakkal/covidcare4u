@@ -46,115 +46,13 @@
                   <span style="color: red;font-size: 14px" id="f5"></span>
                   <br>
     <button class="btn btn-outline-success btn-block" type="submit" id="phonewhatsbtn" onclick="return checkAll()"><i class="fab fa-whatsapp"></i>&nbsp;Send OTP</button>
-    <input type="password" id="inputOtp" class="form-control" placeholder="OTP" required=""><br>
+  
 <!--     <button class="btn btn-outline-primary btn-block" type="button" id="verifyotp"><i class="fas fa-sign-in-alt"></i> VERIFY OTP</button> --><br><br><br><br>
-</form>
+</form><br>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
-<script>
-  var firebaseConfig = {
-    apiKey: "AIzaSyCzgwpNtavE1LOg927fYTmT6xx7tFrcJsI",
-    authDomain: "fir-tutorial-c97f6.firebaseapp.com",
-    projectId: "fir-tutorial-c97f6",
-    storageBucket: "fir-tutorial-c97f6.appspot.com",
-    messagingSenderId: "991342362115",
-    appId: "1:991342362115:web:9baaaeba6501eec25f1836",
-    measurementId: "G-PM07TNNG3L"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
-   //===================Saving Login Details in My Server Using AJAX================
-   function sendDatatoServerPhp(email,provider,token,username){
-       
-        var xhr = new XMLHttpRequest();
-        //xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", function() {
-        if(this.readyState === 4) {
-            console.log(this.responseText);
-            if(this.responseText=="Login Successfull" || this.responseText=="User Created"){
-                alert("OTP Verified");
-                location='drbalance.php';
-            }
-            else if(this.responseText=="Please Verify Your Email to Get Login"){
-                alert("Please Verify Your Email to Login")
-            }
-            else{
-                alert("Error in Login");
-            }
-        }
-        });
-
-        xhr.open("POST", "http://localhost/covidcare4u/login.php?email="+email+"&provider="+provider+"&username="+username+"&token="+token);
-        xhr.send();
-   }
-
-
-   //===========================End Saving Details in My Server=======================
-   //=========================Login With Phone==========================
-   var loginphone=document.getElementById("phoneloginbtn");
-   var phoneinput=document.getElementById("inputPhone");
-   var otpinput=document.getElementById("inputOtp");
-   var verifyotp=document.getElementById("verifyotp");
-   var phonewhatsbtn=document.getElementById("phonewhatsbtn");
-
-   document.getElementById("inputOtp").style.display = 'none';
-   document.getElementById("verifyotp").style.display = 'none';
-
-   loginphone.onclick=function(){
-    document.getElementById("phoneloginbtn").style.display = 'none';
-    document.getElementById("phonewhatsbtn").style.display = 'none';
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
-        'size': 'normal',
-        'callback': function(response) {
-          document.getElementById("inputPhone").style.display = 'none'
-            document.getElementById("recaptcha-container").style.display = 'none'
-            document.getElementById("phoneloginbtn").style.display = 'none';
-            document.getElementById("inputOtp").style.display = 'block';
-            document.getElementById("verifyotp").style.display = 'block';
-            document.getElementById("phonewhatsbtn").style.display = 'none';
-
-            alert("Enter OTP");
-        },
-        'expired-callback': function() {
-            alert("Captcha Timeout");
-            window.location.replace("login.html");
-        }
-        });
-
-        var cverify=window.recaptchaVerifier;
-
-        firebase.auth().signInWithPhoneNumber(phoneinput.value,cverify).then(function(response){
-            //console.log(response);
-            window.confirmationResult=response;
-        }).catch(function(error){
-            console.log(error);
-        })
-   }
-
-   verifyotp.onclick=function(){
-       confirmationResult.confirm(otpinput.value).then(function(response){
-           console.log(response);
-            var userobj=response.user;
-            var token=userobj.xa;
-            var provider="phone";
-            var email=phoneinput.value;
-            if(token!=null && token!=undefined && token!=""){
-            sendDatatoServerPhp(email,provider,token,email);
-            }
-       })
-       .catch(function(error){
-           //console.log(error);
-           alert("Invalid OTP....Enter the correct OTP or reload the page again and generate new OTP");
-           window.location.replace("sosdoctor.php");
-       })
-   }
-   //=================End Login With Phone=========================
-
-</script>
 <br>
 			</div>
 

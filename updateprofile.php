@@ -201,11 +201,22 @@ id="address" onkeyup="addrUser()"><?php echo $row['address']; ?></textarea>
 			    					<div class="form-group">
 			               				<select class="form-control bfh-states" name="district" data-country="US" data-state="CA"  id="district" onclick="distUser()">
 
-			               					<option value="null">Select District</option>
-	               					<option value="Trivandrum" <?=$row['district'] == 'Trivandrum' ? ' selected="selected"' : '';?>>Trivandrum</option>
-	               					<option value="Kollam" <?=$row['district'] == 'Kollam' ? ' selected="selected"' : '';?>>Kollam</option>
-	               					<option value="Idukki" <?=$row['district'] == 'Idukki' ? ' selected="selected"' : '';?>>Idukki</option>
-	               					<option value="Kottayam" <?=$row['district'] == 'Kottayam' ? ' selected="selected"' : '';?>>Kottayam</option>
+			               					<option value="null">District</option>
+  			               					<option value="Trivandrum" <?=$row['district'] == 'Trivandrum' ? ' selected="selected"' : '';?>>Trivandrum</option>
+  			               					<option value="Kollam" <?=$row['district'] == 'Kollam' ? ' selected="selected"' : '';?>>Kollam</option>
+                                <option value="Idukki" <?=$row['district'] == 'Idukki' ? ' selected="selected"' : '';?>>Idukki</option>
+                                <option value="Kottayam" <?=$row['district'] == 'Kottayam' ? ' selected="selected"' : '';?>>Kottayam</option>
+                                <option value="Wayanad" <?=$row['district'] == 'Wayanad' ? ' selected="selected"' : '';?>>Wayanad</option>
+                                <option value="Ernakulam" <?=$row['district'] == 'Ernakulam' ? ' selected="selected"' : '';?>>Ernakulam</option>
+                                <option value="Alappuzha" <?=$row['district'] == 'Alappuzha' ? ' selected="selected"' : '';?>>Alappuzha</option>
+                                <option value="kozhikode" <?=$row['district'] == 'kozhikode' ? ' selected="selected"' : '';?>>kozhikode</option>
+                                <option value="Thrissur" <?=$row['district'] == 'Thrissur' ? ' selected="selected"' : '';?>>Thrissur</option>
+                                <option value="Palakkad" <?=$row['district'] == 'Palakkad' ? ' selected="selected"' : '';?>>Palakkad</option>
+                                <option value="Kannur" <?=$row['district'] == 'Kannur' ? ' selected="selected"' : '';?>>Kannur</option>
+                                <option value="Malappuram" <?=$row['district'] == 'Malappuram' ? ' selected="selected"' : '';?>>Malappuram</option>
+                                <option value="Pathanamthitta" <?=$row['district'] == 'Pathanamthitta' ? ' selected="selected"' : '';?>>Pathanamthitta</option>
+                                <option value="Kasargode" <?=$row['district'] == 'Kasargode' ? ' selected="selected"' : '';?>>Kasargode</option>
+			               				</select>
 			               				</select>
 			               			<span style="color: red;font-size: 14px" id="f7"></span>
 

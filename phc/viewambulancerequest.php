@@ -64,11 +64,11 @@
   <?php      }
         if($status==1)
         { ?>
-           <font color="green"><b>Approved</b></font>&nbsp;&nbsp;<a href="rejectamb.php?t=<?php echo $row['ambkey']; ?>"><button class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button></a>
+           <font color="green"><b>Approved</b></font>
   <?php      }
         if($status==2)
         {   ?>
-           <font color="red"><b>Rejected</b></font>&nbsp;&nbsp;<a href="approveamb.php?t=<?php echo $row['ambkey']; ?>"><button class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></button></a>
+           <font color="red"><b>Rejected</b></font>
   <?php      }    ?>
 
   </td> 

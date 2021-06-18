@@ -29,7 +29,8 @@
         $loginid=$row["id"];
     }
 
-    $sql3="insert into tb_doctor(drkey,fname,lname,address,phno,gender,district,qual,exp,specs,pincode,loginid,phcid) values ('".$k2."','".$firstname."','".$lastname."','".$address."','".$phno."','".$gender."','".$dist."','".$qual."','".$exp."','".$specs."','".$pin."','".$loginid."','".$phckey."')";//echo $sql3;exit;
+    $sql3="insert into tb_doctor(drkey,fname,lname,address,phno,gender,district,qual,exp,specs,pincode,loginid,phcid) values ('".$k2."','".$firstname."','".$lastname."','".$address."','".$phno."','".$gender."','".$dist."','".$qual."','".$exp."','".$specs."','".$pin."','".$loginid."','".$_COOKIE['lkey']."')";
+    //echo $sql3;exit;
     $ex2=mysqli_query($conn,$sql3);
 
     if($ex1 && $ex2)

@@ -23,7 +23,7 @@
 
 	if($ex2)
 	{
-		echo "<SCRIPT type='text/javascript'>alert('Ambulance Details Updated Successfully');window.location.replace(\"ambulancehome.php\"); </SCRIPT>";
+		echo "<SCRIPT type='text/javascript'>alert('Ambulance Details Updated Successfully');window.location.replace(\"index.php\"); </SCRIPT>";
 	}
 	else
 	{

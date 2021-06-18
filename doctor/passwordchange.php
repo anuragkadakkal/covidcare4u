@@ -21,7 +21,7 @@
     var cur = document.getElementById("cur");
     var curpass = document.getElementById('curpass').value;
 
-    if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(curpass))
+    if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,30}$/.test(curpass))
        {
          cur.textContent = "**Password Must Have 1(Uppercase,Lowercase,Digit) & 6 to 20 Character Length";
          document.getElementById("curpass").focus();
@@ -38,7 +38,7 @@
     var f9 = document.getElementById("f9");
     var pass = document.getElementById('pass').value;
 
-    if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(pass))
+    if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,30}$/.test(pass))
        {
          f9.textContent = "**Password Must Have 1(Uppercase,Lowercase,Digit) & 6 to 20 Character Length";
          document.getElementById("pass").focus();

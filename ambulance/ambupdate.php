@@ -21,7 +21,7 @@
     var e1 = document.getElementById("e1");
     var emailaddress = document.getElementById('emailaddress').value;
 
-    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailaddress))
+    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/.test(emailaddress))
        {
          e1.textContent = "**Invalid Email Format";
          document.getElementById("emailaddress").focus();

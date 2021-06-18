@@ -13,7 +13,7 @@
 		var f1 = document.getElementById("f1");
 		var fname = document.getElementById('fname').value;
 
-		if(!/^[A-Za-z ]{5,16}$/.test(fname))
+		if(!/^[A-Za-z ]{5,36}$/.test(fname))
 	     {
 	       f1.textContent = "**Invalid Community Kitchen Name";
 	       var x = document.getElementById("fname");
@@ -31,7 +31,7 @@
 		var f2 = document.getElementById("f2");
 		var lname = document.getElementById('lname').value;
 
-		if(!/^[A-Za-z ]{5,16}$/.test(lname))
+		if(!/^[A-Za-z ]{5,36}$/.test(lname))
 	     {
 	       f2.textContent = "**Invalid City Name";
 	       document.getElementById("lname").focus();
@@ -65,7 +65,7 @@
 		var f4 = document.getElementById("f4");
 		var email = document.getElementById('email').value;
 
-		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))
+		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/.test(email))
 	     {
 	       f4.textContent = "**Invalid Email Format";
 	       document.getElementById("email").focus();
@@ -113,20 +113,20 @@
 	     }
 	}
 
-	function distPin() {
+	function distPinq() {
 
-		var f7 = document.getElementById("f7");
-		var pincode = document.getElementById('pincode').value;
+		var f7q = document.getElementById("f7q");
+		var pincodeq = document.getElementById('pincodeq').value;
 
-		if(!/^[0-9]{6}$/.test(pincode))
+		if(!/^[0-9]{6}$/.test(pincodeq))
 	     {
-	       f7.textContent = "**Enter Correct Pincode";
-	       document.getElementById("pincode").focus();
+	       f7q.textContent = "**Enter Correct Pincode";
+	       document.getElementById("pincodeq").focus();
 	       return false;
 	     }
 	     else
 	     {
-	     	f7.textContent = "";
+	     	f7q.textContent = "";
 	     	return true;
 	     }
 	}
@@ -187,7 +187,7 @@
 
 function checkAll() {
 
-		if(firstName()&&lastName()&&emailUser()&&addrUser()&&phoneUser()&&distUser()&&distPin()&&passUser()&&conpassUser()&&fileCheck())
+		if(firstName()&&lastName()&&emailUser()&&addrUser()&&phoneUser()&&distUser()&&distPinq()&&passUser()&&conpassUser()&&fileCheck())
 	     {
 	       return true;
 	     }
@@ -242,10 +242,20 @@ function checkAll() {
 								<div class="form-group">
 									<select class="form-control bfh-states" name="district" data-country="US" data-state="CA" id="district" onclick="distUser()">
 										<option value="null">Select District</option>
-										<option value="Trivandrum">Trivandrum</option>
-										<option value="Kollam">Kollam</option>
-										<option value="Idukki">Idukki</option>
-										<option value="Kottayam">Kottayam</option>
+			                              <option value="Trivandrum">Trivandrum</option>
+			                              <option value="Kollam">Kollam</option>
+			                              <option value="Idukki">Idukki</option>
+			                              <option value="Kottayam">Kottayam</option>
+			                              <option value="Wayanad">Wayanad</option>
+			                              <option value="Ernakulam">Ernakulam</option>
+			                              <option value="Alappuzha">Alappuzha</option>
+			                              <option value="kozhikode">Kozhikode</option>
+			                              <option value="Thrissur">Thrissur</option>
+			                              <option value="Palakkad">Palakkad</option>
+			                              <option value="Kannur">Kannur</option>
+			                              <option value="Malappuram">Malappuram</option>
+			                              <option value="Pathanamthitta">Pathanamthitta</option>
+			                              <option value="Kasargode">Kasargode</option>
 									</select>
 									<span style="color: red;font-size: 14px" id="f6"></span>
 
@@ -253,8 +263,8 @@ function checkAll() {
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode" id="pincode" onkeyup="distPin()">
-									<span style="color: red;font-size: 14px" id="f7"></span>
+									<input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode" id="pincodeq" onkeyup="distPinq()">
+									<span style="color: red;font-size: 14px" id="f7q"></span>
 								</div>
 							</div>
 						</div>

@@ -35,7 +35,7 @@
                                             <th>Pincode</th>
                                             <th>Phone #</th>
                                             <th>Certificate</th>
-                                            <th>Update / Delete</th>
+                                            <th>Approve / Reject</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -48,7 +48,7 @@
                                           <th>Pincode</th>
                                           <th>Phone #</th>
                                           <th>Certificate</th>
-                                          <th>Update  / Delete</th>
+                                          <th>Approve / Reject</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -61,9 +61,16 @@
                                             <td><?php echo $row['kmdistrict']; ?></td>
                                             <td><?php echo $row['kmpincode']; ?></td>
                                             <td><?php echo $row['kmphone']; ?></td>
-                                            <td><a href="../uploads/<?php echo $row['kmkey']."/".$row['kmcertificate']; ?>" download> <button class="btn btn-warning"><i class="fa fa-download" aria-hidden="true"></i></button></a></td>
+                                            <td><a href="../Uploads/<?php echo $row['kmkey']."/".$row['kmcertificate']; ?>" download> <button class="btn btn-warning"><i class="fa fa-download" aria-hidden="true"></i></button></a></td>
                                             <td><?php $status = $row['status'];
-                                            if($status==1)
+                                            if($status==0)
+                                            {
+                                                ?>
+                                               <a href="activatemed.php?t=<?php echo $row['kmkey']; ?>"><button class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i></button></a>
+                                               <a href="deactivatemed.php?t=<?php echo $row['kmkey']; ?>"><button class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i></button></a>
+                                 <?php  
+                                            } 
+                                            else if($status==1)
                                             { ?>
                                                <font color="green"><b>Active</b></font>&nbsp;&nbsp;<a href="deactivatemed.php?t=<?php echo $row['kmkey']; ?>"><button class="btn btn-danger">Deactivate</button></a>
                                  <?php      }

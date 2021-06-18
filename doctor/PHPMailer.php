@@ -339,14 +339,14 @@ class PHPMailer
      *
      * @var string
      */
-    public $Username = 'otpforfree@gmail.com'; //Username here....gmail username
+    public $Username = 'otp@covidcare4u.online'; //Username here....gmail username
 
     /**
      * SMTP password.
      *
      * @var string
      */
-    public $Password = 'ellamnallathinu'; //Password here....gmail password
+    public $Password = 'Admin1234'; //Password here....gmail password
 
     /**
      * SMTP auth type.

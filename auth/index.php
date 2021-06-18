@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['emailvalid']))
+if(isset($_SESSION['em']))
 {
 require "Authenticator.php";
 

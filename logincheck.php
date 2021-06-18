@@ -8,7 +8,7 @@
     	$en = md5($_POST["pass"]);
 		$url = "https://www.google.com/recaptcha/api/siteverify";
 		$data = [
-			'secret' => "6LfhgMoaAAAAAF1UXZ9_ASAEBlptTWH600da8sda",
+			'secret' => "6Le-fhwbAAAAAAl_vnfKO2wN4os7wtFQtMqpcBlc",
 			'response' => $_POST['token'],
 		];
 
@@ -47,12 +47,12 @@
 					setcookie("lkey",$b);
 					if ($c==0)
 					{
-						$_SESSION["auth"] = 1;
-						$_SESSION["emailvalid"] = 1;
+						//$_SESSION["auth"] = 1;
+						$_SESSION["em"] = $usr;
 						//header("location:admin/adminhome.php");
 						echo "<SCRIPT type='text/javascript'>alert('Use Google Authenticator For Authentication');
-       window.location.replace(\"auth/index.php\");
-       </SCRIPT>";
+       					window.location.replace(\"auth/index.php\");
+       					</SCRIPT>";
 						//header("location:auth/index.php"); 
 						/*Admin SESSION - Completed - Validation Completed*/
 					}
@@ -65,37 +65,37 @@
 					else if($c==2)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:police/policehome.php"); 
+						header("location:police/"); 
 						/*Police Station SESSION - Completed - Validation Completed*/
 					}
 					else if($c==3)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:kitchen/kitchenhome.php");
+						header("location:kitchen/");
 						/*Community SESSION - Completed - Validation Completed*/
 					}
 					else if($c==4)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:karunyamedicals/medicalhome.php"); 
+						header("location:karunyamedicals/"); 
 						/*Karunya Medicals SESSION - Completed - Validation Completed*/
 					}
 					else if($c==5)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:phc/phchome.php");
+						header("location:phc/");
 						/*PHC SESSION - Completed - Validation Completed*/
 					}
 					else if($c==6)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:doctor/drhome.php"); 
+						header("location:doctor/"); 
 						/*Doctor SESSION - Completed - Validation Completed*/
 					}
 					else if($c==7)
 					{
 						$_SESSION["logined"] = 1;
-						header("location:ambulance/ambulancehome.php"); 
+						header("location:ambulance/"); 
 						/*Ambulance SESSION - Completed - Validation Completed*/
 					}
 					else{}

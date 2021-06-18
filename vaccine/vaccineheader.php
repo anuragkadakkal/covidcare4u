@@ -1,6 +1,6 @@
 <?php
 // this MUST be called prior to any output including whitespaces and line breaks!
-
+  include '../curl.php'; //<!-- GOK Direct Data Fetching -->
   include 'connection.php';
 
   $lkey=$_SESSION["email"];
@@ -41,7 +41,7 @@
     <ul class="navbar-nav">
 	
       <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="vaccinehome.php"><i class="fas fa-bars text-success"><span class=" font-weight-light text-success">&nbsp;&nbsp;<?php echo $lkey?></span>
+        <a class="nav-link" data-widget="pushmenu" href="index.php"><i class="fas fa-bars text-success"><span class=" font-weight-light text-success">&nbsp;&nbsp;<?php echo $lkey?></span>
           </i></a>
       </li>
 
@@ -52,7 +52,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="vaccinehome.php" class="brand-link">
+    <a href="index.php" class="brand-link">
       <span class="brand-text font-weight-light">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CovidCare4U <i class="nav-icon fas fa-home"></i></span>
     </a>
 
@@ -71,7 +71,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 		
 				<li class="nav-item">
-				<a  href="vaccinehome.php" class="nav-link " >
+				<a  href="index.php" class="nav-link " >
 				<i class="nav-icon fas fa-home"></i>
 				<p>
 				Dashboard

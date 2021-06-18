@@ -27,7 +27,7 @@
 
 	if($ex2 && $ex1)
 	{
-		echo "<SCRIPT type='text/javascript'>alert('Doctor Details Updated Successfully');window.location.replace(\"drhome.php\"); </SCRIPT>";
+		echo "<SCRIPT type='text/javascript'>alert('Doctor Details Updated Successfully');window.location.replace(\"index.php\"); </SCRIPT>";
 	}
 	else
 	{

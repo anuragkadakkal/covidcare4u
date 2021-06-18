@@ -63,7 +63,7 @@
     var zz = document.getElementById("zz");
     var emailusers = document.getElementById('emailusers').value;
 
-    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailusers))
+    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/.test(emailusers))
        {
          zz.textContent = "**Invalid Email Format";
          document.getElementById("emailusers").focus();
@@ -170,13 +170,23 @@ $key=$_GET['t'];
                 <input type="hidden" name="key"  value="<?php echo $key; ?>">
                               <div class="row">
               			    				<div class="col-xs-6 col-sm-6 col-md-6">
-                                  <div class="form-group"><?php $d=$row['district']; ?>
+                                  <div class="form-group">
               			               				<select class="form-control bfh-states" data-country="US" data-state="CA" name="district" id="district" onclick="distUser()">
-              			               					<option value="null">Select District</option>
-                                            <option value="Trivandrum"<?php if($d=='Trivandrum'){echo "selected"; } ?>>Trivandrum</option>
-                                            <option value="Kollam" <?php if($d=='Kollam'){echo "selected"; } ?>>Kollam</option>
-                                            <option value="Idukki"<?php if($d=='Idukki'){echo "selected"; } ?>>Idukki</option>
-                                            <option value="Kottayam" <?php if($d=='Kottayam'){echo "selected"; } ?>>Kottayam</option>
+              			               					<option value="null">District</option>
+                                <option value="Trivandrum" <?=$row['district'] == 'Trivandrum' ? ' selected="selected"' : '';?>>Trivandrum</option>
+                                <option value="Kollam" <?=$row['district'] == 'Kollam' ? ' selected="selected"' : '';?>>Kollam</option>
+                                <option value="Idukki" <?=$row['district'] == 'Idukki' ? ' selected="selected"' : '';?>>Idukki</option>
+                                <option value="Kottayam" <?=$row['district'] == 'Kottayam' ? ' selected="selected"' : '';?>>Kottayam</option>
+                                <option value="Wayanad" <?=$row['district'] == 'Wayanad' ? ' selected="selected"' : '';?>>Wayanad</option>
+                                <option value="Ernakulam" <?=$row['district'] == 'Ernakulam' ? ' selected="selected"' : '';?>>Ernakulam</option>
+                                <option value="Alappuzha" <?=$row['district'] == 'Alappuzha' ? ' selected="selected"' : '';?>>Alappuzha</option>
+                                <option value="kozhikode" <?=$row['district'] == 'kozhikode' ? ' selected="selected"' : '';?>>kozhikode</option>
+                                <option value="Thrissur" <?=$row['district'] == 'Thrissur' ? ' selected="selected"' : '';?>>Thrissur</option>
+                                <option value="Palakkad" <?=$row['district'] == 'Palakkad' ? ' selected="selected"' : '';?>>Palakkad</option>
+                                <option value="Kannur" <?=$row['district'] == 'Kannur' ? ' selected="selected"' : '';?>>Kannur</option>
+                                <option value="Malappuram" <?=$row['district'] == 'Malappuram' ? ' selected="selected"' : '';?>>Malappuram</option>
+                                <option value="Pathanamthitta" <?=$row['district'] == 'Pathanamthitta' ? ' selected="selected"' : '';?>>Pathanamthitta</option>
+                                <option value="Kasargode" <?=$row['district'] == 'Kasargode' ? ' selected="selected"' : '';?>>Kasargode</option>
               			               				</select>
                                           <span style="color: red;font-size: 14px" id="f7"></span>
 

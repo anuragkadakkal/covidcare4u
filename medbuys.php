@@ -170,7 +170,7 @@ if(isset($_SESSION["cart_item"])){
 				
 			<?php
 			$curdate = date("l jS \of F Y");
-				$product_array = $db_handle->runQuery("SELECT * FROM tb_medicinereg where loginid='".$_SESSION['kitkey']."' and fqty>'0'");//echo $_SESSION['kitkey'];exit;
+				$product_array = $db_handle->runQuery("SELECT * FROM tb_medicinereg where loginid='".$_SESSION['kitkey']."' and fqty>'0' and fstatus='1' and delstatus!='1'");//echo $_SESSION['kitkey'];exit;
 				if (!empty($product_array)) { 
 					foreach($product_array as $key=>$value){ ?>
 						<form method="post" action="medbuys.php?action=add&code=<?php echo $product_array[$key]["fkey"]; ?>">

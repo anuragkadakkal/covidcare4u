@@ -25,7 +25,7 @@
     var f3 = document.getElementById("f3");
     var email = document.getElementById('email').value;
 
-    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))
+    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/.test(email))
        {
          f3.textContent = "**Invalid Email Format";
          document.getElementById("email").focus();
@@ -142,10 +142,20 @@
                                   <div class="form-group">
               			               				<select class="form-control bfh-states" data-country="US" data-state="CA" name="district" id="district" onclick="distUser()">
                     <option value="null">Select District</option>
-                    <option value="Trivandrum">Trivandrum</option>
-                    <option value="Kollam">Kollam</option>
-                    <option value="Idukki">Idukki</option>
-                    <option value="Kottayam">Kottayam</option>
+                                    <option value="Trivandrum">Trivandrum</option>
+                                    <option value="Kollam">Kollam</option>
+                                    <option value="Idukki">Idukki</option>
+                                    <option value="Kottayam">Kottayam</option>
+                                    <option value="Wayanad">Wayanad</option>
+                                    <option value="Ernakulam">Ernakulam</option>
+                                    <option value="Alappuzha">Alappuzha</option>
+                                    <option value="kozhikode">Kozhikode</option>
+                                    <option value="Thrissur">Thrissur</option>
+                                    <option value="Palakkad">Palakkad</option>
+                                    <option value="Kannur">Kannur</option>
+                                    <option value="Malappuram">Malappuram</option>
+                                    <option value="Pathanamthitta">Pathanamthitta</option>
+                                    <option value="Kasargode">Kasargode</option>
                   </select>
                   <span style="color: red;font-size: 14px" id="f7"></span>
 

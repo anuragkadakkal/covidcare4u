@@ -47,7 +47,7 @@
     var f3 = document.getElementById("f3");
     var email = document.getElementById('email').value;
 
-    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))
+    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/.test(email))
        {
          f3.textContent = "**Invalid Email Format";
          document.getElementById("email").focus();
@@ -273,12 +273,8 @@
             <div class="row">
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <select class="form-control bfh-states" name="district" data-country="US" data-state="CA" id="district" onclick="distUser()">
-                    <option value="null">Select District</option>
-                    <option value="Trivandrum">Trivandrum</option>
-                    <option value="Kollam">Kollam</option>
-                    <option value="Idukki">Idukki</option>
-                    <option value="Kottayam">Kottayam</option>
+                  <select class="form-control bfh-states" name="district" data-country="US" data-state="CA" id="district" onclick="distUser()" readonly>
+                    <option value="<?php echo $di; ?>"><?php echo $di; ?></option>
                   </select>
                   <span style="color: red;font-size: 14px" id="f7"></span>
 

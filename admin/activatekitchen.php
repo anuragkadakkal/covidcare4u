@@ -10,14 +10,14 @@
 	{
 		$id=$row['loginid'];
 	}
-	$status=2;
+	$status=1;
 
   	$sql2 = "update tb_login set status='".$status."' where id='".$id."'";
   	$ex2=mysqli_query($conn,$sql2);
 
   	if($ex2)
 	{
-    	echo "<SCRIPT type='text/javascript'>alert('Community Kitchen Deactivated');window.location.replace(\"viewcommunitykitchens.php\"); </SCRIPT>";
+    	echo "<SCRIPT type='text/javascript'>alert('Community Kitchen Activated');window.location.replace(\"viewcommunitykitchens.php\"); </SCRIPT>";
 	}
 	else
 	{

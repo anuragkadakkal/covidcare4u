@@ -28,7 +28,7 @@
 
 	if($ex2)
 	{
-		echo "<SCRIPT type='text/javascript'>alert('PHC Details Updated Successfully');window.location.replace(\"phchome.php\"); </SCRIPT>";
+		echo "<SCRIPT type='text/javascript'>alert('PHC Details Updated Successfully');window.location.replace(\"index.php\"); </SCRIPT>";
 	}
 	else
 	{

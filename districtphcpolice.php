@@ -3,7 +3,7 @@
  if(isset($_POST["country"])){
     // Capture selected country
     $district = $_POST["country"];
-    $sql="select * from tb_phc where district='".$district."'";
+    $sql="select * from tb_phc inner join tb_login on tb_login.id=tb_phc.loginid where district='".$district."' and status='1'";
     $result = mysqli_query($conn,$sql);
 
     // Display city dropdown based on country name

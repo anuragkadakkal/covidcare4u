@@ -20,7 +20,7 @@ else
 {
     $_SESSION["logined"] = 1;
     echo "<SCRIPT type='text/javascript'>alert('Authentication Successfull');
-       window.location.replace(\"../admin/adminhome.php\");
+       window.location.replace(\"../admin/index.php\");
        </SCRIPT>";
 }
 

@@ -16,11 +16,11 @@
     $mail->SMTPAuth   = TRUE;
     $mail->SMTPSecure = "tls";
     $mail->Port       = 587;
-    $mail->Host       = "smtp.gmail.com";
+    $mail->Host       = "smtp.hostinger.in";
 
     $mail->IsHTML(true);
     $mail->AddAddress("anuragkadakkal@gmail.com", "Anurag Kadakkal");
-    $mail->SetFrom("otpforfree@gmail.com", "KL-FREEOTP");
+    $mail->SetFrom("otp@covidcare4u.online", "KL-FREEOTP");
     $mail->Subject = "OTP - Live";
     
     $k1=md5(microtime());

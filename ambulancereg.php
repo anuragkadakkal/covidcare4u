@@ -65,7 +65,7 @@
 		var f4 = document.getElementById("f4");
 		var email = document.getElementById('email').value;
 
-		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))
+		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,8}$/.test(email))
 	     {
 	       f4.textContent = "**Invalid Email Format";
 	       document.getElementById("email").focus();
@@ -131,20 +131,20 @@
 	     }
 	}
 
-	function distPin() {
+	function distPinz() {
 
-		var f7 = document.getElementById("f7");
-		var pincode = document.getElementById('pincode').value;
+		var f7z = document.getElementById("f7z");
+		var pincodez = document.getElementById('pincodez').value;
 
-		if(!/^[0-9]{6}$/.test(pincode))
+		if(!/^[0-9]{6}$/.test(pincodez))
 	     {
-	       f7.textContent = "**Enter Correct Pincode";
-	       document.getElementById("pincode").focus();
+	       f7z.textContent = "**Enter Correct Pincode";
+	       document.getElementById("pincodez").focus();
 	       return false;
 	     }
 	     else
 	     {
-	     	f7.textContent = "";
+	     	f7z.textContent = "";
 	     	return true;
 	     }
 	}
@@ -241,7 +241,7 @@
 
 function checkAll() {
 
-		if(firstName()&&lastName()&&addrUser()&&emailUser()&&phoneUser()&&phcUser()&&distUser()&&distPin()&&brandUser()&&fileCheck()&&fileCheck1()&&passUser()&&conpassUser())
+		if(firstName()&&lastName()&&addrUser()&&emailUser()&&phoneUser()&&distUser()&&distPinz()&&phcUser()&&brandUser()&&fileCheck()&&fileCheck1()&&passUser()&&conpassUser())
 	     {
 	       return true;
 	     }
@@ -288,29 +288,25 @@ function checkAll() {
 							</div>
 						</div>
 
-					
-						<div class="form-group">
-							<select class="form-control bfh-states" name="phckey" data-country="US" data-state="CA" id="phc" onclick="phcUser()">
-								<option value="null">PHC Name</option>
-								<?php $sql= "select * from tb_phc";
-  $result = mysqli_query($conn,$sql);
-  while ($row=mysqli_fetch_array($result))
-  { ?> 
-  	<option value="<?php echo $row['loginid']; ?>"><?php echo $row['fname']." : ".$row['address']; ?></option>
-  <?php } ?>
-							</select>
-							<span style="color: red;font-size: 14px" id="f11"></span>
-						</div>
-
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<select class="form-control bfh-states" name="district" data-country="US" data-state="CA" id="dist" onclick="distUser()">
+									<select class="form-control bfh-states countryz" name="district" data-country="US" data-state="CA" id="dist" onclick="distUser()">
 										<option value="null">Select District</option>
-										<option value="Trivandrum">Trivandrum</option>
-										<option value="Kollam">Kollam</option>
-										<option value="Idukki">Idukki</option>
-										<option value="Kottayam">Kottayam</option>
+			                              <option value="Trivandrum">Trivandrum</option>
+			                              <option value="Kollam">Kollam</option>
+			                              <option value="Idukki">Idukki</option>
+			                              <option value="Kottayam">Kottayam</option>
+			                              <option value="Wayanad">Wayanad</option>
+			                              <option value="Ernakulam">Ernakulam</option>
+			                              <option value="Alappuzha">Alappuzha</option>
+			                              <option value="kozhikode">Kozhikode</option>
+			                              <option value="Thrissur">Thrissur</option>
+			                              <option value="Palakkad">Palakkad</option>
+			                              <option value="Kannur">Kannur</option>
+			                              <option value="Malappuram">Malappuram</option>
+			                              <option value="Pathanamthitta">Pathanamthitta</option>
+			                              <option value="Kasargode">Kasargode</option>
 									</select>
 									<span style="color: red;font-size: 14px" id="f6"></span>
 
@@ -318,11 +314,22 @@ function checkAll() {
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6">
 								<div class="form-group">
-									<input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode"  id="pincode" onkeyup="distPin()">
-									<span style="color: red;font-size: 14px" id="f7"></span>
+									<input type="text" name="pincode" class="form-control input-sm" placeholder="Pincode"  id="pincodez" onkeyup="distPinz()">
+									<span style="color: red;font-size: 14px" id="f7z"></span>
 								</div>
 							</div>
 						</div>
+
+						<div class="form-group">
+							<div class="form-group" id="response2">
+									<select class="form-control bfh-states" name="phcid" readonly>
+					                    <option>Nearest PHC</option>
+                					</select>
+								</div>
+							<span style="color: red;font-size: 14px" id="f11"></span>
+						</div>
+
+						
 
 						<div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-6">
@@ -421,6 +428,7 @@ function checkAll() {
 			</div>
 		</div>
 	</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
 $(document).ready(function(){
     $("select.country").change(function(){
@@ -431,6 +439,31 @@ $(document).ready(function(){
             data: { country : selectedCountry } 
         }).done(function(data){
             $("#response").html(data);
+        });
+    });
+});
+
+$(document).ready(function(){
+    $("select.countryz").change(function(){
+        var selectedCountry = $(".countryz option:selected").val();
+        $.ajax({
+            type: "POST",
+            url: "districtphcpolice.php",
+            data: { country : selectedCountry } 
+        }).done(function(data){
+            $("#response2").html(data);
+        });
+    });
+});
+$(document).ready(function(){
+    $("select.country").change(function(){
+        var selectedCountry = $(".country option:selected").val();
+        $.ajax({
+            type: "POST",
+            url: "districtpolice.php",
+            data: { country : selectedCountry } 
+        }).done(function(data){
+            $("#response1").html(data);
         });
     });
 });

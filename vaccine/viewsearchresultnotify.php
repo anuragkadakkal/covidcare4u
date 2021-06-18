@@ -109,6 +109,7 @@
           <input type="hidden" name="phcid" value="<?php echo $phcid;?>">
           <input type="hidden" name="vcount" value="<?php echo $row['vtotal']?>">
           <input type="hidden" name="userkey" value="<?php echo $userkey; ?>">
+          <input type="hidden" name="vacdate" value="<?php echo $row['availdate']; ?>">
 
           <?php 
                 if(isset($sch))
